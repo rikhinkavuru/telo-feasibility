@@ -1,0 +1,285 @@
+# Regulatory and quality feasibility gates.
+#
+# PRELIMINARY REGULATORY ANALYSIS; NOT LEGAL ADVICE. No gate may be set to
+# PASS until a qualified generic-drug/CMC or 503B regulatory professional has
+# reviewed it and is recorded in `reviewer` / `review_date`. Gates are binary
+# constraints, not costs. UNCERTAIN is never treated as PASS by the code.
+#
+# Superset of protocol section 4.4 (eight rows) and workbook 04_Reg_Gates
+# (fifteen rows). `protocol_ref` maps each gate back to the protocol row.
+# `legal_basis_type` uses the protocol's labels: law_or_regulation,
+# final_guidance, agency_initiative, proposed_rule, expert_interpretation,
+# unresolved_question.
+
+version: 1.0.0
+label: "preliminary regulatory analysis; not legal advice"
+statuses: [PASS, FAIL, UNCERTAIN, NOT_APPLICABLE]
+treatments:
+  exclude_if_fail: strategy excluded from comparison when FAIL; no conclusion when UNCERTAIN
+  lead_time: adds qualified submission/inspection lead time before the strategy exists; UNCERTAIN = no conclusion
+  hard_feasibility: hard feasibility condition; FAIL excludes; UNCERTAIN = no conclusion
+  cap: caps inventory, shelf life/BUD, or location policy; UNCERTAIN = use most conservative bound and report
+  dynamic_state: time-varying on/off eligibility inside the simulation
+  region_restriction: restricts service region
+  fallback_conventional: if not PASS the release-assurance scenario collapses to R0 conventional release
+  no_fleet_claim: if not PASS no fleet-level equivalence or rerouting claim is permitted
+
+# Design-space strategies S8-S19 (protocol revision R006, 2026-09-03) are mapped by the rule
+# stated in the Phase D assignment, so that regulatory.evaluate_strategy returns NO_CONCLUSION by
+# analysis rather than by omission:
+#   * every S8-S19 site is an owned or contracted approved-CMO site -> G01-G07 on all twelve;
+#   * every design that replicates manufacture of one product across two or more sites -> G13, G14.
+#     That is all of them except S15, which declares a single incumbent line;
+#   * no design uses a 503B responder site, so G08-G12 gain no new strategy;
+#   * every design runs release scenario R0 with the frozen release-component vector and claims no
+#     release-assurance component, so G15 gains no new strategy and stays mapped to S6 alone.
+# Every added row keeps status UNCERTAIN with no reviewer, exactly as S0-S7 do. Adding a gate to a
+# strategy can only make it less eligible, never more.
+#
+# G16 was added under revision R007 (2026-09-03) for the three designs that declare a second API or
+# container source (S9, S18, S19). It expresses two preconditions the design-space review found
+# recorded in prose but absent from the gate set: component and container-closure lot qualification
+# under 21 CFR 211.84 and 211.94, and the Type II DMF letter of authorisation the alternate API
+# source must issue.
+
+gates:
+  - id: G01
+    pathway: approved_cmo
+    name: Application ownership or binding CMO relationship
+    evidence_required: ANDA/NDA holder identified in Drugs@FDA/Orange Book and executed quality/technical agreement
+    model_effect: Strategy infeasible if absent
+    treatment: exclude_if_fail
+    applies_to_strategies: [S0, S1, S2, S3, S4, S5, S6, S8, S9, S10, S11, S12, S13, S14, S15, S16, S17, S18, S19]
+    protocol_ref: "4.4 Application/quality owner identified"
+    legal_basis_type: law_or_regulation
+    legal_basis: 21 CFR Part 314 (applications) and 21 CFR Part 211 (CGMP); contract-manufacturing quality agreements per FDA guidance
+    sources: [S16, S17, S06]
+    status: UNCERTAIN
+    reviewer: null
+    review_date: null
+    notes: null
+  - id: G02
+    pathway: approved_cmo
+    name: Manufacturing site in approved application; establishment registered and drug listed
+    evidence_required: Application/site records; establishment registration and listing
+    model_effect: Adds submission and inspection lead time
+    treatment: lead_time
+    applies_to_strategies: [S2, S3, S4, S5, S6, S8, S9, S10, S11, S12, S13, S14, S15, S16, S17, S18, S19]
+    protocol_ref: "4.4 Site and manufacturing steps supportable in application"
+    legal_basis_type: law_or_regulation
+    legal_basis: FD&C Act 510 and 21 CFR Part 207 (registration and listing); 21 CFR 314.70 (supplements and changes)
+    sources: [S11, S16]
+    status: UNCERTAIN
+    reviewer: null
+    review_date: null
+    notes: null
+  - id: G03
+    pathway: approved_cmo
+    name: Product, process, and cleaning validation completed
+    evidence_required: Validation protocols and reports (process performance qualification, cleaning validation)
+    model_effect: Sets earliest commercial start
+    treatment: hard_feasibility
+    applies_to_strategies: [S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15, S16, S17, S18, S19]
+    protocol_ref: "4.4 Process, cleaning, analytical, and aseptic/sterilization validation"
+    legal_basis_type: final_guidance
+    legal_basis: FDA Process Validation General Principles and Practices (2011); 21 CFR 211.100, 211.67
+    sources: [S08, S06]
+    status: UNCERTAIN
+    reviewer: null
+    review_date: null
+    notes: null
+  - id: G04
+    pathway: approved_cmo
+    name: Aseptic processing or terminal sterilization validated
+    evidence_required: Sterility assurance package, media fills (aseptic) or sterilization validation
+    model_effect: Hard constraint; determines process archetype
+    treatment: hard_feasibility
+    applies_to_strategies: [S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12, S13, S14, S15, S16, S17, S18, S19]
+    protocol_ref: "4.4 Process, cleaning, analytical, and aseptic/sterilization validation"
+    legal_basis_type: final_guidance
+    legal_basis: FDA Sterile Drug Products Produced by Aseptic Processing (2004); 21 CFR 211.113(b)
+    sources: [S06, S07]
+    status: UNCERTAIN
+    reviewer: null
+    review_date: null
+    notes: null
+  - id: G05
+    pathway: approved_cmo
+    name: Analytical methods transferred and validated
+    evidence_required: Method validation and transfer reports
+    model_effect: Constrains release time and tech transfer
+    treatment: hard_feasibility
+    applies_to_strategies: [S2, S3, S4, S5, S6, S8, S9, S10, S11, S12, S13, S14, S15, S16, S17, S18, S19]
+    protocol_ref: "4.4 Process, cleaning, analytical, and aseptic/sterilization validation"
+    legal_basis_type: law_or_regulation
+    legal_basis: 21 CFR 211.165(e), 211.194(a)(2); ICH Q2(R2)
+    sources: [S06, S09]
+    status: UNCERTAIN
+    reviewer: null
+    review_date: null
+    notes: null
+  - id: G06
+    pathway: approved_cmo
+    name: Stability and container-closure evidence supports shelf life
+    evidence_required: Stability protocol/data and container-closure integrity
+    model_effect: Caps inventory and distributed-node economics
+    treatment: cap
+    applies_to_strategies: [S0, S1, S2, S3, S4, S5, S6, S8, S9, S10, S11, S12, S13, S14, S15, S16, S17, S18, S19]
+    protocol_ref: "4.4 Stability and container-closure support"
+    legal_basis_type: law_or_regulation
+    legal_basis: 21 CFR 211.166 (stability), 211.94 (containers/closures); ICH Q1
+    sources: [S06, S18]
+    status: UNCERTAIN
+    reviewer: null
+    review_date: null
+    notes: null
+  - id: G07
+    pathway: approved_cmo
+    name: Change-control category and FDA submission identified
+    evidence_required: Regulatory assessment of the change/site addition (PAS, CBE-30, CBE-0, annual report)
+    model_effect: Adds scenario-specific delay
+    treatment: lead_time
+    applies_to_strategies: [S2, S3, S4, S5, S6, S8, S9, S10, S11, S12, S13, S14, S15, S16, S17, S18, S19]
+    protocol_ref: "4.4 Site and manufacturing steps supportable in application"
+    legal_basis_type: law_or_regulation
+    legal_basis: 21 CFR 314.70; FDA guidance on changes to an approved NDA or ANDA
+    sources: [S16, S17]
+    status: UNCERTAIN
+    reviewer: null
+    review_date: null
+    notes: null
+  - id: G08
+    pathway: 503b
+    name: Outsourcing facility registered annually and CGMP-compliant
+    evidence_required: FDA 503B registration and inspection record
+    model_effect: Strategy infeasible if absent
+    treatment: exclude_if_fail
+    applies_to_strategies: [S7]
+    protocol_ref: "4.2 facility registration, inspection/quality status"
+    legal_basis_type: law_or_regulation
+    legal_basis: FD&C Act 503B(b); 21 CFR Part 211 as applied to outsourcing facilities
+    sources: [S06, S13]
+    status: UNCERTAIN
+    reviewer: null
+    review_date: null
+    notes: null
+  - id: G09
+    pathway: 503b
+    name: Bulk substance eligible at compounding, distribution, and dispensing dates
+    evidence_required: Current FDA shortage-list status or 503B bulks list status at each date
+    model_effect: Turns pathway on/off dynamically
+    treatment: dynamic_state
+    applies_to_strategies: [S7]
+    protocol_ref: "4.4 503B bulk/copy/shortage predicates"
+    legal_basis_type: law_or_regulation
+    legal_basis: FD&C Act 503B(a)(2); FDA 503B bulks list; FDA guidance on compounding drugs on the shortage list
+    sources: [S13, S14]
+    status: UNCERTAIN
+    reviewer: null
+    review_date: null
+    notes: shortage-list state is time-varying in the simulation
+  - id: G10
+    pathway: 503b
+    name: Product not barred as essentially a copy
+    evidence_required: Product-specific legal analysis of the essentially-a-copy restriction and shortage exception
+    model_effect: Strategy infeasible if exception absent
+    treatment: dynamic_state
+    applies_to_strategies: [S7]
+    protocol_ref: "4.4 503B bulk/copy/shortage predicates"
+    legal_basis_type: final_guidance
+    legal_basis: FD&C Act 503B(a)(5); FDA guidance Compounded Drug Products That Are Essentially Copies of Approved Drug Products Under Section 503B
+    sources: [S13, S15]
+    status: UNCERTAIN
+    reviewer: null
+    review_date: null
+    notes: null
+  - id: G11
+    pathway: 503b
+    name: Stability/BUD and sterility controls supported
+    evidence_required: Stability and quality package supporting the beyond-use date
+    model_effect: Caps inventory; affects release latency
+    treatment: cap
+    applies_to_strategies: [S7]
+    protocol_ref: "4.2 formulation, sterility, stability/BUD"
+    legal_basis_type: law_or_regulation
+    legal_basis: 21 CFR Part 211 as applied under 503B; FDA CGMP guidance for outsourcing facilities
+    sources: [S06, S13]
+    status: UNCERTAIN
+    reviewer: null
+    review_date: null
+    notes: null
+  - id: G12
+    pathway: 503b
+    name: State licensure and distribution permissions mapped
+    evidence_required: State-by-state licensure and distribution map
+    model_effect: May restrict served regions
+    treatment: region_restriction
+    applies_to_strategies: [S7]
+    protocol_ref: "4.4 State licensure/distribution permissions"
+    legal_basis_type: law_or_regulation
+    legal_basis: State pharmacy/outsourcing-facility licensure laws (vary by state)
+    sources: [S13]
+    status: UNCERTAIN
+    reviewer: null
+    review_date: null
+    notes: null
+  - id: G13
+    pathway: distributed
+    name: Each unit/site registration and listing approach is supportable
+    evidence_required: Counsel review of current rule; DME proposed rule status
+    model_effect: No assumption of one national site identity
+    treatment: lead_time
+    applies_to_strategies: [S5, S6, S8, S9, S10, S11, S12, S13, S14, S16, S17, S18, S19]
+    protocol_ref: "4.3 distributed establishments"
+    legal_basis_type: proposed_rule
+    legal_basis: "Proposed rule 'Drug Establishment Registration and Drug Listing Requirements for Establishments Engaged in Distributed Manufacturing and Certain Foreign Establishments' (FR doc 2026-14073, 91 FR 42888, 2026-07-13; Docket FDA-2025-N-6075; RIN 0910-AI94; 21 CFR 207; comments closed 2026-09-11). Until final, each site registers and lists under 21 CFR Part 207 as it stands."
+    sources: [S10, S11]
+    status: UNCERTAIN
+    reviewer: null
+    review_date: null
+    notes: base case must not depend on the proposed rule becoming final
+  - id: G14
+    pathway: distributed
+    name: Cross-site comparability protocol accepted for the product
+    evidence_required: Product/site data and agency engagement
+    model_effect: No automatic statistical interchangeability
+    treatment: no_fleet_claim
+    applies_to_strategies: [S5, S6, S8, S9, S10, S11, S12, S13, S14, S16, S17, S18, S19]
+    protocol_ref: "4.4 Cross-site comparability accepted"
+    legal_basis_type: unresolved_question
+    legal_basis: No FDA framework grants automatic cross-site equivalence; product/site evidence and engagement required
+    sources: [S10, S12]
+    status: UNCERTAIN
+    reviewer: null
+    review_date: null
+    notes: null
+  - id: G15
+    pathway: release_assurance
+    name: Release model within a validated state of control with drift handling defined
+    evidence_required: Prospective product/site validation, change control, audit trail, pre-declared applicability domain
+    model_effect: Can reduce only validated release components; never sterility assurance
+    treatment: fallback_conventional
+    applies_to_strategies: [S6]
+    protocol_ref: "4.4 AI/release model validated in state of control"
+    legal_basis_type: expert_interpretation
+    legal_basis: PAT framework (2004), ICH Q8(R2) RTRT, FDA draft AI credibility guidance (Jan 2025; final status to verify), EU GMP Annex 17 and draft Annex 22
+    sources: [S06, S09, S10]
+    status: UNCERTAIN
+    reviewer: null
+    review_date: null
+    notes: Must not replace sterility assurance by assumption; R3 cannot be enabled unless this gate is PASS
+  - id: G16
+    pathway: approved_cmo
+    name: Alternate component, container-closure and API source qualified and authorised
+    evidence_required: Identity and suitability testing records for the alternate lots under 21 CFR 211.84 and 211.94, and a Type II drug master file letter of authorisation from the alternate API source
+    model_effect: An alternate source cannot be used until its lots are qualified and the DMF is authorised, so the switch carries a qualification lead time
+    treatment: lead_time
+    applies_to_strategies: [S9, S18, S19]
+    protocol_ref: "4.4 Qualified alternate source available"
+    legal_basis_type: law_or_regulation
+    legal_basis: 21 CFR 211.84 and 211.94 (identity and suitability testing of components and container-closure systems); Type II DMF letter of authorisation from the alternate API source (F9-S12)
+    sources: [S06, S16]
+    status: UNCERTAIN
+    reviewer: null
+    review_date: null
+    notes: Added 2026-09-03 (revision R007). S19's approximations recorded these as real preconditions for which no gate existed, and its own potential_moat makes them the substance of the asset; S9 and S18 are the other two designs that declare a second API or container source. Adding a gate can only make a strategy less eligible, never more, and no gate status changes.

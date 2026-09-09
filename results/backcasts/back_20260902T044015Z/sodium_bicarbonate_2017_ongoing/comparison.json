@@ -1,0 +1,26 @@
+{
+  "episode_id": "sodium_bicarbonate_2017_ongoing",
+  "product_id": "sodium_bicarbonate_8_4_50ml",
+  "strategy_id": "S0",
+  "observed_duration_days_min": 3472.0,
+  "observed_ongoing": true,
+  "simulated_episode_count": 1.0,
+  "simulated_longest_episode_days": 1826.0,
+  "simulated_recovered_fraction": 0.0,
+  "simulated_fill_rate": 0.7117314018395103,
+  "simulated_peak_unmet_units": 8998.0,
+  "simulated_material_stockouts": 88.0,
+  "simulated_site_failure_days": 0.0,
+  "binding_bottleneck_simulated": "capacity below demand (chronic)",
+  "binding_bottleneck_observed": "Demand increase for the drug; Discontinuation of the manufacture of the drug; Other",
+  "consistent_duration": true,
+  "mismatches": [],
+  "human_required": [
+    "ASHP bulletin history for presentation-level dates and reasons (HA-10)",
+    "2017-2026 utilization series to freeze demand at episode start (HA-11)"
+  ],
+  "notes": [
+    "no injection: observed episode is reproduced only if the base inputs imply it",
+    "No 2017 demand, capacity, or supplier data is frozen; the simulation uses the tier-5 workbook inputs, so this backcast tests only whether a status-quo network with utilization above one reproduces a non-recovering shortage."
+  ]
+}

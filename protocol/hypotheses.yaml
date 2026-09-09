@@ -1,0 +1,71 @@
+# Pre-specified, falsifiable hypotheses (protocol section 1.3).
+# `status` may only move to supported / refuted / conditional through a
+# results manifest referenced in `evidence_runs`, never by editing this file
+# alone. All hypotheses start untested.
+
+protocol_version: 1.0.0
+hypotheses:
+  - id: H1
+    name: proximity
+    statement: Transportation distance is not usually the controlling recovery term; release latency, material lead time, and available qualified capacity dominate except in narrow disruption classes.
+    would_be_refuted_if: Across the credible uncertainty region, delivery-time terms account for the largest share of time-to-stable-recovery, or removing transport delay changes the preferred strategy more often than removing release or material lead time.
+    tested_by_outputs: [time_to_first_response, time_to_stable_recovery, binding_bottleneck_attribution, decision_reversal_map]
+    tested_by_modules: [simulation, sensitivity]
+    status: untested
+    evidence_runs: []
+  - id: H2
+    name: node_economics
+    statement: Regional nodes become cost-competitive only above a minimum contracted utilization and below thresholds for fixed QA cost, changeover burden, and validation replication.
+    would_be_refuted_if: S5/S6 delivered cost per unit is competitive with the best eligible alternative at low contracted utilization, or shows no threshold behavior in fixed QA cost, changeover burden, or validation replication.
+    tested_by_outputs: [cost_per_delivered_unit, break_even_volume, required_resilience_premium, feasibility_map]
+    tested_by_modules: [economics, optimization, sensitivity]
+    status: untested
+    evidence_runs: []
+  - id: H3
+    name: pooling_tradeoff
+    statement: Regionalization reduces local transport and some site-concentration risk but sacrifices production and inventory pooling; the direction of net benefit changes with demand covariance and common-cause exposure.
+    would_be_refuted_if: The sign of the paired S5-minus-S4 (or S5-minus-S1) outcome difference does not change anywhere across the regional demand covariance and common-cause dependence ranges.
+    tested_by_outputs: [paired_difference, regional_disparity, feasibility_map]
+    tested_by_modules: [demand, disruptions, simulation, sensitivity]
+    status: untested
+    evidence_runs: []
+  - id: H4
+    name: inventory
+    statement: Safety stock dominates new capacity when shelf life is long, demand is predictable, shortages are shorter than the replenishment/release cycle, and the stock is positioned before disruption.
+    would_be_refuted_if: S1 is dominated by S4/S5 in the region of long shelf life, low demand CV, and disruption durations shorter than replenishment plus release time.
+    tested_by_outputs: [pareto_frontier, dominance_table, expiry_rate]
+    tested_by_modules: [inventory, simulation, optimization]
+    status: untested
+    evidence_runs: []
+  - id: H5
+    name: dual_sourcing
+    statement: Nominal dual sourcing offers little resilience when sources share API, components, analytical constraints, ownership, geography, or regulatory failure modes.
+    would_be_refuted_if: S2 shortage days remain materially below S0 when the two sources are placed in the same common-cause groups (API, component, method, ownership, geography, regulatory action).
+    tested_by_outputs: [shortage_days, common_cause_failures, paired_difference]
+    tested_by_modules: [suppliers, disruptions, simulation]
+    status: untested
+    evidence_runs: []
+  - id: H6
+    name: reserved_capacity
+    statement: Contracted flexible capacity can dominate owned regional capacity when qualification is complete and activation/release latency is short.
+    would_be_refuted_if: S3 never dominates S5 even at zero qualification lead time and the shortest credible activation plus release latency.
+    tested_by_outputs: [pareto_frontier, dominance_table, time_to_stable_recovery]
+    tested_by_modules: [strategies, simulation, optimization]
+    status: untested
+    evidence_runs: []
+  - id: H7
+    name: release_assurance
+    statement: A validated release-assurance layer creates material resilience value only when it reduces an actually binding disposition delay while maintaining an acceptable error/abstention frontier under instrument, site, lot, and time shift.
+    would_be_refuted_if: S6 shows a material paired improvement over S5 while the release delay it removes is not on the critical path (e.g., sterility incubation binds), or while abstention is near total.
+    tested_by_outputs: [release_time_distribution, release_assurance_abstentions, paired_difference, risk_coverage_curve]
+    tested_by_modules: [release_assurance, quality, simulation]
+    status: untested
+    evidence_runs: []
+  - id: H8
+    name: product_specificity
+    statement: No platform-level conclusion is valid without product-specific formulation, stability, presentation, demand, and regulatory analysis.
+    would_be_refuted_if: The case and comparator products yield the same preferred strategy and the same binding bottleneck across the full uncertainty region despite different shelf life, demand, supplier structure, and pathway states.
+    tested_by_outputs: [decision_class_by_product, binding_bottleneck_attribution]
+    tested_by_modules: [reporting]
+    status: untested
+    evidence_runs: []

@@ -1,0 +1,9 @@
+title: Cost against service, dominance marked, sodium_bicarbonate_8_4_50ml
+xlabel: mean fill rate [fraction]
+ylabel: mean annual total cost [USD/yr]
+product: sodium_bicarbonate_8_4_50ml
+scenario: tau = 0.99 (dashed), q = 0.9, 40 paired runs
+manifest_id: ds_post_R004
+source_note: results/design_space/ds_post_R004/; all inputs tier 5 illustrative
+decision_caption: Green markers sit on the cost-service frontier; red markers are dominated by at least one other strategy. Circles meet the tail requirement, crosses do not. Illustrative inputs; not a recommendation.
+illustrative: True

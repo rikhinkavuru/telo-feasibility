@@ -1,0 +1,9 @@
+[1/6] paired simulation, all 20 strategies
+[2/6] optimization at the frozen target
+    opt run: opt_20260906T043357Z
+[3/6] optimization at tau 0.98
+[4/6] ablation on the new optimized designs
+[5/6] interaction study
+[6/6] feasibility conditions, dominance, reversal
+figures, contract table, report
+BATTERY_COMPLETE opt=opt_20260906T043357Z sim=sim_post_R009 abl=abl_post_R009 pairs=abl_post_R009_pairs ds=ds_post_R009

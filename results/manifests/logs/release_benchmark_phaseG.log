@@ -1,0 +1,46 @@
+=== start 2026-09-02T22:17:05Z
+--- MODE reproduction n8 scale
+/Users/rikhinkavuru/telo/feasibility/.venv/lib/python3.12/site-packages/numpy/lib/_function_base_impl.py:4608: RuntimeWarning: invalid value encountered in scalar subtract
+  diff_b_a = b - a
+/Users/rikhinkavuru/telo/feasibility/src/telo_feasibility/release_benchmark.py:914: RuntimeWarning: Mean of empty slice
+  "conditional_error_among_released": float(np.nanmean([r[1] for r in v])),
+results -> /Users/rikhinkavuru/telo/feasibility/results/release_assurance/ra_20260902T221834Z (83s)
+PRELIMINARY / ILLUSTRATIVE / NOT FOR EXTERNAL CLAIMS
+--- MODE n8 noscale
+/Users/rikhinkavuru/telo/feasibility/.venv/lib/python3.12/site-packages/numpy/lib/_function_base_impl.py:4608: RuntimeWarning: invalid value encountered in scalar subtract
+  diff_b_a = b - a
+results -> /Users/rikhinkavuru/telo/feasibility/results/release_assurance/ra_20260902T222043Z (125s)
+PRELIMINARY / ILLUSTRATIVE / NOT FOR EXTERNAL CLAIMS
+--- MODE cv default
+=== relaunch with final code 22:21:57Z
+=== start 2026-09-02T22:21:57Z
+--- MODE reproduction n8 scale
+/Users/rikhinkavuru/telo/feasibility/.venv/lib/python3.12/site-packages/numpy/lib/_function_base_impl.py:4608: RuntimeWarning: invalid value encountered in scalar subtract
+  diff_b_a = b - a
+/Users/rikhinkavuru/telo/feasibility/src/telo_feasibility/release_benchmark.py:931: RuntimeWarning: Mean of empty slice
+  "conditional_error_among_released": float(np.nanmean([r[1] for r in v])),
+results -> /Users/rikhinkavuru/telo/feasibility/results/release_assurance/ra_20260902T222443Z (161s)
+PRELIMINARY / ILLUSTRATIVE / NOT FOR EXTERNAL CLAIMS
+--- MODE n8 noscale
+/Users/rikhinkavuru/telo/feasibility/.venv/lib/python3.12/site-packages/numpy/lib/_function_base_impl.py:4608: RuntimeWarning: invalid value encountered in scalar subtract
+  diff_b_a = b - a
+results -> /Users/rikhinkavuru/telo/feasibility/results/release_assurance/ra_20260902T222725Z (152s)
+PRELIMINARY / ILLUSTRATIVE / NOT FOR EXTERNAL CLAIMS
+--- MODE cv default
+/Users/rikhinkavuru/telo/feasibility/.venv/lib/python3.12/site-packages/numpy/lib/_function_base_impl.py:4608: RuntimeWarning: invalid value encountered in scalar subtract
+  diff_b_a = b - a
+results -> /Users/rikhinkavuru/telo/feasibility/results/release_assurance/ra_20260902T222900Z (91s)
+PRELIMINARY / ILLUSTRATIVE / NOT FOR EXTERNAL CLAIMS
+--- MODE cv leak train_and_calibration_cv
+/Users/rikhinkavuru/telo/feasibility/.venv/lib/python3.12/site-packages/numpy/lib/_function_base_impl.py:4608: RuntimeWarning: invalid value encountered in scalar subtract
+  diff_b_a = b - a
+results -> /Users/rikhinkavuru/telo/feasibility/results/release_assurance/ra_20260902T223019Z (75s)
+PRELIMINARY / ILLUSTRATIVE / NOT FOR EXTERNAL CLAIMS
+--- MODE cv q_residual gate
+/Users/rikhinkavuru/telo/feasibility/.venv/lib/python3.12/site-packages/numpy/lib/_function_base_impl.py:4608: RuntimeWarning: invalid value encountered in scalar subtract
+  diff_b_a = b - a
+/Users/rikhinkavuru/telo/feasibility/src/telo_feasibility/release_benchmark.py:931: RuntimeWarning: Mean of empty slice
+  "conditional_error_among_released": float(np.nanmean([r[1] for r in v])),
+results -> /Users/rikhinkavuru/telo/feasibility/results/release_assurance/ra_20260902T223132Z (70s)
+PRELIMINARY / ILLUSTRATIVE / NOT FOR EXTERNAL CLAIMS
+=== done 2026-09-02T22:31:32Z

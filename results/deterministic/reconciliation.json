@@ -1,0 +1,11 @@
+{
+  "workbook": "/Users/rikhinkavuru/telo/feasibility/data/raw_snapshots/workbook_scaffold/2026-09-01/Telo_Feasibility_Model.xlsx",
+  "abs_tolerance": 1e-06,
+  "rel_tolerance": 1e-09,
+  "screen_cells": 320,
+  "screen_mismatches": [],
+  "dashboard_cells": 128,
+  "dashboard_mismatches": [],
+  "ok": true,
+  "generated_at": "2026-09-03T21:47:54.129927+00:00"
+}

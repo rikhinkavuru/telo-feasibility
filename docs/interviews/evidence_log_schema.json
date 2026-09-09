@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Interview evidence record",
+  "description": "Schema for data/interview_evidence/*.json. The claims[] fields map one-to-one onto the parameter card in elicitation_worksheet.md section 5, so transcription is mechanical. DF18 counts only records at status 'complete'; a record is written at 'pending_confirmation' and promoted to 'complete' when the interviewee has confirmed it.",
+  "type": "object",
+  "required": ["interview_id", "date", "role_category", "organization_type", "relevant_experience_years", "consent", "attribution", "status", "claims"],
+  "properties": {
+    "interview_id": {"type": "string", "pattern": "^INT-[0-9]{4}-[0-9]{3}$"},
+    "date": {"type": "string", "format": "date"},
+    "role_category": {"type": "string", "enum": ["hospital_pharmacy_supply_chain", "sterile_manufacturing_process", "quality_cmc_microbiology_validation", "generic_drug_or_503b_regulatory", "gpo_wholesaler_distributor", "drug_supply_economics_operations_research", "purchaser_contracting_authority"], "description": "The protocol's seven roles. The seventh, purchaser_contracting_authority, was added under revision R012 of 2026-09-07 together with the matching role in protocol.yaml; before R012 such a person logged as gpo_wholesaler_distributor (target_matrix.md sections 3 and 8)."},
+    "organization_type": {"type": "string"},
+    "relevant_experience_years": {"type": "number", "minimum": 0},
+    "consent": {"type": "object", "required": ["recorded", "quotes_allowed"], "properties": {"recorded": {"type": "boolean"}, "quotes_allowed": {"type": "boolean"}}},
+    "attribution": {"type": "string", "enum": ["anonymous_role_only", "named_with_authorization"]},
+    "status": {"type": "string", "enum": ["scheduled", "pending_confirmation", "complete", "declined", "no_reply"], "description": "pending_confirmation: transcribed and sent back to the interviewee, not yet confirmed. complete: confirmed, or the stated wait elapsed; only this counts toward DF18. no_reply: contacted, no answer, which is not a refusal."},
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["parameter_id", "parameter_definition_readback", "units", "entity_level", "basis", "confidence", "rationale"],
+        "properties": {
+          "parameter_id": {"type": "string"},
+          "parameter_definition_readback": {"type": "string", "description": "The parameter definition read aloud, in their words back to you (card row 2). Not the closing attack."},
+          "challenge": {"type": "string", "description": "The closing attack on this parameter, if there was one (worksheet section 9, rule C2). A claim row opened by the close carries this with low, base and high null."},
+          "units": {"type": "string", "description": "Confirmed on the call before any number (worksheet rule A1). Enter 'n/a' for a claim row that carries no number."},
+          "entity_level": {"type": "string", "description": "Confirmed on the call before any number: site, network, batch, event, year, group, supplier, order. Enter 'n/a' for a claim row that carries no number."},
+          "low": {"type": ["number", "null"]},
+          "base": {"type": ["number", "null"]},
+          "high": {"type": ["number", "null"]},
+          "range_confidence_pct": {"type": ["number", "null"], "minimum": 0, "maximum": 100, "description": "Their stated confidence, as a percentage, that the truth lies between low and high (worksheet rule A3). Recorded rather than assumed, so ranges elicited at different confidences can be put on one scale before they enter a sweep."},
+          "widened": {"type": ["boolean", "null"], "description": "Whether the range widened after the single widening probe (worksheet rule A4), and what moved goes in rationale."},
+          "our_range_reaction": {"type": "string", "description": "Their reaction when the study's own low, base and high were shown, which happens only after their first answer (worksheet rule A6)."},
+          "direction_higher": {"type": "string", "description": "What makes it higher in practice (worksheet rule A7)."},
+          "direction_lower": {"type": "string", "description": "What makes it lower in practice (worksheet rule A7)."},
+          "basis": {"type": "string", "enum": ["personally_observed", "read_in_document", "impression"], "description": "Drives the tier (worksheet section 6). 'impression' logs at tier 5 no matter who gives it."},
+          "confidence": {"type": "string", "enum": ["high", "medium", "low"]},
+          "rationale": {"type": "string", "description": "Verbatim. A paraphrase cannot be audited later."},
+          "disagreement": {"type": "string", "description": "The protocol's fifth required field for tier 4. Either the substance of a disagreement with another interviewee or a snapshot, or the explicit entry 'no other interviewee has answered this yet'. A blank fails the tier-4 test (worksheet rule T1). Every disagreement recorded here is also recorded as a contradicts token on both records (rule D3)."},
+          "contradicts": {"type": "array", "items": {"type": "string"}, "description": "Greppable tokens: snapshot:<source_id>/<date>/<file>, interview:<id>#<parameter_id>, claim:<claim_id>."},
+          "model_change": {"type": "string"},
+          "code_change": {"type": "string"},
+          "revision_id": {"type": ["string", "null"]},
+          "follow_up": {"type": "string"}
+        }
+      }
+    },
+    "documents_provided": {"type": "array", "items": {"type": "string"}},
+    "notes": {"type": "string"}
+  }
+}

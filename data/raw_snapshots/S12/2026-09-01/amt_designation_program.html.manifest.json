@@ -1,0 +1,17 @@
+{
+  "source_id": "S12",
+  "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/advanced-manufacturing-technologies-designation-program",
+  "retrieved_at": "2026-09-01T23:04:13.732152Z",
+  "http_status": 200,
+  "sha256": "f5d5be68cf8dbca7a1464cf813e81ccd5dfcba9f6e5ff76810d4385cded927d7",
+  "content_type": "text/html; charset=UTF-8",
+  "size_bytes": 36412,
+  "license_note": "FDA public domain",
+  "raw_path": "data/raw_snapshots/S12/2026-09-01/amt_designation_program.html",
+  "transform_script": null,
+  "processed_path": null,
+  "data_dictionary_rows": 0,
+  "access_method": "auto",
+  "robots_allowed": true,
+  "notes": ""
+}

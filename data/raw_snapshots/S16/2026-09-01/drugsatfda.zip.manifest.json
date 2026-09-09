@@ -1,0 +1,17 @@
+{
+  "source_id": "S16",
+  "url": "https://www.fda.gov/media/89850/download",
+  "retrieved_at": "2026-09-01T23:08:16.146757Z",
+  "http_status": 200,
+  "sha256": "52e1277513bca65f52c39c362404dc80eeb05d9828d9e50ae5513754bde68b5f",
+  "content_type": "application/zip",
+  "size_bytes": 6074615,
+  "license_note": "FDA public domain",
+  "raw_path": "data/raw_snapshots/S16/2026-09-01/drugsatfda.zip",
+  "transform_script": null,
+  "processed_path": null,
+  "data_dictionary_rows": 0,
+  "access_method": "auto",
+  "robots_allowed": true,
+  "notes": ""
+}

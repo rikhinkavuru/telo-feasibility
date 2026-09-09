@@ -1,0 +1,5 @@
+/Users/rikhinkavuru/telo/feasibility/.venv/lib/python3.12/site-packages/numpy/lib/_function_base_impl.py:4608: RuntimeWarning: invalid value encountered in scalar subtract
+  diff_b_a = b - a
+/Users/rikhinkavuru/telo/feasibility/src/telo_feasibility/release_benchmark.py:524: RuntimeWarning: Mean of empty slice
+  "conditional_error_among_released": float(np.nanmean([r[1] for r in v])),
+/Users/rikhinkavuru/telo/feasibility/results/release_assurance/ra_20260902T045127Z

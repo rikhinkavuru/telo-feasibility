@@ -1,0 +1,27 @@
+uv run ruff check src tests scripts
+All checks passed!
+uv run ruff format --check src tests scripts
+73 files already formatted
+uv run mypy
+Success: no issues found in 32 source files
+uv run python scripts/run_tests_report.py
+........................................................................ [ 40%]
+........................................................................ [ 80%]
+..................................                                       [100%]
+=============================== warnings summary ===============================
+tests/integration/test_release_benchmark.py::test_benchmark_reproduces_shift_collapse_and_gate_abstention
+tests/integration/test_release_benchmark.py::test_fixed_eight_components_mode_runs_and_is_reported_separately
+  /Users/rikhinkavuru/telo/feasibility/.venv/lib/python3.12/site-packages/numpy/lib/_function_base_impl.py:4608: RuntimeWarning: invalid value encountered in scalar subtract
+    diff_b_a = b - a
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+{
+  "generated_at": "2026-09-03T02:40:54.897061+00:00",
+  "passed": 178,
+  "failed": 0,
+  "skipped": 0,
+  "crn_test_passed": true,
+  "common_cause_test_passed": true,
+  "mass_balance_property_passed": true,
+  "exit_code": 0
+}

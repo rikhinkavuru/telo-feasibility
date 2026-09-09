@@ -1,0 +1,17 @@
+{
+  "source_id": "S18",
+  "url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls.json?drug_name=sterile+water&pagesize=100",
+  "retrieved_at": "2026-09-01T23:09:08.712512Z",
+  "http_status": 200,
+  "sha256": "32f17469d12cd4a125ded78ac7c9982f95e31ec7f536dbe818a5fdd380833151",
+  "content_type": "application/json",
+  "size_bytes": 20221,
+  "license_note": "NLM: US government works not subject to copyright; acknowledge NLM; non-government label content may be copyrighted by the labeler.",
+  "raw_path": "data/raw_snapshots/S18/2026-09-01/spls_sterile_water.json",
+  "transform_script": null,
+  "processed_path": null,
+  "data_dictionary_rows": 0,
+  "access_method": "auto",
+  "robots_allowed": true,
+  "notes": ""
+}

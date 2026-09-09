@@ -1,0 +1,17 @@
+{
+  "source_id": "S26",
+  "url": "https://www.accessdata.fda.gov/cder/ndctext.zip",
+  "retrieved_at": "2026-09-02T04:03:05.699746Z",
+  "http_status": 200,
+  "sha256": "7d60424b44cbf34f16a2ef6f907a3770fbb3166938654218bae3695f01922839",
+  "content_type": "application/x-zip-compressed",
+  "size_bytes": 10802069,
+  "license_note": "FDA public domain",
+  "raw_path": "data/raw_snapshots/S26/2026-09-02/ndctext.zip",
+  "transform_script": null,
+  "processed_path": null,
+  "data_dictionary_rows": 0,
+  "access_method": "auto",
+  "robots_allowed": true,
+  "notes": ""
+}

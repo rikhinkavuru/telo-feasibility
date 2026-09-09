@@ -1,0 +1,5 @@
+[4/6] ablation on the new optimized designs, single process
+[5/6] interaction study
+[6/6] feasibility conditions, dominance, reversal
+figures, contract table, report
+BATTERY_COMPLETE opt=opt_20260903T220534Z sim=sim_post_R008 abl=abl_post_R008 pairs=abl_post_R008_pairs ds=ds_post_R008

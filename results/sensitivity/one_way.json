@@ -1,0 +1,3913 @@
+{
+  "meta": {
+    "product": "sodium_bicarbonate_8_4_50ml",
+    "optimized_designs_run": "opt_20260902T043854Z",
+    "designs": {
+      "S0": {
+        "sites": 1.0,
+        "capacity_factor": 1.05,
+        "safety_stock_days": 30.0,
+        "release_time_factor": 1.0,
+        "delivery_days": 5.0,
+        "common_impact_factor": 1.0,
+        "fixed_cost_factor": 1.0,
+        "validation_factor": 1.0,
+        "reserved_capacity_fraction": 0.0
+      },
+      "S1": {
+        "sites": 1.0,
+        "capacity_factor": 1.05,
+        "safety_stock_days": 180.0,
+        "release_time_factor": 1.0,
+        "delivery_days": 5.0,
+        "common_impact_factor": 1.0,
+        "fixed_cost_factor": 1.0,
+        "validation_factor": 1.0,
+        "reserved_capacity_fraction": 0.0
+      },
+      "S2": {
+        "sites": 2.0,
+        "capacity_factor": 0.95,
+        "safety_stock_days": 120.0,
+        "release_time_factor": 1.0,
+        "delivery_days": 4.0,
+        "common_impact_factor": 0.65,
+        "fixed_cost_factor": 1.15,
+        "validation_factor": 1.5,
+        "reserved_capacity_fraction": 0.0,
+        "independent_api_supplier": 0.0,
+        "material_target_days": 161.25
+      },
+      "S3": {
+        "sites": 2.0,
+        "capacity_factor": 1.3,
+        "safety_stock_days": 120.0,
+        "release_time_factor": 1.0,
+        "delivery_days": 4.0,
+        "common_impact_factor": 0.65,
+        "fixed_cost_factor": 1.2,
+        "validation_factor": 1.5,
+        "reserved_capacity_fraction": 0.25,
+        "activation_threshold_days": 45.0,
+        "campaign_batches": 6.0
+      },
+      "S4": {
+        "sites": 2.0,
+        "capacity_factor": 1.45,
+        "safety_stock_days": 60.0,
+        "release_time_factor": 1.0,
+        "delivery_days": 5.0,
+        "common_impact_factor": 0.75,
+        "fixed_cost_factor": 1.1,
+        "validation_factor": 1.5,
+        "reserved_capacity_fraction": 0.0
+      },
+      "S5": {
+        "sites": 4.0,
+        "capacity_factor": 1.35,
+        "safety_stock_days": 45.0,
+        "release_time_factor": 1.0,
+        "delivery_days": 2.0,
+        "common_impact_factor": 0.45,
+        "fixed_cost_factor": 1.4,
+        "validation_factor": 2.5,
+        "reserved_capacity_fraction": 0.0
+      },
+      "S6": {
+        "sites": 4.0,
+        "capacity_factor": 1.35,
+        "safety_stock_days": 45.0,
+        "release_time_factor": 0.6,
+        "delivery_days": 2.0,
+        "common_impact_factor": 0.45,
+        "fixed_cost_factor": 1.5,
+        "validation_factor": 3.0,
+        "reserved_capacity_fraction": 0.0
+      },
+      "S7": {
+        "sites": 2.0,
+        "capacity_factor": 1.15,
+        "safety_stock_days": 30.0,
+        "release_time_factor": 1.0,
+        "delivery_days": 3.0,
+        "common_impact_factor": 0.7,
+        "fixed_cost_factor": 1.25,
+        "validation_factor": 1.0,
+        "reserved_capacity_fraction": 0.15
+      }
+    },
+    "runs_per_scenario": 6,
+    "horizon_days": 1095,
+    "generated_at": "20260902T045142Z",
+    "banner": "PRELIMINARY / ILLUSTRATIVE / NOT FOR EXTERNAL CLAIMS"
+  },
+  "one_way": {
+    "base": {
+      "inputs": {},
+      "outcomes": [
+        {
+          "strategy_id": "S0",
+          "mean_cost": 12926302.946638236,
+          "mean_fill": 0.7640601893438563,
+          "p_meet": 0.0,
+          "feasible": false
+        },
+        {
+          "strategy_id": "S1",
+          "mean_cost": 12628996.619446456,
+          "mean_fill": 0.7686253869760331,
+          "p_meet": 0.0,
+          "feasible": false
+        },
+        {
+          "strategy_id": "S2",
+          "mean_cost": 24220841.04415444,
+          "mean_fill": 0.9890504856947061,
+          "p_meet": 0.8333333333333334,
+          "feasible": false
+        },
+        {
+          "strategy_id": "S3",
+          "mean_cost": 32801751.10163915,
+          "mean_fill": 0.9966102962206769,
+          "p_meet": 0.8333333333333334,
+          "feasible": false
+        },
+        {
+          "strategy_id": "S4",
+          "mean_cost": 30317634.28261606,
+          "mean_fill": 0.9774231061750779,
+          "p_meet": 0.3333333333333333,
+          "feasible": false
+        },
+        {
+          "strategy_id": "S5",
+          "mean_cost": 48103572.021089345,
+          "mean_fill": 0.8344478120552193,
+          "p_meet": 0.0,
+          "feasible": false
+        },
+        {
+          "strategy_id": "S6",
+          "mean_cost": 50689748.77087116,
+          "mean_fill": 0.8344478120552193,
+          "p_meet": 0.0,
+          "feasible": false
+        },
+        {
+          "strategy_id": "S7",
+          "mean_cost": 17548348.931758013,
+          "mean_fill": 0.8365455923655513,
+          "p_meet": 0.0,
+          "feasible": false
+        }
+      ],
+      "preferred": null
+    },
+    "inputs": {
+      "capacity_utilization": {
+        "low": 600000.0,
+        "base": 1200000.0,
+        "high": 2400000.0,
+        "rows": [
+          {
+            "value": 600000.0,
+            "preferred": "S2",
+            "reversal": true,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12098047.722871112,
+                "mean_fill": 0.9871888016381387,
+                "p_meet": 0.6666666666666666,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 11914065.58619988,
+                "mean_fill": 0.9755166103457483,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 22834704.370172706,
+                "mean_fill": 0.9993346903204307,
+                "p_meet": 1.0,
+                "feasible": true
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 31277608.13386747,
+                "mean_fill": 0.9942457901965988,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 28808710.597488206,
+                "mean_fill": 0.992085004157569,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 46631926.082440935,
+                "mean_fill": 0.9885069046120547,
+                "p_meet": 0.6666666666666666,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 49218102.83222276,
+                "mean_fill": 0.9885069046120547,
+                "p_meet": 0.6666666666666666,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 16703827.372118741,
+                "mean_fill": 0.9957062612993387,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 1500000.0,
+            "preferred": "S3",
+            "reversal": true,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12934504.214145085,
+                "mean_fill": 0.6100841874928981,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12644408.317081159,
+                "mean_fill": 0.6130515300593439,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24716280.268930692,
+                "mean_fill": 0.974128488495379,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 33549090.067228198,
+                "mean_fill": 0.9981815106094403,
+                "p_meet": 1.0,
+                "feasible": true
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30716020.60196309,
+                "mean_fill": 0.8848287480787311,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48432466.50021262,
+                "mean_fill": 0.7648947592428276,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 51018643.24999445,
+                "mean_fill": 0.7648947592428276,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17557988.104388148,
+                "mean_fill": 0.6678914819108003,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 2400000.0,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12940174.435021797,
+                "mean_fill": 0.3800009068145796,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12661653.651126822,
+                "mean_fill": 0.3822544556318328,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24926519.79375718,
+                "mean_fill": 0.6695853992882195,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 35069575.65186747,
+                "mean_fill": 0.8723845692135992,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 31387359.368332952,
+                "mean_fill": 0.7248898341401726,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 49577555.86534505,
+                "mean_fill": 0.6578404277618318,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 52163732.61512688,
+                "mean_fill": 0.6578404277618318,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17564911.70602742,
+                "mean_fill": 0.41622134757801743,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          }
+        ],
+        "any_reversal": true
+      },
+      "release_time": {
+        "low": 14.0,
+        "base": 14.0,
+        "high": 18.0,
+        "rows": [
+          {
+            "value": 14.0,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12926302.946638236,
+                "mean_fill": 0.7640601893438563,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12628996.619446456,
+                "mean_fill": 0.7686253869760331,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24220841.04415444,
+                "mean_fill": 0.9890504856947061,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32801751.10163915,
+                "mean_fill": 0.9966102962206769,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30317634.28261606,
+                "mean_fill": 0.9774231061750779,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48103572.021089345,
+                "mean_fill": 0.8344478120552193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50689748.77087116,
+                "mean_fill": 0.8344478120552193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17548348.931758013,
+                "mean_fill": 0.8365455923655513,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 16.0,
+            "preferred": "S3",
+            "reversal": true,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12922390.708058327,
+                "mean_fill": 0.7662113541229049,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12629095.784195313,
+                "mean_fill": 0.7668044873895304,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24193561.40768869,
+                "mean_fill": 0.9865013191476074,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32799541.45224646,
+                "mean_fill": 0.9963789324385308,
+                "p_meet": 1.0,
+                "feasible": true
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30306870.708501905,
+                "mean_fill": 0.975879840861222,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48082810.34906193,
+                "mean_fill": 0.8334405170252136,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50668987.09884376,
+                "mean_fill": 0.8334405170252136,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17545427.854831073,
+                "mean_fill": 0.8366250992244781,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 18.0,
+            "preferred": "S3",
+            "reversal": true,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12922477.786670199,
+                "mean_fill": 0.7678572600933581,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12627315.984300336,
+                "mean_fill": 0.7681473173555439,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24182852.4805928,
+                "mean_fill": 0.9859839705355832,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32772103.573109478,
+                "mean_fill": 0.9945125769645077,
+                "p_meet": 1.0,
+                "feasible": true
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30290189.571182266,
+                "mean_fill": 0.9738584145714434,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48064256.30849573,
+                "mean_fill": 0.8320856101963807,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50650433.05827755,
+                "mean_fill": 0.8320856101963807,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17543118.405525133,
+                "mean_fill": 0.8380754707336804,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          }
+        ],
+        "any_reversal": true
+      },
+      "fixed_qa_labor_per_node": {
+        "low": 1500000.0,
+        "base": 3000000.0,
+        "high": 6000000.0,
+        "rows": [
+          {
+            "value": 1500000.0,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 11366597.106536431,
+                "mean_fill": 0.7640601893438563,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 11069290.779344648,
+                "mean_fill": 0.7686253869760331,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 20909545.23623981,
+                "mean_fill": 0.9890504856947061,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 27694878.510784324,
+                "mean_fill": 0.9966102962206769,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 25875329.603622306,
+                "mean_fill": 0.9774231061750779,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 41392512.41437063,
+                "mean_fill": 0.8344478120552193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 43499327.763674356,
+                "mean_fill": 0.8344478120552193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 15187685.913987203,
+                "mean_fill": 0.8365455923655513,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 3750000.0,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 13706155.866689064,
+                "mean_fill": 0.7640601893438563,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 13408849.539497284,
+                "mean_fill": 0.7686253869760331,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 25876488.948111843,
+                "mean_fill": 0.9890504856947061,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 35355187.397066005,
+                "mean_fill": 0.9966102962206769,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 32538786.62211336,
+                "mean_fill": 0.9774231061750779,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 51459101.824446894,
+                "mean_fill": 0.8344478120552193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 54284959.27447343,
+                "mean_fill": 0.8344478120552193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 18728680.44064391,
+                "mean_fill": 0.8365455923655513,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 6000000.0,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 16045714.62684185,
+                "mean_fill": 0.7640601893438563,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 15748408.299650066,
+                "mean_fill": 0.7686253869760331,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 30843432.659983695,
+                "mean_fill": 0.9890504856947061,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 43015496.28334886,
+                "mean_fill": 0.9966102962206769,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 39202243.64060356,
+                "mean_fill": 0.9774231061750779,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 61525691.23452673,
+                "mean_fill": 0.8344478120552193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 65070590.78526477,
+                "mean_fill": 0.8344478120552193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 22269674.967299636,
+                "mean_fill": 0.8365455923655513,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          }
+        ],
+        "any_reversal": false
+      },
+      "yield": {
+        "low": 0.9,
+        "base": 0.96,
+        "high": 0.99,
+        "rows": [
+          {
+            "value": 0.9,
+            "preferred": "S3",
+            "reversal": true,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12922218.92969303,
+                "mean_fill": 0.7159903760386408,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12627526.090738691,
+                "mean_fill": 0.7221475077641125,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24346648.112437546,
+                "mean_fill": 0.9874136239380267,
+                "p_meet": 0.6666666666666666,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 33010997.54131039,
+                "mean_fill": 0.9990037322715679,
+                "p_meet": 1.0,
+                "feasible": true
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30442278.909223363,
+                "mean_fill": 0.9531136533096172,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48170122.19198888,
+                "mean_fill": 0.8129853271492095,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50756298.9417707,
+                "mean_fill": 0.8129853271492095,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17540516.756045688,
+                "mean_fill": 0.7846336709602859,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 0.9450000000000001,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12927033.483629102,
+                "mean_fill": 0.7515217424314619,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12629970.599816317,
+                "mean_fill": 0.7561614891666409,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24255332.793606494,
+                "mean_fill": 0.9896960943638583,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32827779.248598058,
+                "mean_fill": 0.9932207213191421,
+                "p_meet": 0.6666666666666666,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30350332.075561266,
+                "mean_fill": 0.9727801505578366,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48115498.99976057,
+                "mean_fill": 0.829088665593622,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50701675.74954239,
+                "mean_fill": 0.829088665593622,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17547796.016885865,
+                "mean_fill": 0.8234178937925805,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 0.99,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12928173.919857413,
+                "mean_fill": 0.7901115379773427,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12630288.336099423,
+                "mean_fill": 0.7933960136380751,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24149483.35483937,
+                "mean_fill": 0.9906065721166578,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32726047.755433675,
+                "mean_fill": 0.9949789626512143,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30247063.246574964,
+                "mean_fill": 0.9810463908267564,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48070064.14129025,
+                "mean_fill": 0.8449906648716764,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50656240.89107207,
+                "mean_fill": 0.8449906648716764,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17523775.146319658,
+                "mean_fill": 0.8516387840020441,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          }
+        ],
+        "any_reversal": true
+      },
+      "uptime": {
+        "low": 0.7,
+        "base": 0.85,
+        "high": 0.95,
+        "rows": [
+          {
+            "value": 0.7,
+            "preferred": "S3",
+            "reversal": true,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12494822.88788481,
+                "mean_fill": 0.6270405144108818,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12261233.268195314,
+                "mean_fill": 0.6330378687149555,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24093450.79729599,
+                "mean_fill": 0.9796111363348542,
+                "p_meet": 0.16666666666666666,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32805957.441419978,
+                "mean_fill": 0.9957005801248086,
+                "p_meet": 1.0,
+                "feasible": true
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30120564.16364802,
+                "mean_fill": 0.9152413709740078,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 47812246.528504856,
+                "mean_fill": 0.7762054556782716,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50398423.27828669,
+                "mean_fill": 0.7762054556782716,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17064109.43408678,
+                "mean_fill": 0.6799090620310325,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 0.825,
+            "preferred": "S3",
+            "reversal": true,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12924627.319496684,
+                "mean_fill": 0.7642771110294193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12628964.078514948,
+                "mean_fill": 0.7679499531938241,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24211437.01581654,
+                "mean_fill": 0.9883646054873277,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32808587.502269294,
+                "mean_fill": 0.9968165473484577,
+                "p_meet": 1.0,
+                "feasible": true
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30308697.447291862,
+                "mean_fill": 0.9760632963683493,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48105141.43671948,
+                "mean_fill": 0.8338385881242912,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50691318.186501294,
+                "mean_fill": 0.8338385881242912,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17535873.441465776,
+                "mean_fill": 0.8335534752108811,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 0.95,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 13198426.792619972,
+                "mean_fill": 0.8517566554036864,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12857231.734044628,
+                "mean_fill": 0.8591213272501643,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24266096.09671608,
+                "mean_fill": 0.9896921048133436,
+                "p_meet": 0.6666666666666666,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32813504.62906838,
+                "mean_fill": 0.9965333577783014,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30369160.869675416,
+                "mean_fill": 0.9867608863798348,
+                "p_meet": 0.6666666666666666,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48247762.64106194,
+                "mean_fill": 0.8675762425416718,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50833939.39084376,
+                "mean_fill": 0.8675762425416718,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17839192.97295436,
+                "mean_fill": 0.9293582148603458,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          }
+        ],
+        "any_reversal": true
+      },
+      "demand_cv": {
+        "low": 0.08,
+        "base": 0.15,
+        "high": 0.3,
+        "rows": [
+          {
+            "value": 0.08,
+            "preferred": "S3",
+            "reversal": true,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12926260.835040063,
+                "mean_fill": 0.7634536497593025,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12630279.900286637,
+                "mean_fill": 0.7673234005519339,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24203137.393752616,
+                "mean_fill": 0.9877885905985005,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32810342.730040982,
+                "mean_fill": 0.9980831055437734,
+                "p_meet": 1.0,
+                "feasible": true
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30312438.81152473,
+                "mean_fill": 0.9726980211779278,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48108136.15607107,
+                "mean_fill": 0.8343424416166662,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50694312.90585289,
+                "mean_fill": 0.8343424416166662,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17547628.68807308,
+                "mean_fill": 0.8376952162159018,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 0.19,
+            "preferred": "S3",
+            "reversal": true,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12926291.149633668,
+                "mean_fill": 0.7640243358500253,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12629026.805528646,
+                "mean_fill": 0.7692377900723031,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24217541.371337086,
+                "mean_fill": 0.9892947558440759,
+                "p_meet": 0.6666666666666666,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32806138.425374314,
+                "mean_fill": 0.9988002242289632,
+                "p_meet": 1.0,
+                "feasible": true
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30316948.848529298,
+                "mean_fill": 0.9750578962931966,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48098836.73998887,
+                "mean_fill": 0.8345056724334965,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50685013.4897707,
+                "mean_fill": 0.8345056724334965,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17548592.693000022,
+                "mean_fill": 0.8357953371579461,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 0.3,
+            "preferred": "S3",
+            "reversal": true,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12926433.460647369,
+                "mean_fill": 0.764207570612684,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12629059.621711297,
+                "mean_fill": 0.7718854588614344,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24222638.051172704,
+                "mean_fill": 0.9899980406962201,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32823556.74412774,
+                "mean_fill": 0.9975415348606993,
+                "p_meet": 1.0,
+                "feasible": true
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30312603.66563889,
+                "mean_fill": 0.9746186820782112,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48099848.15371034,
+                "mean_fill": 0.8356473765614502,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50686024.903492175,
+                "mean_fill": 0.8356473765614502,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17545666.202397283,
+                "mean_fill": 0.8360463606645431,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          }
+        ],
+        "any_reversal": true
+      },
+      "regional_demand_covariance": {
+        "low": 0.2,
+        "base": 0.5,
+        "high": 0.9,
+        "rows": [
+          {
+            "value": 0.2,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12926302.968665635,
+                "mean_fill": 0.764079905672267,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12628996.624670198,
+                "mean_fill": 0.7686452639873438,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24220846.477122474,
+                "mean_fill": 0.989049691237501,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32801751.864744175,
+                "mean_fill": 0.9966102452404434,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30317630.726944823,
+                "mean_fill": 0.977422179315507,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48103568.470130436,
+                "mean_fill": 0.8344433394833112,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50689745.21991226,
+                "mean_fill": 0.8344433394833112,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17548349.0132192,
+                "mean_fill": 0.8365684576830899,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 0.55,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12926264.39076609,
+                "mean_fill": 0.7593675252949756,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12628969.88194874,
+                "mean_fill": 0.7630093870621494,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24232126.891633894,
+                "mean_fill": 0.988354608549827,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32836803.43236975,
+                "mean_fill": 0.9967979820604264,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30328887.24570738,
+                "mean_fill": 0.9755715574103728,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48112931.74479253,
+                "mean_fill": 0.8326732213652592,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50699108.49457436,
+                "mean_fill": 0.8326732213652592,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17548731.373643856,
+                "mean_fill": 0.8318791981308196,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 0.9,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12926264.39076609,
+                "mean_fill": 0.7593675252949756,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12628969.88194874,
+                "mean_fill": 0.7630093870621494,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24232126.891633894,
+                "mean_fill": 0.988354608549827,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32836803.43236975,
+                "mean_fill": 0.9967979820604264,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30328887.24570738,
+                "mean_fill": 0.9755715574103728,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48112931.74479253,
+                "mean_fill": 0.8326732213652592,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50699108.49457436,
+                "mean_fill": 0.8326732213652592,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17548731.373643856,
+                "mean_fill": 0.8318791981308196,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          }
+        ],
+        "any_reversal": false
+      },
+      "raw_material_lead_time": {
+        "low": 30.0,
+        "base": 90.0,
+        "high": 240.0,
+        "rows": [
+          {
+            "value": 30.0,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12912134.831336865,
+                "mean_fill": 0.7605104981594654,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12620111.706816318,
+                "mean_fill": 0.7660168331654673,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24207183.668980923,
+                "mean_fill": 0.9890504856947061,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32802695.470757872,
+                "mean_fill": 0.9962629518014099,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30304197.42028272,
+                "mean_fill": 0.97489019543452,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48094740.41464641,
+                "mean_fill": 0.8332037421287314,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50680917.164428234,
+                "mean_fill": 0.8332037421287314,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17511630.88640641,
+                "mean_fill": 0.8222216569545798,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 135.0,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12930196.044866547,
+                "mean_fill": 0.7656282036837382,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12630664.427665634,
+                "mean_fill": 0.7686253869760331,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24220841.04415444,
+                "mean_fill": 0.9890504856947061,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32800083.293419976,
+                "mean_fill": 0.9966102962206769,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30317690.61408181,
+                "mean_fill": 0.9768510190458066,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48101772.15676057,
+                "mean_fill": 0.8344478120552193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50687948.90654239,
+                "mean_fill": 0.8344478120552193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17552228.37552057,
+                "mean_fill": 0.8384753720162217,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 240.0,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12931863.853085725,
+                "mean_fill": 0.7656282036837382,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12639833.560734129,
+                "mean_fill": 0.7723487443631692,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24220841.04415444,
+                "mean_fill": 0.9890504856947061,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32795681.969995316,
+                "mean_fill": 0.9962419269027118,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30317690.61408181,
+                "mean_fill": 0.9768510190458066,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48105902.40530852,
+                "mean_fill": 0.8344478120552193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50692079.15509034,
+                "mean_fill": 0.8344478120552193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17553896.183739748,
+                "mean_fill": 0.8384753720162217,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          }
+        ],
+        "any_reversal": false
+      },
+      "supplier_concentration": {
+        "low": 0.05,
+        "base": 0.2,
+        "high": 0.6,
+        "rows": [
+          {
+            "value": 0.05,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12926343.920008099,
+                "mean_fill": 0.7630308157021851,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12629008.240451023,
+                "mean_fill": 0.7670653758535854,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24220841.04415444,
+                "mean_fill": 0.9890504856947061,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32795985.88798162,
+                "mean_fill": 0.9962419269027118,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30330552.979017884,
+                "mean_fill": 0.9827590645116935,
+                "p_meet": 0.5,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48088427.02652312,
+                "mean_fill": 0.8344478120552193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50674603.77630495,
+                "mean_fill": 0.8344478120552193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17549968.68560276,
+                "mean_fill": 0.8354580786962506,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 0.32499999999999996,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12875721.104556045,
+                "mean_fill": 0.7500919658444061,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12589005.494528646,
+                "mean_fill": 0.7512962473524555,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24220841.04415444,
+                "mean_fill": 0.9890504856947061,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32795990.898292124,
+                "mean_fill": 0.9970841970004604,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30206588.481378615,
+                "mean_fill": 0.942733984251943,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48068749.80280167,
+                "mean_fill": 0.82970322517522,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50654926.55258349,
+                "mean_fill": 0.82970322517522,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17497817.083657555,
+                "mean_fill": 0.8220018949218463,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 0.6,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12888531.04911769,
+                "mean_fill": 0.7502622724468536,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12587333.900437323,
+                "mean_fill": 0.7506830983122711,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24220841.04415444,
+                "mean_fill": 0.9890504856947061,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32822978.026177973,
+                "mean_fill": 0.9967853962788901,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30246395.57335122,
+                "mean_fill": 0.9550872663893059,
+                "p_meet": 0.16666666666666666,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48062582.167034544,
+                "mean_fill": 0.8333201080065208,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50648758.91681636,
+                "mean_fill": 0.8333201080065208,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17510827.679589067,
+                "mean_fill": 0.8213545640028106,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          }
+        ],
+        "any_reversal": false
+      },
+      "common_cause_dependence": {
+        "low": 0.02,
+        "base": 0.1,
+        "high": 0.3,
+        "rows": [
+          {
+            "value": 0.02,
+            "preferred": "S2",
+            "reversal": true,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 13008559.650085725,
+                "mean_fill": 0.771238491686581,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12672161.479597142,
+                "mean_fill": 0.7713921656276503,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24302967.148154438,
+                "mean_fill": 0.9939783998844369,
+                "p_meet": 1.0,
+                "feasible": true
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32798084.308196235,
+                "mean_fill": 0.9959031636529382,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30382496.680748478,
+                "mean_fill": 0.9824628586696815,
+                "p_meet": 0.5,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48190344.66330851,
+                "mean_fill": 0.841111019230012,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50776521.41309034,
+                "mean_fill": 0.841111019230012,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17622827.40905025,
+                "mean_fill": 0.84502592936074,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 0.15999999999999998,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12914356.325880246,
+                "mean_fill": 0.7601797226909635,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12619834.85076609,
+                "mean_fill": 0.7618715453538298,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24191170.95230056,
+                "mean_fill": 0.9811582419495233,
+                "p_meet": 0.6666666666666666,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32799987.50071678,
+                "mean_fill": 0.9961885291185926,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30301520.42974848,
+                "mean_fill": 0.9700387794434407,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48088169.59220806,
+                "mean_fill": 0.830661775227425,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50674346.341989875,
+                "mean_fill": 0.830661775227425,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17535544.190579932,
+                "mean_fill": 0.8319336693951481,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 0.3,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12830202.230985269,
+                "mean_fill": 0.7320995150105377,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12590211.543003531,
+                "mean_fill": 0.7453691011691972,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24234637.970967222,
+                "mean_fill": 0.9910588156871988,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32774317.40973505,
+                "mean_fill": 0.9918007196229657,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30256817.353753045,
+                "mean_fill": 0.9610489258082605,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48030579.905591615,
+                "mean_fill": 0.8261991453626449,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50616756.65537345,
+                "mean_fill": 0.8261991453626449,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17448624.229694083,
+                "mean_fill": 0.8053380627391716,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          }
+        ],
+        "any_reversal": true
+      },
+      "shelf_life": {
+        "low": 12.0,
+        "base": 24.0,
+        "high": 36.0,
+        "rows": [
+          {
+            "value": 12.0,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12926302.946638236,
+                "mean_fill": 0.7640601893438563,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12664388.852094859,
+                "mean_fill": 0.7662694816007448,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24235998.409159005,
+                "mean_fill": 0.9890504856947061,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32846541.22411861,
+                "mean_fill": 0.996676253746588,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30317634.28261606,
+                "mean_fill": 0.9774231061750779,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48103572.021089345,
+                "mean_fill": 0.8344478120552193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50689748.77087116,
+                "mean_fill": 0.8344478120552193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17548348.931758013,
+                "mean_fill": 0.8365455923655513,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 24.0,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12926302.946638236,
+                "mean_fill": 0.7640601893438563,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12628996.619446456,
+                "mean_fill": 0.7686253869760331,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24220841.04415444,
+                "mean_fill": 0.9890504856947061,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32801751.10163915,
+                "mean_fill": 0.9966102962206769,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30317634.28261606,
+                "mean_fill": 0.9774231061750779,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48103572.021089345,
+                "mean_fill": 0.8344478120552193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50689748.77087116,
+                "mean_fill": 0.8344478120552193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17548348.931758013,
+                "mean_fill": 0.8365455923655513,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 36.0,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12926302.946638236,
+                "mean_fill": 0.7640601893438563,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12628996.619446456,
+                "mean_fill": 0.7686253869760331,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24220841.04415444,
+                "mean_fill": 0.9890504856947061,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32801751.10163915,
+                "mean_fill": 0.9966102962206769,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30317634.28261606,
+                "mean_fill": 0.9774231061750779,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48103572.021089345,
+                "mean_fill": 0.8344478120552193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50689748.77087116,
+                "mean_fill": 0.8344478120552193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17548348.931758013,
+                "mean_fill": 0.8365455923655513,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          }
+        ],
+        "any_reversal": false
+      },
+      "expiry": {
+        "low": 0.005,
+        "base": 0.02,
+        "high": 0.08,
+        "rows": [
+          {
+            "value": 0.005,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12926302.946638236,
+                "mean_fill": 0.7640601893438563,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12628996.619446456,
+                "mean_fill": 0.7686253869760331,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24220841.04415444,
+                "mean_fill": 0.9890504856947061,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32801751.10163915,
+                "mean_fill": 0.9966102962206769,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30317634.28261606,
+                "mean_fill": 0.9774231061750779,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48103572.021089345,
+                "mean_fill": 0.8344478120552193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50689748.77087116,
+                "mean_fill": 0.8344478120552193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17548348.931758013,
+                "mean_fill": 0.8365455923655513,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 0.042499999999999996,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12926302.946638236,
+                "mean_fill": 0.7640601893438563,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12628996.619446456,
+                "mean_fill": 0.7686253869760331,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24220841.04415444,
+                "mean_fill": 0.9890504856947061,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32801751.10163915,
+                "mean_fill": 0.9966102962206769,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30317634.28261606,
+                "mean_fill": 0.9774231061750779,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48103572.021089345,
+                "mean_fill": 0.8344478120552193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50689748.77087116,
+                "mean_fill": 0.8344478120552193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17548348.931758013,
+                "mean_fill": 0.8365455923655513,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 0.08,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12926302.946638236,
+                "mean_fill": 0.7640601893438563,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12628996.619446456,
+                "mean_fill": 0.7686253869760331,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24220841.04415444,
+                "mean_fill": 0.9890504856947061,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32801751.10163915,
+                "mean_fill": 0.9966102962206769,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30317634.28261606,
+                "mean_fill": 0.9774231061750779,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48103572.021089345,
+                "mean_fill": 0.8344478120552193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50689748.77087116,
+                "mean_fill": 0.8344478120552193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17548348.931758013,
+                "mean_fill": 0.8365455923655513,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          }
+        ],
+        "any_reversal": false
+      },
+      "batch_size": {
+        "low": 10000.0,
+        "base": 25000.0,
+        "high": 60000.0,
+        "rows": [
+          {
+            "value": 10000.0,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12138578.18403093,
+                "mean_fill": 0.30383956740012535,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 11943861.931843715,
+                "mean_fill": 0.3055928623966907,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 23656833.40805855,
+                "mean_fill": 0.5354715597921157,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 33268126.075118605,
+                "mean_fill": 0.6955672069125419,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 29997257.064981356,
+                "mean_fill": 0.5852993462928702,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48657901.829034545,
+                "mean_fill": 0.6172623403199814,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 51244078.57881638,
+                "mean_fill": 0.6172623403199814,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 16659865.688748881,
+                "mean_fill": 0.3327875921051024,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 35000.0,
+            "preferred": "S2",
+            "reversal": true,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 13171469.344948739,
+                "mean_fill": 0.9650250836876307,
+                "p_meet": 0.16666666666666666,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12845613.048126819,
+                "mean_fill": 0.9676193462318898,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 23981098.02605855,
+                "mean_fill": 0.9978237761297467,
+                "p_meet": 1.0,
+                "feasible": true
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32442816.55826472,
+                "mean_fill": 0.9916013064749012,
+                "p_meet": 0.6666666666666666,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 29968464.80940144,
+                "mean_fill": 0.9848250571613604,
+                "p_meet": 0.5,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 47964372.25100714,
+                "mean_fill": 0.9643267715042696,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50550549.00078898,
+                "mean_fill": 0.9643267715042696,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17744072.710643858,
+                "mean_fill": 0.993567323039869,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 60000.0,
+            "preferred": "S0",
+            "reversal": true,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12876802.129738694,
+                "mean_fill": 0.996293092792539,
+                "p_meet": 1.0,
+                "feasible": true
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12567558.752364263,
+                "mean_fill": 0.9657524027672902,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 23607834.836254895,
+                "mean_fill": 0.9984335727215415,
+                "p_meet": 1.0,
+                "feasible": true
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32070274.655584365,
+                "mean_fill": 0.997427001103846,
+                "p_meet": 1.0,
+                "feasible": true
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 29608320.567602355,
+                "mean_fill": 0.991722668549507,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 47349669.25922632,
+                "mean_fill": 0.9923112313256636,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 49935846.00900815,
+                "mean_fill": 0.9923112313256636,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17714364.74799546,
+                "mean_fill": 0.9914000789900047,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              }
+            ]
+          }
+        ],
+        "any_reversal": true
+      },
+      "changeover_burden": {
+        "low": 1.0,
+        "base": 3.0,
+        "high": 10.0,
+        "rows": [
+          {
+            "value": 1.0,
+            "preferred": "S3",
+            "reversal": true,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12926445.583314033,
+                "mean_fill": 0.7629748945913012,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12629096.103939606,
+                "mean_fill": 0.7699715759162663,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24228979.32034622,
+                "mean_fill": 0.9893845104122293,
+                "p_meet": 0.6666666666666666,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32822678.386721354,
+                "mean_fill": 0.9973871228173694,
+                "p_meet": 1.0,
+                "feasible": true
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30318672.921086375,
+                "mean_fill": 0.9756960173263917,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48116435.21132678,
+                "mean_fill": 0.8355122091745334,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50702611.9611086,
+                "mean_fill": 0.8355122091745334,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17548842.13303655,
+                "mean_fill": 0.8334962559081136,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 5.5,
+            "preferred": "S3",
+            "reversal": true,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12924205.671250107,
+                "mean_fill": 0.7662407978100191,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12628911.073364263,
+                "mean_fill": 0.7664990074069102,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24218114.74600375,
+                "mean_fill": 0.9891041470014968,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32798333.9308766,
+                "mean_fill": 0.998926189251559,
+                "p_meet": 1.0,
+                "feasible": true
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30121055.993419707,
+                "mean_fill": 0.9156043011525282,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48074951.22707564,
+                "mean_fill": 0.8335911337552971,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50661127.97685746,
+                "mean_fill": 0.8335911337552971,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17547671.399474908,
+                "mean_fill": 0.8363356791010054,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 10.0,
+            "preferred": "S3",
+            "reversal": true,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12222714.986131387,
+                "mean_fill": 0.5346812031098812,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12007894.284930473,
+                "mean_fill": 0.5336186366533155,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 23963197.168254897,
+                "mean_fill": 0.9577773456562944,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32743278.270707652,
+                "mean_fill": 0.996720283542404,
+                "p_meet": 1.0,
+                "feasible": true
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 29467652.770880897,
+                "mean_fill": 0.7443438068139069,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 47632142.15606651,
+                "mean_fill": 0.7506361332492939,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50218318.905848324,
+                "mean_fill": 0.7506361332492939,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 16846689.15532879,
+                "mean_fill": 0.6087815297981486,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          }
+        ],
+        "any_reversal": true
+      },
+      "deviation_rejection_rate": {
+        "low": 0.005,
+        "base": 0.02,
+        "high": 0.08,
+        "rows": [
+          {
+            "value": 0.005,
+            "preferred": "S3",
+            "reversal": true,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12911738.826492116,
+                "mean_fill": 0.7632972937166224,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12615525.365455588,
+                "mean_fill": 0.7687963756442698,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24207257.3592001,
+                "mean_fill": 0.989834868920064,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32793118.089356054,
+                "mean_fill": 0.9963458354579213,
+                "p_meet": 1.0,
+                "feasible": true
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30304726.355415147,
+                "mean_fill": 0.978784413201813,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48094409.377390705,
+                "mean_fill": 0.8344983000906133,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50680586.12717253,
+                "mean_fill": 0.8344983000906133,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17531970.72601372,
+                "mean_fill": 0.8357150106484611,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 0.042499999999999996,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12945009.3083049,
+                "mean_fill": 0.7642133311259416,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12647027.400706729,
+                "mean_fill": 0.7713150439820492,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24253473.909912433,
+                "mean_fill": 0.9867292411790863,
+                "p_meet": 0.5,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32814031.579209935,
+                "mean_fill": 0.9958075854426238,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30337563.586164,
+                "mean_fill": 0.9738607440351137,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48120617.20869664,
+                "mean_fill": 0.833071981619462,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50706793.95847847,
+                "mean_fill": 0.833071981619462,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17569034.454187237,
+                "mean_fill": 0.8370549534029029,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 0.08,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12969588.327775223,
+                "mean_fill": 0.7650434277750943,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12665174.890026363,
+                "mean_fill": 0.7697640908869237,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24271952.855816543,
+                "mean_fill": 0.9887778119937568,
+                "p_meet": 0.5,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32853125.969346914,
+                "mean_fill": 0.9962869325226976,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30363889.67836949,
+                "mean_fill": 0.9747025390033749,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48144774.349751435,
+                "mean_fill": 0.833071981619462,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50730951.09953326,
+                "mean_fill": 0.833071981619462,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17600390.68425573,
+                "mean_fill": 0.8381783890139586,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          }
+        ],
+        "any_reversal": true
+      },
+      "capital_per_site": {
+        "low": 15000000.0,
+        "base": 40000000.0,
+        "high": 100000000.0,
+        "rows": [
+          {
+            "value": 15000000.0,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 8736801.9648201,
+                "mean_fill": 0.7640601893438563,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 8439495.637628317,
+                "mean_fill": 0.7686253869760331,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 16330189.303307226,
+                "mean_fill": 0.9890504856947061,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 21848512.09147558,
+                "mean_fill": 0.9966102962206769,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 20148136.309421584,
+                "mean_fill": 0.9774231061750779,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 33656073.747918375,
+                "mean_fill": 0.8344478120552193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 36242250.49770019,
+                "mean_fill": 0.8344478120552193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 12055370.64941443,
+                "mean_fill": 0.8365455923655513,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 57500000.0,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 15858953.633910917,
+                "mean_fill": 0.7640601893438563,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 15561647.306719134,
+                "mean_fill": 0.7686253869760331,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 29744297.262747873,
+                "mean_fill": 0.9890504856947061,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 40469018.40875245,
+                "mean_fill": 0.9966102962206769,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 37436282.86385257,
+                "mean_fill": 0.9774231061750779,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 58216820.81230878,
+                "mean_fill": 0.8344478120552193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 60802997.562090605,
+                "mean_fill": 0.8344478120552193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 21393433.72939882,
+                "mean_fill": 0.8365455923655513,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 100000000.0,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 22981105.303002223,
+                "mean_fill": 0.7640601893438563,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 22683798.97581044,
+                "mean_fill": 0.7686253869760331,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 43158405.22218869,
+                "mean_fill": 0.9890504856947061,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 59089524.72603182,
+                "mean_fill": 0.9966102962206769,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 54724429.41828368,
+                "mean_fill": 0.9774231061750779,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 82777567.87669909,
+                "mean_fill": 0.8344478120552193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 85363744.6264809,
+                "mean_fill": 0.8344478120552193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 30731496.809383154,
+                "mean_fill": 0.8365455923655513,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          }
+        ],
+        "any_reversal": false
+      },
+      "node_scale": {
+        "low": 0.15,
+        "base": 0.35,
+        "high": 0.6,
+        "rows": [
+          {
+            "value": 0.15,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12926302.946638236,
+                "mean_fill": 0.7640601893438563,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12628996.619446456,
+                "mean_fill": 0.7686253869760331,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24220841.04415444,
+                "mean_fill": 0.9890504856947061,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32801751.10163915,
+                "mean_fill": 0.9966102962206769,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30317634.28261606,
+                "mean_fill": 0.9774231061750779,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 37663298.22364253,
+                "mean_fill": 0.8344041927082628,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 39925194.52377286,
+                "mean_fill": 0.8344041927082628,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17548348.931758013,
+                "mean_fill": 0.8365455923655513,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 0.375,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12926302.946638236,
+                "mean_fill": 0.7640601893438563,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12628996.619446456,
+                "mean_fill": 0.7686253869760331,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24220841.04415444,
+                "mean_fill": 0.9890504856947061,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32801751.10163915,
+                "mean_fill": 0.9966102962206769,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30317634.28261606,
+                "mean_fill": 0.9774231061750779,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 49295979.44701013,
+                "mean_fill": 0.8344478120552193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 51919536.026507765,
+                "mean_fill": 0.8344478120552193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17548348.931758013,
+                "mean_fill": 0.8365455923655513,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 0.6,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12926302.946638236,
+                "mean_fill": 0.7640601893438563,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12628996.619446456,
+                "mean_fill": 0.7686253869760331,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24220841.04415444,
+                "mean_fill": 0.9890504856947061,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32801751.10163915,
+                "mean_fill": 0.9966102962206769,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30317634.28261606,
+                "mean_fill": 0.9774231061750779,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 59060928.13724808,
+                "mean_fill": 0.8344478120552193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 62002221.71090349,
+                "mean_fill": 0.8344478120552193,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17548348.931758013,
+                "mean_fill": 0.8365455923655513,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          }
+        ],
+        "any_reversal": false
+      },
+      "site_failure_rate": {
+        "low": 0.05,
+        "base": 0.2,
+        "high": 0.6,
+        "rows": [
+          {
+            "value": 0.05,
+            "preferred": "S3",
+            "reversal": true,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12955220.610190747,
+                "mean_fill": 0.7753745598822214,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12655628.546702163,
+                "mean_fill": 0.7799131271412135,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24227754.352615625,
+                "mean_fill": 0.9903041540035193,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32797450.521351486,
+                "mean_fill": 0.9979154975845802,
+                "p_meet": 1.0,
+                "feasible": true
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30341255.968090948,
+                "mean_fill": 0.9860769559666069,
+                "p_meet": 0.6666666666666666,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48134698.393847324,
+                "mean_fill": 0.8454518788301298,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50720875.143629156,
+                "mean_fill": 0.8454518788301298,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17574927.800214633,
+                "mean_fill": 0.8469404950150322,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 0.32499999999999996,
+            "preferred": "S3",
+            "reversal": true,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12897091.383090293,
+                "mean_fill": 0.770874193164463,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12639830.762186179,
+                "mean_fill": 0.7728846911312314,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24184234.244871333,
+                "mean_fill": 0.9878095812967768,
+                "p_meet": 0.5,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32809034.0374565,
+                "mean_fill": 0.9986252870039826,
+                "p_meet": 1.0,
+                "feasible": true
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30289772.926186834,
+                "mean_fill": 0.9818295030088503,
+                "p_meet": 0.5,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48047047.59408934,
+                "mean_fill": 0.8416055754044232,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50633224.343871154,
+                "mean_fill": 0.8416055754044232,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17517521.554502305,
+                "mean_fill": 0.8435869734952376,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 0.6,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12801623.626391662,
+                "mean_fill": 0.7436772764471505,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12542026.798268372,
+                "mean_fill": 0.7457462978973209,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24089531.100528866,
+                "mean_fill": 0.9658214862707828,
+                "p_meet": 0.6666666666666666,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32780114.227566093,
+                "mean_fill": 0.9913578675013289,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30151249.762725648,
+                "mean_fill": 0.9379676301187398,
+                "p_meet": 0.5,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 47924241.60253226,
+                "mean_fill": 0.8141921109355641,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50510418.35231408,
+                "mean_fill": 0.8141921109355641,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17420755.305474907,
+                "mean_fill": 0.8132766933983966,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          }
+        ],
+        "any_reversal": true
+      },
+      "investigation_duration": {
+        "low": 7.0,
+        "base": 21.0,
+        "high": 60.0,
+        "rows": [
+          {
+            "value": 7.0,
+            "preferred": "S3",
+            "reversal": true,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12926209.274346,
+                "mean_fill": 0.7633866140236093,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12628923.357820883,
+                "mean_fill": 0.7684124380927821,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24223997.01027773,
+                "mean_fill": 0.9900992700648038,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32826034.46968482,
+                "mean_fill": 0.9969063555311193,
+                "p_meet": 1.0,
+                "feasible": true
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30324098.40648364,
+                "mean_fill": 0.9780140623681567,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48112711.43247289,
+                "mean_fill": 0.8349931516652295,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50698888.182254724,
+                "mean_fill": 0.8349931516652295,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17549168.952452075,
+                "mean_fill": 0.835959115502641,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 33.5,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12926329.563551478,
+                "mean_fill": 0.7650638375364059,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12628984.471683899,
+                "mean_fill": 0.7677944982937435,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24225683.972848505,
+                "mean_fill": 0.9899814621588335,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32797990.599506736,
+                "mean_fill": 0.9950812920772223,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30320093.884643454,
+                "mean_fill": 0.977472471322808,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48102614.96992496,
+                "mean_fill": 0.8319525027059141,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50688791.719706774,
+                "mean_fill": 0.8319525027059141,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17547525.44514614,
+                "mean_fill": 0.8376708129033728,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          },
+          {
+            "value": 60.0,
+            "preferred": null,
+            "reversal": false,
+            "outcomes": [
+              {
+                "strategy_id": "S0",
+                "mean_cost": 12926324.920446455,
+                "mean_fill": 0.7662277632377014,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S1",
+                "mean_cost": 12626999.50518618,
+                "mean_fill": 0.767396389657196,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S2",
+                "mean_cost": 24215591.739948962,
+                "mean_fill": 0.9900992700648038,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S3",
+                "mean_cost": 32835579.761931393,
+                "mean_fill": 0.9955298675863715,
+                "p_meet": 0.8333333333333334,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S4",
+                "mean_cost": 30307777.983812407,
+                "mean_fill": 0.975489736537985,
+                "p_meet": 0.3333333333333333,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S5",
+                "mean_cost": 48085550.567756005,
+                "mean_fill": 0.8300167364195586,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S6",
+                "mean_cost": 50671727.31753782,
+                "mean_fill": 0.8300167364195586,
+                "p_meet": 0.0,
+                "feasible": false
+              },
+              {
+                "strategy_id": "S7",
+                "mean_cost": 17547634.25046121,
+                "mean_fill": 0.8388970805330623,
+                "p_meet": 0.0,
+                "feasible": false
+              }
+            ]
+          }
+        ],
+        "any_reversal": true
+      }
+    }
+  }
+}

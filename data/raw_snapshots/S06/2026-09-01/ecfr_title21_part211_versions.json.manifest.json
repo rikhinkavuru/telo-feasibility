@@ -1,0 +1,17 @@
+{
+  "source_id": "S06",
+  "url": "https://www.ecfr.gov/api/versioner/v1/versions/title-21.json?part=211",
+  "retrieved_at": "2026-09-01T23:02:11.545962Z",
+  "http_status": 200,
+  "sha256": "f1736e629284efaa924f8e5818825b63ac2c251d91ccc10f988d5a87af6e1833",
+  "content_type": "application/json; charset=utf-8",
+  "size_bytes": 19350,
+  "license_note": "US government work (verbatim eCFR statement not retrievable; HTML blocked to automation)",
+  "raw_path": "data/raw_snapshots/S06/2026-09-01/ecfr_title21_part211_versions.json",
+  "transform_script": null,
+  "processed_path": null,
+  "data_dictionary_rows": 0,
+  "access_method": "auto",
+  "robots_allowed": true,
+  "notes": ""
+}

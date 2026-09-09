@@ -1,0 +1,17 @@
+{
+  "source_id": "S18",
+  "url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls.json?drug_name=furosemide&pagesize=100",
+  "retrieved_at": "2026-09-01T23:08:57.885672Z",
+  "http_status": 200,
+  "sha256": "e464b6b51f695c7fd5d426e59ba2208619cde8505deb09a4ffe63f9c8fb859b8",
+  "content_type": "application/json",
+  "size_bytes": 17127,
+  "license_note": "NLM: US government works not subject to copyright; acknowledge NLM; non-government label content may be copyrighted by the labeler.",
+  "raw_path": "data/raw_snapshots/S18/2026-09-01/spls_furosemide.json",
+  "transform_script": null,
+  "processed_path": null,
+  "data_dictionary_rows": 0,
+  "access_method": "auto",
+  "robots_allowed": true,
+  "notes": ""
+}

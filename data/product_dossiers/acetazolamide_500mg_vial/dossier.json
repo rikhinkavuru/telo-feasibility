@@ -1,0 +1,331 @@
+{
+  "candidate_id": "acetazolamide_500mg_vial",
+  "ingredient": "acetazolamide",
+  "presentation": "acetazolamide sodium 500 mg lyophilized powder vial",
+  "protocol_role": "explicit out-of-archetype (lyophilized) comparator",
+  "generated_at": "2026-09-02T04:07:45.241545+00:00",
+  "protocol_version": "1.0.0",
+  "snapshot_ids": [
+    "S01:2ea0ff3bb44c",
+    "S01B:417de7856556",
+    "S14:7f00a4d2672a",
+    "S16:52e1277513bc",
+    "S17:caaa826d4ba7",
+    "S18/acetazolamide_500mg_vial:282b33d34c33",
+    "S18/acyclovir_sodium_50mgml_vial:0364dcefc84c",
+    "S18/furosemide_10mgml_vial:e464b6b51f69",
+    "S18/norepinephrine_1mgml_4ml:8f9cb72e5257",
+    "S18/sodium_bicarbonate_8_4_50ml:b6d09135744c",
+    "S18/sterile_water_for_injection_vial:32f17469d12c",
+    "S19:986deefa094d"
+  ],
+  "sources": {
+    "S01": {
+      "source_id": "S01",
+      "snapshot_sha256": "2ea0ff3bb44ce4ca7a5c617704876d48b1752e65d872e6d80b5d8942d1bcb463",
+      "retrieved_at": "2026-09-02T04:01:34.502579+00:00",
+      "available": true,
+      "summary": {
+        "rows_ingredient": 0,
+        "rows_presentation_match": 0,
+        "status_counts": {},
+        "earliest_initial_posting": null,
+        "reasons": [],
+        "companies": [],
+        "presentations": []
+      }
+    },
+    "S01B": {
+      "source_id": "S01B",
+      "snapshot_sha256": "417de7856556315bd0ada0aff25a228225d96d56654c40c4f4ffce8c4848252d",
+      "retrieved_at": "2026-09-01T22:55:09.181438+00:00",
+      "available": true,
+      "summary": {
+        "records": 0,
+        "status_counts": {}
+      }
+    },
+    "S16": {
+      "source_id": "S16",
+      "snapshot_sha256": "52e1277513bca65f52c39c362404dc80eeb05d9828d9e50ae5513754bde68b5f",
+      "retrieved_at": "2026-09-01T23:08:16.146757+00:00",
+      "available": true,
+      "summary": {
+        "products_ingredient_form": 10,
+        "products_strength_match": 10,
+        "applications": 10,
+        "application_types": {
+          "NDA": 1,
+          "ANDA": 9
+        },
+        "sponsors": [
+          "AVET LIFESCIENCES",
+          "GLAND",
+          "HIKMA",
+          "HOSPIRA",
+          "MYLAN ASI",
+          "PH HEALTH",
+          "QUAD PHARMS",
+          "TEVA WOMENS",
+          "XGEN PHARMS",
+          "ZYDUS PHARMS"
+        ],
+        "forms": [
+          "INJECTABLE;INJECTION",
+          "Injectable; Injection"
+        ]
+      }
+    },
+    "S17": {
+      "source_id": "S17",
+      "snapshot_sha256": "caaa826d4ba72f1abb156c8a38063929d3930d3700e091130474a876513a4da3",
+      "retrieved_at": "2026-09-01T23:08:46.549281+00:00",
+      "available": true,
+      "summary": {
+        "products": 9,
+        "applicants": [
+          "AVET LIFESCIENCES",
+          "GLAND",
+          "HIKMA",
+          "HOSPIRA",
+          "MYLAN ASI",
+          "PH HEALTH",
+          "TEVA WOMENS",
+          "XGEN PHARMS",
+          "ZYDUS PHARMS"
+        ],
+        "rld_products": 1,
+        "strength_matches": 9
+      }
+    },
+    "S18": {
+      "source_id": "S18",
+      "snapshot_sha256": "282b33d34c338715bee4d1a254061254839d311d44bb6afcc58fd35c17a3cfb8",
+      "retrieved_at": "2026-09-01T23:09:14.059113+00:00",
+      "available": true,
+      "summary": {
+        "spls": 65,
+        "injectable_titles": 8,
+        "strength_matches": 0,
+        "sample_titles": [
+          "ACETAZOLAMIDE INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION [HERITAGE PHARMACEUTICALS INC. D/B/A AVET PHARMACEUTICALS INC.]",
+          "ACETAZOLAMIDE (ACETAZOLAMIDE SODIUM) INJECTION, POWDER, FOR SOLUTION [SAGENT PHARMACEUTICALS]",
+          "ACETAZOLAMIDE INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION [HIKMA PHARMACEUTICALS USA INC.]",
+          "ACETAZOLAMIDE INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION [HERITAGE PHARMACEUTICALS INC. D/B/A AVET PHARMACEUTICALS INC.]",
+          "ACETAZOLAMIDE INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION [GLAND PHARMA LIMITED]",
+          "ACETAZOLAMIDE INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION [XGEN PHARMACEUTICALS DJB, INC.]",
+          "ACETAZOLAMIDE (ACETAZOLAMIDE SODIUM) INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION [MYLAN INSTITUTIONAL LLC]",
+          "ACETAZOLAMIDE INJECTION, POWDER, LYOPHILIZED, FOR SOLUTION [HIKMA PHARMACEUTICALS USA INC.]"
+        ]
+      }
+    },
+    "S14": {
+      "source_id": "S14",
+      "snapshot_sha256": "7f00a4d2672a0478de9deabc6b3189057292d65ff72369cdb084283fde5f6775",
+      "retrieved_at": "2026-09-01T23:05:44.417140+00:00",
+      "available": true,
+      "summary": {
+        "bulks_list_status": "absent"
+      }
+    },
+    "S19": {
+      "source_id": "S19",
+      "snapshot_sha256": "986deefa094dca8f4e50abde43263910eeb667de305366f397f7af04d8a8734e",
+      "retrieved_at": "2026-09-01T23:09:14.344925+00:00",
+      "available": true,
+      "summary": {
+        "rows": 1,
+        "note": "utilization/reimbursement proxy only; never cost"
+      }
+    }
+  },
+  "gates": [
+    {
+      "gate_id": "PG1",
+      "name": "Product identity",
+      "status": "PASS",
+      "rationale": "presentation fully specified in config",
+      "evidence": [],
+      "human_task": null
+    },
+    {
+      "gate_id": "PG2",
+      "name": "Manufacturing fit",
+      "status": "FAIL",
+      "rationale": "violates first archetype: lyophilized, not aqueous small-molecule solution in a standard vial",
+      "evidence": [],
+      "human_task": null
+    },
+    {
+      "gate_id": "PG3",
+      "name": "Control status",
+      "status": "PASS",
+      "rationale": "non-controlled (config flag)",
+      "evidence": [],
+      "human_task": null
+    },
+    {
+      "gate_id": "PG4",
+      "name": "Regulatory pathway",
+      "status": "UNCERTAIN",
+      "rationale": "approved applications exist (10 Drugs@FDA, 9 Orange Book products); whether Telo can own, contract, or license one needs regulatory review",
+      "evidence": [
+        {
+          "source_id": "S16",
+          "snapshot_sha256": "52e1277513bca65f52c39c362404dc80eeb05d9828d9e50ae5513754bde68b5f",
+          "retrieved_at": "2026-09-01T23:08:16.146757+00:00",
+          "description": "Drugs@FDA applications for ingredient+form: 10",
+          "value": 10
+        },
+        {
+          "source_id": "S17",
+          "snapshot_sha256": "caaa826d4ba72f1abb156c8a38063929d3930d3700e091130474a876513a4da3",
+          "retrieved_at": "2026-09-01T23:08:46.549281+00:00",
+          "description": "Orange Book products for ingredient+form: 9",
+          "value": 9
+        }
+      ],
+      "human_task": "regulatory professional maps an approved-generic/CMO architecture (HA-23, HA-31)"
+    },
+    {
+      "gate_id": "PG5",
+      "name": "Demand observability",
+      "status": "UNCERTAIN",
+      "rationale": "national/regional utilization requires hospital, GPO, or wholesaler evidence; CMS is a proxy",
+      "evidence": [
+        {
+          "source_id": "S19",
+          "snapshot_sha256": "986deefa094dca8f4e50abde43263910eeb667de305366f397f7af04d8a8734e",
+          "retrieved_at": "2026-09-01T23:09:14.344925+00:00",
+          "description": "CMS Part B rows (proxy only): 1",
+          "value": 1
+        }
+      ],
+      "human_task": "obtain utilization evidence (HA-11)"
+    },
+    {
+      "gate_id": "PG6",
+      "name": "Clinical substitutability",
+      "status": "UNCERTAIN",
+      "rationale": "presentation-specific substitution behavior must be described by clinicians or pharmacists",
+      "evidence": [],
+      "human_task": "hospital pharmacy interviews (HA-20)"
+    },
+    {
+      "gate_id": "PG7",
+      "name": "Input feasibility",
+      "status": "UNCERTAIN",
+      "rationale": "API, vial, stopper, seal, label, and testing dependencies not yet mapped",
+      "evidence": [
+        {
+          "source_id": "S18",
+          "snapshot_sha256": "282b33d34c338715bee4d1a254061254839d311d44bb6afcc58fd35c17a3cfb8",
+          "retrieved_at": "2026-09-01T23:09:14.059113+00:00",
+          "description": "DailyMed SPLs: 65 (labelers as a supplier-count proxy)",
+          "value": 65
+        }
+      ],
+      "human_task": "supplier and component map (HA-12)"
+    },
+    {
+      "gate_id": "PG8",
+      "name": "Economic relevance",
+      "status": "UNCERTAIN",
+      "rationale": "volume plausibly compatible with micro nodes; needs demand evidence",
+      "evidence": [],
+      "human_task": "demand evidence (HA-11) and node sizing"
+    }
+  ],
+  "criteria": [
+    {
+      "criterion": "clinical_criticality",
+      "weight": 0.2,
+      "score": null,
+      "basis": "expert_pending",
+      "rule": "hospital role, substitution difficulty, patient consequences: pharmacist/clinician judgment",
+      "confidence": "low",
+      "evidence": [],
+      "disagreement": "",
+      "workbook_provisional_score": 4
+    },
+    {
+      "criterion": "shortage_recurrence_duration",
+      "weight": 0.2,
+      "score": 1,
+      "basis": "data_rule",
+      "rule": "no current FDA shortage rows (0 rows total); resolved history not visible in a single snapshot",
+      "confidence": "low",
+      "evidence": [],
+      "disagreement": "",
+      "workbook_provisional_score": 5
+    },
+    {
+      "criterion": "supplier_vulnerability",
+      "weight": 0.15,
+      "score": 1,
+      "basis": "data_rule",
+      "rule": "10 distinct application holders (fewer holders = higher vulnerability = higher score); finished-dose only, API and component concentration not yet mapped",
+      "confidence": "low",
+      "evidence": [],
+      "disagreement": "",
+      "workbook_provisional_score": 3
+    },
+    {
+      "criterion": "manufacturing_fit",
+      "weight": 0.15,
+      "score": null,
+      "basis": "expert_pending",
+      "rule": "scored against the actual first-node train by a sterile-manufacturing professional",
+      "confidence": "low",
+      "evidence": [],
+      "disagreement": "",
+      "workbook_provisional_score": 1
+    },
+    {
+      "criterion": "public_data_strength",
+      "weight": 0.1,
+      "score": 4,
+      "basis": "data_rule",
+      "rule": "4 of 6 official sources return records for the ingredient",
+      "confidence": "medium",
+      "evidence": [],
+      "disagreement": "",
+      "workbook_provisional_score": 3
+    },
+    {
+      "criterion": "regional_relevance",
+      "weight": 0.1,
+      "score": null,
+      "basis": "expert_pending",
+      "rule": "whether geography or response speed matters after release/material delays: needs release-time and logistics evidence",
+      "confidence": "low",
+      "evidence": [],
+      "disagreement": "",
+      "workbook_provisional_score": 2
+    },
+    {
+      "criterion": "demand_contract_fit",
+      "weight": 0.1,
+      "score": null,
+      "basis": "expert_pending",
+      "rule": "bounded demand and a credible institutional purchasing model: GPO/wholesaler evidence",
+      "confidence": "low",
+      "evidence": [],
+      "disagreement": "",
+      "workbook_provisional_score": 3
+    }
+  ],
+  "data_partial_score": 0.75,
+  "data_weight_covered": 0.45,
+  "workbook_provisional_total": 3.2,
+  "hard_gate_outcome": "FAIL",
+  "status": "partial",
+  "human_tasks": [
+    "demand evidence (HA-11) and node sizing",
+    "hospital pharmacy interviews (HA-20)",
+    "obtain utilization evidence (HA-11)",
+    "regulatory professional maps an approved-generic/CMO architecture (HA-23, HA-31)",
+    "supplier and component map (HA-12)"
+  ],
+  "banner": "PRELIMINARY / ILLUSTRATIVE / NOT FOR EXTERNAL CLAIMS"
+}

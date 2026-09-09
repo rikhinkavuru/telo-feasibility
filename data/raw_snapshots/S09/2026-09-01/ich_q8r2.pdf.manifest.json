@@ -1,0 +1,17 @@
+{
+  "source_id": "S09",
+  "url": "https://www.fda.gov/media/71535/download",
+  "retrieved_at": "2026-09-01T23:03:12.939908Z",
+  "http_status": 200,
+  "sha256": "dd1e404040a72098343fb1b5c12b64f37b1900facbfddd3a3ce02a8aa056c644",
+  "content_type": "application/pdf",
+  "size_bytes": 411450,
+  "license_note": "FDA public domain copy of ICH text",
+  "raw_path": "data/raw_snapshots/S09/2026-09-01/ich_q8r2.pdf",
+  "transform_script": null,
+  "processed_path": null,
+  "data_dictionary_rows": 0,
+  "access_method": "auto",
+  "robots_allowed": true,
+  "notes": ""
+}

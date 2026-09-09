@@ -1,0 +1,17 @@
+{
+  "source_id": "S28",
+  "url": "https://eigenvector.com/data/tablets/nir_shootout_2002.mat",
+  "retrieved_at": "2026-09-02T04:41:16.775310Z",
+  "http_status": 200,
+  "sha256": "129a32ec9e194e568cbd96a200c88aabeb347156081b5dfbb0120372fdd6c22a",
+  "content_type": "",
+  "size_bytes": 6868936,
+  "license_note": "Public benchmark dataset distributed by Eigenvector Research for research use; no license text found on the landing page at probe time (HUMAN CHECK: confirm redistribution terms before publishing derived data). Values are pharmaceutical tablet NIR spectra with reference assay; no Telo data.",
+  "raw_path": "data/raw_snapshots/S28/2026-09-02/nir_shootout_2002.mat",
+  "transform_script": null,
+  "processed_path": null,
+  "data_dictionary_rows": 0,
+  "access_method": "auto",
+  "robots_allowed": true,
+  "notes": ""
+}

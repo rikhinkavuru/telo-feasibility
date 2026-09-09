@@ -1,0 +1,17 @@
+{
+  "source_id": "S01B",
+  "url": "https://download.open.fda.gov/drug/shortages/drug-shortages-0001-of-0001.json.zip",
+  "retrieved_at": "2026-09-01T22:55:09.181438Z",
+  "http_status": 200,
+  "sha256": "417de7856556315bd0ada0aff25a228225d96d56654c40c4f4ffce8c4848252d",
+  "content_type": "application/zip",
+  "size_bytes": 443449,
+  "license_note": "CC0 1.0 Universal public domain dedication (open.fda.gov/license); terms at open.fda.gov/terms.",
+  "raw_path": "data/raw_snapshots/S01B/2026-09-01/drug-shortages-0001-of-0001.json.zip",
+  "transform_script": null,
+  "processed_path": null,
+  "data_dictionary_rows": 0,
+  "access_method": "auto",
+  "robots_allowed": true,
+  "notes": ""
+}

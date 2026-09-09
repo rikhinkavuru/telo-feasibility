@@ -1,0 +1,17 @@
+{
+  "source_id": "S18",
+  "url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls.json?drug_name=acetazolamide&pagesize=100",
+  "retrieved_at": "2026-09-01T23:09:14.059113Z",
+  "http_status": 200,
+  "sha256": "282b33d34c338715bee4d1a254061254839d311d44bb6afcc58fd35c17a3cfb8",
+  "content_type": "application/json",
+  "size_bytes": 11782,
+  "license_note": "NLM: US government works not subject to copyright; acknowledge NLM; non-government label content may be copyrighted by the labeler.",
+  "raw_path": "data/raw_snapshots/S18/2026-09-01/spls_acetazolamide.json",
+  "transform_script": null,
+  "processed_path": null,
+  "data_dictionary_rows": 0,
+  "access_method": "auto",
+  "robots_allowed": true,
+  "notes": ""
+}

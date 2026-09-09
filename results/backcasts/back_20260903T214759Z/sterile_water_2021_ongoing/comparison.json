@@ -1,0 +1,26 @@
+{
+  "episode_id": "sterile_water_2021_ongoing",
+  "product_id": "sodium_bicarbonate_8_4_50ml",
+  "strategy_id": "S0",
+  "observed_duration_days_min": 1744.0,
+  "observed_ongoing": true,
+  "simulated_episode_count": 1.0,
+  "simulated_longest_episode_days": 1826.0,
+  "simulated_recovered_fraction": 0.0,
+  "simulated_fill_rate": 0.66720255843046,
+  "simulated_peak_unmet_units": 8998.0,
+  "simulated_material_stockouts": 88.0,
+  "simulated_site_failure_days": 0.0,
+  "binding_bottleneck_simulated": "capacity below demand (chronic)",
+  "binding_bottleneck_observed": "Demand increase for the drug; Discontinuation of the manufacture of the drug; Other",
+  "consistent_duration": true,
+  "mismatches": [],
+  "human_required": [
+    "Demand series around 2021-11 to freeze the shock size (HA-11)"
+  ],
+  "notes": [
+    "no product config for sterile_water_for_injection_vial; scaffold product sodium_bicarbonate_8_4_50ml used for a behavior test only",
+    "injected demand_shock on all from day 400 for 365 days",
+    "No product config; behavior test with an injected demand shock on the scaffold product."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "source_id": "S03",
+  "url": "https://aspe.hhs.gov/reports/preventing-shortages-supply-chain-vulnerabilities",
+  "retrieved_at": "2026-09-01T22:55:10.193311Z",
+  "http_status": 200,
+  "sha256": "1ae17b025052877f26c1ab72f4fd95778942fb67b2a41fa65a26340eff395f75",
+  "content_type": "text/html; charset=UTF-8",
+  "size_bytes": 48443,
+  "license_note": "US government work",
+  "raw_path": "data/raw_snapshots/S03/2026-09-01/aspe_landing.html",
+  "transform_script": null,
+  "processed_path": null,
+  "data_dictionary_rows": 0,
+  "access_method": "auto",
+  "robots_allowed": true,
+  "notes": ""
+}

@@ -1,0 +1,17 @@
+{
+  "source_id": "S18",
+  "url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls.json?drug_name=norepinephrine&pagesize=100",
+  "retrieved_at": "2026-09-01T23:08:52.487796Z",
+  "http_status": 200,
+  "sha256": "8f9cb72e5257c9d2ff471f88f93bbc300e8ee266abbaa787c99496f6915e8364",
+  "content_type": "application/json",
+  "size_bytes": 15037,
+  "license_note": "NLM: US government works not subject to copyright; acknowledge NLM; non-government label content may be copyrighted by the labeler.",
+  "raw_path": "data/raw_snapshots/S18/2026-09-01/spls_norepinephrine.json",
+  "transform_script": null,
+  "processed_path": null,
+  "data_dictionary_rows": 0,
+  "access_method": "auto",
+  "robots_allowed": true,
+  "notes": ""
+}

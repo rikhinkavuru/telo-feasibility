@@ -1,0 +1,248 @@
+{
+  "run_id": "sim_post_R008",
+  "created_at": "2026-09-03T22:05:33.940939Z",
+  "protocol_version": "1.0.0",
+  "protocol_sha256": "96b7779b82cfd3598b6fb716b60b7f0146832f91f207afc8d0ca0cee971ea1a7",
+  "package_version": "0.1.0",
+  "git_commit": "5b4cbfe374f440000491e0b262ca461caab85d3d",
+  "git_dirty": true,
+  "python_version": "3.12.13",
+  "platform": "macOS-26.4.1-arm64-arm-64bit",
+  "config_hashes": {
+    "simulation": "8a6c20c0924eaa7db388a0a1d04227ac87dfba2c64230c299a0dafc316b68a6d",
+    "global": "4af53928df17cb51a7f673241852e1ae22d069ec7d6d6cf7517f05fd3761e699",
+    "products": "9b1cc3178371d3096747e37329f018c64283a6160129b7e3ce69724f4b0ec17c",
+    "strategies": "6137de20272cb6a37d9a1ba2b42391455911e86acbabd75e83a078ad24560d7e",
+    "gates": "2caf28bb6838023b4d85b0c9a5a75fd8827b1626becdac29992b81b8c0f44c2a"
+  },
+  "master_seed": 20260901,
+  "n_runs": 100,
+  "illustrative": true,
+  "gate_outcomes": {
+    "S0": {
+      "G01": "UNCERTAIN",
+      "G06": "UNCERTAIN"
+    },
+    "S1": {
+      "G01": "UNCERTAIN",
+      "G06": "UNCERTAIN"
+    },
+    "S2": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN"
+    },
+    "S3": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN"
+    },
+    "S4": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN"
+    },
+    "S5": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN",
+      "G13": "UNCERTAIN",
+      "G14": "UNCERTAIN"
+    },
+    "S6": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN",
+      "G13": "UNCERTAIN",
+      "G14": "UNCERTAIN",
+      "G15": "UNCERTAIN"
+    },
+    "S7": {
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G08": "UNCERTAIN",
+      "G09": "UNCERTAIN",
+      "G10": "UNCERTAIN",
+      "G11": "UNCERTAIN",
+      "G12": "UNCERTAIN"
+    },
+    "S8": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN",
+      "G13": "UNCERTAIN",
+      "G14": "UNCERTAIN"
+    },
+    "S9": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN",
+      "G13": "UNCERTAIN",
+      "G14": "UNCERTAIN",
+      "G16": "UNCERTAIN"
+    },
+    "S10": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN",
+      "G13": "UNCERTAIN",
+      "G14": "UNCERTAIN"
+    },
+    "S11": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN",
+      "G13": "UNCERTAIN",
+      "G14": "UNCERTAIN"
+    },
+    "S12": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN",
+      "G13": "UNCERTAIN",
+      "G14": "UNCERTAIN"
+    },
+    "S13": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN",
+      "G13": "UNCERTAIN",
+      "G14": "UNCERTAIN"
+    },
+    "S14": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN",
+      "G13": "UNCERTAIN",
+      "G14": "UNCERTAIN"
+    },
+    "S15": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN"
+    },
+    "S16": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN",
+      "G13": "UNCERTAIN",
+      "G14": "UNCERTAIN"
+    },
+    "S17": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN",
+      "G13": "UNCERTAIN",
+      "G14": "UNCERTAIN"
+    },
+    "S18": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN",
+      "G13": "UNCERTAIN",
+      "G14": "UNCERTAIN",
+      "G16": "UNCERTAIN"
+    },
+    "S19": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN",
+      "G13": "UNCERTAIN",
+      "G14": "UNCERTAIN",
+      "G16": "UNCERTAIN"
+    },
+    "S20": {}
+  },
+  "wall_time_s": null,
+  "notes": "{\"strategy_ids\": [\"S0\", \"S1\", \"S2\", \"S3\", \"S4\", \"S5\", \"S6\", \"S7\", \"S8\", \"S9\", \"S10\", \"S11\", \"S12\", \"S13\", \"S14\", \"S15\", \"S16\", \"S17\", \"S18\", \"S19\"], \"products\": [\"sodium_bicarbonate_8_4_50ml\", \"norepinephrine_1mgml_4ml\"], \"results_dir\": \"/Users/rikhinkavuru/telo/feasibility/results/simulation/sim_post_R008\"}",
+  "strategy_ids": [
+    "S0",
+    "S1",
+    "S2",
+    "S3",
+    "S4",
+    "S5",
+    "S6",
+    "S7",
+    "S8",
+    "S9",
+    "S10",
+    "S11",
+    "S12",
+    "S13",
+    "S14",
+    "S15",
+    "S16",
+    "S17",
+    "S18",
+    "S19"
+  ]
+}

@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this study, model, or code, please cite it as below. The study is PRELIMINARY until protocol/definition-of-finished gates pass; check CHANGELOG.md and results/manifests/ for the analysis version."
+type: software
+title: "Telo feasibility study: distributed sterile-injectable manufacturing under real-world constraints"
+version: 0.1.0
+date-released: 2026-09-01
+authors:
+  - family-names: Kavuru
+    given-names: Rikhin
+    email: rikhin@virahacks.com
+repository-code: https://github.com/rikhinkavuru/Telo
+license: Apache-2.0
+keywords:
+  - drug shortages
+  - sterile injectables
+  - distributed manufacturing
+  - supply-chain resilience
+  - discrete-time simulation
+  - feasibility study
+abstract: >
+  A pre-specified, falsifiable computational feasibility study asking under
+  what product, demand, regulatory, and operating conditions distributed
+  regional capacity can reduce sterile-injectable shortages more
+  cost-effectively than additional safety stock, dual sourcing, reserved
+  contract capacity, or additional centralized capacity. The study is
+  designed to permit a negative conclusion.

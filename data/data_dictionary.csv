@@ -1,0 +1,53 @@
+table,field,type,units,definition,source_module,notes
+snapshot_manifest,source_id,string,,Source registry id (config/sources.yaml),provenance.py,
+snapshot_manifest,url,string,,Exact URL fetched or to be fetched,provenance.py,
+snapshot_manifest,retrieved_at,datetime,UTC,Retrieval timestamp,provenance.py,
+snapshot_manifest,http_status,integer,,HTTP status of the fetch; null for human tasks,provenance.py,
+snapshot_manifest,sha256,string,,SHA-256 of the unmodified payload,provenance.py,
+snapshot_manifest,content_type,string,,Response content type,provenance.py,
+snapshot_manifest,size_bytes,integer,bytes,Payload size,provenance.py,
+snapshot_manifest,license_note,string,,License or terms statement for the source,provenance.py,
+snapshot_manifest,raw_path,string,,Package-relative path of the raw file,provenance.py,
+snapshot_manifest,transform_script,string,,Script that produced the processed table,provenance.py,filled in when processing exists
+snapshot_manifest,processed_path,string,,Package-relative path of the processed table,provenance.py,
+snapshot_manifest,access_method,enum,,auto or human,provenance.py,human = HUMAN-ACQUISITION-TASK
+snapshot_manifest,robots_allowed,boolean,,Whether robots.txt permitted the path,acquire.py,
+snapshot_manifest,notes,string,,Free text including failure or task descriptions,acquire.py,
+screen,product_id,string,,Product presentation id,deterministic.py,
+screen,strategy_id,enum,,S0-S7,deterministic.py,
+screen,mode,enum,,workbook_replica or corrected,deterministic.py,never mixed in one table
+screen,sites,number,count,Sites or nodes in the design,deterministic.py,
+screen,annual_demand,number,units/year,Annual presentation demand (tier 5 until sourced),deterministic.py,
+screen,units_per_batch,number,units/batch,Saleable-fill batch size,deterministic.py,
+screen,batches_per_site_year,number,batches/site-year,Nominal batches times capacity factor,deterministic.py,
+screen,yield_fraction,number,fraction,Saleable yield,deterministic.py,
+screen,uptime,number,fraction,Available fraction of scheduled capacity,deterministic.py,
+screen,saleable_capacity,number,units/year,Eq. 1 sites x batches x units x yield x uptime,deterministic.py,
+screen,utilization,number,fraction,Eq. 2 demand / saleable capacity,deterministic.py,can exceed 1
+screen,annualized_capex,number,USD/year,Sites x capital x CRF,deterministic.py,replica uses the workbook's typed CRF
+screen,fixed_qa_labor,number,USD/year,Sites x fixed QA/labor x fixed-cost factor,deterministic.py,
+screen,validation_annualized,number,USD/year,Validation and tech transfer annualized,deterministic.py,replica straight-line; corrected CRF
+screen,variable_production,number,USD/year,Materials plus conversion for units produced,deterministic.py,replica grossed up by 1/(1-scrap)
+screen,testing,number,USD/year,Batches x testing cost per batch,deterministic.py,replica ignores yield
+screen,inventory_carrying_expiry,number,USD/year,Carrying cost of safety stock (replica adds a second scrap charge),deterministic.py,
+screen,distribution,number,USD/year,Units x distribution cost per unit,deterministic.py,
+screen,reserved_capacity_cost,number,USD/year,Demand x variable cost x reserved fraction (workbook fee definition),deterministic.py,WB-21
+screen,total_annual_cost,number,USD/year,Sum of the eight ledgers above,deterministic.py,
+screen,cost_per_unit,number,USD/unit,Total / demand (replica) or total / delivered (corrected),deterministic.py,Eq. 4 denominator differs by mode
+screen,response_days,number,days,Eq. 5 lead + changeover + cycle + release x factor + delivery (serial sum),deterministic.py,
+screen,expected_shortage_days_screen,number,days/year,Workbook event-driven heuristic; ignores safety stock and release time,deterministic.py,never used for ranking
+screen,delivered_units,number,units/year,min(demand, capacity x (1-scrap)) in corrected mode; demand in replica,deterministic.py,
+screen,chronic_shortfall_days,number,days/year,365 x (1 - delivered/demand) in corrected mode,deterministic.py,
+screen,crf_used,number,1/year,Capital recovery factor applied,deterministic.py,
+screen,illustrative,boolean,,True when any input is tier 5,deterministic.py,forces the preliminary banner
+dashboard,shortage_days_avoided,number,days/year,max(0, reference shortage days - strategy shortage days),deterministic.py,reference = S0 of the same product
+dashboard,incremental_annual_cost,number,USD/year,Strategy cost minus reference cost,deterministic.py,
+dashboard,cost_per_shortage_day_avoided,number,USD/day,Incremental cost / days avoided; null when nothing avoided,deterministic.py,never shown for dominated strategies
+dashboard,approx_fill_rate,number,fraction,1 - shortage days / 365 x severity (workbook proxy),deterministic.py,not a simulated fill rate
+dashboard,interpretation,string,,Workbook verdict text,deterministic.py,
+dashboard,eligibility,string,,Workbook typed flag (replica) or gate-derived eligibility (corrected),deterministic.py,
+run_manifest,run_id,string,,Unique run identifier,provenance.py,
+run_manifest,protocol_sha256,string,,SHA-256 of protocol/protocol.yaml at run time,provenance.py,
+run_manifest,config_hashes,object,,SHA-256 of each configuration object (canonical JSON),provenance.py,
+run_manifest,gate_outcomes,object,,Gate status per strategy at run time,provenance.py,
+run_manifest,illustrative,boolean,,Any tier-5 input in use,provenance.py,

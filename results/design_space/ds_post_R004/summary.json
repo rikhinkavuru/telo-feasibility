@@ -1,0 +1,68 @@
+{
+  "meta": {
+    "run_id": "ds_post_R004",
+    "tau": 0.99,
+    "q": 0.9,
+    "products": [
+      "norepinephrine_1mgml_4ml",
+      "sodium_bicarbonate_8_4_50ml"
+    ],
+    "strategies": [
+      "S0",
+      "S1",
+      "S2",
+      "S3",
+      "S4",
+      "S5",
+      "S6",
+      "S7"
+    ],
+    "inputs": [
+      "capacity_utilization",
+      "fixed_qa_labor_per_node",
+      "release_time",
+      "shelf_life",
+      "raw_material_lead_time",
+      "common_cause_dependence",
+      "supplier_concentration",
+      "commissioning_days",
+      "activation_latency_days",
+      "node_capital",
+      "batches_per_site_year",
+      "changeover_burden"
+    ],
+    "runs": 40,
+    "threshold_runs": 20,
+    "bisection_steps": 5,
+    "horizon_years": 5.0,
+    "master_seed": 20260901,
+    "designs_from": "opt_20260903T181601Z",
+    "eligibility": {
+      "S0": "NO_CONCLUSION",
+      "S1": "NO_CONCLUSION",
+      "S2": "NO_CONCLUSION",
+      "S3": "NO_CONCLUSION",
+      "S4": "NO_CONCLUSION",
+      "S5": "NO_CONCLUSION",
+      "S6": "NO_CONCLUSION",
+      "S7": "NO_CONCLUSION",
+      "S8": "NO_CONCLUSION",
+      "S9": "NO_CONCLUSION",
+      "S10": "NO_CONCLUSION",
+      "S11": "NO_CONCLUSION",
+      "S12": "NO_CONCLUSION",
+      "S13": "NO_CONCLUSION",
+      "S14": "NO_CONCLUSION",
+      "S15": "NO_CONCLUSION",
+      "S16": "NO_CONCLUSION",
+      "S17": "NO_CONCLUSION",
+      "S18": "NO_CONCLUSION",
+      "S19": "NO_CONCLUSION",
+      "S20": "NO_CONCLUSION"
+    },
+    "wall_time_s": 1072.9,
+    "banner": "PRELIMINARY / ILLUSTRATIVE / NOT FOR EXTERNAL CLAIMS"
+  },
+  "n_thresholds": 192,
+  "n_dominance": 16
+}

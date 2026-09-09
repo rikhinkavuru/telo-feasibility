@@ -1,0 +1,153 @@
+% comment.tex -- public comment, FDA docket FDA-2025-N-6075.
+% Build:  tectonic comment.tex   (run from reports/docket_comment/)
+% Nothing in this file is computed here; every model statement is quoted from the memo.
+
+\documentclass[11pt,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{newtxtext}
+\usepackage{newtxmath}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\titleformat{\section}{\normalfont\normalsize\bfseries}{\thesection.}{0.6em}{}
+\titlespacing*{\section}{0pt}{2.0ex plus 0.4ex}{0.8ex}
+\setlength{\parskip}{0.7ex plus 0.2ex}
+\setlist[enumerate]{leftmargin=1.4em,itemsep=0.4ex,topsep=0.5ex}
+\hypersetup{pdftitle={Comment on FDA-2025-N-6075},pdfauthor={Rikhin Kavuru}}
+
+\begin{document}
+\pagestyle{plain}
+
+{\bfseries Comment on Docket No.\ FDA-2025-N-6075, RIN 0910-AI94}\\
+Drug Establishment Registration and Drug Listing Requirements for Establishments Engaged in
+Distributed Manufacturing and Certain Foreign Establishments\\[0.7ex]
+Submitted by Rikhin Kavuru, individual.
+
+\vspace{0.4ex}\hrule\vspace{1.2ex}
+
+\section{What this comment is, and what it is not}
+
+\textbf{Disclosure of interest.} I work on early-stage software for sterile drug manufacturing, a
+release-decision support layer, and I have sought pre-seed funding and grant support for that work.
+It has no product on the market, no customer, no revenue, and no application pending before the
+Agency. A rule that makes distributed manufacturing registration more workable could in principle
+enlarge the market that work is directed at, so I have an interest in this rulemaking that is
+indirect but real. I am submitting as an individual and not on behalf of that work, and I am stating
+the interest here rather than leaving the Agency to discover it, so this comment can be weighed
+accordingly.
+
+I am a high school student. Over the past year I built an open, pre-registered engineering and
+operations feasibility model of sterile-injectable supply, in order to test whether regionally
+distributed manufacturing reduces shortage risk more effectively than safety stock, dual sourcing,
+reserved contract capacity, or additional centralized capacity. The protocol, the code, the frozen
+source snapshots, and the study's own retractions are public.
+
+I want to be direct about the model's standing before making any recommendation. Its numeric inputs
+are illustrative placeholders that I selected myself; they are not measurements, not elicited from
+practitioners, and not validated. No interview and no independent expert review has yet been
+completed. The study asserts nothing about whether any system is compliant with FDA requirements or
+ready to manufacture drugs, and it makes no claim about the safety or quality of any product or
+process. What the model can do is show which constraints determine the outcome, and that structural
+result is stable across every revision of the model, including the revisions that overturned its
+other conclusions.
+
+Two of the three comments below respond to questions the Agency expressly raised. I offer them as
+structural observations about where the proposed pathway is likely to bind, not as evidence about
+any firm or product.
+
+\section{Please define ``unified pharmaceutical quality system,'' because disposition authority is
+the load-bearing term}
+
+The preamble notes that ``unified pharmaceutical quality system'' and ``equivalent'' are not
+currently defined in FDA regulations, and seeks comment on whether they should be defined in the
+final rule and how. They should be, and the specific ambiguity worth resolving is which quality-unit
+functions may be exercised centrally across distributed manufacturing units and which must remain
+resident at each unit.
+
+This is not a drafting preference. In my model, every multi-site architecture rests on an assumption
+that a single quality unit can perform batch disposition for several registered locations, with only
+some functions resident locally. I recorded that assumption as unsourced, because my only basis for
+it is my own reading of 21 CFR 211.22(a), which assigns the quality control unit responsibility for
+approving or rejecting each batch without addressing the distributed case. If that assumption is
+wrong, an entire family of distributed designs collapses, not because of cost but because each unit
+then carries a full resident quality function and the configuration stops being distributed in any
+economically meaningful sense.
+
+A registration pathway that permits a distributed manufacturing establishment to register as one
+establishment, while leaving unresolved whether its quality system may dispose of batches as one
+quality unit, gives a sponsor the administrative benefit without the operational one. A definition
+of ``unified pharmaceutical quality system'' that speaks directly to disposition authority, and to
+the minimum functions that must remain at each unit, would let a sponsor determine before investing
+whether the pathway is usable at all.
+
+\section{The registration timelines are not the constraint that governs supply; time to first
+released batch is}
+
+The Agency specifically requests comment on the appropriateness of the 30-day and 120-day timelines
+for notifying FDA of a mobile unit relocation. On the narrow question I have no operational basis to
+argue for a different number, and I do not propose one.
+
+I would offer a different observation about those timelines. In my model the interval that decides
+whether added capacity reduces a shortage is not the registration notification interval. It is the
+elapsed time from the decision to add capacity to the first batch that can actually be released and
+shipped, which includes qualification, process validation, and the release hold itself. Under my
+illustrative inputs, sterility testing sits on the critical path of that release hold and dominates
+it: chemical and analytical testing runs concurrently and its removal would shorten release by a
+small fraction of the total, while the incubation period does not compress. The consequence is that
+a distributed unit contributes nothing during the period before it exists as a releasing site, and
+in the model that dead interval, rather than any steady-state efficiency, is what most often
+determines whether the distributed configuration meets a service requirement.
+
+The implication for this rulemaking is modest but I think real. A registration pathway that permits
+a unit to be added by expedited update removes an administrative interval that is short relative to
+the qualification and release interval that follows it. That is a genuine benefit and worth having.
+It is unlikely, on its own, to change how quickly distributed capacity can respond to a shortage,
+and I would suggest the final rule's benefit discussion distinguish the registration interval from
+the time to first released batch rather than treating flexibility in the former as a proxy for
+responsiveness.
+
+\section{The preliminary economic analysis may overstate uptake if it does not separate the
+capacity-short case}
+
+My model's clearest finding, and the one that survived every correction I made, is that a network
+whose saleable capacity is below demand cannot be stocked or scheduled out of the deficit. In the
+runs I have done, the configurations that meet a service requirement where the incumbent plant is
+capacity-short are not distributed plants that a sponsor builds. They are arrangements that buy
+campaigns on lines that are already registered and already inspected, paired with positioned
+finished-goods inventory. Distributed capacity performed best in my model on the product that was
+\emph{not} capacity-short, which is the case where a shortage is least likely to arise.
+
+I state this carefully, because the inputs are illustrative and the result is model behavior rather
+than a fact about the industry. But if the pattern holds under real inputs, it suggests the sponsors
+most likely to use this registration pathway are those already operating registered lines and
+seeking flexibility across them, rather than new entrants building regional capacity to address
+shortages. That distinction matters for the preliminary economic analysis, since the two populations
+differ in number, in size, and in how much the administrative saving is worth to them. I would
+encourage the Agency to consider whether its uptake estimate rests on the second population when the
+first is the more likely user.
+
+\section{What I am not asking for}
+
+I am not asking FDA to endorse, review, or respond to my model, and nothing in this comment should
+be read as a claim that the Agency has done so. I am not seeking any approval, designation, meeting,
+or determination of any kind, and I am not requesting a response. Nobody asked me to submit this and
+nobody is paying me to. My interest in the subject is disclosed in section 1 and I have not tried to
+write around it: the analysis below is unfavorable to the configuration I originally set out to
+build, which is the main reason I think it is worth the Agency's time.
+
+I am a student who spent a year modeling the configuration this rule addresses, found that my own
+starting hypothesis did not survive, and thought the three constraints above might be useful to the
+docket. The full study, including its assumptions, its defect register, and the conclusions it has
+retracted, is available on request and will be posted publicly.
+
+\vspace{1.2ex}
+\hrule
+\vspace{0.8ex}
+{\footnotesize Every quantitative statement above describes the behavior of a computational model
+under illustrative inputs that have not been validated, elicited, or peer reviewed. None is offered
+as a measurement, a regulatory position, or a statement about any firm, product, or facility.}
+
+\end{document}

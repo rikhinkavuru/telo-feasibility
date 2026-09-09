@@ -1,0 +1,17 @@
+{
+  "source_id": "S17",
+  "url": "https://www.fda.gov/media/76860/download",
+  "retrieved_at": "2026-09-01T23:08:46.549281Z",
+  "http_status": 200,
+  "sha256": "caaa826d4ba72f1abb156c8a38063929d3930d3700e091130474a876513a4da3",
+  "content_type": "application/zip",
+  "size_bytes": 1095244,
+  "license_note": "FDA public domain",
+  "raw_path": "data/raw_snapshots/S17/2026-09-01/EOBZIP.zip",
+  "transform_script": null,
+  "processed_path": null,
+  "data_dictionary_rows": 0,
+  "access_method": "auto",
+  "robots_allowed": true,
+  "notes": ""
+}

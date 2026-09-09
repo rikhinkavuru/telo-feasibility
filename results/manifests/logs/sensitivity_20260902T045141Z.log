@@ -1,0 +1,5 @@
+one-way done (165s); reversals: ['capacity_utilization', 'release_time', 'yield', 'uptime', 'demand_cv', 'common_cause_dependence', 'batch_size', 'changeover_burden', 'deviation_rejection_rate', 'site_failure_rate', 'investigation_duration']
+decision-reversal map done (220s)
+Sobol/PRCC done (362s): ST={'capacity_utilization': 0.0, 'release_time': 0.0, 'fixed_qa_labor_per_node': 0.114, 'demand_cv': 0.0, 'raw_material_lead_time': 0.0, 'common_cause_dependence': 0.0, 'shelf_life': 0.0, 'node_scale': 0.859}
+VOI done (398s): EVPI=4757494; best=S3
+PRELIMINARY / ILLUSTRATIVE / NOT FOR EXTERNAL CLAIMS

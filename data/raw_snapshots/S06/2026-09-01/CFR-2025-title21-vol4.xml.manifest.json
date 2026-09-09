@@ -1,0 +1,17 @@
+{
+  "source_id": "S06",
+  "url": "https://www.govinfo.gov/bulkdata/CFR/2025/title-21/CFR-2025-title21-vol4.xml",
+  "retrieved_at": "2026-09-01T23:02:11.942196Z",
+  "http_status": 200,
+  "sha256": "605f92496557c404e1698fbb1f50c0619072c7d6de4881ca4280c917587f8fde",
+  "content_type": "text/xml",
+  "size_bytes": 1634968,
+  "license_note": "US government work (verbatim eCFR statement not retrievable; HTML blocked to automation)",
+  "raw_path": "data/raw_snapshots/S06/2026-09-01/CFR-2025-title21-vol4.xml",
+  "transform_script": null,
+  "processed_path": null,
+  "data_dictionary_rows": 0,
+  "access_method": "auto",
+  "robots_allowed": true,
+  "notes": ""
+}

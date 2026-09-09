@@ -1,0 +1,17 @@
+{
+  "source_id": "S14",
+  "url": "https://www.fda.gov/media/94164/download",
+  "retrieved_at": "2026-09-01T23:06:14.727193Z",
+  "http_status": 200,
+  "sha256": "22b2228b40491512a686eb2bf025f54b1a5a01efaaea99b9e3eaa32a85f698f6",
+  "content_type": "application/pdf",
+  "size_bytes": 377585,
+  "license_note": "FDA public domain",
+  "raw_path": "data/raw_snapshots/S14/2026-09-01/503b_categories_march_2025.pdf",
+  "transform_script": null,
+  "processed_path": null,
+  "data_dictionary_rows": 0,
+  "access_method": "auto",
+  "robots_allowed": true,
+  "notes": ""
+}

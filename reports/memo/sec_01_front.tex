@@ -1,0 +1,228 @@
+% sec_01_front.tex -- fragment included by memo.tex. Title, author, date and the
+% status block live in the master file.
+
+\begin{abstract}
+\noindent
+This memo asks under what product, demand, regulatory and operating conditions regional
+manufacturing of sterile injectables could reduce shortages more effectively than safety
+stock, dual sourcing, or additional centralized capacity. It compares those options on two
+non-controlled small-molecule presentations: sodium bicarbonate 8.4 percent in a 50 mL vial,
+in prolonged shortage, and norepinephrine bitartrate 1 mg/mL in a 4 mL vial, resolved. The
+method is a protocol frozen before any result, a deterministic screen reconciled cell for
+cell against the source spreadsheet, a daily discrete-event simulation in which every
+strategy faces the same simulated world, optimization of each strategy to one pre-specified
+service target, and an ablation harness over named failure mechanisms. The answer is
+conditional and largely negative: what decides the outcome is capacity relative to demand and
+correlated failure across nominally separate sites, and neither is improved by distributing
+manufacture as such. The study retracted three of its own headline conclusions after
+correcting defects in its own model, and that history is reported here rather than removed.
+\end{abstract}
+
+\section{The problem, the two products, and the question}
+\label{sec:question}
+
+\subsection{What the record supports}
+\label{sec:record}
+
+United States sterile injectable shortages are counted by two registries that do not count the
+same object. The ASHP and University of Utah series recorded 323 active shortages in the first
+quarter of 2024, the highest since tracking began in 2001. The FDA CDER database, which is the
+statutory list, carried 102 as of 31 July 2024 in the count the Government Accountability
+Office records. Both are correct on their own definitions and the gap is roughly threefold.
+This package flagged that its own earlier market research quoted the 323 figure without saying
+it was the ASHP count, which overstates the FDA-defined problem. The distinction is
+operational, because the FDA list is the legal object that gates the 503B exception, the CMS
+buffer-stock payment and most contracting language, so a claim to reduce shortage days is
+measured against that list.
+
+Three features of the record bound what a manufacturing intervention can do. Demand, not plant
+failure, is the dominant reported driver: increased demand contributed to 66 of the 102
+shortages on the FDA list at that date. That driver is also the least observable, because
+manufacturers must report an interruption caused by increased demand but need not report an
+increase in demand that does not interrupt production, and FDA has asked Congress for that
+authority. And concentration risk is not only offshore: the largest recent supply event
+followed a hurricane closing a single domestic plant in Marion, North Carolina, described by
+USP as having made roughly 60 percent of US intravenous solution supply.
+
+The prior-art review behind this study covered fourteen solution families over 798 source rows,
+651 fetched and quoted, with citation audits on 2 and 3 September 2026. The audits found no
+fabricated source, company, patent, contract or DOI, and found instead a recurring defect of
+misattribution, load-bearing numbers cited to sources that do not contain them, with thirty-six
+corrections in four families alone. The structural finding is that the space is occupied. A
+centralized plant built specifically for shortage injectables is already implemented rather
+than proposed, and shortage detection, risk scoring, ingredient mapping, essential-medicines
+curation and committed-volume contracting each have a funded incumbent with better data than a
+new entrant would have. What is unsettled is the economics and operations of a distributed
+alternative, which is why this is a feasibility question rather than a novelty question, and
+why it is built so the answer may be negative.
+
+\subsection{Two products, from a screen that selects nothing}
+\label{sec:products}
+
+The protocol requires a dated longlist of at least five presentations from frozen FDA and ASHP
+snapshots including one resolved or recurrent comparator, then hard gates, then weighted
+scoring of survivors. Six were screened on 2 September 2026 against snapshots whose hashes are
+recorded in \texttt{data/product\_dossiers/screen\_manifest.json}.
+
+\begin{table}[htbp]
+\centering
+\caption{Product screen, 2 September 2026, against frozen official snapshots. Shortage rows
+from the FDA drug shortage export (1,635 rows). No candidate passed every gate, because gates
+PG5 to PG8 cannot be evaluated from public data.}
+\label{tab:screen}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}llllc@{}}
+\toprule
+Presentation & Protocol role & Binding gate result & FDA rows (current) & Outcome \\
+\midrule
+Sodium bicarbonate 8.4\%, 50 mL vial & case candidate & PG1 to PG3 PASS & 19 (15) & UNCERTAIN \\
+Norepinephrine bitartrate 1 mg/mL, 4 mL & resolved comparator & PG1 to PG3 PASS & 0 (0) & UNCERTAIN \\
+Furosemide 10 mg/mL vial & reserve & PG1 UNCERTAIN & 33 (30) & UNCERTAIN \\
+Sterile water for injection, vial & scale question & PG1 UNCERTAIN, PG8 mismatch & 21 (21) & UNCERTAIN \\
+Acyclovir sodium 50 mg/mL vial & reserve & PG1 UNCERTAIN & 0 (0) & UNCERTAIN \\
+Acetazolamide sodium 500 mg vial & out-of-archetype & PG2 FAIL, lyophilized & 0 (0) & FAIL \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The two carried forward are sodium bicarbonate injection 8.4 percent in a 50 mL single-dose
+vial and norepinephrine bitartrate 1 mg/mL in a 4 mL single-dose vial, chosen for the contrast
+the protocol asks for. Sodium bicarbonate is the prolonged current shortage: 19 rows in the FDA
+export, 11 matching the 8.4 percent presentation, 15 current, earliest posting 1 March 2017,
+stated reasons demand increase, discontinuation and other. Norepinephrine is the resolved
+comparator: zero rows in the FDA export and the openFDA mirror on the same date, and one ASHP
+bulletin ever, opened 9 February 2017 and resolved 7 June 2022. Both are non-controlled
+small-molecule aqueous solutions in standard vials, the archetype the modelled process train
+represents, and both clear the identity, manufacturing-fit and control-status gates that
+acetazolamide fails on lyophilization. Their supplier structures differ, 13 approved holders
+against 23, and under the illustrative inputs one network is capacity-short by construction and
+the other is not. That contrast is the point of the pair: a conclusion holding on only one of
+them is a conclusion about a product rather than about an architecture.
+
+Four qualifications attach. The screen selects nothing, because gates PG5 to PG8, covering
+demand observability, clinical substitutability, input feasibility and economic relevance,
+cannot be evaluated from public data, so every survivor ends UNCERTAIN and the protocol's rule
+is that UNCERTAIN blocks final selection. The protocol's step 5 requires a hospital pharmacy
+leader and a sterile-manufacturing expert to challenge the selection independently, and that
+has not happened. The selection record contains zero finalized presentations and both product
+configurations carry a header saying they are provisional. And the source workbook labelled
+norepinephrine ``resolved/recurrent'' where the snapshot does not support the recurrent half.
+These are working presentations for a model, used as such.
+
+\subsection{The question}
+\label{sec:central-question}
+
+\begin{quote}
+Under what product, demand, regulatory and operating conditions could regional manufacturing
+reduce sterile-injectable shortages more effectively than safety stock, dual sourcing, or
+additional centralized capacity?
+\end{quote}
+
+The words that carry weight are ``under what conditions''. The question is not whether
+distributed manufacturing is a good idea but which region of the product, demand, regulatory
+and operating space, if any, contains a distributed design that beats the alternatives on cost
+at a matched service level. A negative answer, or one holding only inside a narrow and clearly
+stated region, is a legitimate result and the study was built to permit one. The comparison set
+is fixed in the protocol as the eight strategies S0 to S7 of Table~\ref{tab:architectures},
+which implement the four comparator classes the specification names and add centralized
+expansion and a 503B responder; twelve further architectures were configured later as S8 to S19
+and are compared on the same terms. Quality and regulatory requirements enter as hard
+constraints throughout. They are never relaxed to improve an economic result, and an ineligible
+strategy is excluded rather than charged a penalty an optimizer could pay through.
+
+\section{Method}
+\label{sec:method}
+
+The protocol was written and frozen first, as \texttt{protocol/protocol.yaml} version 1.0.0,
+converted on 1 September 2026 from the author's protocol document and the source workbook. The
+service target was fixed before any simulation result existed: mean fill rate at least 0.99,
+and probability at least 0.90 that a run's own fill rate reaches 0.99, with a shortage day
+defined as a day whose fulfilled fraction falls below 0.95. Those values are recorded in
+revision R001 on the day of the freeze, with the note that no simulation result existed at that
+date. Eleven revisions have been logged since, ten flagged decision-relevant, each carrying a
+date, section, change, rationale, author, approval state and affected files
+(Table~\ref{tab:revisions}). Most are corrections the study made to its own model after finding
+a defect in it. None has been signed off, so the definition-of-finished gate for protocol freeze
+fails and is recorded as failing.
+
+\begin{table}[htbp]
+\centering
+\caption{The eleven logged protocol revisions (\texttt{protocol/revisions.csv}). ``DR'' marks
+one flagged decision-relevant. None has been signed off.}
+\label{tab:revisions}
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}llll@{}}
+\toprule
+Id & Date & Subject & DR \\
+\midrule
+R001 & 2026-09-01 & Service thresholds pre-specified before any result & yes \\
+R002 & 2026-09-01 & Regulatory gate set adopted, every status UNCERTAIN & yes \\
+R003 & 2026-09-02 & Raw-material stock carries the inventory carrying rate & yes \\
+R004 & 2026-09-03 & Expansion lead time, cost accrual, opening cohorts, reserved lines & yes \\
+R005 & 2026-09-03 & Reorder point, node placement, utilization denominator, error bars & no \\
+R006 & 2026-09-03 & Twelve further architectures configured as S8 to S19, gate-mapped & yes \\
+R007 & 2026-09-03 & Supplier capacity as a fraction, reserved capacity screened, gate G16 & yes \\
+R008 & 2026-09-03 & Commissioning clock starts at the first measured day & yes \\
+R009 & 2026-09-05 & Opening inventory is purchased and charged, not inherited free & yes \\
+R010 & 2026-09-05 & Every comparator searches one common inventory space & yes \\
+R011 & 2026-09-05 & Pipeline cover, region weights, readiness clock, contract priority & yes \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The study inherited an Excel model and reproduces it rather than replacing it silently.
+\texttt{deterministic.run\_screen} in replica mode recomputes the screen for all sixteen rows
+from the same base inputs, and \texttt{reconcile\_with\_workbook} reports any absolute
+difference above $10^{-6}$ for currency or $10^{-9}$ for fractions. All 448 cached values
+reconcile, the workbook snapshot is pinned by SHA-256 hash, and the reconciliation is a
+regression test rather than a one-time exercise. A separate corrected mode applies the defects
+the workbook audit found, including a delivered-unit denominator and a capacity cap, and
+reports its deltas separately, so a correction cannot be misread as a reconciliation failure.
+The screen is a verification device and produces no service verdict, because a deterministic
+screen cannot produce one.
+
+Service and cost come from a daily discrete-event simulation of sites, suppliers, regions and
+lanes. Each run generates one exogenous world for a universal roster of entities, and every
+strategy in that run consumes the subset it instantiates, so paired strategies see identical
+demand, shocks, site failures, supplier disruptions, common-cause events, shortage-list
+transitions and transit noise. This is the study's first fair-comparison rule and it is enforced
+by test. Random draws are keyed by run index, named stream, a BLAKE2b hash of the entity
+identifier and an ordinal, so adding an entity to a design never perturbs another entity's
+draws, which is what makes a comparison between two designs a comparison of the designs.
+
+No strategy is compared at its default settings. For each product and strategy the optimizer
+reads regulatory eligibility from the gates first, so an excluded strategy is never optimized
+and a strategy whose gates are unresolved is optimized for information and labelled as such. It
+searches the strategy's declared design space on a common random-number batch, where feasible
+means the mean fill rate reaches the target and the share of runs reaching it clears the tail
+confidence, refines the best feasible point by coordinate search, and re-evaluates the incumbent
+at full sample size with its Monte Carlo standard error. If no point is feasible the record says
+so and reports the closest fill rate. Nothing pays a penalty to become feasible.
+
+Attribution comes from an ablation harness of 22 named failure mechanisms, each a set of
+parameter overrides applied through the same provenance-carrying records the rest of the study
+uses, so a switched-off mechanism is a stated value visible in the run manifest. For each
+product and strategy the harness runs a base configuration, a leave-one-out configuration per
+mechanism, an all-off configuration, and an add-one-in configuration per mechanism.
+Leave-one-out and add-one-in are the two ends of the Shapley averaging order, so the harness
+reports the bracket between them rather than a single attributed share, and reports the Monte
+Carlo standard error of every mean, on the rule that a difference smaller than the standard
+errors it is built from is not evidence of anything.
+
+The harness turned out to be a defect detector as much as an attribution tool, because a
+mechanism whose measured sign is wrong is usually a bug. That is how most of the twenty-four
+model defects in \texttt{bottleneck\_decomposition.md} section 7 were found, and it is why this
+memo carries a correction history. After defects NEW-1, MD-3, MD-11 and MD-12 were fixed under
+revisions R009 to R011 and every incumbent design was re-evaluated at full resolution without
+re-searching, three statements the study had presented as headline conclusions were falsified by
+its own corrected model and withdrawn; Section~\ref{sec:limitations} reports them. Three limits
+bound everything that follows, beyond the standing qualification on page 1. The ablation
+measures only mechanisms the engine represents, so the absence of a mechanism is not evidence
+that it does not matter; known omissions include multi-product pooling, campaign scheduling
+across products, and a second inventory stage for postponement. The engine models one product
+per network over four equal regions. And the entire input set is illustrative, so the ranking of
+mechanisms, like every cost and service number here, is a property of those values. Where a
+result would change under a different input, the memo reports the condition rather than the
+number.

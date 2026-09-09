@@ -1,0 +1,320 @@
+\section{The engineering, operations and reliability model}
+\label{sec:model}
+
+The model has two layers. A deterministic screen implements the protocol's closed-form
+equations and reconciles them against the source workbook. A stochastic daily network
+simulation over five measured years after a 365-day warm-up produces every service and cost
+number reported. The screen audits arithmetic and bounds and never ranks architectures, because
+its shortage-day column ignores safety stock and release queues. Apart from the four release
+components marked tier 1 and 4 in Table~\ref{tab:release}, every input below is tier 5,
+illustrative.
+
+\subsection{Capacity, unit cost, response time, break-even}
+
+Saleable annual capacity over $n$ sites with $q$ units per batch, $b$ nominal batches per
+site-year, yield $y$ and uptime $u$, and capacity utilization against annual demand $D$, are
+\begin{equation}
+C = n \, q \, b \, y \, u ,
+\qquad
+U = D / C .
+\label{eq:capacity}
+\end{equation}
+Yield and uptime enter the model only here, so a proportional change in either is
+arithmetically the same lever as the same proportional change in $b$. Capital is annualized by
+the capital recovery factor at discount rate $r$ over economic life $L$, with the limit $1/L$ at
+$r=0$; fully loaded cost per delivered unit is the sum of the ten annual ledgers divided by
+delivered non-expired units $Q$:
+\begin{equation}
+\mathrm{CRF}(r,L) = \frac{r(1+r)^{L}}{(1+r)^{L}-1} ,
+\qquad
+c = \frac{1}{Q}\bigl( K + F + V + M + O_{\mathrm{inv}} + T + W + I + R + G \bigr),
+\label{eq:unitcost}
+\end{equation}
+where $K$ is annualized capital, $F$ fixed site operations including the quality unit and
+labour, $V$ product and site launch, $M$ variable production, $O_{\mathrm{inv}}$ the opening
+inventory purchase, $T$ quality testing, $W$ failure, scrap and expiry waste, $I$ inventory
+carrying and distribution, $R$ resilience contracts and $G$ operating-system integration. The
+denominator is delivered non-expired units, not demand: the workbook divided by demand, which
+credits a plant for units it cannot make. Break-even committed volume, the resilience premium
+over committed units, and incremental cost per shortage-day avoided against a reference are
+\begin{equation}
+Q_{\mathrm{be}} = \frac{F+R}{m} ,
+\qquad
+p = \frac{C_{s}-C_{0}}{Q_{\mathrm{committed}}} ,
+\qquad
+\mathrm{ICER} = \frac{C_{s}-C_{\mathrm{ref}}}{SD_{\mathrm{ref}}-SD_{s}} ,
+\label{eq:economics}
+\end{equation}
+with $m$ the contribution margin per delivered unit, price net of variable production, testing,
+distribution and expected waste, and $SD$ shortage days. The ratio is computed only where the
+comparison is a genuine trade-off; a strategy that costs more and avoids no shortage days is
+labelled dominated and receives none. Price, reimbursement, willingness to pay, provider
+shortage cost and production cost are separate arguments in the economics module and are never
+summed. CMS average sales price and Part B spending appear nowhere as a manufacturing cost.
+
+Response time as the workbook sums it is serial with no overlap,
+$T_{\mathrm{resp}} = \ell_{\mathrm{mat}} + t_{\mathrm{change}} + t_{\mathrm{cycle}} +
+\phi\, t_{\mathrm{rel}} + t_{\mathrm{deliv}}$, over raw-material lead time, changeover,
+production cycle, release time scaled by a strategy factor $\phi$, and delivery. The protocol
+warns that these overlap only where overlap is operationally valid, so the stochastic engine
+does not use that sum. It runs setup, fill, test and release as queues and reports time to first
+response and time to stable recovery, the second being the first day followed by 30 consecutive
+days at or above the daily shortage threshold of 0.95.
+
+\subsection{The daily engine and the release path}
+
+Each simulated day runs the protocol's nine-step order: expire lots first-expiry-first-out,
+advance demand, advance disruption states, receive materials and released batches, serve
+regional demand within a backorder window, start batches where the finished-goods position falls
+below target and materials permit, replenish and trigger contract or transfer policies, accrue
+the ten ledgers, then assert a mass balance in integer units,
+\begin{equation}
+I_{0} + P_{\mathrm{saleable}} = H + T_{\mathrm{transit}} + Q_{\mathrm{release}} + E + S ,
+\label{eq:massbalance}
+\end{equation}
+opening stock plus saleable production equals on hand plus in transit plus in the release queue
+plus expired plus served. The assertion caught a real leak on the first full-horizon run, a
+shipment that expired in transit and was counted as served. Line occupancy is $365.25/b/u$ days
+per batch, stretched by the reciprocal of the site's available capacity fraction that day and
+floored at changeover plus production cycle, so uptime is a time stretch rather than a discount
+on output.
+
+Release time is not one number. Sterility incubation, environmental monitoring, assay and
+endotoxin start together when the batch is filled, so the critical path is their maximum, and
+quality-unit review is serial after them:
+\begin{equation}
+t_{\mathrm{rel}} = \max\{t_{\mathrm{ster}},\, t_{\mathrm{EM}},\, t_{\mathrm{assay}},\,
+t_{\mathrm{endo}}\} + t_{\mathrm{QA}} .
+\label{eq:release}
+\end{equation}
+At base values this is $\max\{14,7,5,2\}+2 = 16$ days, of which 14 are sterility incubation and
+are not reducible by any analytical method the study models. Release scenario R1, which reduces
+administrative time, can act only on the serial term, and R3, which could remove the assay
+component, sits off the critical path unless sterility is shortened first. R3 cannot be
+instantiated while gate G15 is UNCERTAIN. One defect is stated rather than hidden: the
+release-time factor $\phi$ is read only by the deterministic screen and never by the stochastic
+engine (MD-18), which is one of two reasons architecture S6 returns service numbers identical to
+S5. The aggregate release inputs of 14 and 12 days in Table~\ref{tab:ops} and the 16-day
+decomposition disagree; that is a known inconsistency between screen and engine, and the engine
+uses Eq.~\ref{eq:release}.
+
+\begin{table}[htbp]
+\centering
+\caption{Release-time components, from \texttt{config/global.yaml}. The first four are the only
+inputs in the model above tier 5.}
+\label{tab:release}
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}llccl@{}}
+\toprule
+Component (parameter id) & Path & Base (d) & Range (d) & Tier \\
+\midrule
+\texttt{sterility\_incubation\_days} & parallel & 14 & 14 to 18 & 1 \\
+\texttt{environmental\_monitoring\_days} & parallel & 7 & 5 to 7 & 4 \\
+\texttt{assay\_days} & parallel & 5 & 1 to 7 & 4 \\
+\texttt{endotoxin\_days} & parallel & 2 & 0 to 3 & 4 \\
+\texttt{qa\_review\_days} & serial & 2 & 0 to 4 & 5 \\
+\texttt{release\_time\_cv} & dispersion & 0.20 & 0.10 to 0.40 & 5 \\
+\texttt{investigation\_duration\_days} & added on deviation & 21 & 7 to 60 & 5 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Operational and cost parameters}
+
+Table~\ref{tab:ops} holds the operational inputs the specification names, all tier 5. Node count
+is not a single parameter: the network is four equal regions by protocol choice, with 3 and 8 as
+sensitivity settings, and site count is a design variable the optimizer searches. Nodes may
+exceed the region count and are placed round-robin, and a second node inside one region shares
+that region's geography common-cause group, so redundancy inside a region buys less than
+redundancy across regions.
+
+Cost inputs are tier 5 on the same low, base, high convention. Per unit: materials 0.60 USD for
+sodium bicarbonate and 0.55 for norepinephrine (0.25 to 1.50 and 0.20 to 1.50), conversion 0.60
+for both (0.20 to 1.50), distribution 0.20 (0.05 to 0.80). Per batch: testing 30{,}000 USD
+(10{,}000 to 100{,}000). Per site: fixed quality and labour 3.0 million USD per year (1.5 to
+6.0), installed capital 40 million USD (15 to 100), validation and transfer 4 million USD once
+(1 to 12). Globally: discount rate 0.10 (0.06 to 0.15) over a 10-year life (7 to 15), inventory
+carrying 0.20 per year (0.12 to 0.30), and a shared operating layer at 0.30 million USD per
+site-year (0.10 to 0.80) charged only outside release scenario R0. The last is an open defect
+(MD-25), because every design-space architecture runs R0 and so declares a shared software group
+carrying hazard with no cost line.
+
+\begin{table}[htbp]
+\centering
+\caption{Operational parameters, base value with declared low and high range. All tier 5,
+illustrative, from the two product configurations and \texttt{config/global.yaml}.}
+\label{tab:ops}
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lllll@{}}
+\toprule
+Parameter id & Units & Sodium bicarbonate & Norepinephrine & Tier \\
+\midrule
+\texttt{annual\_demand\_units} & million units/yr & 1.20 [0.60, 2.40] & 0.90 [0.50, 1.80] & 5 \\
+\texttt{units\_per\_batch} & thousand units & 25 [10, 60] & 30 [10, 75] & 5 \\
+\texttt{batches\_per\_site\_year\_nominal} & batches/site-yr & 45 [30, 70] & 45 [30, 70] & 5 \\
+\texttt{yield\_fraction} & fraction & 0.96 [0.90, 0.99] & 0.96 [0.90, 0.99] & 5 \\
+\texttt{uptime\_fraction} & fraction & 0.85 [0.70, 0.95] & 0.85 [0.70, 0.95] & 5 \\
+\texttt{production\_cycle\_days} & days/batch & 3 [1, 7] & 3 [1, 7] & 5 \\
+\texttt{changeover\_days} & days & 3 [1, 10] & 3 [1, 10] & 5 \\
+\texttt{release\_time\_days} & days/batch & 14 [5, 28] & 12 [5, 28] & 5 \\
+\texttt{material\_lead\_time\_days} & days & 90 [30, 240] & 90 [30, 240] & 5 \\
+\texttt{shelf\_life\_months} & months & 24 [12, 36] & 24 [12, 30] & 5 \\
+\texttt{expiry\_scrap\_fraction} & fraction & 0.020 [0.005, 0.080] & 0.020 [0.005, 0.080] & 5 \\
+\texttt{delivery\_days} & days & 2 [1, 5] & 2 [1, 5] & 5 \\
+\texttt{target\_safety\_stock\_days} & days & 60 [30, 180] & 60 [30, 180] & 5 \\
+\texttt{yield\_sd} & fraction & 0.02 [0.01, 0.05] & 0.02 [0.01, 0.05] & 5 \\
+\texttt{node\_commissioning\_days} & days & 730 [365, 1095] & 730 [365, 1095] & 5 \\
+\texttt{capacity\_expansion\_days} & days & 270 [90, 730] & 270 [90, 730] & 5 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Reliability}
+\label{sec:reliability}
+
+Reliability is where the architectures separate, so failure processes are modelled explicitly
+rather than assumed into a service level. Five mechanisms generate the exogenous world, all at
+the tier-5 rates of Table~\ref{tab:reliability}. Daily regional demand is annual demand times
+regional share divided by 365.25, times growth, seasonality, a routine multiplier and a shock
+multiplier, rounded to integer units; the routine multiplier is a mean-one lognormal AR(1)
+process at \texttt{demand\_cv} with lag-1 autocorrelation, so a bad week is correlated with the
+week before it, and shocks arrive as a Poisson process hitting all four regions with a declared
+probability and otherwise one, with lognormal magnitude and duration. Sites and suppliers each
+draw Poisson failure arrivals with lognormal durations; degradation is proportional rather than
+binary, so a line at capacity fraction $f$ takes $1/f$ times as long and a supplier at $f$ ships
+at most $f$ of one full order per day. Since revision R011 pipeline cover is separated from the
+policy cover of safety plus cycle stock, so shortening a lead time no longer shrinks the buffer,
+though a residual remains and is not argued away, because under a forced outage a deferred order
+lands when the supplier resumes whatever its nominal lead. A site that does not exist yet
+contributes nothing but sunk capital, and since revision R008 starts its commissioning clock at
+the first measured day rather than at simulation day zero; before that fix, three commissioning
+parameters coincided with the warm-up, so any lead time of a year or less cost nothing inside
+the measured window, and the architecture that had benefited most from the artifact was dual
+sourcing.
+
+Nominal site count is not independent redundancy, and the protocol's fair-comparison rules make
+that a hard requirement. Every site and supplier declares its common-cause groups, and a site's
+available capacity on a day is the minimum of its own and that of every group it belongs to.
+Groups arrive at \texttt{common\_cause\_events\_per\_year} with lognormal durations, and impact
+is a Beta draw, so an event degrades rather than switches off. Six kinds of group are
+represented: API supplier, container and closure supplier, stopper and seal supplier, shared
+software or model version, ownership and the quality unit that performs disposition, and
+geography. The last two carry the study's scepticism about nominal redundancy. A shared quality
+unit means one legal holder disposing batches from several sites, which is the situation for
+most contract-manufacturing architectures whatever their site count; five design-space
+architectures were configured claiming an independence their own regulatory-owner field denied,
+and revision R007 added the shared quality group to all five. The same revision fixed a defect
+that had made supplier-level groups structurally inert, since shipment was gated on capacity
+strictly above zero while a group only ever sets capacity to $1-\text{impact}$, so a shared
+key-starting-material tier could never delay a unit at any parameter value (MD-19). Fixing the
+structure did not make the mechanism bite at the frozen hazard rate, which is reported as a null
+rather than dropped.
+
+\begin{table}[htbp]
+\centering
+\caption{Reliability parameters, base with declared range, all tier 5 illustrative, from
+\texttt{config/global.yaml}. Durations are lognormal medians at dispersion
+\texttt{disruption\_duration\_cv}.}
+\label{tab:reliability}
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}llll@{}}
+\toprule
+Mechanism & Parameter id & Base & Range \\
+\midrule
+Routine demand & \texttt{demand\_cv} & 0.15 & 0.08 to 0.30 \\
+ & \texttt{demand\_autocorrelation} & 0.30 & 0.00 to 0.70 \\
+ & \texttt{annual\_demand\_growth} & 0.01 & $-0.02$ to 0.05 \\
+Demand shocks & \texttt{demand\_shocks\_per\_year} & 0.40 & 0.10 to 1.00 \\
+ & \texttt{demand\_shock\_multiplier} & 1.35 & 1.10 to 2.00 \\
+ & \texttt{demand\_shock\_duration\_days} & 30 & 7 to 90 \\
+ & \texttt{demand\_shock\_all\_regions\_probability} & 0.50 & 0.20 to 0.90 \\
+Site failures & \texttt{site\_failures\_per\_site\_year} & 0.20 & 0.05 to 0.60 \\
+ & \texttt{site\_failure\_duration\_days} & 45 & 7 to 180 \\
+ & \texttt{site\_failure\_residual\_capacity} & 0.00 & 0.00 to 0.50 \\
+Supplier disruptions & \texttt{supplier\_disruptions\_per\_supplier\_year} & 0.20 & 0.05 to 0.60 \\
+ & \texttt{supplier\_disruption\_duration\_days} & 45 & 14 to 120 \\
+Common cause & \texttt{common\_cause\_events\_per\_year} & 0.10 & 0.02 to 0.30 \\
+ & \texttt{common\_cause\_duration\_days} & 60 & 14 to 240 \\
+ & \texttt{common\_cause\_capacity\_impact} & 0.50 & 0.20 to 1.00 \\
+ & \texttt{common\_cause\_capacity\_impact\_sd} & 0.15 & 0.05 to 0.30 \\
+Quality & \texttt{deviation\_rate\_per\_batch} & 0.020 & 0.005 to 0.080 \\
+ & \texttt{batch\_rejection\_rate} & 0.010 & 0.002 to 0.040 \\
+Regulatory state & \texttt{shortage\_list\_resolution\_rate\_per\_year} & 0.30 & 0.10 to 1.00 \\
+ & \texttt{shortage\_list\_relisting\_rate\_per\_year} & 0.10 & 0.02 to 0.40 \\
+ & \texttt{bud\_503b\_days} & 90 & 45 to 180 \\
+Logistics & \texttt{transport\_time\_cv} & 0.25 & 0.10 to 0.50 \\
+ & \texttt{disruption\_duration\_cv} & 0.60 & 0.30 to 1.00 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{The regulatory state machine}
+
+The sixteen gates are binary feasibility constraints, not costs. A FAIL excludes an
+architecture. UNCERTAIN permits simulation for information only and can never receive a
+favourable decision class, and there is no penalty path an optimizer can pay through. As of the
+current runs all sixteen are UNCERTAIN with no reviewer assigned, so eligibility is
+NO\_CONCLUSION for every one of the twenty architectures. The 503B pathway is not a permanent
+pathway and is not modelled as one. It is a time-varying legal state,
+\begin{equation}
+\mathrm{eligible}(t) = \mathrm{listed}(t) \wedge \mathrm{gates}_{\mathrm{static}}
+ \wedge \mathrm{permission}(\mathrm{region}) ,
+\label{eq:503b}
+\end{equation}
+where $\mathrm{listed}(t)$ is a two-state Markov chain on the FDA shortage list with hazards
+\texttt{shortage\_list\_resolution\_rate\_per\_year} and
+\texttt{shortage\_list\_relisting\_rate\_per\_year}, initialised from the frozen 2026-09-02
+snapshot; $\mathrm{gates}_{\mathrm{static}}$ requires G08 and G11; and $\mathrm{permission}$
+requires G12, with regions lacking state licensure removed from the service set. The predicate
+is checked when a batch is compounded and again on each shipment and issue day, because the
+statute requires the condition at compounding, at distribution and at dispensing. Section
+\ref{sec:regulatory} states what that implies.
+
+\subsection{The architectures, and what the model does not represent}
+
+Table~\ref{tab:architectures} lists the twenty architectures. All are optimized to the same
+target, minimizing expected annual cost subject to mean fill at or above 0.99 and a probability
+of at least 0.90 that a run meets it, on common random numbers. Since revision R010 every frozen
+comparator searches the same inventory space the design-space strategies declared for
+themselves, because the earlier comparison measured search freedom as much as architecture:
+added central capacity moved from infeasible to feasible on both products at roughly 60 percent
+of its declared-space cost. The symmetric test, narrowing the design-space strategies to the
+comparators' old space, has not been run and would be the honest completion of the check.
+
+\begin{table}[htbp]
+\centering
+\caption{The twenty architectures. S0 to S7 are the frozen comparators, carrying the four
+comparator classes the specification names plus centralized expansion and the 503B responder.
+S8 to S19 are the design-space additions of revision R006.}
+\label{tab:architectures}
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lp{60mm}lp{48mm}@{}}
+\toprule
+Id & Architecture & Id & Architecture \\
+\midrule
+S0 & Status quo centralized supply & S10 & Split tenancy, two independent multi-product hosts \\
+S1 & Additional safety stock & S11 & Bright-stock campaign offtake, national reserve \\
+S2 & Dual source plus contracts & S12 & Contracted registered-capacity supply base \\
+S3 & Reserved flexible contract capacity & S13 & Contracted base, rotated surge, reserve stock \\
+S4 & Additional centralized capacity & S14 & Cooperative-financed registered second source \\
+S5 & Distributed regional nodes, conventional release & S15 & Capacity-adequate presentation, no new plant \\
+S6 & Distributed nodes plus validated release assurance & S16 & Reserve-triggered campaign network \\
+S7 & 503B shortage response (time-varying legal state) & S17 & Rotating prequalified campaigns, three registered lines \\
+S8 & Acquired registered line, split API and geography & S18 & Dual committed supply, contract-mandated sources \\
+S9 & Dual finished-dose source, key-starting-material tier & S19 & Maintained alternate-source switching package \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The limits are recorded rather than described around. One product per network, so no campaign
+scheduling or cost pooling across a portfolio; this is the largest unquantified distortion in
+the cost comparison, because a node's fixed cost is borne by a single presentation at low
+utilization (MD-15). Four equal regions, so three of the four allocation policies are
+arithmetically the same function at the base case. No supplier allocation rule during scarcity.
+Provider harm and clinical substitution are not monetized. And the screen's common-impact factor
+is derived from topology for S8 to S19 but hand-set for S0 to S7, so no screen-level
+common-impact comparison across the two arms is valid (MD-22).

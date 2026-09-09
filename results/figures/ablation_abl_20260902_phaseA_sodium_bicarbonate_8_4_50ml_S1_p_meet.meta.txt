@@ -1,0 +1,9 @@
+title: Failure attribution, S1, sodium_bicarbonate_8_4_50ml: p_meet
+xlabel: delta p_meet [probability]
+ylabel: mechanism (family) [-]
+product: sodium_bicarbonate_8_4_50ml
+scenario: ablation abl_20260902_phaseA; base p_meet = 0.0
+manifest_id: abl_20260902_phaseA
+source_note: results/ablation/abl_20260902_phaseA/summary.json and attribution.csv; all inputs tier 5 illustrative
+decision_caption: Blue: how much the service metric improves when this mechanism alone is switched off in the base world. Orange: how much it degrades when this mechanism alone is switched on in the quiet world. Bars that disagree signal interaction with other mechanisms. Model behavior under illustrative inputs, not a finding.
+illustrative: True

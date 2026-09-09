@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet href="https://www.accessdata.fda.gov/spl/stylesheet/spl.xsl" type="text/xsl"?>
+<document xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 https://www.accessdata.fda.gov/spl/schema/spl.xsd">
+   <id root="c190b37f-ee4a-43ca-b9c6-dbe7a73771b0"/>
+   <code code="34391-3" codeSystem="2.16.840.1.113883.6.1" displayName="HUMAN PRESCRIPTION DRUG LABEL"/>
+   <title>These highlights do not include all the information needed to use NOREPINEPHRINE BITARTRATE injection safely and effectively.  See full prescribing information for NOREPINEPHRINE BITARTRATE injection.<br/>NOREPINEPHRINE BITARTRATE injection, for intravenous use<br/>Initial U.S. Approval: 1950</title>
+   <effectiveTime value="20230331"/>
+   <setId root="4408987e-690a-41ac-9677-e24604fa9793"/>
+   <versionNumber value="4"/>
+   <author>
+      <time/>
+      <assignedEntity>
+         <representedOrganization>
+            <id extension="081373942" root="1.3.6.1.4.1.519.1"/>
+            <name>Civica, Inc.</name>
+         </representedOrganization>
+      </assignedEntity>
+   </author>
+   <component>
+      <structuredBody>
+         <component>
+            <section>
+               <id root="c130c8d6-d579-42a7-a5a1-1d5a10eba1f7"/>
+               <code code="48780-1" codeSystem="2.16.840.1.113883.6.1" displayName="SPL product data elements section"/>
+               <effectiveTime value="20200914"/>
+               <subject>
+                  <manufacturedProduct>
+                     <manufacturedProduct>
+                        <code code="72572-481" codeSystem="2.16.840.1.113883.6.69"/>
+                        <name>NOREPINEPHRINE BITARTRATE</name>
+                        <formCode code="C42899" codeSystem="2.16.840.1.113883.3.26.1.1" displayName="INJECTION, SOLUTION, CONCENTRATE"/>
+                        <asEntityWithGeneric>
+                           <genericMedicine>
+                              <name>Norepinephrine Bitartrate</name>
+                           </genericMedicine>
+                        </asEntityWithGeneric>
+                        <ingredient classCode="ACTIM">
+                           <quantity>
+                              <numerator unit="mg" value="1"/>
+                              <denominator unit="mL" value="1"/>
+                           </quantity>
+                           <ingredientSubstance>
+                              <code code="IFY5PE3ZRW" codeSystem="2.16.840.1.113883.4.9"/>
+                              <name>NOREPINEPHRINE BITARTRATE</name>
+                              <activeMoiety>
+                                 <activeMoiety>
+                                    <code code="X4W3ENH1CV" codeSystem="2.16.840.1.113883.4.9"/>
+                                    <name>NOREPINEPHRINE</name>
+                                 </activeMoiety>
+                              </activeMoiety>
+                           </ingredientSubstance>
+                        </ingredient>
+                        <ingredient classCode="IACT">
+                           <ingredientSubstance>
+                              <code code="451W47IQ8X" codeSystem="2.16.840.1.113883.4.9"/>
+                              <name>SODIUM CHLORIDE</name>
+                           </ingredientSubstance>
+                        </ingredient>
+                        <ingredient classCode="IACT">
+                           <ingredientSubstance>
+                              <code code="4VON5FNS3C" codeSystem="2.16.840.1.113883.4.9"/>
+                              <name>SODIUM METABISULFITE</name>
+                           </ingredientSubstance>
+                        </ingredient>
+                        <asContent>
+                           <quantity>
+                              <numerator unit="mL" value="4"/>
+                              <denominator value="1"/>
+                           </quantity>
+                           <containerPackagedProduct>
+                              <code code="72572-481-01" codeSystem="2.16.840.1.113883.6.69"/>
+                              <formCode code="C43215" codeSystem="2.16.840.1.113883.3.26.1.1" displayName="VIAL, SINGLE-DOSE"/>
+                              <asContent>
+                                 <quantity>
+                                    <numerator unit="1" value="10"/>
+                                    <denominator value="1"/>
+                                 </quantity>
+                                 <containerPackagedProduct>
+                                    <code code="72572-481-10" codeSystem="2.16.840.1.113883.6.69"/>
+                                    <formCode code="C43182" codeSystem="2.16.840.1.113883.3.26.1.1" displayName="CARTON"/>
+                                 </containerPackagedProduct>
+                                 <subjectOf>
+                                    <marketingAct>
+                                       <code code="C53292" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                                       <statusCode code="active"/>
+                                       <effectiveTime>
+                                          <low value="20210312"/>
+                                       </effectiveTime>
+                                    </marketingAct>
+                                 </subjectOf>
+                              </asContent>
+                           </containerPackagedProduct>
+                           <subjectOf>
+                              <characteristic classCode="OBS">
+                                 <code code="SPLCMBPRDTP" codeSystem="2.16.840.1.113883.1.11.19255"/>
+                                 <value code="C112160" codeSystem="2.16.840.1.113883.3.26.1.1" displayName="Type 0: Not a Combination Product" xsi:type="CE"/>
+                              </characteristic>
+                           </subjectOf>
+                        </asContent>
+                     </manufacturedProduct>
+                     <subjectOf>
+                        <approval>
+                           <id extension="ANDA211359" root="2.16.840.1.113883.3.150"/>
+                           <code code="C73584" codeSystem="2.16.840.1.113883.3.26.1.1" displayName="ANDA"/>
+                           <author>
+                              <territorialAuthority>
+                                 <territory>
+                                    <code code="USA" codeSystem="2.16.840.1.113883.5.28"/>
+                                 </territory>
+                              </territorialAuthority>
+                           </author>
+                        </approval>
+                     </subjectOf>
+                     <subjectOf>
+                        <marketingAct>
+                           <code code="C53292" codeSystem="2.16.840.1.113883.3.26.1.1"/>
+                           <statusCode code="active"/>
+                           <effectiveTime>
+                              <low value="20210312"/>
+                           </effectiveTime>
+                        </marketingAct>
+                     </subjectOf>
+                     <consumedIn>
+                        <substanceAdministration>
+                           <routeCode code="C38276" codeSystem="2.16.840.1.113883.3.26.1.1" displayName="INTRAVENOUS"/>
+                        </substanceAdministration>
+                     </consumedIn>
+                  </manufacturedProduct>
+               </subject>
+            </section>
+         </component>
+         <component>
+            <section ID="ID_2bfdb9f1-29ad-46c7-ab11-ee2face9033f">
+               <id root="2bfdb9f1-29ad-46c7-ab11-ee2face9033f"/>
+               <code code="34067-9" codeSystem="2.16.840.1.113883.6.1" displayName="INDICATIONS &amp; USAGE SECTION"/>
+               <title>1 INDICATIONS AND USAGE </title>
+               <text>
+                  <paragraph>Norepinephrine bitartrate injection is indicated to raise blood pressure in adult patients with severe, acute hypotension.</paragraph>
+               </text>
+               <effectiveTime value="20200914"/>
+               <excerpt>
+                  <highlight>
+                     <text>
+                        <paragraph>Norepinephrine bitartrate injection is a catecholamine, indicated for restoration of blood pressure in adult patients with acute hypotensive states. (<linkHtml href="#ID_2bfdb9f1-29ad-46c7-ab11-ee2face9033f">1</linkHtml>)</paragraph>
+                     </text>
+                  </highlight>
+               </excerpt>
+            </section>
+         </component>
+         <component>
+            <section ID="ID_9be9c47f-5029-4260-ad76-fc82d6075d0e">
+               <id root="9be9c47f-5029-4260-ad76-fc82d6075d0e"/>
+               <code code="34068-7" codeSystem="2.16.840.1.113883.6.1" displayName="DOSAGE &amp; ADMINISTRATION SECTION"/>
+               <title>2 DOSAGE AND ADMINISTRATION </title>
+               <effectiveTime value="20200914"/>
+               <excerpt>
+                  <highlight>
+                     <text>
+                        <list listType="unordered">
+                           <item>
+                              <caption>•</caption>Initial dose of 0.25 mL to 0.375 mL (from 8 mcg to 12 mcg of base) per minute, adjust the rate of flow to establish and maintain a low to normal blood pressure (usually 80 mm Hg to 100 mm Hg systolic) sufficient to maintain the circulation of vital organs. (<linkHtml href="#ID_7916a391-fc8f-4b36-9f19-2f2783b2ae3a">2.2</linkHtml>)</item>
+                           <item>
+                              <caption>•</caption>The average maintenance dose ranges from 0.0625 mL to 0.125 mL per minute (from 2 mcg to 4 mcg of base). (<linkHtml href="#ID_7916a391-fc8f-4b36-9f19-2f2783b2ae3a">2.2</linkHtml>)</item>
+                        </list>
+                     </text>
+                  </highlight>
+               </excerpt>
+               <component>
+                  <section ID="ID_ba341b1d-5a6d-48a4-aa99-a29dfa3e86a9">
+                     <id root="ba341b1d-5a6d-48a4-aa99-a29dfa3e86a9"/>
+                     <code code="42229-5" codeSystem="2.16.840.1.113883.6.1" displayName="SPL UNCLASSIFIED SECTION"/>
+                     <title>2.1 Important Dosage and Administration Instructions </title>
+                     <text>
+                        <paragraph>
+                           <content styleCode="bold">
+                              <content styleCode="italics">Correct Hypovolemia</content>
+                           </content>
+                        </paragraph>
+                        <paragraph>Address hypovolemia before initiation of norepinephrine bitartrate injection therapy. If the patient does not respond to therapy, suspect occult hypovolemia <content styleCode="italics">[see Warnings and Precautions (<linkHtml href="#ID_fa39b7d4-d1df-4572-b2fe-8d7e4ffb8ed0">5.1</linkHtml>)]</content>.</paragraph>
+                        <paragraph>
+                           <content styleCode="bold">
+                              <content styleCode="italics">Administration</content>
+                           </content>
+                        </paragraph>
+                        <paragraph>Dilute norepinephrine bitartrate injection prior to use <content styleCode="italics">[see Dosage and Administration (<linkHtml href="#ID_49890dff-0a67-4f58-8ccb-9ee79efefe28">2.3</linkHtml>)]</content>.</paragraph>
+                        <paragraph>Infuse norepinephrine bitartrate injection into a large vein. Avoid infusions into the veins of the leg in the elderly or in patients with occlusive vascular disease of the legs <content styleCode="italics">[see Warnings and Precautions (<linkHtml href="#ID_fa39b7d4-d1df-4572-b2fe-8d7e4ffb8ed0">5.1</linkHtml>)]</content>. Avoid using a catheter-tie-in technique.</paragraph>
+                        <paragraph>
+                           <content styleCode="bold">
+                              <content styleCode="italics">Discontinuation</content>
+                           </content>
+                        </paragraph>
+                        <paragraph>When discontinuing the infusion, reduce the flow rate gradually. Avoid abrupt withdrawal.</paragraph>
+                     </text>
+                     <effectiveTime value="20200914"/>
+                  </section>
+               </component>
+               <component>
+                  <section ID="ID_7916a391-fc8f-4b36-9f19-2f2783b2ae3a">
+                     <id root="7916a391-fc8f-4b36-9f19-2f2783b2ae3a"/>
+                     <code code="42229-5" codeSystem="2.16.840.1.113883.6.1" displayName="SPL UNCLASSIFIED SECTION"/>
+                     <title>2.2 Dosage </title>
+                     <text>
+                        <paragraph>After an initial dosage of 8 to 12 mcg per minute via intravenous infusion, assess patient response and adjust dosage to maintain desired hemodynamic effect. Monitor blood pressure every two minutes until the desired hemodynamic effect is achieved, and then monitor blood pressure every five minutes for the duration of the infusion.</paragraph>
+                        <paragraph>Typical maintenance intravenous dosage is 2 to 4 mcg per minute.</paragraph>
+                     </text>
+                     <effectiveTime value="20200914"/>
+                  </section>
+               </component>
+               <component>
+                  <section ID="ID_49890dff-0a67-4f58-8ccb-9ee79efefe28">
+                     <id root="49890dff-0a67-4f58-8ccb-9ee79efefe28"/>
+                     <code code="42229-5" codeSystem="2.16.840.1.113883.6.1" displayName="SPL UNCLASSIFIED SECTION"/>
+                     <title>2.3 Preparation of Diluted Solution </title>
+                     <text>
+                        <paragraph>Visually inspect norepinephrine bitartrate injection for particulate matter and discoloration prior to administration (the solution is colorless). Do not use the solution if its color is pinkish or darker than slightly yellow or if it contains a precipitate.</paragraph>
+                        <paragraph>Add the content of one norepinephrine bitartrate injection vial (4 mg in 4 mL) to 1,000 mL of 5% Dextrose Injection, USP or Sodium Chloride Injection solutions that contain 5% dextrose to produce a 4 mcg per mL dilution. Dextrose reduces loss of potency due to oxidation. Administration in saline solution alone is not recommended.</paragraph>
+                        <paragraph>Use higher concentration solutions in patients requiring fluid restriction. Prior to use, store the diluted norepinephrine bitartrate injection solution for up to 24 hours at room temperature [20°C to 25°C (68°F to 77°F)] and protect from light.</paragraph>
+                     </text>
+                     <effectiveTime value="20200914"/>
+                  </section>
+               </component>
+               <component>
+                  <section ID="ID_466a7d1b-fd68-4666-9390-5cbea4ba298f">
+                     <id root="466a7d1b-fd68-4666-9390-5cbea4ba298f"/>
+                     <code code="42229-5" codeSystem="2.16.840.1.113883.6.1" displayName="SPL UNCLASSIFIED SECTION"/>
+                     <title>2.4 Drug Incompatibilities </title>
+                     <text>
+                        <paragraph>Avoid contact with iron salts, alkalis, or oxidizing agents.</paragraph>
+                        <paragraph>Whole blood or plasma, if indicated to increase blood volume, should be administered separately.</paragraph>
+                     </text>
+                     <effectiveTime value="20200914"/>
+                  </section>
+               </component>
+            </section>
+         </component>
+         <component>
+            <section ID="ID_14820a06-5c6b-4ef6-bbab-1d0ab68e27fe">
+               <id root="14820a06-5c6b-4ef6-bbab-1d0ab68e27fe"/>
+               <code code="43678-2" codeSystem="2.16.840.1.113883.6.1" displayName="DOSAGE FORMS &amp; STRENGTHS SECTION"/>
+               <title>3 DOSAGE FORMS AND STRENGTHS </title>
+               <text>
+                  <paragraph>Injection: 4 mg/4 mL (1 mg/mL norepinephrine base) sterile, colorless solution in a single-dose amber glass vial.</paragraph>
+               </text>
+               <effectiveTime value="20200914"/>
+               <excerpt>
+                  <highlight>
+                     <text>
+                        <paragraph>Injection: 4 mg/4 mL (1 mg/mL) norepinephrine base in single-dose glass vial. (<linkHtml href="#ID_14820a06-5c6b-4ef6-bbab-1d0ab68e27fe">3</linkHtml>)</paragraph>
+                     </text>
+                  </highlight>
+               </excerpt>
+            </section>
+         </component>
+         <component>
+            <section ID="ID_91a1e033-f0e5-4f50-960f-9d23c661137a">
+               <id root="91a1e033-f0e5-4f50-960f-9d23c661137a"/>
+               <code code="34070-3" codeSystem="2.16.840.1.113883.6.1" displayName="CONTRAINDICATIONS SECTION"/>
+               <title>4 CONTRAINDICATIONS </title>
+               <text>
+                  <paragraph>None.</paragraph>
+               </text>
+               <effectiveTime value="20200914"/>
+               <excerpt>
+                  <highlight>
+                     <text>
+                        <paragraph>None. (<linkHtml href="#ID_91a1e033-f0e5-4f50-960f-9d23c661137a">4</linkHtml>)</paragraph>
+                     </text>
+                  </highlight>
+               </excerpt>
+            </section>
+         </component>
+         <component>
+            <section ID="ID_757b911a-8008-4408-bc29-07f54389d9c0">
+               <id root="757b911a-8008-4408-bc29-07f54389d9c0"/>
+               <code code="43685-7" codeSystem="2.16.840.1.113883.6.1" displayName="WARNINGS AND PRECAUTIONS SECTION"/>
+               <title>5 WARNINGS AND PRECAUTIONS </title>
+               <effectiveTime value="20200914"/>
+               <excerpt>
+                  <highlight>
+                     <text>
+                        <list listType="unordered">
+                           <item>
+                              <caption>•</caption>
+                              <content styleCode="underline">Tissue Ischemia:</content> Avoid extravasation of norepinephrine bitartrate into the tissues, as local necrosis might ensue due to the vasoconstrictive action of the drug. Infuse norepinephrine bitartrate into a large vein. To prevent sloughing and necrosis in areas in which extravasation has taken place, the area should be infiltrated as soon as possible with 10 mL to 15 mL of saline solution containing from 5 mg to 10 mg of an adrenergic blocking agent. (<linkHtml href="#ID_fa39b7d4-d1df-4572-b2fe-8d7e4ffb8ed0">5.1</linkHtml>)</item>
+                           <item>
+                              <caption>•</caption>
+                              <content styleCode="underline">Hypotension after Abrupt Discontinuation:</content> Sudden cessation of the infusion rate may result in marked hypotension. Reduce the norepinephrine bitartrate infusion rate gradually. (<linkHtml href="#ID_c4a3846b-4a76-4f0e-982d-12319093f923">5.2</linkHtml>)</item>
+                           <item>
+                              <caption>•</caption>
+                              <content styleCode="underline">Cardiac Arrhythmias:</content> Norepinephrine bitartrate may cause arrhythmias. Monitor cardiac function in patients with underlying heart disease. (<linkHtml href="#ID_0a48aabe-8e3e-4e96-aa86-71fccfdafa23">5.3</linkHtml>)</item>
+                           <item>
+                              <caption>•</caption>
+                              <content styleCode="underline">Allergic Reactions with Sulfite:</content> Norepinephrine bitartrate contains sodium metabisulfite. Sulfite may cause allergic-type-reactions. (<linkHtml href="#ID_e32657f8-1300-4eb7-818f-a29812944c43">5.4</linkHtml>)</item>
+                        </list>
+                     </text>
+                  </highlight>
+               </excerpt>
+               <component>
+                  <section ID="ID_fa39b7d4-d1df-4572-b2fe-8d7e4ffb8ed0">
+                     <id root="fa39b7d4-d1df-4572-b2fe-8d7e4ffb8ed0"/>
+                     <code code="42229-5" codeSystem="2.16.840.1.113883.6.1" displayName="SPL UNCLASSIFIED SECTION"/>
+                     <title>5.1 Tissue Ischemia </title>
+                     <text>
+                        <paragraph>Administration of norepinephrine bitartrate injection to patients who are hypotensive from hypovolemia can result in severe peripheral and visceral vasoconstriction, decreased renal perfusion and reduced urine output, tissue hypoxia, lactic acidosis, and reduced systemic blood flow despite “normal” blood pressure. Address hypovolemia prior to initiating norepinephrine bitartrate injection <content styleCode="italics">[see Dosage and Administration (<linkHtml href="#ID_ba341b1d-5a6d-48a4-aa99-a29dfa3e86a9">2.1</linkHtml>)]. </content>Avoid norepinephrine bitartrate injection in patients with mesenteric or peripheral vascular thrombosis, as this may increase ischemia and extend the area of infarction.</paragraph>
+                        <paragraph>Gangrene of the extremities has occurred in patients with occlusive or thrombotic vascular disease or who received prolonged or high dose infusions. Monitor for changes to the skin of the extremities in susceptible patients.</paragraph>
+                        <paragraph>Extravasation of norepinephrine bitartrate injection may cause necrosis and sloughing of surrounding tissue. To reduce the risk of extravasation, infuse into a large vein, check the infusion site frequently for free flow, and monitor for signs of extravasation <content styleCode="italics">[see Dosage and Administration (<linkHtml href="#ID_ba341b1d-5a6d-48a4-aa99-a29dfa3e86a9">2.1</linkHtml>)].</content>
+                        </paragraph>
+                        <paragraph>
+                           <content styleCode="bold">
+                              <content styleCode="italics">Emergency Treatment of Extravasation</content>
+                           </content>
+                        </paragraph>
+                        <paragraph>To prevent sloughing and necrosis in areas in which extravasation has occurred, infiltrate the ischemic area as soon as possible, using a syringe with a fine hypodermic needle with 5 to 10 mg of phentolamine mesylate in 10 to 15 mL of 0.9% Sodium Chloride Injection in adults.</paragraph>
+                        <paragraph>Sympathetic blockade with phentolamine causes immediate and conspicuous local hyperemic changes if the area is infiltrated within 12 hours.</paragraph>
+                     </text>
+                     <effectiveTime value="20200914"/>
+                  </section>
+               </component>
+               <component>
+                  <section ID="ID_c4a3846b-4a76-4f0e-982d-12319093f923">
+                     <id root="c4a3846b-4a76-4f0e-982d-12319093f923"/>
+                     <code code="42229-5" codeSystem="2.16.840.1.113883.6.1" displayName="SPL UNCLASSIFIED SECTION"/>
+                     <title>5.2 Hypotension after Abrupt Discontinuation </title>
+                     <text>
+                        <paragraph>Sudden cessation of the infusion rate may result in marked hypotension. When discontinuing the infusion, gradually reduce the norepinephrine bitartrate injection infusion rate while expanding blood volume with intravenous fluids.</paragraph>
+                     </text>
+                     <effectiveTime value="20200914"/>
+                  </section>
+               </component>
+               <component>
+                  <section ID="ID_0a48aabe-8e3e-4e96-aa86-71fccfdafa23">
+                     <id root="0a48aabe-8e3e-4e96-aa86-71fccfdafa23"/>
+                     <code code="42229-5" codeSystem="2.16.840.1.113883.6.1" displayName="SPL UNCLASSIFIED SECTION"/>
+                     <title>5.3 Cardiac Arrhythmias </title>
+                     <text>
+                        <paragraph>Norepinephrine bitartrate injection elevates intracellular calcium concentrations and may cause arrhythmias, particularly in the setting of hypoxia or hypercarbia. Perform continuous cardiac monitoring of patients with arrhythmias.</paragraph>
+                     </text>
+                     <effectiveTime value="20200914"/>
+                  </section>
+               </component>
+               <component>
+                  <section ID="ID_e32657f8-1300-4eb7-818f-a29812944c43">
+                     <id root="e32657f8-1300-4eb7-818f-a29812944c43"/>
+                     <code code="42229-5" codeSystem="2.16.840.1.113883.6.1" displayName="SPL UNCLASSIFIED SECTION"/>
+                     <title>5.4 Allergic Reactions Associated with Sulfite </title>
+                     <text>
+                        <paragraph>Norepinephrine bitartrate injection contains sodium metabisulfite, a sulfite that may cause allergic-type reactions including anaphylactic symptoms and life-threatening or less severe asthmatic episodes in certain susceptible people. The overall prevalence of sulfite sensitivity in the general population is unknown. Sulfite sensitivity is seen more frequently in asthmatic than in non-asthmatic people.</paragraph>
+                     </text>
+                     <effectiveTime value="20200914"/>
+                  </section>
+               </component>
+            </section>
+         </component>
+         <component>
+            <section ID="ID_b4108ac0-d958-4e46-90cf-8618695cd487">
+               <id root="b4108ac0-d958-4e46-90cf-8618695cd487"/>
+               <code code="34084-4" codeSystem="2.16.840.1.113883.6.1" displayName="ADVERSE REACTIONS SECTION"/>
+               <title>6 ADVERSE REACTIONS </title>
+               <text>
+                  <paragraph>The following adverse reactions are described in greater detail in other sections:</paragraph>
+                  <list listType="unordered">
+                     <item>
+                        <caption>•</caption>Tissue Ischemia <content styleCode="italics">[see Warnings and Precautions (<linkHtml href="#ID_fa39b7d4-d1df-4572-b2fe-8d7e4ffb8ed0">5.1</linkHtml>)]</content>
+                     </item>
+                     <item>
+                        <caption>•</caption>Hypotension <content styleCode="italics">[see Warnings and Precautions (<linkHtml href="#ID_c4a3846b-4a76-4f0e-982d-12319093f923">5.2</linkHtml>)]</content>
+                     </item>
+                     <item>
+                        <caption>•</caption>Cardiac Arrhythmias <content styleCode="italics">[see Warnings and Precautions (<linkHtml href="#ID_0a48aabe-8e3e-4e96-aa86-71fccfdafa23">5.3</linkHtml>)]</content>
+                     </item>
+                  </list>
+                  <paragraph>The most common adverse reactions are hypertension and bradycardia. </paragraph>
+                  <paragraph>The following adverse reactions can occur:</paragraph>
+                  <paragraph>
+                     <content styleCode="bold">
+                        <content styleCode="italics">Nervous system disorders: </content>
+                     </content>Anxiety, headache </paragraph>
+                  <paragraph>
+                     <content styleCode="bold">
+                        <content styleCode="italics">Respiratory disorders: </content>
+                     </content>Respiratory difficulty, pulmonary edema</paragraph>
+               </text>
+               <effectiveTime value="20200914"/>
+               <excerpt>
+                  <highlight>
+                     <text>
+                        <paragraph>Most common adverse reactions are ischemic injury, bradycardia, anxiety, transient headache, respiratory difficulty, and extravasation necrosis at injection site. (<linkHtml href="#ID_b4108ac0-d958-4e46-90cf-8618695cd487">6</linkHtml>)</paragraph>
+                        <paragraph>
+                           <content styleCode="bold">To report SUSPECTED ADVERSE REACTIONS, contact </content>
+                           <content styleCode="bold">Sandoz Inc. at 1-800-525-8747</content>
+                           <content styleCode="bold"> or FDA at 1-800-FDA-1088 or <linkHtml href="http://www.fda.gov/medwatch">www.fda.gov/medwatch.</linkHtml>
+                           </content>
+                        </paragraph>
+                     </text>
+                  </highlight>
+               </excerpt>
+            </section>
+         </component>
+         <component>
+            <section ID="ID_bbf9983c-e8e5-4dca-a3d0-95a0bdeb5d65">
+               <id root="bbf9983c-e8e5-4dca-a3d0-95a0bdeb5d65"/>
+               <code code="34073-7" codeSystem="2.16.840.1.113883.6.1" displayName="DRUG INTERACTIONS SECTION"/>
+               <title>7 DRUG INTERACTIONS </title>
+               <effectiveTime value="20200914"/>
+               <excerpt>
+                  <highlight>
+                     <text>
+                        <list listType="unordered">
+                           <item>
+                              <caption>•</caption>Monoamine oxidase inhibitors (MAOI) or antidepressants of the triptyline or imipramine types may result in hypertension. (<linkHtml href="#ID_a4acbc28-a44d-4222-84f9-19be68fd0502">7.1</linkHtml>)</item>
+                           <item>
+                              <caption>•</caption>Cyclopropane and halothane anesthetics increase cardiac autonomic irritability. (<linkHtml href="#ID_743ddfe9-87b2-4ff4-88a8-240e9399b525">7.4</linkHtml>)</item>
+                        </list>
+                     </text>
+                  </highlight>
+               </excerpt>
+               <component>
+                  <section ID="ID_a4acbc28-a44d-4222-84f9-19be68fd0502">
+                     <id root="a4acbc28-a44d-4222-84f9-19be68fd0502"/>
+                     <code code="42229-5" codeSystem="2.16.840.1.113883.6.1" displayName="SPL UNCLASSIFIED SECTION"/>
+                     <title>7.1 MAO-Inhibiting Drugs </title>
+                     <text>
+                        <paragraph>Co-administration of norepinephrine bitartrate injection with monoamine oxidase (MAO) inhibitors or other drugs with MAO-inhibiting properties (e.g., linezolid) can cause severe, prolonged hypertension.</paragraph>
+                        <paragraph>If administration of norepinephrine bitartrate injection cannot be avoided in patients who recently have received any of these drugs and in whom, after discontinuation, MAO activity has not yet sufficiently recovered, monitor for hypertension.</paragraph>
+                     </text>
+                     <effectiveTime value="20200914"/>
+                  </section>
+               </component>
+               <component>
+                  <section ID="ID_588619a4-8204-4d9b-ac4b-bc41ef3a0189">
+                     <id root="588619a4-8204-4d9b-ac4b-bc41ef3a0189"/>
+                     <code code="42229-5" codeSystem="2.16.840.1.113883.6.1" displayName="SPL UNCLASSIFIED SECTION"/>
+                     <title>7.2 Tricyclic Antidepressants </title>
+                     <text>
+                        <paragraph>Co-administration of norepinephrine bitartrate injection with tricyclic antidepressants (including amitriptyline, nortriptyline, protriptyline, clomipramine, desipramine, imipramine) can cause severe, prolonged hypertension. If administration of norepinephrine bitartrate injection cannot be avoided in these patients, monitor for hypertension.</paragraph>
+                     </text>
+                     <effectiveTime value="20200914"/>
+                  </section>
+               </component>
+               <component>
+                  <section ID="ID_1ca66324-6530-46be-9ec7-b2b52cd54d7b">
+                     <id root="1ca66324-6530-46be-9ec7-b2b52cd54d7b"/>
+                     <code code="42229-5" codeSystem="2.16.840.1.113883.6.1" displayName="SPL UNCLASSIFIED SECTION"/>
+                     <title>7.3 Antidiabetics </title>
+                     <text>
+                        <paragraph>Norepinephrine bitartrate injection can decrease insulin sensitivity and raise blood glucose. Monitor glucose and consider dosage adjustment of antidiabetic drugs.</paragraph>
+                     </text>
+                     <effectiveTime value="20200914"/>
+                  </section>
+               </component>
+               <component>
+                  <section ID="ID_743ddfe9-87b2-4ff4-88a8-240e9399b525">
+                     <id root="743ddfe9-87b2-4ff4-88a8-240e9399b525"/>
+                     <code code="42229-5" codeSystem="2.16.840.1.113883.6.1" displayName="SPL UNCLASSIFIED SECTION"/>
+                     <title>7.4 Halogenated Anesthetics </title>
+                     <text>
+                        <paragraph>Concomitant use of norepinephrine bitartrate injection with halogenated anesthetics (e.g., cyclopropane, desflurane, enflurane, isoflurane, and sevoflurane) may lead to ventricular tachycardia or ventricular fibrillation. Monitor cardiac rhythm in patients receiving concomitant halogenated anesthetics.</paragraph>
+                     </text>
+                     <effectiveTime value="20200914"/>
+                  </section>
+               </component>
+            </section>
+         </component>
+         <component>
+            <section ID="ID_a1fbdf18-c143-436e-9f64-0dcc997b8502">
+               <id root="a1fbdf18-c143-436e-9f64-0dcc997b8502"/>
+               <code code="43684-0" codeSystem="2.16.840.1.113883.6.1" displayName="USE IN SPECIFIC POPULATIONS SECTION"/>
+               <title>8 USE IN SPECIFIC POPULATIONS </title>
+               <effectiveTime value="20200914"/>
+               <excerpt>
+                  <highlight>
+                     <text>
+                        <list listType="unordered">
+                           <item>
+                              <caption>•</caption>Elderly patients may be at greater risk of developing adverse reactions. (<linkHtml href="#ID_91913f0b-2604-42e3-91f6-b0ac3d59cd34">8.5</linkHtml>)</item>
+                        </list>
+                     </text>
+                  </highlight>
+               </excerpt>
+               <component>
+                  <section ID="ID_605585e9-6029-497d-875f-4efc2c85b4a0">
+                     <id root="605585e9-6029-497d-875f-4efc2c85b4a0"/>
+                     <code code="42228-7" codeSystem="2.16.840.1.113883.6.1" displayName="PREGNANCY SECTION"/>
+                     <title>8.1 Pregnancy </title>
+                     <text>
+                        <paragraph>
+                           <content styleCode="bold">
+                              <content styleCode="italics">Risk Summary</content>
+                           </content>
+                        </paragraph>
+                        <paragraph>Limited published data consisting of a small number of case reports and multiple small trials involving the use of norepinephrine in pregnant women at the time of delivery have not identified an increased risk of major birth defects, miscarriage or adverse maternal or fetal outcomes. There are risks to the mother and fetus from hypotension associated with septic shock, myocardial infarction and stroke which are medical emergencies in pregnancy and can be fatal if left untreated (<content styleCode="italics">see</content>
+                           <content styleCode="italics">Clinical Considerations</content>). In animal reproduction studies, using high doses of intravenous norepinephrine resulted in lowered maternal placental blood flow. Clinical relevance to changes in the human fetus is unknown since the average maintenance dose is ten times lower (<content styleCode="italics">see Data</content>). Increased fetal reabsorptions were observed in pregnant hamsters after receiving daily injections at approximately 2 times the maximum recommended dose on a mg/m<sup>3</sup> basis for four days during organogenesis (<content styleCode="italics">see Data</content>).</paragraph>
+                        <paragraph>The estimated background risk for major birth defects and miscarriage for the indicated population is unknown. All pregnancies have a background risk of birth defect, loss, or other adverse outcomes. In the U.S. general population, the estimated background risk of major birth defects and miscarriage in the clinically recognized pregnancies is 2-4% and 15−20%, respectively.</paragraph>
+                        <paragraph>
+                           <content styleCode="bold">
+                              <content styleCode="italics">Clinical Considerations</content>
+                           </content>
+                        </paragraph>
+                        <paragraph>
+                           <content styleCode="italics">Disease-associated maternal and/or embryo/fetal risk</content>
+                        </paragraph>
+                        <paragraph>Hypotension associated with septic shock, myocardial infarction, and stroke are medical emergencies in pregnancy which can be fatal if left untreated. Delaying treatment in pregnant women with hypotension associated with septic shock, myocardial infarction and stroke may increase the risk of maternal and fetal morbidity and mortality. Life-sustaining therapy for the pregnant woman should not be withheld due to potential concerns regarding the effects of norepinephrine on the fetus.</paragraph>
+                        <paragraph>
+                           <content styleCode="bold">
+                              <content styleCode="italics">Data</content>
+                           </content>
+                        </paragraph>
+                        <paragraph>
+                           <content styleCode="italics">Animal Data</content>
+                        </paragraph>
+                        <paragraph>A study in pregnant sheep receiving high doses of intravenous norepinephrine (40 mcg/min, at approximately 10 times the average maintenance dose of 2-4 mcg/min in human, on a mg/kg basis) exhibited a significant decrease in maternal placental blood flow. Decreases in fetal oxygenation, urine and lung liquid flow were also observed.</paragraph>
+                        <paragraph>Norepinephrine administration to pregnant rats on Gestation Day 16 or 17 resulted in cataract production in rat fetuses.</paragraph>
+                        <paragraph>In hamsters, an increased number of resorptions (29.1% in study group vs. 3.4% in control group), fetal microscopic liver abnormalities and delayed skeletal ossification were observed at approximately 2 times the maximum recommended intramuscular or subcutaneous dose (on a mg/m<sup>2</sup> basis at a maternal subcutaneous dose of 0.5 mg/kg/day from Gestation Day 7-10).</paragraph>
+                     </text>
+                     <effectiveTime value="20200914"/>
+                  </section>
+               </component>
+               <component>
+                  <section ID="ID_3c4ff8d1-0bfa-4854-8101-ea1f7180871c">
+                     <id root="3c4ff8d1-0bfa-4854-8101-ea1f7180871c"/>
+                     <code code="77290-5" codeSystem="2.16.840.1.113883.6.1" displayName="LACTATION SECTION"/>
+                     <title>8.2 Lactation </title>
+                     <text>
+                        <paragraph>
+                           <content styleCode="bold">
+                              <content styleCode="italics">Risk Summary</content>
+                           </content>
+                        </paragraph>
+                        <paragraph>There are no data on the presence of norepinephrine in either human or animal milk, the effects on the breastfed infant, or the effects on milk production. Clinically relevant exposure to the infant is not expected based on the short half-life and poor oral bioavailability of norepinephrine.</paragraph>
+                     </text>
+                     <effectiveTime value="20200914"/>
+                  </section>
+               </component>
+               <component>
+                  <section ID="ID_59cda329-47b3-44ec-ad9d-8fad1b2db067">
+                     <id root="59cda329-47b3-44ec-ad9d-8fad1b2db067"/>
+                     <code code="34081-0" codeSystem="2.16.840.1.113883.6.1" displayName="PEDIATRIC USE SECTION"/>
+                     <title>8.4 Pediatric Use </title>
+                     <text>
+                        <paragraph>Safety and effectiveness in pediatric patients have not been established.</paragraph>
+                     </text>
+                     <effectiveTime value="20200914"/>
+                  </section>
+               </component>
+               <component>
+                  <section ID="ID_91913f0b-2604-42e3-91f6-b0ac3d59cd34">
+                     <id root="91913f0b-2604-42e3-91f6-b0ac3d59cd34"/>
+                     <code code="34082-8" codeSystem="2.16.840.1.113883.6.1" displayName="GERIATRIC USE SECTION"/>
+                     <title>8.5 Geriatric Use </title>
+                     <text>
+                        <paragraph>Clinical studies of norepinephrine bitartrate injection did not include sufficient numbers of subjects aged 65 and over to determine whether they respond differently from younger subjects. Other reported clinical experience has not identified differences in responses between the elderly and younger patients. In general, dose selection for an elderly patient should be cautious, usually starting at the low end of the dosing range, reflecting the greater frequency of decreased hepatic, renal, or cardiac function, and of concomitant disease or other drug therapy.</paragraph>
+                        <paragraph>Avoid administration of norepinephrine bitartrate injection into the veins in the leg in elderly patients <content styleCode="italics">[see Warnings and Precautions (<linkHtml href="#ID_fa39b7d4-d1df-4572-b2fe-8d7e4ffb8ed0">5.1</linkHtml>)].</content>
+                        </paragraph>
+                     </text>
+                     <effectiveTime value="20200914"/>
+                  </section>
+               </component>
+            </section>
+         </component>
+         <component>
+            <section ID="ID_4494ca56-3f24-4f7a-96a7-c008b3b6dc04">
+               <id root="4494ca56-3f24-4f7a-96a7-c008b3b6dc04"/>
+               <code code="34088-5" codeSystem="2.16.840.1.113883.6.1" displayName="OVERDOSAGE SECTION"/>
+               <title>10 OVERDOSAGE </title>
+               <text>
+                  <paragraph>Overdosage with norepinephrine bitartrate injection may result in headache, severe hypertension, reflex bradycardia, marked increase in peripheral resistance, and decreased cardiac output.</paragraph>
+                  <paragraph>In case of overdosage, discontinue norepinephrine bitartrate injection until the condition of the patient stabilizes.</paragraph>
+               </text>
+               <effectiveTime value="20200914"/>
+            </section>
+         </component>
+         <component>
+            <section ID="ID_891ea598-cde0-4e34-bfb8-ad87dd07c8b3">
+               <id root="891ea598-cde0-4e34-bfb8-ad87dd07c8b3"/>
+               <code code="34089-3" codeSystem="2.16.840.1.113883.6.1" displayName="DESCRIPTION SECTION"/>
+               <title>11 DESCRIPTION </title>
+               <text>
+                  <paragraph>Norepinephrine (sometimes referred to as <content styleCode="italics">l-arterenol/Levarterenol or l-norepinephrine</content>) is a sympathomimetic amine which differs from epinephrine by the absence of a methyl group on the nitrogen atom.</paragraph>
+                  <paragraph>Norepinephrine bitartrate is (-)-α-(aminomethyl)-3,4-dihydroxybenzyl alcohol tartrate (1:1) (salt) monohydrate (molecular weight 337.3 g/mol) and has the following structural formula:</paragraph>
+                  <renderMultiMedia ID="id242" referencedObject="ID_77b1e774-bf03-4975-bcb9-02c783743097"/>
+                  <paragraph>Norepinephrine bitartrate injection, USP is supplied in a sterile aqueous solution in the form of the bitartrate salt to be administered by intravenous infusion following dilution. Norepinephrine is sparingly soluble in water, very slightly soluble in alcohol and ether, and readily soluble in acids. Each mL contains the equivalent of 1 mg base of norepinephrine, sodium chloride for isotonicity, and not more than 0.2 mg of sodium metabisulfite as an antioxidant. It has a pH of 3 to 4.5. The air in the vials has been displaced by nitrogen gas.</paragraph>
+               </text>
+               <effectiveTime value="20200914"/>
+               <component>
+                  <observationMedia ID="ID_77b1e774-bf03-4975-bcb9-02c783743097">
+                     <text>chemical-structure</text>
+                     <value mediaType="image/jpeg" xsi:type="ED">
+                        <reference value="norepinephrine-civica-01.jpg"/>
+                     </value>
+                  </observationMedia>
+               </component>
+            </section>
+         </component>
+         <component>
+            <section ID="ID_55dc52cb-ad26-4b73-8b61-f7d7a71c4658">
+               <id root="55dc52cb-ad26-4b73-8b61-f7d7a71c4658"/>
+               <code code="34090-1" codeSystem="2.16.840.1.113883.6.1" displayName="CLINICAL PHARMACOLOGY SECTION"/>
+               <title>12 CLINICAL PHARMACOLOGY </title>
+               <effectiveTime value="20200914"/>
+               <component>
+                  <section ID="ID_6e32d0fe-bafe-40e0-b8f2-af1aeaf7e58f">
+                     <id root="6e32d0fe-bafe-40e0-b8f2-af1aeaf7e58f"/>
+                     <code code="43679-0" codeSystem="2.16.840.1.113883.6.1" displayName="MECHANISM OF ACTION SECTION"/>
+                     <title>12.1 Mechanism of Action </title>
+                     <text>
+                        <paragraph>Norepinephrine is a peripheral vasoconstrictor (alpha-adrenergic action) and an inotropic stimulator of the heart and dilator of coronary arteries (beta-adrenergic action).</paragraph>
+                     </text>
+                     <effectiveTime value="20200914"/>
+                  </section>
+               </component>
+               <component>
+                  <section ID="ID_fc83d3d3-5f02-46f4-8227-62bc3e569d0f">
+                     <id root="fc83d3d3-5f02-46f4-8227-62bc3e569d0f"/>
+                     <code code="43681-6" codeSystem="2.16.840.1.113883.6.1" displayName="PHARMACODYNAMICS SECTION"/>
+                     <title>12.2 Pharmacodynamics </title>
+                     <text>
+                        <paragraph>The primary pharmacodynamic effects of norepinephrine are cardiac stimulation and vasoconstriction. Cardiac output is generally unaffected, although it can be decreased, and total peripheral resistance is also elevated. The elevation in resistance and pressure result in reflex vagal activity, which slows the heart rate and increases stroke volume. The elevation in vascular tone or resistance reduces blood flow to the major abdominal organs as well as to skeletal muscle. Coronary blood flow is substantially increased secondary to the indirect effects of alpha stimulation. After intravenous administration, a pressor response occurs rapidly and reaches steady state within 5 minutes. The pharmacologic actions of norepinephrine are terminated primarily by uptake and metabolism in sympathetic nerve endings. The pressor action stops within 1-2 minutes after the infusion is discontinued.</paragraph>
+                     </text>
+                     <effectiveTime value="20200914"/>
+                  </section>
+               </component>
+               <component>
+                  <section ID="ID_d244a6a4-65a2-4adb-a827-be755e8d7f72">
+                     <id root="d244a6a4-65a2-4adb-a827-be755e8d7f72"/>
+                     <code code="43682-4" codeSystem="2.16.840.1.113883.6.1" displayName="PHARMACOKINETICS SECTION"/>
+                     <title>12.3 Pharmacokinetics </title>
+                     <text>
+                        <paragraph>
+                           <content styleCode="bold">
+                              <content styleCode="italics">Absorption</content>
+                           </content>
+                        </paragraph>
+                        <paragraph>Following initiation of intravenous infusion, the steady state plasma concentration is achieved in 5 min.</paragraph>
+                        <paragraph>
+                           <content styleCode="bold">
+                              <content styleCode="italics">Distribution</content>
+                           </content>
+                        </paragraph>
+                        <paragraph>Plasma protein binding of norepinephrine is approximately 25%. It is mainly bound to plasma albumin and to a smaller extent to prealbumin and alpha 1-acid glycoprotein. The volume of distribution is 8.8 L. Norepinephrine localizes mainly in sympathetic nervous tissue. It crosses the placenta but not the blood-brain barrier.</paragraph>
+                        <paragraph>
+                           <content styleCode="bold">
+                              <content styleCode="italics">Elimination</content>
+                           </content>
+                        </paragraph>
+                        <paragraph>The mean half-life of norepinephrine is approximately 2.4 min. The average metabolic clearance is 3.1 L/min.</paragraph>
+                        <paragraph>
+                           <content styleCode="bold">
+                              <content styleCode="italics">Metabolism</content>
+                           </content>
+                        </paragraph>
+                        <paragraph>Norepinephrine is metabolized in the liver and other tissues by a combination of reactions involving the enzymes catechol-O-methyltransferase (COMT) and MAO. The major metabolites are normetanephrine and 3-methoxyl-4-hydroxy mandelic acid (vanillylmandelic acid, VMA), both of which are inactive. Other inactive metabolites include 3-methoxy-4-hydroxyphenylglycol, 3,4-dihydroxymandelic acid, and 3,4-dihydroxyphenylglycol.</paragraph>
+                        <paragraph>
+                           <content styleCode="bold">
+                              <content styleCode="italics">Excretion</content>
+                           </content>
+                        </paragraph>
+                        <paragraph>Noradrenaline metabolites are excreted in urine primarily as sulphate conjugates and, to a lesser extent, as glucuronide conjugates. Only small quantities of norepinephrine are excreted unchanged.</paragraph>
+                     </text>
+                     <effectiveTime value="20200914"/>
+                  </section>
+               </component>
+            </section>
+         </component>
+         <component>
+            <section ID="ID_bbdcc3a3-9df3-4b06-92ca-0d36bfa65252">
+               <id root="bbdcc3a3-9df3-4b06-92ca-0d36bfa65252"/>
+               <code code="43680-8" codeSystem="2.16.840.1.113883.6.1" displayName="NONCLINICAL TOXICOLOGY SECTION"/>
+               <title>13 NONCLINICAL TOXICOLOGY </title>
+               <effectiveTime value="20200914"/>
+               <component>
+                  <section ID="ID_92660a2d-ac8b-475b-aff2-f2a8e120e23c">
+                     <id root="92660a2d-ac8b-475b-aff2-f2a8e120e23c"/>
+                     <code code="34083-6" codeSystem="2.16.840.1.113883.6.1" displayName="CARCINOGENESIS &amp; MUTAGENESIS &amp; IMPAIRMENT OF FERTILITY SECTION"/>
+                     <title>13.1 Carcinogenesis, Mutagenesis, Impairment of Fertility </title>
+                     <text>
+                        <paragraph>Carcinogenesis, mutagenesis, and fertility studies have not been performed.</paragraph>
+                     </text>
+                     <effectiveTime value="20200914"/>
+                  </section>
+               </component>
+            </section>
+         </component>
+         <component>
+            <section ID="ID_de4121de-5f1c-413a-835b-7c42eb480db3">
+               <id root="de4121de-5f1c-413a-835b-7c42eb480db3"/>
+               <code code="34069-5" codeSystem="2.16.840.1.113883.6.1" displayName="HOW SUPPLIED SECTION"/>
+               <title>16 HOW SUPPLIED/STORAGE AND HANDLING </title>
+               <text>
+                  <paragraph>Norepinephrine bitartrate injection, USP is a sterile, colorless solution for injection intended for intravenous use. It contains the equivalent of 1 mg of norepinephrine base per 1 mL (4 mg/4 mL). It is available as 4 mg/4 mL in single-dose amber glass vials.</paragraph>
+                  <paragraph>Supplied as: 4 mg/4 mL Single-dose Vials in boxes of 10 (NDC 72572-481-10)</paragraph>
+                  <paragraph>Store at 20°C to 25°C (68°F to 77°F) [see USP Controlled Room Temperature].</paragraph>
+                  <paragraph>Store in original carton until time of administration to protect from light. Discard unused portion.</paragraph>
+               </text>
+               <effectiveTime value="20200914"/>
+            </section>
+         </component>
+         <component>
+            <section ID="ID_1c737eb4-b547-4e63-8ef7-264161733cea">
+               <id root="3c75ac93-50ff-4af5-ad64-3d536ff9b4b3"/>
+               <code code="34076-0" codeSystem="2.16.840.1.113883.6.1" displayName="INFORMATION FOR PATIENTS SECTION"/>
+               <title>17 PATIENT COUNSELING INFORMATION </title>
+               <text>
+                  <paragraph>
+                     <content styleCode="bold">
+                        <content styleCode="italics">Risk of Tissue Damage</content>
+                     </content>
+                  </paragraph>
+                  <paragraph>Advise the patient, family, or caregiver to report signs of extravasation urgently <content styleCode="italics">[see Warnings and Precautions (<linkHtml href="#ID_fa39b7d4-d1df-4572-b2fe-8d7e4ffb8ed0">5.1</linkHtml>)].</content>
+                  </paragraph>
+                  <paragraph>Manufactured for:</paragraph>
+                  <paragraph>Civica, Inc., Lehi, Utah 84043</paragraph>
+                  <paragraph>Manufactured by: </paragraph>
+                  <paragraph>Delpharm Boucherville Canada Inc.</paragraph>
+                  <paragraph>145 Rue Jules-Leger Street</paragraph>
+                  <paragraph>Boucherville, QC, J4B 7K8</paragraph>
+                  <paragraph>46327077</paragraph>
+               </text>
+               <effectiveTime value="20230331"/>
+            </section>
+         </component>
+         <component>
+            <section ID="ID_04b57bbd-c24a-4607-b42e-fb4c84ebfa5a">
+               <id root="04b57bbd-c24a-4607-b42e-fb4c84ebfa5a"/>
+               <code code="51945-4" codeSystem="2.16.840.1.113883.6.1" displayName="PACKAGE LABEL.PRINCIPAL DISPLAY PANEL"/>
+               <title>PACKAGE/LABEL PRINCIPAL DISPLAY PANEL </title>
+               <text>
+                  <paragraph>NDC 72572-481-10</paragraph>
+                  <paragraph>Norepinephrine</paragraph>
+                  <paragraph>Bitartrate Injection, USP</paragraph>
+                  <paragraph>4mg/4mL* (1mg/mL)</paragraph>
+                  <paragraph>FOR INTRAVENOUS INFUSION ONLY</paragraph>
+                  <paragraph>Warning: Contains Sulfites.</paragraph>
+                  <paragraph>Rx Only</paragraph>
+                  <paragraph>10 x 4 mL Single-Dose Vials</paragraph>
+                  <paragraph>CIVICA</paragraph>
+                  <renderMultiMedia ID="id-1665619029" referencedObject="ID_2ea5b170-e674-4400-b62d-057578aa5141"/>
+               </text>
+               <effectiveTime value="20200914"/>
+               <component>
+                  <observationMedia ID="ID_2ea5b170-e674-4400-b62d-057578aa5141">
+                     <text>carton</text>
+                     <value mediaType="image/jpeg" xsi:type="ED">
+                        <reference value="norepinephrine-civica-02.jpg"/>
+                     </value>
+                  </observationMedia>
+               </component>
+            </section>
+         </component>
+      </structuredBody>
+   </component>
+</document>

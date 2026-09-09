@@ -1,0 +1,56 @@
+# Illustrative starting designs from workbook 08_Strategies rows 5-12.
+# These are NOT optimized designs and NOT conclusions (08_Strategies!A2). They
+# exist so the deterministic replica reconciles with the workbook; the
+# optimization phase replaces every design variable. Eligibility is NOT stored
+# here: it is derived from config/regulatory_gates.yaml (workbook anomaly WB-05).
+id: illustrative_baseline
+description: Workbook multipliers, all illustrative
+source_locator: "08_Strategies!B5:J12"
+designs:
+  - id: S0
+    name: Status quo centralized supply
+    pathway: approved_cmo
+    durable: true
+    design_variables: {sites: 1, capacity_factor: 1.05, safety_stock_days: 30, release_time_factor: 1.0, delivery_days: 5, common_impact_factor: 1.0, fixed_cost_factor: 1.0, validation_factor: 1.0, reserved_capacity_fraction: 0.0}
+    notes: "Capacity factor 1.05 means 'status quo' runs 5% above nominal (WB-29)"
+  - id: S1
+    name: Additional safety stock
+    pathway: approved_cmo
+    durable: true
+    design_variables: {sites: 1, capacity_factor: 1.05, safety_stock_days: 180, release_time_factor: 1.0, delivery_days: 5, common_impact_factor: 1.0, fixed_cost_factor: 1.0, validation_factor: 1.0, reserved_capacity_fraction: 0.0}
+    notes: "Six-month inventory comparator; the workbook screen cannot rank it (WB-02)"
+  - id: S2
+    name: Dual source plus contracts
+    pathway: approved_cmo
+    durable: true
+    design_variables: {sites: 2, capacity_factor: 1.2, safety_stock_days: 60, release_time_factor: 1.0, delivery_days: 4, common_impact_factor: 0.65, fixed_cost_factor: 1.15, validation_factor: 1.5, reserved_capacity_fraction: 0.0}
+  - id: S3
+    name: Reserved flexible contract capacity
+    pathway: approved_cmo
+    durable: true
+    design_variables: {sites: 2, capacity_factor: 1.3, safety_stock_days: 60, release_time_factor: 1.0, delivery_days: 4, common_impact_factor: 0.65, fixed_cost_factor: 1.2, validation_factor: 1.5, reserved_capacity_fraction: 0.25}
+    notes: "reserved_capacity_fraction is charged as a fraction of variable cost in the workbook, not as reserved capacity (WB-21)"
+  - id: S4
+    name: Additional centralized capacity
+    pathway: approved_cmo
+    durable: true
+    design_variables: {sites: 2, capacity_factor: 1.45, safety_stock_days: 60, release_time_factor: 1.0, delivery_days: 5, common_impact_factor: 0.75, fixed_cost_factor: 1.1, validation_factor: 1.5, reserved_capacity_fraction: 0.0}
+  - id: S5
+    name: Distributed regional nodes with conventional release
+    pathway: approved_cmo
+    durable: true
+    design_variables: {sites: 4, capacity_factor: 1.35, safety_stock_days: 45, release_time_factor: 1.0, delivery_days: 2, common_impact_factor: 0.45, fixed_cost_factor: 1.4, validation_factor: 2.5, reserved_capacity_fraction: 0.0}
+    notes: "Node size is not scaled: each 'smaller node' uses the full central-plant capital and fixed cost (WB-04)"
+  - id: S6
+    name: Distributed regional nodes plus validated release assurance
+    pathway: approved_cmo
+    durable: true
+    release_scenario: R0
+    design_variables: {sites: 4, capacity_factor: 1.35, safety_stock_days: 45, release_time_factor: 0.6, delivery_days: 2, common_impact_factor: 0.45, fixed_cost_factor: 1.5, validation_factor: 3.0, reserved_capacity_fraction: 0.0}
+    notes: "release_time_factor 0.6 is the workbook's illustrative upper bound (WB-12 in wb-B); release_scenario stays R0 because gate G15 is UNCERTAIN and R3 is disabled by default"
+  - id: S7
+    name: 503B shortage response
+    pathway: 503b
+    durable: false
+    design_variables: {sites: 2, capacity_factor: 1.15, safety_stock_days: 30, release_time_factor: 1.0, delivery_days: 3, common_impact_factor: 0.7, fixed_cost_factor: 1.25, validation_factor: 1.0, reserved_capacity_fraction: 0.15}
+    notes: "Status-dependent pathway; legal availability is a time-varying state in the simulation"

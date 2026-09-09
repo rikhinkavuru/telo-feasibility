@@ -1,0 +1,125 @@
+..F................................FF................................... [ 52%]
+....................................F.............................       [100%]
+=================================== FAILURES ===================================
+_______ test_chronic_shortage_backcast_is_consistent_with_ongoing_status _______
+
+    def test_chronic_shortage_backcast_is_consistent_with_ongoing_status() -> None:
+        ep = next(e for e in load_episodes() if e["id"] == "sodium_bicarbonate_2017_ongoing")
+>       c = backcast_episode(ep, horizon_days=365 + 400)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/integration/test_backcast.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/telo_feasibility/backcast.py:109: in backcast_episode
+    th = load_protocol().service_thresholds
+         ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/Users/rikhinkavuru/telo/feasibility/protocol/protocol.yaml')
+
+    def load_protocol(path: Path = PROTOCOL_PATH) -> Protocol:
+        with path.open("r", encoding="utf-8") as f:
+            raw = yaml.safe_load(f)
+>       return Protocol.model_validate(raw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       pydantic_core._pydantic_core.ValidationError: 1 validation error for Protocol
+E         Value error, protocol strategies must be S0..S7 in order, got ['S0', 'S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7'] [type=value_error, input_value={'protocol': {'id': 'telo...o excluded modalities']}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.13/v/value_error
+
+src/telo_feasibility/provenance.py:66: ValidationError
+___________________ test_config_inputs_match_workbook_inputs ___________________
+
+    def test_config_inputs_match_workbook_inputs() -> None:
+>       wb = workbook_inputs()
+             ^^^^^^^^^^^^^^^^^
+
+tests/regression/test_workbook_reconciliation.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/Users/rikhinkavuru/telo/feasibility/data/raw_snapshots/workbook_scaffold/2026-09-01/Telo_Feasibility_Model.xlsx')
+
+    def workbook_inputs(path: Path = WORKBOOK_PATH) -> WorkbookInputs:
+        """Base/low/high inputs as typed in the workbook (05, 06, 07, 08). Drift guard for config/."""
+        wb = load_workbook(path, data_only=True, read_only=True)
+        g = wb["05_Assumptions"]
+        gb = {name: float(g[f"C{r}"].value) for r, name in GLOBAL_ROWS.items()}
+        gl = {name: float(g[f"B{r}"].value) for r, name in GLOBAL_ROWS.items()}
+        gh = {name: float(g[f"D{r}"].value) for r, name in GLOBAL_ROWS.items()}
+        target_fill = float(g["C9"].value)
+        pb: dict[str, dict[str, float]] = {}
+        pl: dict[str, dict[str, float]] = {}
+        ph: dict[str, dict[str, float]] = {}
+        for pid, sheet in zip(WORKBOOK_PRODUCT_ORDER, ("06_Product_A", "07_Product_B"), strict=True):
+            ws = wb[sheet]
+            pb[pid] = {name: float(ws[f"C{r}"].value) for r, name in PRODUCT_ROWS.items()}
+            pl[pid] = {name: float(ws[f"B{r}"].value) for r, name in PRODUCT_ROWS.items()}
+            ph[pid] = {name: float(ws[f"D{r}"].value) for r, name in PRODUCT_ROWS.items()}
+        s = wb["08_Strategies"]
+        strategies: dict[StrategyId, dict[str, float]] = {}
+        flags: dict[StrategyId, str] = {}
+        for i, sid in enumerate(StrategyId):
+            r = 5 + i
+            strategies[sid] = {
+>               name: float(s[f"{col}{r}"].value) for col, name in STRATEGY_COLUMNS.items()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+            }
+E           TypeError: float() argument must be a string or a real number, not 'NoneType'
+
+src/telo_feasibility/workbook.py:221: TypeError
+__________________ test_replica_reconciles_every_cached_cell ___________________
+
+    def test_replica_reconciles_every_cached_cell() -> None:
+>       protocol = load_protocol()
+                   ^^^^^^^^^^^^^^^
+
+tests/regression/test_workbook_reconciliation.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/Users/rikhinkavuru/telo/feasibility/protocol/protocol.yaml')
+
+    def load_protocol(path: Path = PROTOCOL_PATH) -> Protocol:
+        with path.open("r", encoding="utf-8") as f:
+            raw = yaml.safe_load(f)
+>       return Protocol.model_validate(raw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       pydantic_core._pydantic_core.ValidationError: 1 validation error for Protocol
+E         Value error, protocol strategies must be S0..S7 in order, got ['S0', 'S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7'] [type=value_error, input_value={'protocol': {'id': 'telo...o excluded modalities']}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.13/v/value_error
+
+src/telo_feasibility/provenance.py:66: ValidationError
+______________________ test_protocol_loads_and_is_frozen _______________________
+
+    def test_protocol_loads_and_is_frozen() -> None:
+>       p = load_protocol()
+            ^^^^^^^^^^^^^^^
+
+tests/unit/test_provenance.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/Users/rikhinkavuru/telo/feasibility/protocol/protocol.yaml')
+
+    def load_protocol(path: Path = PROTOCOL_PATH) -> Protocol:
+        with path.open("r", encoding="utf-8") as f:
+            raw = yaml.safe_load(f)
+>       return Protocol.model_validate(raw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       pydantic_core._pydantic_core.ValidationError: 1 validation error for Protocol
+E         Value error, protocol strategies must be S0..S7 in order, got ['S0', 'S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7'] [type=value_error, input_value={'protocol': {'id': 'telo...o excluded modalities']}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.13/v/value_error
+
+src/telo_feasibility/provenance.py:66: ValidationError
+=========================== short test summary info ============================
+FAILED tests/integration/test_backcast.py::test_chronic_shortage_backcast_is_consistent_with_ongoing_status
+FAILED tests/regression/test_workbook_reconciliation.py::test_config_inputs_match_workbook_inputs
+FAILED tests/regression/test_workbook_reconciliation.py::test_replica_reconciles_every_cached_cell
+FAILED tests/unit/test_provenance.py::test_protocol_loads_and_is_frozen - pyd...
+{
+  "generated_at": "2026-09-02T22:13:58.398369+00:00",
+  "passed": 134,
+  "failed": 4,
+  "skipped": 0,
+  "crn_test_passed": true,
+  "common_cause_test_passed": true,
+  "mass_balance_property_passed": true,
+  "exit_code": 1
+}

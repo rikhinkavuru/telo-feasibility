@@ -1,0 +1,17 @@
+{
+  "source_id": "S08",
+  "url": "https://www.fda.gov/media/71021/download",
+  "retrieved_at": "2026-09-01T23:02:42.622422Z",
+  "http_status": 200,
+  "sha256": "821788a1127a9215670e60a7010e35bf2eafb408cf346e74440fb73a01869792",
+  "content_type": "application/pdf",
+  "size_bytes": 380828,
+  "license_note": "FDA public domain",
+  "raw_path": "data/raw_snapshots/S08/2026-09-01/fda_process_validation_2011.pdf",
+  "transform_script": null,
+  "processed_path": null,
+  "data_dictionary_rows": 0,
+  "access_method": "auto",
+  "robots_allowed": true,
+  "notes": ""
+}

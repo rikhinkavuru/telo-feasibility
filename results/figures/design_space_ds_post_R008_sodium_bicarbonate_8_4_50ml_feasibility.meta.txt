@@ -1,0 +1,9 @@
+title: Feasibility conditions by strategy and input, sodium_bicarbonate_8_4_50ml
+xlabel: input, normalized over its recorded low-to-high range [-]
+ylabel: strategy [-]
+product: sodium_bicarbonate_8_4_50ml
+scenario: tau = 0.99, q = 0.9; bisection 5 steps on 20 paired runs
+manifest_id: ds_post_R008
+source_note: results/design_space/ds_post_R008/; all inputs tier 5 illustrative
+decision_caption: Green: the part of each input's recorded range where the strategy meets the service target. The tick marks the crossing. Grey only: no crossing inside the range, so the condition is not binding there. Illustrative.
+illustrative: True

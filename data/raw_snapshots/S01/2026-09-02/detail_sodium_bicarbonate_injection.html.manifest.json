@@ -1,0 +1,17 @@
+{
+  "source_id": "S01",
+  "url": "https://www.accessdata.fda.gov/scripts/drugshortages/dsp_ActiveIngredientDetails.cfm?AI=Sodium+Bicarbonate+Injection&st=c",
+  "retrieved_at": "2026-09-02T04:02:04.824664Z",
+  "http_status": 200,
+  "sha256": "8ed87b1156e6ea415566cf03419c04aa4388d677553df8151564c05e5e787eb7",
+  "content_type": "text/html;charset=UTF-8",
+  "size_bytes": 35992,
+  "license_note": "FDA website policies: contents of fda.gov are not copyrighted and are in the public domain; credit appreciated but not required.",
+  "raw_path": "data/raw_snapshots/S01/2026-09-02/detail_sodium_bicarbonate_injection.html",
+  "transform_script": null,
+  "processed_path": null,
+  "data_dictionary_rows": 0,
+  "access_method": "auto",
+  "robots_allowed": true,
+  "notes": ""
+}

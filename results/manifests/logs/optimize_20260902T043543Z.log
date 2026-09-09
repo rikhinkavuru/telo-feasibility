@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/rikhinkavuru/telo/feasibility/scripts/optimize_strategies.py", line 21, in <module>
+    out = optimize_all(
+          ^^^^^^^^^^^^^
+  File "/Users/rikhinkavuru/telo/feasibility/src/telo_feasibility/optimization.py", line 353, in optimize_all
+    records = list(ex.map(_optimize_task, tasks))
+                          ^^^^^^^^^^^^^^
+NameError: name '_optimize_task' is not defined. Did you mean: 'optimize_all'?

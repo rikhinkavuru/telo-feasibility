@@ -1,0 +1,672 @@
+{
+  "meta": {
+    "product": "sodium_bicarbonate_8_4_50ml",
+    "optimized_designs_run": "opt_20260902T043854Z",
+    "designs": {
+      "S0": {
+        "sites": 1.0,
+        "capacity_factor": 1.05,
+        "safety_stock_days": 30.0,
+        "release_time_factor": 1.0,
+        "delivery_days": 5.0,
+        "common_impact_factor": 1.0,
+        "fixed_cost_factor": 1.0,
+        "validation_factor": 1.0,
+        "reserved_capacity_fraction": 0.0
+      },
+      "S1": {
+        "sites": 1.0,
+        "capacity_factor": 1.05,
+        "safety_stock_days": 180.0,
+        "release_time_factor": 1.0,
+        "delivery_days": 5.0,
+        "common_impact_factor": 1.0,
+        "fixed_cost_factor": 1.0,
+        "validation_factor": 1.0,
+        "reserved_capacity_fraction": 0.0
+      },
+      "S2": {
+        "sites": 2.0,
+        "capacity_factor": 0.95,
+        "safety_stock_days": 120.0,
+        "release_time_factor": 1.0,
+        "delivery_days": 4.0,
+        "common_impact_factor": 0.65,
+        "fixed_cost_factor": 1.15,
+        "validation_factor": 1.5,
+        "reserved_capacity_fraction": 0.0,
+        "independent_api_supplier": 0.0,
+        "material_target_days": 161.25
+      },
+      "S3": {
+        "sites": 2.0,
+        "capacity_factor": 1.3,
+        "safety_stock_days": 120.0,
+        "release_time_factor": 1.0,
+        "delivery_days": 4.0,
+        "common_impact_factor": 0.65,
+        "fixed_cost_factor": 1.2,
+        "validation_factor": 1.5,
+        "reserved_capacity_fraction": 0.25,
+        "activation_threshold_days": 45.0,
+        "campaign_batches": 6.0
+      },
+      "S4": {
+        "sites": 2.0,
+        "capacity_factor": 1.45,
+        "safety_stock_days": 60.0,
+        "release_time_factor": 1.0,
+        "delivery_days": 5.0,
+        "common_impact_factor": 0.75,
+        "fixed_cost_factor": 1.1,
+        "validation_factor": 1.5,
+        "reserved_capacity_fraction": 0.0
+      },
+      "S5": {
+        "sites": 4.0,
+        "capacity_factor": 1.35,
+        "safety_stock_days": 45.0,
+        "release_time_factor": 1.0,
+        "delivery_days": 2.0,
+        "common_impact_factor": 0.45,
+        "fixed_cost_factor": 1.4,
+        "validation_factor": 2.5,
+        "reserved_capacity_fraction": 0.0
+      },
+      "S6": {
+        "sites": 4.0,
+        "capacity_factor": 1.35,
+        "safety_stock_days": 45.0,
+        "release_time_factor": 0.6,
+        "delivery_days": 2.0,
+        "common_impact_factor": 0.45,
+        "fixed_cost_factor": 1.5,
+        "validation_factor": 3.0,
+        "reserved_capacity_fraction": 0.0
+      },
+      "S7": {
+        "sites": 2.0,
+        "capacity_factor": 1.15,
+        "safety_stock_days": 30.0,
+        "release_time_factor": 1.0,
+        "delivery_days": 3.0,
+        "common_impact_factor": 0.7,
+        "fixed_cost_factor": 1.25,
+        "validation_factor": 1.0,
+        "reserved_capacity_fraction": 0.15
+      }
+    },
+    "runs_per_scenario": 6,
+    "horizon_days": 1095,
+    "generated_at": "20260902T045142Z",
+    "banner": "PRELIMINARY / ILLUSTRATIVE / NOT FOR EXTERNAL CLAIMS"
+  },
+  "map": {
+    "axes": {
+      "capacity_utilization": [
+        600000.0,
+        1200000.0,
+        2400000.0
+      ],
+      "release_time": [
+        2.0,
+        14.0,
+        18.0
+      ],
+      "common_cause_dependence": [
+        0.02,
+        0.1,
+        0.3
+      ]
+    },
+    "cells": [
+      {
+        "inputs": {
+          "capacity_utilization": 600000.0,
+          "release_time": 2.0,
+          "common_cause_dependence": 0.02
+        },
+        "preferred": "S2",
+        "costs": {
+          "S0": 12123231.62530947,
+          "S1": 11947161.081546912,
+          "S2": 22868155.035615623,
+          "S3": 31303715.1532145,
+          "S4": 28807362.51880327,
+          "S5": 46634112.30113956,
+          "S6": 49220289.05092139,
+          "S7": 16766335.380639292
+        },
+        "feasible": [
+          "S2"
+        ]
+      },
+      {
+        "inputs": {
+          "capacity_utilization": 600000.0,
+          "release_time": 2.0,
+          "common_cause_dependence": 0.1
+        },
+        "preferred": "S2",
+        "costs": {
+          "S0": 12108525.361345997,
+          "S1": 11945281.857665634,
+          "S2": 22857321.937200103,
+          "S3": 31296825.509977058,
+          "S4": 28808847.26258409,
+          "S5": 46641284.200258285,
+          "S6": 49227460.95004011,
+          "S7": 16752313.777525136
+        },
+        "feasible": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "inputs": {
+          "capacity_utilization": 600000.0,
+          "release_time": 2.0,
+          "common_cause_dependence": 0.3
+        },
+        "preferred": "S2",
+        "costs": {
+          "S0": 12102064.31811312,
+          "S1": 11937692.041190749,
+          "S2": 22853680.42483024,
+          "S3": 31271345.357707653,
+          "S4": 28808614.60673021,
+          "S5": 46631028.57732678,
+          "S6": 49217205.3271086,
+          "S7": 16725981.994150707
+        },
+        "feasible": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "inputs": {
+          "capacity_utilization": 600000.0,
+          "release_time": 14.0,
+          "common_cause_dependence": 0.02
+        },
+        "preferred": "S2",
+        "costs": {
+          "S0": 12113098.952446455,
+          "S1": 11911577.21977979,
+          "S2": 22846084.434894163,
+          "S3": 31302169.592045546,
+          "S4": 28786975.307716515,
+          "S5": 46627639.25624459,
+          "S6": 49213816.00602641,
+          "S7": 16731537.65179911
+        },
+        "feasible": [
+          "S2"
+        ]
+      },
+      {
+        "inputs": {
+          "capacity_utilization": 600000.0,
+          "release_time": 14.0,
+          "common_cause_dependence": 0.1
+        },
+        "preferred": "S2",
+        "costs": {
+          "S0": 12098047.722871112,
+          "S1": 11914065.58619988,
+          "S2": 22834704.370172706,
+          "S3": 31277608.13386747,
+          "S4": 28808710.597488206,
+          "S5": 46631926.082440935,
+          "S6": 49218102.83222276,
+          "S7": 16703827.372118741
+        },
+        "feasible": [
+          "S2"
+        ]
+      },
+      {
+        "inputs": {
+          "capacity_utilization": 600000.0,
+          "release_time": 14.0,
+          "common_cause_dependence": 0.3
+        },
+        "preferred": "S2",
+        "costs": {
+          "S0": 12083014.400190746,
+          "S1": 11903522.456332302,
+          "S2": 22837174.15780741,
+          "S3": 31293046.997456506,
+          "S4": 28793658.18140601,
+          "S5": 46614703.387495734,
+          "S6": 49200880.13727755,
+          "S7": 16680437.517497739
+        },
+        "feasible": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "inputs": {
+          "capacity_utilization": 600000.0,
+          "release_time": 18.0,
+          "common_cause_dependence": 0.02
+        },
+        "preferred": "S2",
+        "costs": {
+          "S0": 12111622.20078892,
+          "S1": 11876513.75936883,
+          "S2": 22842392.529665858,
+          "S3": 31289336.66196793,
+          "S4": 28794981.482515603,
+          "S5": 46615243.83918979,
+          "S6": 49201420.588971615,
+          "S7": 16667541.50587217
+        },
+        "feasible": [
+          "S2"
+        ]
+      },
+      {
+        "inputs": {
+          "capacity_utilization": 600000.0,
+          "release_time": 18.0,
+          "common_cause_dependence": 0.1
+        },
+        "preferred": "S2",
+        "costs": {
+          "S0": 12089347.941747824,
+          "S1": 11869921.894578874,
+          "S2": 22821435.30046494,
+          "S3": 31292410.869328648,
+          "S4": 28783170.744812403,
+          "S5": 46616295.98157335,
+          "S6": 49202472.73135518,
+          "S7": 16638619.430182673
+        },
+        "feasible": [
+          "S2"
+        ]
+      },
+      {
+        "inputs": {
+          "capacity_utilization": 600000.0,
+          "release_time": 18.0,
+          "common_cause_dependence": 0.3
+        },
+        "preferred": "S2",
+        "costs": {
+          "S0": 12087068.465254674,
+          "S1": 11869751.609081157,
+          "S2": 22820869.031958092,
+          "S3": 31317731.56864372,
+          "S4": 28777019.431762174,
+          "S5": 46608199.58402997,
+          "S6": 49194376.3338118,
+          "S7": 16635483.189922398
+        },
+        "feasible": [
+          "S2"
+        ]
+      },
+      {
+        "inputs": {
+          "capacity_utilization": 1200000.0,
+          "release_time": 2.0,
+          "common_cause_dependence": 0.02
+        },
+        "preferred": "S2",
+        "costs": {
+          "S0": 13016012.59204463,
+          "S1": 12679365.330218144,
+          "S2": 24344241.13979371,
+          "S3": 32858716.08191313,
+          "S4": 30399276.698122904,
+          "S5": 48262942.94103911,
+          "S6": 50849119.69082093,
+          "S7": 17636632.662251163
+        },
+        "feasible": [
+          "S2",
+          "S3"
+        ]
+      },
+      {
+        "inputs": {
+          "capacity_utilization": 1200000.0,
+          "release_time": 2.0,
+          "common_cause_dependence": 0.1
+        },
+        "preferred": "S3",
+        "costs": {
+          "S0": 12933778.995072024,
+          "S1": 12636126.5203323,
+          "S2": 24259084.471501473,
+          "S3": 32864988.134785276,
+          "S4": 30349646.49649277,
+          "S5": 48165034.296208054,
+          "S6": 50751211.04598988,
+          "S7": 17557329.27473518
+        },
+        "feasible": [
+          "S3"
+        ]
+      },
+      {
+        "inputs": {
+          "capacity_utilization": 1200000.0,
+          "release_time": 2.0,
+          "common_cause_dependence": 0.3
+        },
+        "preferred": null,
+        "costs": {
+          "S0": 12845471.80707659,
+          "S1": 12597343.22123641,
+          "S2": 24275791.481528874,
+          "S3": 32844066.28069852,
+          "S4": 30301988.33815944,
+          "S5": 48095762.82537701,
+          "S6": 50681939.575158834,
+          "S7": 17465215.975456644
+        },
+        "feasible": []
+      },
+      {
+        "inputs": {
+          "capacity_utilization": 1200000.0,
+          "release_time": 14.0,
+          "common_cause_dependence": 0.02
+        },
+        "preferred": "S2",
+        "costs": {
+          "S0": 13008559.650085725,
+          "S1": 12672161.479597142,
+          "S2": 24302967.148154438,
+          "S3": 32798084.308196235,
+          "S4": 30382496.680748478,
+          "S5": 48190344.66330851,
+          "S6": 50776521.41309034,
+          "S7": 17622827.40905025
+        },
+        "feasible": [
+          "S2"
+        ]
+      },
+      {
+        "inputs": {
+          "capacity_utilization": 1200000.0,
+          "release_time": 14.0,
+          "common_cause_dependence": 0.1
+        },
+        "preferred": null,
+        "costs": {
+          "S0": 12926302.946638236,
+          "S1": 12628996.619446456,
+          "S2": 24220841.04415444,
+          "S3": 32801751.10163915,
+          "S4": 30317634.28261606,
+          "S5": 48103572.021089345,
+          "S6": 50689748.77087116,
+          "S7": 17548348.931758013
+        },
+        "feasible": []
+      },
+      {
+        "inputs": {
+          "capacity_utilization": 1200000.0,
+          "release_time": 14.0,
+          "common_cause_dependence": 0.3
+        },
+        "preferred": null,
+        "costs": {
+          "S0": 12830202.230985269,
+          "S1": 12590211.543003531,
+          "S2": 24234637.970967222,
+          "S3": 32774317.40973505,
+          "S4": 30256817.353753045,
+          "S5": 48030579.905591615,
+          "S6": 50616756.65537345,
+          "S7": 17448624.229694083
+        },
+        "feasible": []
+      },
+      {
+        "inputs": {
+          "capacity_utilization": 1200000.0,
+          "release_time": 18.0,
+          "common_cause_dependence": 0.02
+        },
+        "preferred": "S3",
+        "costs": {
+          "S0": 13004832.243432755,
+          "S1": 12670607.126743257,
+          "S2": 24271485.094446674,
+          "S3": 32824284.72961176,
+          "S4": 30346601.86361149,
+          "S5": 48150542.60238158,
+          "S6": 50736719.3521634,
+          "S7": 17621496.267949793
+        },
+        "feasible": [
+          "S3"
+        ]
+      },
+      {
+        "inputs": {
+          "capacity_utilization": 1200000.0,
+          "release_time": 18.0,
+          "common_cause_dependence": 0.1
+        },
+        "preferred": "S3",
+        "costs": {
+          "S0": 12922477.786670199,
+          "S1": 12627315.984300336,
+          "S2": 24182852.4805928,
+          "S3": 32772103.573109478,
+          "S4": 30290189.571182266,
+          "S5": 48064256.30849573,
+          "S6": 50650433.05827755,
+          "S7": 17543118.405525133
+        },
+        "feasible": [
+          "S3"
+        ]
+      },
+      {
+        "inputs": {
+          "capacity_utilization": 1200000.0,
+          "release_time": 18.0,
+          "common_cause_dependence": 0.3
+        },
+        "preferred": "S3",
+        "costs": {
+          "S0": 12828456.220099425,
+          "S1": 12586586.713861981,
+          "S2": 24197934.99741928,
+          "S3": 32808126.553926826,
+          "S4": 30226476.876287293,
+          "S5": 47987621.290472895,
+          "S6": 50573798.040254734,
+          "S7": 17448663.27669865
+        },
+        "feasible": [
+          "S3"
+        ]
+      },
+      {
+        "inputs": {
+          "capacity_utilization": 2400000.0,
+          "release_time": 2.0,
+          "common_cause_dependence": 0.02
+        },
+        "preferred": null,
+        "costs": {
+          "S0": 13047144.971135953,
+          "S1": 12726866.931770654,
+          "S2": 25034192.926839378,
+          "S3": 35202050.247771576,
+          "S4": 31535896.654383183,
+          "S5": 49828819.63083363,
+          "S6": 52414996.38061545,
+          "S7": 17673175.560789976
+        },
+        "feasible": []
+      },
+      {
+        "inputs": {
+          "capacity_utilization": 2400000.0,
+          "release_time": 2.0,
+          "common_cause_dependence": 0.1
+        },
+        "preferred": null,
+        "costs": {
+          "S0": 12946148.44582545,
+          "S1": 12671349.75670673,
+          "S2": 24933271.25769782,
+          "S3": 35107420.57565286,
+          "S4": 31419768.43678501,
+          "S5": 49741724.79785189,
+          "S6": 52327901.54763373,
+          "S7": 17571424.43976258
+        },
+        "feasible": []
+      },
+      {
+        "inputs": {
+          "capacity_utilization": 2400000.0,
+          "release_time": 2.0,
+          "common_cause_dependence": 0.3
+        },
+        "preferred": null,
+        "costs": {
+          "S0": 12868493.052715862,
+          "S1": 12623362.164263807,
+          "S2": 24865746.594738916,
+          "S3": 34985309.735132314,
+          "S4": 31269068.95044254,
+          "S5": 49569758.979436375,
+          "S6": 52155935.72921819,
+          "S7": 17488492.168146145
+        },
+        "feasible": []
+      },
+      {
+        "inputs": {
+          "capacity_utilization": 2400000.0,
+          "release_time": 14.0,
+          "common_cause_dependence": 0.02
+        },
+        "preferred": null,
+        "costs": {
+          "S0": 13046954.700012663,
+          "S1": 12719077.320204446,
+          "S2": 25023147.45005855,
+          "S3": 35171895.24089486,
+          "S4": 31498013.695803273,
+          "S5": 49663535.593194366,
+          "S6": 52249712.34297619,
+          "S7": 17670556.96803655
+        },
+        "feasible": []
+      },
+      {
+        "inputs": {
+          "capacity_utilization": 2400000.0,
+          "release_time": 14.0,
+          "common_cause_dependence": 0.1
+        },
+        "preferred": null,
+        "costs": {
+          "S0": 12940174.435021797,
+          "S1": 12661653.651126822,
+          "S2": 24926519.79375718,
+          "S3": 35069575.65186747,
+          "S4": 31387359.368332952,
+          "S5": 49577555.86534505,
+          "S6": 52163732.61512688,
+          "S7": 17564911.70602742
+        },
+        "feasible": []
+      },
+      {
+        "inputs": {
+          "capacity_utilization": 2400000.0,
+          "release_time": 14.0,
+          "common_cause_dependence": 0.3
+        },
+        "preferred": null,
+        "costs": {
+          "S0": 12856693.56522271,
+          "S1": 12615613.190761523,
+          "S2": 24850150.70470238,
+          "S3": 34955948.05382637,
+          "S4": 31236364.232853502,
+          "S5": 49422567.13347747,
+          "S6": 52008743.8832593,
+          "S7": 17480046.618164405
+        },
+        "feasible": []
+      },
+      {
+        "inputs": {
+          "capacity_utilization": 2400000.0,
+          "release_time": 18.0,
+          "common_cause_dependence": 0.02
+        },
+        "preferred": null,
+        "costs": {
+          "S0": 13039154.528428191,
+          "S1": 12713244.526693031,
+          "S2": 24998385.290980924,
+          "S3": 35157270.255273856,
+          "S4": 31478136.63277131,
+          "S5": 49612900.838463776,
+          "S6": 52199077.5882456,
+          "S7": 17661502.535214636
+        },
+        "feasible": []
+      },
+      {
+        "inputs": {
+          "capacity_utilization": 2400000.0,
+          "release_time": 18.0,
+          "common_cause_dependence": 0.1
+        },
+        "preferred": null,
+        "costs": {
+          "S0": 12932332.745003534,
+          "S1": 12657757.688222712,
+          "S2": 24909877.261136174,
+          "S3": 35052449.3132145,
+          "S4": 31360420.321903735,
+          "S5": 49513435.86102084,
+          "S6": 52099612.61080268,
+          "S7": 17559706.861872166
+        },
+        "feasible": []
+      },
+      {
+        "inputs": {
+          "capacity_utilization": 2400000.0,
+          "release_time": 18.0,
+          "common_cause_dependence": 0.3
+        },
+        "preferred": null,
+        "costs": {
+          "S0": 12852704.24520901,
+          "S1": 12613652.471706731,
+          "S2": 24839243.346592795,
+          "S3": 34935068.04758436,
+          "S4": 31214392.26157953,
+          "S5": 49358915.16955053,
+          "S6": 51945091.919332355,
+          "S7": 17474860.6065708
+        },
+        "feasible": []
+      }
+    ]
+  }
+}

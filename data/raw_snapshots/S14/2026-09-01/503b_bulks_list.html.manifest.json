@@ -1,0 +1,17 @@
+{
+  "source_id": "S14",
+  "url": "https://www.fda.gov/drugs/human-drug-compounding/503b-bulk-drug-substances-list",
+  "retrieved_at": "2026-09-01T23:05:44.417140Z",
+  "http_status": 200,
+  "sha256": "7f00a4d2672a0478de9deabc6b3189057292d65ff72369cdb084283fde5f6775",
+  "content_type": "text/html; charset=UTF-8",
+  "size_bytes": 39199,
+  "license_note": "FDA public domain",
+  "raw_path": "data/raw_snapshots/S14/2026-09-01/503b_bulks_list.html",
+  "transform_script": null,
+  "processed_path": null,
+  "data_dictionary_rows": 0,
+  "access_method": "auto",
+  "robots_allowed": true,
+  "notes": ""
+}

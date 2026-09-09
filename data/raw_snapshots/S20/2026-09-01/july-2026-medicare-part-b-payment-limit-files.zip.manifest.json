@@ -1,0 +1,17 @@
+{
+  "source_id": "S20",
+  "url": "https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip",
+  "retrieved_at": "2026-09-01T23:09:14.604518Z",
+  "http_status": 200,
+  "sha256": "d475e2a7b0e87dd635a8dc3fdf6d72200fbc6dcfc46e7e8a3931d96a4d643797",
+  "content_type": "application/zip",
+  "size_bytes": 83139,
+  "license_note": "US government work. REIMBURSEMENT / ASP PROXY ONLY; never manufacturing cost.",
+  "raw_path": "data/raw_snapshots/S20/2026-09-01/july-2026-medicare-part-b-payment-limit-files.zip",
+  "transform_script": null,
+  "processed_path": null,
+  "data_dictionary_rows": 0,
+  "access_method": "auto",
+  "robots_allowed": true,
+  "notes": ""
+}

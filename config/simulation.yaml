@@ -1,0 +1,15 @@
+# Stochastic simulation settings (protocol 5.1, 7). Thresholds come from protocol/protocol.yaml.
+id: base_2026_09
+master_seed: 20260901
+n_runs: 200              # quick default; the protocol's precision target is reached by raising this until MCSE stabilizes
+horizon_years: 5
+warm_up_days: 365
+n_regions: 4
+record_events: false
+products:
+  - id: sodium_bicarbonate_8_4_50ml
+    shortage_listed_at_t0: true    # FDA shortage CSV 2026-09-02: 15 Current rows (S01 snapshot)
+  - id: norepinephrine_1mgml_4ml
+    shortage_listed_at_t0: false   # 0 rows in the same snapshot
+strategies: [S0, S1, S2, S3, S4, S5, S6, S7]
+workers: 0               # 0 = all CPUs minus one

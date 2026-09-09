@@ -1,0 +1,169 @@
+{
+  "meta": {
+    "product": "sodium_bicarbonate_8_4_50ml",
+    "optimized_designs_run": "opt_20260902T043854Z",
+    "designs": {
+      "S0": {
+        "sites": 1.0,
+        "capacity_factor": 1.05,
+        "safety_stock_days": 30.0,
+        "release_time_factor": 1.0,
+        "delivery_days": 5.0,
+        "common_impact_factor": 1.0,
+        "fixed_cost_factor": 1.0,
+        "validation_factor": 1.0,
+        "reserved_capacity_fraction": 0.0
+      },
+      "S1": {
+        "sites": 1.0,
+        "capacity_factor": 1.05,
+        "safety_stock_days": 180.0,
+        "release_time_factor": 1.0,
+        "delivery_days": 5.0,
+        "common_impact_factor": 1.0,
+        "fixed_cost_factor": 1.0,
+        "validation_factor": 1.0,
+        "reserved_capacity_fraction": 0.0
+      },
+      "S2": {
+        "sites": 2.0,
+        "capacity_factor": 0.95,
+        "safety_stock_days": 120.0,
+        "release_time_factor": 1.0,
+        "delivery_days": 4.0,
+        "common_impact_factor": 0.65,
+        "fixed_cost_factor": 1.15,
+        "validation_factor": 1.5,
+        "reserved_capacity_fraction": 0.0,
+        "independent_api_supplier": 0.0,
+        "material_target_days": 161.25
+      },
+      "S3": {
+        "sites": 2.0,
+        "capacity_factor": 1.3,
+        "safety_stock_days": 120.0,
+        "release_time_factor": 1.0,
+        "delivery_days": 4.0,
+        "common_impact_factor": 0.65,
+        "fixed_cost_factor": 1.2,
+        "validation_factor": 1.5,
+        "reserved_capacity_fraction": 0.25,
+        "activation_threshold_days": 45.0,
+        "campaign_batches": 6.0
+      },
+      "S4": {
+        "sites": 2.0,
+        "capacity_factor": 1.45,
+        "safety_stock_days": 60.0,
+        "release_time_factor": 1.0,
+        "delivery_days": 5.0,
+        "common_impact_factor": 0.75,
+        "fixed_cost_factor": 1.1,
+        "validation_factor": 1.5,
+        "reserved_capacity_fraction": 0.0
+      },
+      "S5": {
+        "sites": 4.0,
+        "capacity_factor": 1.35,
+        "safety_stock_days": 45.0,
+        "release_time_factor": 1.0,
+        "delivery_days": 2.0,
+        "common_impact_factor": 0.45,
+        "fixed_cost_factor": 1.4,
+        "validation_factor": 2.5,
+        "reserved_capacity_fraction": 0.0
+      },
+      "S6": {
+        "sites": 4.0,
+        "capacity_factor": 1.35,
+        "safety_stock_days": 45.0,
+        "release_time_factor": 0.6,
+        "delivery_days": 2.0,
+        "common_impact_factor": 0.45,
+        "fixed_cost_factor": 1.5,
+        "validation_factor": 3.0,
+        "reserved_capacity_fraction": 0.0
+      },
+      "S7": {
+        "sites": 2.0,
+        "capacity_factor": 1.15,
+        "safety_stock_days": 30.0,
+        "release_time_factor": 1.0,
+        "delivery_days": 3.0,
+        "common_impact_factor": 0.7,
+        "fixed_cost_factor": 1.25,
+        "validation_factor": 1.0,
+        "reserved_capacity_fraction": 0.15
+      }
+    },
+    "runs_per_scenario": 6,
+    "horizon_days": 1095,
+    "generated_at": "20260902T045142Z",
+    "banner": "PRELIMINARY / ILLUSTRATIVE / NOT FOR EXTERNAL CLAIMS"
+  },
+  "response": "annual cost S5 minus S4",
+  "sobol_prcc": {
+    "names": [
+      "capacity_utilization",
+      "release_time",
+      "fixed_qa_labor_per_node",
+      "demand_cv",
+      "raw_material_lead_time",
+      "common_cause_dependence",
+      "shelf_life",
+      "node_scale"
+    ],
+    "n_samples": 160,
+    "S1": [
+      0.001399773272671333,
+      -0.0009912025688171924,
+      0.24215795189262365,
+      -2.8813594537079118e-05,
+      0.0013707300498218863,
+      0.0005381512617697426,
+      0.0,
+      0.5305500761298209
+    ],
+    "S1_conf": [
+      0.009113742602943327,
+      0.001970535759531046,
+      0.3563448543975274,
+      0.0008694847147924913,
+      0.003188020997932865,
+      0.003590994787200714,
+      0.0,
+      0.465759215156525
+    ],
+    "ST": [
+      0.00015638184749650156,
+      7.840668686802642e-06,
+      0.11365575810406338,
+      8.730183441260303e-07,
+      1.0851227238820051e-05,
+      1.4621540752548971e-05,
+      0.0,
+      0.8592024847532428
+    ],
+    "ST_conf": [
+      0.00017261707913135058,
+      1.1339137320172488e-05,
+      0.14945788615593805,
+      1.0549061868054509e-06,
+      1.0854237714158446e-05,
+      7.959345481672687e-06,
+      0.0,
+      0.6355074177547808
+    ],
+    "PRCC": [
+      0.21612145073995603,
+      -0.055565151797627554,
+      0.7378801508272198,
+      0.3639747467064841,
+      0.16054067492453006,
+      -0.19500527922728816,
+      -0.03365197951215686,
+      0.9760560210397257
+    ],
+    "response_finite_fraction": 1.0
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "source_id": "S13",
+  "url": "https://www.fda.gov/drugs/human-drug-compounding/compounding-when-drugs-are-fdas-drug-shortages-list",
+  "retrieved_at": "2026-09-01T23:04:43.952212Z",
+  "http_status": 200,
+  "sha256": "135920ae522d5aa828ef1c0bb8ab9fe31c8cfd0cf3b1eba43eaaedaeb38e7b15",
+  "content_type": "text/html; charset=UTF-8",
+  "size_bytes": 39202,
+  "license_note": "FDA public domain",
+  "raw_path": "data/raw_snapshots/S13/2026-09-01/compounding_shortage_list.html",
+  "transform_script": null,
+  "processed_path": null,
+  "data_dictionary_rows": 0,
+  "access_method": "auto",
+  "robots_allowed": true,
+  "notes": ""
+}

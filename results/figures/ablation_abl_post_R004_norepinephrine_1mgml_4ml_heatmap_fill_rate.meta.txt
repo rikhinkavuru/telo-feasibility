@@ -1,0 +1,9 @@
+title: fill_rate by ablation configuration and strategy, norepinephrine_1mgml_4ml
+xlabel: strategy [-]
+ylabel: configuration [-]
+product: norepinephrine_1mgml_4ml
+scenario: ablation abl_post_R004; tau = 0.99, q = 0.9
+manifest_id: abl_post_R004
+source_note: results/ablation/abl_post_R004/summary.json and attribution.csv; all inputs tier 5 illustrative
+decision_caption: Rows: base, each mechanism switched off (loo), the quiet world, each mechanism switched on alone (addin), and search-bound extensions. A row that lifts a column to the target names the mechanism that binds for that strategy. Illustrative.
+illustrative: True

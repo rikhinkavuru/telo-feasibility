@@ -1,0 +1,17 @@
+{
+  "source_id": "S02",
+  "url": "https://www.fda.gov/media/131130/download",
+  "retrieved_at": "2026-09-01T22:55:09.621210Z",
+  "http_status": 200,
+  "sha256": "74af9ad4645c70113ce69451c841cb5818064840f3c29b9420f17c36b4ac90fc",
+  "content_type": "application/pdf",
+  "size_bytes": 2501209,
+  "license_note": "FDA public domain",
+  "raw_path": "data/raw_snapshots/S02/2026-09-01/DSTF_Full_Report.pdf",
+  "transform_script": null,
+  "processed_path": null,
+  "data_dictionary_rows": 0,
+  "access_method": "auto",
+  "robots_allowed": true,
+  "notes": ""
+}

@@ -1,0 +1,225 @@
+{
+  "run_id": "det_20260903T214748Z",
+  "created_at": "2026-09-03T21:47:48.330224Z",
+  "protocol_version": "1.0.0",
+  "protocol_sha256": "96b7779b82cfd3598b6fb716b60b7f0146832f91f207afc8d0ca0cee971ea1a7",
+  "package_version": "0.1.0",
+  "git_commit": "b7f36f6cf438b0c23d731785d4f1420c58799891",
+  "git_dirty": true,
+  "python_version": "3.12.13",
+  "platform": "macOS-26.4.1-arm64-arm-64bit",
+  "config_hashes": {
+    "global": "92a8f6bc08668d6a5400ae449a4c791d35e708363b38d0719fb411fb0dba2cb9",
+    "products": "9b1cc3178371d3096747e37329f018c64283a6160129b7e3ce69724f4b0ec17c",
+    "strategies": "bc7950c97a21f1103667b9c0b9c5c4036fb9285356c7d8092189d012a80d8d0e",
+    "gates": "2caf28bb6838023b4d85b0c9a5a75fd8827b1626becdac29992b81b8c0f44c2a"
+  },
+  "master_seed": null,
+  "n_runs": null,
+  "illustrative": true,
+  "gate_outcomes": {
+    "S0": {
+      "G01": "UNCERTAIN",
+      "G06": "UNCERTAIN"
+    },
+    "S1": {
+      "G01": "UNCERTAIN",
+      "G06": "UNCERTAIN"
+    },
+    "S2": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN"
+    },
+    "S3": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN"
+    },
+    "S4": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN"
+    },
+    "S5": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN",
+      "G13": "UNCERTAIN",
+      "G14": "UNCERTAIN"
+    },
+    "S6": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN",
+      "G13": "UNCERTAIN",
+      "G14": "UNCERTAIN",
+      "G15": "UNCERTAIN"
+    },
+    "S7": {
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G08": "UNCERTAIN",
+      "G09": "UNCERTAIN",
+      "G10": "UNCERTAIN",
+      "G11": "UNCERTAIN",
+      "G12": "UNCERTAIN"
+    },
+    "S8": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN",
+      "G13": "UNCERTAIN",
+      "G14": "UNCERTAIN"
+    },
+    "S9": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN",
+      "G13": "UNCERTAIN",
+      "G14": "UNCERTAIN",
+      "G16": "UNCERTAIN"
+    },
+    "S10": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN",
+      "G13": "UNCERTAIN",
+      "G14": "UNCERTAIN"
+    },
+    "S11": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN",
+      "G13": "UNCERTAIN",
+      "G14": "UNCERTAIN"
+    },
+    "S12": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN",
+      "G13": "UNCERTAIN",
+      "G14": "UNCERTAIN"
+    },
+    "S13": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN",
+      "G13": "UNCERTAIN",
+      "G14": "UNCERTAIN"
+    },
+    "S14": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN",
+      "G13": "UNCERTAIN",
+      "G14": "UNCERTAIN"
+    },
+    "S15": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN"
+    },
+    "S16": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN",
+      "G13": "UNCERTAIN",
+      "G14": "UNCERTAIN"
+    },
+    "S17": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN",
+      "G13": "UNCERTAIN",
+      "G14": "UNCERTAIN"
+    },
+    "S18": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN",
+      "G13": "UNCERTAIN",
+      "G14": "UNCERTAIN",
+      "G16": "UNCERTAIN"
+    },
+    "S19": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN",
+      "G13": "UNCERTAIN",
+      "G14": "UNCERTAIN",
+      "G16": "UNCERTAIN"
+    },
+    "S20": {}
+  },
+  "wall_time_s": null,
+  "notes": "deterministic screen; PRELIMINARY / ILLUSTRATIVE / NOT FOR EXTERNAL CLAIMS"
+}

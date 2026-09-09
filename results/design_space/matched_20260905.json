@@ -1,0 +1,350 @@
+{
+  "meta": {
+    "run_id": "matched_20260905",
+    "purpose": "fair-comparison check for model defect MD-12: the frozen comparators' design spaces give less inventory freedom than the design-space strategies declare, so this run optimizes each named strategy twice, over its declared space and over a common inventory space, and reports both",
+    "matched_inventory_space": [
+      {
+        "name": "safety_stock_days",
+        "low": 30.0,
+        "high": 365.0,
+        "kind": "float",
+        "grid": 4
+      },
+      {
+        "name": "region_base_stock",
+        "low": 0.0,
+        "high": 1.0,
+        "kind": "int",
+        "grid": 2
+      }
+    ],
+    "tau": 0.99,
+    "q": 0.9,
+    "runs": 40,
+    "search_runs": 12,
+    "master_seed": 20260901,
+    "banner": "PRELIMINARY / ILLUSTRATIVE / NOT FOR EXTERNAL CLAIMS"
+  },
+  "by_key": {
+    "norepinephrine_1mgml_4ml|S1|declared": {
+      "status": "infeasible_at_full_n",
+      "space": [
+        "safety_stock_days",
+        "site_fg_days",
+        "material_target_days"
+      ],
+      "best_design": {
+        "safety_stock_days": 113.75,
+        "site_fg_days": 60.0,
+        "material_target_days": 180.0
+      },
+      "mean_cost": 12745796.629563946,
+      "mean_fill": 0.9874307131295982,
+      "p_meet": 0.725,
+      "feasible": false,
+      "evaluations": 50
+    },
+    "norepinephrine_1mgml_4ml|S1|matched": {
+      "status": "infeasible_at_full_n",
+      "space": [
+        "site_fg_days",
+        "material_target_days",
+        "safety_stock_days",
+        "region_base_stock"
+      ],
+      "best_design": {
+        "site_fg_days": 60.0,
+        "material_target_days": 30.0,
+        "safety_stock_days": 141.66666666666669,
+        "region_base_stock": 1.0
+      },
+      "mean_cost": 12795616.351425273,
+      "mean_fill": 0.9889037005492913,
+      "p_meet": 0.85,
+      "feasible": false,
+      "evaluations": 78
+    },
+    "norepinephrine_1mgml_4ml|S4|declared": {
+      "status": "infeasible",
+      "space": [
+        "capacity_factor",
+        "safety_stock_days",
+        "material_target_days"
+      ],
+      "best_design": {
+        "capacity_factor": 2.5,
+        "safety_stock_days": 10.0,
+        "material_target_days": 180.0
+      },
+      "mean_cost": 37842225.36806057,
+      "mean_fill": 0.9881028155886716,
+      "p_meet": 0.6666666666666666,
+      "feasible": false,
+      "evaluations": 45
+    },
+    "norepinephrine_1mgml_4ml|S4|matched": {
+      "status": "optimal",
+      "space": [
+        "capacity_factor",
+        "material_target_days",
+        "safety_stock_days",
+        "region_base_stock"
+      ],
+      "best_design": {
+        "capacity_factor": 0.8,
+        "material_target_days": 30.0,
+        "safety_stock_days": 253.33333333333334,
+        "region_base_stock": 1.0
+      },
+      "mean_cost": 19984085.93823465,
+      "mean_fill": 0.9951803453288797,
+      "p_meet": 0.9,
+      "feasible": true,
+      "evaluations": 126
+    },
+    "norepinephrine_1mgml_4ml|S5|declared": {
+      "status": "infeasible",
+      "space": [
+        "sites",
+        "node_scale",
+        "safety_stock_days",
+        "material_target_days"
+      ],
+      "best_design": {
+        "sites": 4.0,
+        "node_scale": 0.15,
+        "safety_stock_days": 10.0,
+        "material_target_days": 180.0
+      },
+      "mean_cost": 35413971.33823302,
+      "mean_fill": 0.9800765090911104,
+      "p_meet": 0.5833333333333334,
+      "feasible": false,
+      "evaluations": 96
+    },
+    "norepinephrine_1mgml_4ml|S5|matched": {
+      "status": "infeasible_at_full_n",
+      "space": [
+        "sites",
+        "node_scale",
+        "material_target_days",
+        "safety_stock_days",
+        "region_base_stock"
+      ],
+      "best_design": {
+        "sites": 1.0,
+        "node_scale": 0.15,
+        "material_target_days": 105.0,
+        "safety_stock_days": 281.25,
+        "region_base_stock": 1.0
+      },
+      "mean_cost": 20026625.271296002,
+      "mean_fill": 0.9949913513478684,
+      "p_meet": 0.85,
+      "feasible": false,
+      "evaluations": 269
+    },
+    "norepinephrine_1mgml_4ml|S6|declared": {
+      "status": "infeasible",
+      "space": [
+        "sites",
+        "node_scale",
+        "safety_stock_days",
+        "material_target_days"
+      ],
+      "best_design": {
+        "sites": 4.0,
+        "node_scale": 0.15,
+        "safety_stock_days": 10.0,
+        "material_target_days": 180.0
+      },
+      "mean_cost": 37508722.78456012,
+      "mean_fill": 0.9800765090911104,
+      "p_meet": 0.5833333333333334,
+      "feasible": false,
+      "evaluations": 96
+    },
+    "norepinephrine_1mgml_4ml|S6|matched": {
+      "status": "infeasible_at_full_n",
+      "space": [
+        "sites",
+        "node_scale",
+        "material_target_days",
+        "safety_stock_days",
+        "region_base_stock"
+      ],
+      "best_design": {
+        "sites": 1.0,
+        "node_scale": 0.15,
+        "material_target_days": 105.0,
+        "safety_stock_days": 281.25,
+        "region_base_stock": 1.0
+      },
+      "mean_cost": 21019431.225202017,
+      "mean_fill": 0.9949913513478684,
+      "p_meet": 0.85,
+      "feasible": false,
+      "evaluations": 269
+    },
+    "sodium_bicarbonate_8_4_50ml|S1|declared": {
+      "status": "infeasible",
+      "space": [
+        "safety_stock_days",
+        "site_fg_days",
+        "material_target_days"
+      ],
+      "best_design": {
+        "safety_stock_days": 365.0,
+        "site_fg_days": 60.0,
+        "material_target_days": 180.0
+      },
+      "mean_cost": 12675550.694484986,
+      "mean_fill": 0.7581939605436525,
+      "p_meet": 0.0,
+      "feasible": false,
+      "evaluations": 45
+    },
+    "sodium_bicarbonate_8_4_50ml|S1|matched": {
+      "status": "infeasible",
+      "space": [
+        "site_fg_days",
+        "material_target_days",
+        "safety_stock_days",
+        "region_base_stock"
+      ],
+      "best_design": {
+        "site_fg_days": 60.0,
+        "material_target_days": 180.0,
+        "safety_stock_days": 365.0,
+        "region_base_stock": 1.0
+      },
+      "mean_cost": 13143261.571627462,
+      "mean_fill": 0.8951281234858781,
+      "p_meet": 0.0,
+      "feasible": false,
+      "evaluations": 72
+    },
+    "sodium_bicarbonate_8_4_50ml|S4|declared": {
+      "status": "infeasible",
+      "space": [
+        "capacity_factor",
+        "safety_stock_days",
+        "material_target_days"
+      ],
+      "best_design": {
+        "capacity_factor": 2.5,
+        "safety_stock_days": 10.0,
+        "material_target_days": 180.0
+      },
+      "mean_cost": 38619549.72649288,
+      "mean_fill": 0.9531093530278599,
+      "p_meet": 0.0,
+      "feasible": false,
+      "evaluations": 45
+    },
+    "sodium_bicarbonate_8_4_50ml|S4|matched": {
+      "status": "optimal",
+      "space": [
+        "capacity_factor",
+        "material_target_days",
+        "safety_stock_days",
+        "region_base_stock"
+      ],
+      "best_design": {
+        "capacity_factor": 1.0125000000000002,
+        "material_target_days": 30.0,
+        "safety_stock_days": 365.0,
+        "region_base_stock": 1.0
+      },
+      "mean_cost": 23740651.44829598,
+      "mean_fill": 0.9951817836690271,
+      "p_meet": 0.9,
+      "feasible": true,
+      "evaluations": 131
+    },
+    "sodium_bicarbonate_8_4_50ml|S5|declared": {
+      "status": "infeasible",
+      "space": [
+        "sites",
+        "node_scale",
+        "safety_stock_days",
+        "material_target_days"
+      ],
+      "best_design": {
+        "sites": 4.0,
+        "node_scale": 0.43333333333333335,
+        "safety_stock_days": 90.0,
+        "material_target_days": 180.0
+      },
+      "mean_cost": 46666474.81273333,
+      "mean_fill": 0.8665894035729985,
+      "p_meet": 0.0,
+      "feasible": false,
+      "evaluations": 96
+    },
+    "sodium_bicarbonate_8_4_50ml|S5|matched": {
+      "status": "infeasible",
+      "space": [
+        "sites",
+        "node_scale",
+        "material_target_days",
+        "safety_stock_days",
+        "region_base_stock"
+      ],
+      "best_design": {
+        "sites": 4.0,
+        "node_scale": 1.0,
+        "material_target_days": 180.0,
+        "safety_stock_days": 365.0,
+        "region_base_stock": 1.0
+      },
+      "mean_cost": 64318649.33673564,
+      "mean_fill": 0.9883056778078408,
+      "p_meet": 0.5833333333333334,
+      "feasible": false,
+      "evaluations": 256
+    },
+    "sodium_bicarbonate_8_4_50ml|S6|declared": {
+      "status": "infeasible",
+      "space": [
+        "sites",
+        "node_scale",
+        "safety_stock_days",
+        "material_target_days"
+      ],
+      "best_design": {
+        "sites": 4.0,
+        "node_scale": 0.43333333333333335,
+        "safety_stock_days": 90.0,
+        "material_target_days": 180.0
+      },
+      "mean_cost": 48984836.362873174,
+      "mean_fill": 0.8665894035729985,
+      "p_meet": 0.0,
+      "feasible": false,
+      "evaluations": 96
+    },
+    "sodium_bicarbonate_8_4_50ml|S6|matched": {
+      "status": "infeasible",
+      "space": [
+        "sites",
+        "node_scale",
+        "material_target_days",
+        "safety_stock_days",
+        "region_base_stock"
+      ],
+      "best_design": {
+        "sites": 4.0,
+        "node_scale": 1.0,
+        "material_target_days": 180.0,
+        "safety_stock_days": 365.0,
+        "region_base_stock": 1.0
+      },
+      "mean_cost": 67009264.75830082,
+      "mean_fill": 0.9883056778078408,
+      "p_meet": 0.5833333333333334,
+      "feasible": false,
+      "evaluations": 256
+    }
+  }
+}

@@ -1,0 +1,95 @@
+# Historical shortage episodes for backcasting (protocol 12.2; task section 20).
+# Observed fields come only from frozen snapshots (tier 1) or are marked human_required.
+# Backcasting validates broad model behavior; it does not prove counterfactual causality.
+version: 1.0.0
+episodes:
+  - id: sodium_bicarbonate_2017_ongoing
+    product_id: sodium_bicarbonate_8_4_50ml
+    episode_class: resolved_or_chronic   # protocol class 'resolved shortage' pending; this one is ongoing
+    observed:
+      start_date: 2017-03-01
+      end_date: null
+      ongoing_as_of: 2026-09-02
+      observed_duration_days_min: 3472
+      status_rows_current: 15
+      status_rows_to_be_discontinued: 4
+      stated_reasons: [Demand increase for the drug, Discontinuation of the manufacture of the drug, Other]
+      companies: 5
+      severity_text: "Limited Availability / Available on allocation (per-company presentation tables)"
+      source: "S01 FDA shortage CSV and detail page, sha256 2ea0ff3b..., retrieved 2026-09-02"
+    information_frozen_at: 2017-03-01
+    frozen_inputs_note: "No 2017 demand, capacity, or supplier data is frozen; the simulation uses the tier-5 workbook inputs, so this backcast tests only whether a status-quo network with utilization above one reproduces a non-recovering shortage."
+    simulate:
+      strategy_id: S0
+      inject: null
+    human_required:
+      - "ASHP bulletin history for presentation-level dates and reasons (HA-10)"
+      - "2017-2026 utilization series to freeze demand at episode start (HA-11)"
+  - id: furosemide_2020_ongoing
+    product_id: furosemide_10mgml_vial
+    episode_class: upstream_or_common_cause
+    observed:
+      start_date: 2020-04-07
+      end_date: null
+      ongoing_as_of: 2026-09-02
+      observed_duration_days_min: 2339
+      status_rows_current: 30
+      status_rows_to_be_discontinued: 3
+      stated_reasons: [Demand increase for the drug, Discontinuation of the manufacture of the drug, Other, Requirements related to complying with good manufacturing practices, Shortage of an inactive ingredient component]
+      companies: 8
+      severity_text: "mixed availability across 8 companies"
+      source: "S01 FDA shortage CSV and furosemide detail page, retrieved 2026-09-02"
+    information_frozen_at: 2020-04-07
+    frozen_inputs_note: "Furosemide has no product config yet (reserve candidate); the simulation runs the sodium bicarbonate scaffold parameters with an injected component shortage as a behavior test only."
+    simulate:
+      strategy_id: S0
+      inject:
+        kind: supplier
+        target: stopper_1
+        start_day: 400
+        duration_days: 180
+    human_required:
+      - "Product config for furosemide 10 mg/mL (demand, batch, cost) before this episode can be interpreted"
+  - id: sterile_water_2021_ongoing
+    product_id: sterile_water_for_injection_vial
+    episode_class: demand_shock_or_substitution
+    observed:
+      start_date: 2021-11-23
+      end_date: null
+      ongoing_as_of: 2026-09-02
+      observed_duration_days_min: 1744
+      status_rows_current: 21
+      stated_reasons: [Demand increase for the drug, Discontinuation of the manufacture of the drug, Other]
+      companies: null
+      severity_text: "all 21 rows Current"
+      source: "S01 FDA shortage CSV, retrieved 2026-09-02"
+    information_frozen_at: 2021-11-23
+    frozen_inputs_note: "No product config; behavior test with an injected demand shock on the scaffold product."
+    simulate:
+      strategy_id: S0
+      inject:
+        kind: demand_shock
+        target: all
+        start_day: 400
+        duration_days: 365
+        magnitude: 1.35
+    human_required:
+      - "Demand series around 2021-11 to freeze the shock size (HA-11)"
+  - id: site_failure_template
+    product_id: sodium_bicarbonate_8_4_50ml
+    episode_class: site_failure
+    observed:
+      start_date: null
+      end_date: null
+      note: "A documented single-site failure episode (e.g., a warning-letter or hurricane-driven plant outage) must be selected from primary sources and dated by a person; none is frozen yet."
+      source: null
+    information_frozen_at: null
+    simulate:
+      strategy_id: S0
+      inject:
+        kind: site_failure
+        target: central
+        start_day: 400
+        duration_days: 120
+    human_required:
+      - "Select and document one real single-site failure episode with dates and observed recovery (HA-10)"

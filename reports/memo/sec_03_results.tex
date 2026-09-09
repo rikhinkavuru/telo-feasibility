@@ -1,0 +1,369 @@
+\section{Results: what the engine returns}
+\label{sec:results}
+
+Every number here is engine behaviour under evidence tier 5 inputs. All sixteen regulatory gates
+carry status \texttt{UNCERTAIN} with no reviewer, every run returns eligibility
+\texttt{NO\_CONCLUSION} for every strategy, and nothing below measures any plant, product or
+supply chain. The frozen requirement is a tail statement, not a mean: a design meets it when
+$P(\text{run-level fill rate} \ge 0.99) \ge 0.90$ over a five-year measured window after a
+365-day warm-up. Both numbers were pre-specified on 2026-09-01 as revision R001, before any
+simulation result existed. Among designs that meet it, lower annual total cost is preferred.
+Cost never buys a relaxation of the requirement. Because the requirement is a Monte Carlo
+proportion, the binomial standard error at the requirement governs what a verdict is worth: the
+optimization and the ablations run at 60 paired runs (0.039), the dominance and reversal maps at
+40 (0.047), the threshold bisections at 20 (0.067), the simulation and the re-evaluation at 100
+(0.030). All postdate revisions R009 to R011, so earlier runs are superseded and none appears
+here.
+
+One structural fact separates the two products in almost every table below. At the illustrative
+inputs the norepinephrine network's status-quo saleable capacity runs at 0.778 of demand-implied
+throughput and the sodium bicarbonate network's at 1.245. The bicarbonate case is capacity-short
+by construction, and a network whose saleable capacity is below demand cannot be stocked out of
+the deficit over a long enough window. That is a property of the illustrative demand and capacity
+numbers, not an observation about the products.
+
+\begin{table}[htbp]
+\centering
+\caption{Specification outputs at each architecture's optimized design, 60 paired runs,
+\texttt{opt\_20260906T043357Z}. Days avoided is the paired reduction in shortage days per year
+against S0 on the same seeds; incremental cost is thousands of USD per shortage-day avoided per
+year and reads ``none'' where no days are avoided. Response times are medians across episodes.
+Six architectures are omitted for space and appear in Table~\ref{tab:feasible} where they
+qualify. All inputs tier 5 illustrative.}
+\label{tab:outputs}
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lrrrrrrrrr@{}}
+\toprule
+ & USD/ & Annual & Mean & $P$(meet & Short. & Days & Incr. & First & Stable \\
+Id & unit & USD M & fill & dem.) & d/yr & avoid. & kUSD/d & resp. d & recov. d \\
+\midrule
+\multicolumn{10}{@{}l}{\textit{Norepinephrine bitartrate 1 mg/mL, 4 mL vial (resolved comparator)}}\\
+S0 & 13.82 & 12.91 & 0.9949 & 0.917 & 7.5 & +0.0 & n/a & 3.7 & 4.0 \\
+S1 & 13.82 & 12.91 & 0.9949 & 0.917 & 7.5 & +0.0 & none & 3.7 & 4.0 \\
+S2 & 19.22 & 18.03 & 0.9986 & 0.950 & 1.5 & +6.0 & 848 & 1.1 & 8.4 \\
+S3 & 18.70 & 17.48 & 0.9952 & 0.900 & 9.4 & $-1.9$ & none & 1.0 & 2.5 \\
+S4 & 21.53 & 20.18 & 0.9975 & 0.950 & 2.1 & +5.4 & 1347 & 0.7 & 10.3 \\
+S5 & 21.39 & 20.04 & 0.9975 & 0.950 & 5.3 & +2.2 & 3266 & 8.3 & 12.8 \\
+S6 & 22.45 & 21.03 & 0.9975 & 0.950 & 5.3 & +2.2 & 3721 & 8.3 & 12.8 \\
+S7 & 16.93 & 15.83 & 0.9956 & 0.933 & 6.6 & +1.0 & 3021 & 6.7 & 4.3 \\
+S9 & 24.85 & 23.28 & 0.9972 & 0.917 & 2.0 & +5.6 & 1864 & 2.6 & 12.7 \\
+S11 & 16.22 & 15.15 & 0.9949 & 0.933 & 3.9 & +3.7 & 611 & 2.8 & 19.3 \\
+S15 & 13.76 & 12.87 & 0.9958 & 0.917 & 9.1 & $-1.6$ & none & 2.1 & 3.5 \\
+S16 & 17.07 & 16.00 & 0.9981 & 0.950 & 1.3 & +6.2 & 497 & 1.9 & 6.4 \\
+S17 & 19.64 & 18.38 & 0.9967 & 0.950 & 10.7 & $-3.1$ & none & 6.0 & 7.5 \\
+S19 & 17.02 & 15.88 & 0.9939 & 0.917 & 3.8 & +3.7 & 806 & 2.2 & 18.5 \\
+\midrule
+\multicolumn{10}{@{}l}{\textit{Sodium bicarbonate 8.4\%, 50 mL vial (prolonged current shortage)}}\\
+S0 & 11.69 & 13.41 & 0.9200 & 0.017 & 64.2 & +0.0 & n/a & 14.8 & 0.0 \\
+S1 & 11.69 & 13.41 & 0.9200 & 0.017 & 64.2 & +0.0 & none & 14.8 & 0.0 \\
+S2 & 19.26 & 24.00 & 0.9949 & 0.850 & 15.3 & +48.9 & 217 & 3.9 & 19.6 \\
+S3 & 14.82 & 18.49 & 0.9963 & 0.917 & 3.5 & +60.7 & 84 & 1.3 & 10.7 \\
+S4 & 19.23 & 24.04 & 0.9984 & 0.950 & 1.2 & +63.0 & 169 & 0.9 & 7.6 \\
+S5 & 25.63 & 31.98 & 0.9961 & 0.900 & 3.6 & +60.6 & 306 & 3.8 & 13.2 \\
+S6 & 27.02 & 33.70 & 0.9961 & 0.900 & 3.6 & +60.6 & 335 & 3.8 & 13.2 \\
+S7 & 13.77 & 16.56 & 0.9632 & 0.317 & 32.8 & +31.4 & 100 & 8.0 & 0.3 \\
+S9 & 19.68 & 24.63 & 0.9993 & 0.967 & 1.0 & +63.2 & 177 & 0.8 & 6.0 \\
+S11 & 12.89 & 16.11 & 0.9982 & 0.950 & 1.9 & +62.3 & 43 & 0.3 & 4.8 \\
+S15 & 11.77 & 13.38 & 0.9122 & 0.017 & 69.3 & $-5.1$ & none & 14.9 & 0.0 \\
+S16 & 13.40 & 16.72 & 0.9961 & 0.917 & 3.8 & +60.4 & 55 & 1.4 & 24.2 \\
+S17 & 15.57 & 19.41 & 0.9958 & 0.917 & 15.4 & +48.8 & 123 & 4.4 & 8.4 \\
+S19 & 14.77 & 16.35 & 0.8881 & 0.000 & 99.9 & $-35.7$ & none & 13.3 & 271.9 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Four things follow from Table~\ref{tab:outputs}, each a statement about the model. First, on
+norepinephrine the status quo at its own optimized inventory policy already returns mean fill
+0.9949 and $P(\text{meet}) = 0.917$ at 13.82 USD per unit, where the configured default design
+in the 100-run simulation returns 0.9474 and 0.100 at 14.28 USD per unit. The two come from runs
+at different resolutions, so only the direction should be read, but the direction is large: on
+the product whose plant is not capacity-short, most of the achievable service comes from
+inventory policy at the incumbent plant, at roughly 0.2 million USD per year, with no new plant,
+no second source and no new site. Second, once that baseline exists, further service is
+expensive: the cheapest architecture that avoids any shortage days on norepinephrine does so at
+497 thousand USD per shortage-day avoided per year, and distributed regional nodes at 3.27
+million, where on sodium bicarbonate, whose baseline loses 64 shortage days a year, the same two
+figures are 43 thousand and 306 thousand. The specification's headline efficiency output differs
+by nearly two orders of magnitude between the products, and the difference is whether the
+incumbent network has enough capacity. Third, the release-assurance variant costs money and
+returns nothing measurable: S6 matches S5 to four decimal places on both products while costing
+0.99 and 1.73 million USD a year more, and part of that identity is defect MD-18, so the cost
+difference is real inside the ledger while the service equality is partly an artifact. Fourth,
+response time is not the binding output: medians to first response run from 0.3 to 14.9 days and
+to stable recovery from 0.0 to 271.9, and recovery is slowest where fill is already high, because
+an architecture that rarely stocks out records few episodes and clears each slowly relative to
+its own small deficit.
+
+\begin{table}[htbp]
+\centering
+\caption{The verified feasible set at 100 paired runs, from
+\texttt{results/design\_space/reeval\_post\_R009.json}. A cell is borderline when its estimated
+$P(\text{meet})$ lies within one binomial standard error (0.030) of the 0.90 requirement.}
+\label{tab:feasible}
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}llrrrrl@{}}
+\toprule
+Product & Id & Annual USD M & Mean fill & $P$(meet) & SE & Borderline \\
+\midrule
+Norepinephrine & S11 & 15.2 & 0.9952 & 0.900 & 0.030 & yes \\
+Norepinephrine & S19 & 15.9 & 0.9943 & 0.920 & 0.027 & yes \\
+Norepinephrine & S2 & 18.0 & 0.9989 & 0.960 & 0.020 & no \\
+Norepinephrine & S17 & 18.4 & 0.9975 & 1.000 & 0.000 & no \\
+Norepinephrine & S13 & 18.8 & 0.9964 & 0.900 & 0.030 & yes \\
+Norepinephrine & S5 & 20.0 & 0.9963 & 0.940 & 0.024 & no \\
+Norepinephrine & S6 & 21.0 & 0.9963 & 0.940 & 0.024 & no \\
+Norepinephrine & S8 & 22.5 & 0.9964 & 0.910 & 0.029 & yes \\
+Norepinephrine & S9 & 23.3 & 0.9975 & 0.920 & 0.027 & yes \\
+Norepinephrine & S14 & 23.9 & 0.9964 & 0.920 & 0.027 & yes \\
+Bicarbonate & S17 & 19.4 & 0.9960 & 0.900 & 0.030 & yes \\
+Bicarbonate & S12 & 21.5 & 0.9967 & 0.920 & 0.027 & yes \\
+Bicarbonate & S18 & 24.2 & 0.9977 & 0.930 & 0.026 & no \\
+Bicarbonate & S9 & 24.6 & 0.9987 & 0.940 & 0.024 & no \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:feasible} gives the fourteen of forty product-strategy cells meeting the
+requirement when each cell's own incumbent design is re-evaluated at 100 paired runs without
+re-searching, which separates a change of classification caused by a model fix from one caused by
+a small final-run count. Eight of the fourteen are borderline, and eight further cells the run
+calls infeasible also sit within one standard error, sixteen of forty in total. What that means
+is narrow: at 100 paired runs a cell estimated at 0.900 and one at 0.870 cannot be told apart, so
+their opposite labels carry no information, and only six cells across both products are separated
+from the requirement by more than one standard error. Two architectures meet it on both products,
+rotating prequalified campaigns (S17) and dual finished-dose sourcing with a
+key-starting-material tier (S9), and S17 returns the only tail probability of 1.000 in the set.
+The table is a floor rather than a boundary, because it scores incumbents of an earlier and
+smaller search. The later search over the same space finds a feasible design for fifteen of the
+twenty-six cells this re-evaluation calls infeasible, including sodium bicarbonate S11 at 0.950
+against 0.630 and norepinephrine S0 itself. The disagreement runs one way only, which is the
+signature of a search that has not converged rather than of a model that has changed. The honest
+reading is that this package can identify architectures that plainly fail and cannot yet rank the
+ones that do not.
+
+No price is assumed anywhere. The break-even price is derived from each run's own cost ledger and
+delivered volume, and the break-even volume is the committed volume covering fixed and committed
+cost at that price; no reimbursement figure enters the cost side or stands in for a price. Across
+all forty cells the fixed share of annual cost runs from 0.797 to 0.937, so every architecture
+here is a fixed-cost business in the model and its break-even volume is a large fraction of its
+own capacity: 0.64 to 0.94 overall, and 0.80 or above for every architecture meeting the
+requirement on either product. On norepinephrine the break-even price is 14.26 USD per unit for
+the status quo, 16.63 for bright-stock campaign offtake, 20.55 for rotating campaigns, 46.65 for
+distributed regional nodes and 49.10 once the release layer is added; on sodium bicarbonate the
+same five are 14.44, 13.28, 15.72, 40.59 and 42.67. These are model cost recoveries under
+illustrative inputs, not prices, not offers, and not evidence that any buyer would pay them.
+
+\section{Sensitivity: what determines the answer}
+\label{sec:sensitivity}
+
+Three mechanisms decide whether an architecture in this battery meets the requirement, and they
+are not the three the original thesis rests on. In order of measured effect they are capacity
+adequacy, the regional inventory review rule, and commissioning time, and capacity adequacy
+dominates the other two by roughly an order of magnitude on every service metric. Release time,
+the mechanism a release-assurance layer would address, is worth two of the sixteen days in the
+release path and moves mean fill by less than 0.002 anywhere in the battery. Capital cost and
+fixed quality and labour cost change feasibility in none of the forty cells at any point of their
+declared ranges, and in the reversal map they do not change even the ranking.
+
+\begin{table}[htbp]
+\centering
+\caption{One-way threshold census over 40 product-strategy cells per input, 480 bisections at 20
+paired runs each, from \texttt{ds\_post\_R009/thresholds.csv}. The last two columns count cells
+whose classification never changes anywhere in the declared range.}
+\label{tab:census}
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}llrrr@{}}
+\toprule
+Input & Declared range & Thresh. & Feasible & Infeas. \\
+      &                & inside  & throughout & throughout \\
+\midrule
+Annual demand & 0.5M to 1.8M; 0.6M to 2.4M & 40 & 0 & 0 \\
+Batches per site-year & 30 to 70 & 39 & 1 & 0 \\
+Common-cause events per year & 0.02 to 0.3 & 31 & 4 & 5 \\
+Changeover days & 1 to 10 & 25 & 3 & 12 \\
+Shelf life, months & 12 to 30; 12 to 36 & 19 & 9 & 12 \\
+Raw-material lead time, days & 30 to 240 & 19 & 11 & 10 \\
+Supplier concentration & 0.05 to 0.6 & 17 & 14 & 9 \\
+Release time, sterility, days & 14 to 18 & 6 & 22 & 12 \\
+Node commissioning, days & 365 to 1095 & 4 & 24 & 12 \\
+Contract activation latency, days & 7 to 60 & 2 & 26 & 12 \\
+Capital per node, USD & 15M to 100M & 0 & 28 & 12 \\
+Fixed quality and labour, USD/site-yr & 1.5M to 6M & 0 & 28 & 12 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Two rows of Table~\ref{tab:census} carry the result. Annual demand changes feasibility in all
+forty cells and batches per site-year in thirty-nine of forty; both are statements about capacity
+adequacy, the first varying the demand a fixed network must serve and the second how much it can
+make. No other input changes feasibility in even four fifths of the cells, and capital per node
+and fixed quality and labour per site-year change it in zero cells across a four-fold and a
+six-and-a-half-fold range, so cost is not a feasibility lever in this model. Two cautions belong
+with the census: the bisections run at 20 paired runs, where the standard error is 0.067, so a
+threshold is an interval and not a point; and twelve cells sit in the last column for most inputs
+and can never show a threshold, so the informative denominator for the weaker inputs is 28 rather
+than 40. As multiples of the base demand each cell was designed for, the demand thresholds run
+from 0.71 to 1.17, median 1.075 on norepinephrine and 0.99 on sodium bicarbonate. No architecture
+buys more than about seventeen per cent of demand headroom over its own design point, and the
+largest headroom in the battery is the status quo's own. Five norepinephrine cells lose
+feasibility below the demand they were designed for, and on sodium bicarbonate fourteen of twenty
+do. These are sized designs rather than resilient ones, sitting near a capacity cliff that the
+choice between them moves by a few per cent of demand.
+
+Two of the seven sensitivity axes the specification names are covered only indirectly, which is
+stated rather than papered over. Uptime and yield enter the model only through saleable capacity
+in Eq.~\ref{eq:capacity}, so a proportional change in either is the same lever as the same
+proportional change in batches per site-year, the row that already moves 39 of 40 cells; neither
+was bisected separately in the threshold grid. Routine demand volatility likewise was not
+bisected: it appears in the ablation below as the demand-shock and correlated-regional-shock
+mechanisms, both of which rank low, while the demand \emph{level} was swept and dominates. The
+other five axes, capacity utilization, release time, quality and fixed cost, and raw-material lead
+time, are swept directly in Table~\ref{tab:census} or ablated in Table~\ref{tab:ablation}.
+
+\begin{table}[htbp]
+\centering
+\caption{Leave-one-out attribution over 40 cells, 60 paired runs, from
+\texttt{abl\_post\_R009/attribution.csv}. Positive deltas mean removing the mechanism improves
+service; cost is the mean change in annual total cost, thousands of USD. Five mechanisms with
+mean $\Delta$fill below 0.0003 are omitted, and the three cost mechanisms, which move every
+service metric by exactly zero, are reported as one row.}
+\label{tab:ablation}
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}llrrrrrr@{}}
+\toprule
+Mechanism removed & Family & Mean & Max & Mean & Max & Short. & Cost \\
+                  &        & $\Delta$fill & $\Delta$fill & $\Delta P$ & $\Delta P$ & d/yr & kUSD \\
+\midrule
+Capacity shortfall & capacity & +0.01128 & +0.11066 & +0.150 & +0.967 & $-10.2$ & +379 \\
+Raw-material buffer & supply & +0.00535 & +0.03508 & +0.049 & +0.167 & $-4.2$ & +535 \\
+Common-cause events & dependence & +0.00522 & +0.04325 & +0.052 & +0.233 & $-4.6$ & +57 \\
+Supplier disruption & supply & +0.00393 & +0.02137 & +0.031 & +0.083 & $-2.9$ & +33 \\
+Idiosyncratic site failure & capacity & +0.00371 & +0.02342 & +0.041 & +0.217 & $-3.0$ & +41 \\
+Backorder window, 7 to 30 d & structure & +0.00312 & +0.01293 & +0.039 & +0.117 & +2.1 & +4 \\
+Deviations, rejections, yield var. & quality & +0.00148 & +0.00841 & +0.015 & +0.100 & $-1.3$ & $-13$ \\
+Regional review rule & inventory & +0.00143 & +0.00887 & +0.032 & +0.233 & $-3.5$ & +141 \\
+Demand shocks & demand & +0.00127 & +0.00860 & +0.004 & +0.083 & $-1.1$ & $-9$ \\
+Sterility incubation, 14 days & release & +0.00099 & +0.00323 & +0.013 & +0.067 & $-1.4$ & +17 \\
+Correlated regional shocks & demand & +0.00084 & +0.00493 & +0.004 & +0.033 & $-0.7$ & $-4$ \\
+Commissioning delay & time & +0.00054 & +0.00495 & +0.015 & +0.150 & $-0.8$ & +285 \\
+503B availability & regulatory & +0.00034 & +0.01200 & +0.004 & +0.133 & $-0.3$ & +5 \\
+Chemical release queue, 2 days & release & +0.00031 & +0.00149 & +0.000 & +0.033 & $-0.5$ & +6 \\
+The three cost mechanisms & cost & 0.00000 & 0.00000 & 0.000 & 0.000 & 0.0 & $-5431$ \\
+Component lead time & supply & $-0.00101$ & +0.00053 & $-0.005$ & +0.017 & +0.6 & $-15$ \\
+Ten-year horizon & structure & $-0.01504$ & +0.00276 & $-0.051$ & +0.083 & +12.7 & +375 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Capacity shortfall is more than twice the next mechanism on mean fill and three times it on the
+tail probability, and its largest single-cell effect, +0.111 fill and +0.967 on $P(\text{meet})$
+at sodium bicarbonate S19, is an order of magnitude larger than any other mechanism's largest.
+Two rows are warnings rather than findings. Component lead time carries a negative sign, meaning
+a shorter lead slightly worsens service; revision R011 fixed the policy half of that defect and a
+residual remains, because under a forced outage a deferred order lands when the supplier resumes
+whatever its nominal lead, so a longer lead carries a larger protective pipeline. That is a
+property of the disruption model and is recorded rather than argued away. The ten-year horizon
+row is a measurement convention, not a mechanism.
+
+\begin{table}[htbp]
+\centering
+\caption{Interaction of the three deciding mechanisms, 60 paired runs, averaged over 40 cells,
+from \texttt{abl\_post\_R009\_pairs/}. The additive prediction adds the single-mechanism deltas
+to the base; the last two columns are observed minus predicted.}
+\label{tab:interaction}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lrrrrrrr@{}}
+\toprule
+Mechanisms removed & Mean & $P$(meet) & Short. & Annual & Additive & Fill & $P$ \\
+                   & fill &           & d/yr   & USD M  & fill     & inter. & inter. \\
+\midrule
+None (base) & 0.98666 & 0.8058 & 13.60 & 19.48 & . & . & . \\
+Capacity adequacy only & 0.99794 & 0.9558 & 3.37 & 19.86 & 0.99794 & 0.00000 & 0.0000 \\
+Regional review rule only & 0.98809 & 0.8379 & 10.10 & 19.62 & 0.98809 & 0.00000 & 0.0000 \\
+Commissioning only & 0.98720 & 0.8208 & 12.80 & 19.76 & 0.98720 & 0.00000 & 0.0000 \\
+Capacity plus review rule & 0.99906 & 0.9796 & 0.69 & 20.03 & 0.99937 & $-0.00031$ & $-0.0083$ \\
+Capacity plus commissioning & 0.99811 & 0.9617 & 3.10 & 20.14 & 0.99847 & $-0.00036$ & $-0.0092$ \\
+Review rule plus commissioning & 0.98842 & 0.8467 & 9.80 & 19.91 & 0.98863 & $-0.00021$ & $-0.0062$ \\
+All three & 0.99913 & 0.9817 & 0.62 & 20.33 & 0.99990 & $-0.00078$ & $-0.0212$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Ranking mechanisms one at a time does not show whether they substitute. Removing all three lifts
+the average tail probability from 0.806 to 0.982 and cuts average shortage days from 13.6 to 0.6,
+at an average cost increase of 0.85 million USD per year. The interactions are all negative and
+all small, so the three substitute weakly rather than reinforce: fixing capacity first removes
+most of the value of fixing the other two, and capacity alone recovers 0.0113 of the 0.0125 fill
+and 0.150 of the 0.176 tail probability the full triple delivers. That ordering is the practical
+content of the sensitivity analysis, and it exposes a gap: the raw-material buffer ranks second in
+Table~\ref{tab:ablation} and is a design variable in every search space, but it was left out of
+the interaction study, so its substitution behaviour with capacity is unmeasured.
+
+\begin{table}[htbp]
+\centering
+\caption{Decision-reversal map, from \texttt{ds\_post\_R009/reversal.json}, 40 paired runs per
+cell. Each entry is the preferred strategy with the number of feasible strategies of 20 in
+brackets; demand is a multiple of the base for that product. Entries were identical at all three
+levels of fixed quality and labour cost per site-year (1.5M, 3M and 6M USD), so that axis is
+collapsed.}
+\label{tab:reversal}
+\footnotesize
+\setlength{\tabcolsep}{8pt}
+\begin{tabular}{@{}llll@{}}
+\toprule
+Product and demand & Common-cause 0.02 & 0.10 & 0.30 \\
+\midrule
+Norepinephrine, 0.56 & S15 (19) & S15 (19) & S15 (18) \\
+Norepinephrine, 1.00 & S15 (20) & S15 (20) & S17 (1) \\
+Norepinephrine, 2.00 & none (0) & none (0) & none (0) \\
+Bicarbonate, 0.50 & S0 (20) & S15 (20) & S15 (19) \\
+Bicarbonate, 1.00 & S11 (15) & S11 (15) & none (0) \\
+Bicarbonate, 2.00 & none (0) & none (0) & none (0) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:reversal} contains three results. A four-fold change in the fixed quality and
+labour cost of a site reverses no decision anywhere: in a study about whether to build
+manufacturing capacity, the cost of running a quality unit does not decide the answer and the
+amount of capacity does. At twice the design demand nothing in the battery is feasible on either
+product, which is the demand cliff seen from the other side. And dependence between sites is the
+one hazard that can collapse the feasible set on its own: at base demand and a common-cause rate
+of 0.30 per year, norepinephrine drops from twenty feasible strategies to one and sodium
+bicarbonate from fifteen to none. Correlated failure rather than site count is what an
+architecture has to defeat, and adding sites that still share an API source, a container supplier,
+a geography or a quality unit does not defeat it. Most rows prefer S15, which builds no new plant,
+because it is the cheapest design meeting the requirement, which is the frozen decision rule
+working as specified. Two qualifications stop that being a recommendation: the map runs at 40
+paired runs, where the standard error is 0.047, so its feasible sets are coarse; and S15 is a
+product-selection construct, a presentation whose capacity is adequate and whose buffer is
+payable, so its position at the top says which product to pick and not which network to build.
+
+On release time specifically, a chemical release-assurance layer can only reduce the assay
+component of the sixteen-day path, and the engine's ablation for it zeroes assay, endotoxin,
+environmental monitoring and quality review together, removing 2 of 16 days for +0.00031 mean
+fill and +0.00149 in the single cell where it does most. Removing the entire 14-day sterility
+incubation, which no release-assurance layer can do and which only a change of sterilization
+route with parametric release could reach, moves mean fill by +0.00099 and at most +0.00323. A
+perfect quality system with no deviations, rejections or yield variance moves it by +0.00148 and
+at most +0.00841, the largest figure this package has recorded for any release-side or
+quality-side ablation in any run vintage. On mean fill, capacity is worth eight times the quality
+ablation and eleven times the sterility one, and the one-way analysis agrees: the sterility
+component changes feasibility in 6 of 40 cells against 40 of 40 for demand. In the dominance
+analysis S6 is dominated by S5 on both products. Defect MD-18 means part of that identity is an
+artifact, but no run in any vintage has shown the release layer paying for itself.
+
+Four limits on this analysis are load-bearing and none is closed. The inputs are illustrative, so
+it says what the model is sensitive to and not where the real world sits inside those ranges; the
+most consequential unknown is the one the analysis calls decisive, the true capacity headroom of
+the incumbent networks for these two presentations, and the package holds no evidence for it above
+tier 5. The resolution is coarse and inconsistent, at 20, 40, 60 and 100 paired runs with standard
+errors of 0.067, 0.047, 0.039 and 0.030, and fifteen of forty cells change classification between
+the two most recent optimizations, so individual cell verdicts are provisional throughout. Several
+model defects bearing on these numbers remain open and are listed in Table~\ref{tab:defects}. And
+nothing here has been reviewed by anyone.

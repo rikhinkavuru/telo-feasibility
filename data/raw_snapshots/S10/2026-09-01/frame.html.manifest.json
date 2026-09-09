@@ -1,0 +1,17 @@
+{
+  "source_id": "S10",
+  "url": "https://www.fda.gov/about-fda/center-drug-evaluation-and-research-cder/cders-framework-regulatory-advanced-manufacturing-evaluation-frame-initiative",
+  "retrieved_at": "2026-09-01T23:03:43.483108Z",
+  "http_status": 200,
+  "sha256": "81e95d2de0bc6320af4444d4a3d1fc30fcd0386ff679bc10f58faa5ee15f4e4a",
+  "content_type": "text/html; charset=UTF-8",
+  "size_bytes": 45700,
+  "license_note": "FDA public domain",
+  "raw_path": "data/raw_snapshots/S10/2026-09-01/frame.html",
+  "transform_script": null,
+  "processed_path": null,
+  "data_dictionary_rows": 0,
+  "access_method": "auto",
+  "robots_allowed": true,
+  "notes": ""
+}

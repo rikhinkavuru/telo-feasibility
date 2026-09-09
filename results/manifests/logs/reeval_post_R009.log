@@ -1,0 +1,45 @@
+[6s] norepinephrine_1mgml_4ml|S0                  declared infeasible_at_full_n p=0.850+-0.056  ->  full n p=0.800+-0.040 infeasible
+[12s] norepinephrine_1mgml_4ml|S1                  declared infeasible_at_full_n p=0.850+-0.056  ->  full n p=0.800+-0.040 infeasible
+[18s] norepinephrine_1mgml_4ml|S10                 declared infeasible_at_full_n p=0.875+-0.052  ->  full n p=0.840+-0.037 infeasible
+[25s] norepinephrine_1mgml_4ml|S11                 declared optimal              p=0.925+-0.042  ->  full n p=0.900+-0.030 FEASIBLE  [within 1 SE of the requirement]
+[51s] norepinephrine_1mgml_4ml|S12                 declared infeasible_at_full_n p=0.800+-0.063  ->  full n p=0.870+-0.034 infeasible  [within 1 SE of the requirement]
+[58s] norepinephrine_1mgml_4ml|S13                 declared optimal              p=0.950+-0.034  ->  full n p=0.900+-0.030 FEASIBLE  [within 1 SE of the requirement]
+[83s] norepinephrine_1mgml_4ml|S14                 declared optimal              p=0.900+-0.047  ->  full n p=0.920+-0.027 FEASIBLE  [within 1 SE of the requirement]
+[88s] norepinephrine_1mgml_4ml|S15                 declared infeasible_at_full_n p=0.750+-0.068  ->  full n p=0.730+-0.044 infeasible
+[110s] norepinephrine_1mgml_4ml|S16                 declared infeasible_at_full_n p=0.825+-0.060  ->  full n p=0.890+-0.031 infeasible  [within 1 SE of the requirement]
+[118s] norepinephrine_1mgml_4ml|S17                 declared optimal              p=1.000+-0.000  ->  full n p=1.000+-0.000 FEASIBLE
+[124s] norepinephrine_1mgml_4ml|S18                 declared optimal              p=0.900+-0.047  ->  full n p=0.890+-0.031 infeasible  [within 1 SE of the requirement]
+[148s] norepinephrine_1mgml_4ml|S19                 declared optimal              p=0.925+-0.042  ->  full n p=0.920+-0.027 FEASIBLE  [within 1 SE of the requirement]
+[181s] norepinephrine_1mgml_4ml|S2                  declared optimal              p=0.950+-0.034  ->  full n p=0.960+-0.020 FEASIBLE
+[188s] norepinephrine_1mgml_4ml|S3                  declared infeasible_at_full_n p=0.850+-0.056  ->  full n p=0.790+-0.041 infeasible
+[216s] norepinephrine_1mgml_4ml|S4                  declared infeasible_at_full_n p=0.850+-0.056  ->  full n p=0.880+-0.032 infeasible  [within 1 SE of the requirement]
+[223s] norepinephrine_1mgml_4ml|S5                  declared optimal              p=0.925+-0.042  ->  full n p=0.940+-0.024 FEASIBLE
+[230s] norepinephrine_1mgml_4ml|S6                  declared optimal              p=0.925+-0.042  ->  full n p=0.940+-0.024 FEASIBLE
+[236s] norepinephrine_1mgml_4ml|S7                  declared infeasible_at_full_n p=0.850+-0.056  ->  full n p=0.830+-0.038 infeasible
+[267s] norepinephrine_1mgml_4ml|S8                  declared infeasible_at_full_n p=0.875+-0.052  ->  full n p=0.910+-0.029 FEASIBLE  [within 1 SE of the requirement]
+[297s] norepinephrine_1mgml_4ml|S9                  declared optimal              p=0.900+-0.047  ->  full n p=0.920+-0.027 FEASIBLE  [within 1 SE of the requirement]
+[319s] sodium_bicarbonate_8_4_50ml|S0               declared infeasible           p=0.000+-0.000  ->  full n p=0.050+-0.022 infeasible
+[341s] sodium_bicarbonate_8_4_50ml|S1               declared infeasible           p=0.000+-0.000  ->  full n p=0.050+-0.022 infeasible
+[354s] sodium_bicarbonate_8_4_50ml|S10              declared infeasible_at_full_n p=0.875+-0.052  ->  full n p=0.830+-0.038 infeasible
+[361s] sodium_bicarbonate_8_4_50ml|S11              declared infeasible_at_full_n p=0.775+-0.066  ->  full n p=0.630+-0.048 infeasible
+[373s] sodium_bicarbonate_8_4_50ml|S12              declared optimal              p=0.925+-0.042  ->  full n p=0.920+-0.027 FEASIBLE  [within 1 SE of the requirement]
+[385s] sodium_bicarbonate_8_4_50ml|S13              declared infeasible_at_full_n p=0.875+-0.052  ->  full n p=0.820+-0.038 infeasible
+[417s] sodium_bicarbonate_8_4_50ml|S14              declared infeasible_at_full_n p=0.850+-0.056  ->  full n p=0.870+-0.034 infeasible  [within 1 SE of the requirement]
+[439s] sodium_bicarbonate_8_4_50ml|S15              declared infeasible           p=0.000+-0.000  ->  full n p=0.030+-0.017 infeasible
+[449s] sodium_bicarbonate_8_4_50ml|S16              declared infeasible_at_full_n p=0.850+-0.056  ->  full n p=0.780+-0.041 infeasible
+[458s] sodium_bicarbonate_8_4_50ml|S17              declared optimal              p=0.925+-0.042  ->  full n p=0.900+-0.030 FEASIBLE  [within 1 SE of the requirement]
+[491s] sodium_bicarbonate_8_4_50ml|S18              declared infeasible_at_full_n p=0.850+-0.056  ->  full n p=0.930+-0.026 FEASIBLE
+[502s] sodium_bicarbonate_8_4_50ml|S19              declared infeasible           p=0.000+-0.000  ->  full n p=0.000+-0.000 infeasible
+[509s] sodium_bicarbonate_8_4_50ml|S2               declared infeasible_at_full_n p=0.850+-0.056  ->  full n p=0.820+-0.038 infeasible
+[524s] sodium_bicarbonate_8_4_50ml|S3               declared infeasible_at_full_n p=0.800+-0.063  ->  full n p=0.790+-0.041 infeasible
+[543s] sodium_bicarbonate_8_4_50ml|S4               declared infeasible_at_full_n p=0.875+-0.052  ->  full n p=0.880+-0.032 infeasible  [within 1 SE of the requirement]
+[574s] sodium_bicarbonate_8_4_50ml|S5               declared infeasible_at_full_n p=0.875+-0.052  ->  full n p=0.880+-0.032 infeasible  [within 1 SE of the requirement]
+[605s] sodium_bicarbonate_8_4_50ml|S6               declared infeasible_at_full_n p=0.875+-0.052  ->  full n p=0.880+-0.032 infeasible  [within 1 SE of the requirement]
+[629s] sodium_bicarbonate_8_4_50ml|S7               declared infeasible           p=0.100+-0.095  ->  full n p=0.150+-0.036 infeasible
+[636s] sodium_bicarbonate_8_4_50ml|S8               declared infeasible_at_full_n p=0.800+-0.063  ->  full n p=0.700+-0.046 infeasible
+[655s] sodium_bicarbonate_8_4_50ml|S9               declared optimal              p=0.975+-0.025  ->  full n p=0.940+-0.024 FEASIBLE
+
+3 of 40 cells change classification at full n
+16 of 40 sit within one standard error of the requirement
+results -> /Users/rikhinkavuru/telo/feasibility/results/design_space/reeval_post_R009.json (655s)
+PRELIMINARY / ILLUSTRATIVE / NOT FOR EXTERNAL CLAIMS

@@ -1,0 +1,105 @@
+{
+  "run_id": "abl_20260902_phaseA_mb",
+  "created_at": "2026-09-03T02:34:38.082397Z",
+  "protocol_version": "1.0.0",
+  "protocol_sha256": "96b7779b82cfd3598b6fb716b60b7f0146832f91f207afc8d0ca0cee971ea1a7",
+  "package_version": "0.1.0",
+  "git_commit": "c3b31b9bcda1803c5f38f56edf34dc9fcdb27cf6",
+  "git_dirty": true,
+  "python_version": "3.12.13",
+  "platform": "macOS-26.4.1-arm64-arm-64bit",
+  "config_hashes": {
+    "ablation": "571f105fb8220ba004662d48aae6371660c7a6f1cc5dce51b89ffd7d90315dec",
+    "global": "029a6db0ff55bb92efa9f2e234c0484ea8aed9fee1755998cc7b413257eab525",
+    "products": "9b1cc3178371d3096747e37329f018c64283a6160129b7e3ce69724f4b0ec17c",
+    "strategies": "e3fe4fc056b65ab3032f727b2d9454dfe3ab1dcb5d67ca4bf1cf83fd18423cf4",
+    "gates": "71c76c7118ca9473e9b9533ba7c1b601442cb5d33c00565d83bbe0523f2c8d8d"
+  },
+  "master_seed": 20260901,
+  "n_runs": 100,
+  "illustrative": true,
+  "gate_outcomes": {
+    "S0": {
+      "G01": "UNCERTAIN",
+      "G06": "UNCERTAIN"
+    },
+    "S1": {
+      "G01": "UNCERTAIN",
+      "G06": "UNCERTAIN"
+    },
+    "S2": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN"
+    },
+    "S3": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN"
+    },
+    "S4": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN"
+    },
+    "S5": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN",
+      "G13": "UNCERTAIN",
+      "G14": "UNCERTAIN"
+    },
+    "S6": {
+      "G01": "UNCERTAIN",
+      "G02": "UNCERTAIN",
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G05": "UNCERTAIN",
+      "G06": "UNCERTAIN",
+      "G07": "UNCERTAIN",
+      "G13": "UNCERTAIN",
+      "G14": "UNCERTAIN",
+      "G15": "UNCERTAIN"
+    },
+    "S7": {
+      "G03": "UNCERTAIN",
+      "G04": "UNCERTAIN",
+      "G08": "UNCERTAIN",
+      "G09": "UNCERTAIN",
+      "G10": "UNCERTAIN",
+      "G11": "UNCERTAIN",
+      "G12": "UNCERTAIN"
+    },
+    "S8": {},
+    "S9": {},
+    "S10": {},
+    "S11": {},
+    "S12": {},
+    "S13": {},
+    "S14": {},
+    "S15": {},
+    "S16": {},
+    "S17": {},
+    "S18": {},
+    "S19": {},
+    "S20": {}
+  },
+  "wall_time_s": null,
+  "notes": "{\"kind\": \"ablation\", \"results_dir\": \"/Users/rikhinkavuru/telo/feasibility/results/ablation/abl_20260902_phaseA_mb\", \"n_configs\": 2}"
+}

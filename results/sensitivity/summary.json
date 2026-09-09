@@ -1,0 +1,144 @@
+{
+  "meta": {
+    "product": "sodium_bicarbonate_8_4_50ml",
+    "optimized_designs_run": "opt_20260902T043854Z",
+    "designs": {
+      "S0": {
+        "sites": 1.0,
+        "capacity_factor": 1.05,
+        "safety_stock_days": 30.0,
+        "release_time_factor": 1.0,
+        "delivery_days": 5.0,
+        "common_impact_factor": 1.0,
+        "fixed_cost_factor": 1.0,
+        "validation_factor": 1.0,
+        "reserved_capacity_fraction": 0.0
+      },
+      "S1": {
+        "sites": 1.0,
+        "capacity_factor": 1.05,
+        "safety_stock_days": 180.0,
+        "release_time_factor": 1.0,
+        "delivery_days": 5.0,
+        "common_impact_factor": 1.0,
+        "fixed_cost_factor": 1.0,
+        "validation_factor": 1.0,
+        "reserved_capacity_fraction": 0.0
+      },
+      "S2": {
+        "sites": 2.0,
+        "capacity_factor": 0.95,
+        "safety_stock_days": 120.0,
+        "release_time_factor": 1.0,
+        "delivery_days": 4.0,
+        "common_impact_factor": 0.65,
+        "fixed_cost_factor": 1.15,
+        "validation_factor": 1.5,
+        "reserved_capacity_fraction": 0.0,
+        "independent_api_supplier": 0.0,
+        "material_target_days": 161.25
+      },
+      "S3": {
+        "sites": 2.0,
+        "capacity_factor": 1.3,
+        "safety_stock_days": 120.0,
+        "release_time_factor": 1.0,
+        "delivery_days": 4.0,
+        "common_impact_factor": 0.65,
+        "fixed_cost_factor": 1.2,
+        "validation_factor": 1.5,
+        "reserved_capacity_fraction": 0.25,
+        "activation_threshold_days": 45.0,
+        "campaign_batches": 6.0
+      },
+      "S4": {
+        "sites": 2.0,
+        "capacity_factor": 1.45,
+        "safety_stock_days": 60.0,
+        "release_time_factor": 1.0,
+        "delivery_days": 5.0,
+        "common_impact_factor": 0.75,
+        "fixed_cost_factor": 1.1,
+        "validation_factor": 1.5,
+        "reserved_capacity_fraction": 0.0
+      },
+      "S5": {
+        "sites": 4.0,
+        "capacity_factor": 1.35,
+        "safety_stock_days": 45.0,
+        "release_time_factor": 1.0,
+        "delivery_days": 2.0,
+        "common_impact_factor": 0.45,
+        "fixed_cost_factor": 1.4,
+        "validation_factor": 2.5,
+        "reserved_capacity_fraction": 0.0
+      },
+      "S6": {
+        "sites": 4.0,
+        "capacity_factor": 1.35,
+        "safety_stock_days": 45.0,
+        "release_time_factor": 0.6,
+        "delivery_days": 2.0,
+        "common_impact_factor": 0.45,
+        "fixed_cost_factor": 1.5,
+        "validation_factor": 3.0,
+        "reserved_capacity_fraction": 0.0
+      },
+      "S7": {
+        "sites": 2.0,
+        "capacity_factor": 1.15,
+        "safety_stock_days": 30.0,
+        "release_time_factor": 1.0,
+        "delivery_days": 3.0,
+        "common_impact_factor": 0.7,
+        "fixed_cost_factor": 1.25,
+        "validation_factor": 1.0,
+        "reserved_capacity_fraction": 0.15
+      }
+    },
+    "runs_per_scenario": 6,
+    "horizon_days": 1095,
+    "generated_at": "20260902T045142Z",
+    "banner": "PRELIMINARY / ILLUSTRATIVE / NOT FOR EXTERNAL CLAIMS"
+  },
+  "files": [
+    "one_way.json",
+    "decision_reversal.json",
+    "global.json",
+    "voi.json"
+  ],
+  "reversal_inputs": [
+    "capacity_utilization",
+    "release_time",
+    "yield",
+    "uptime",
+    "demand_cv",
+    "common_cause_dependence",
+    "batch_size",
+    "changeover_burden",
+    "deviation_rejection_rate",
+    "site_failure_rate",
+    "investigation_duration"
+  ],
+  "sobol_total_order": {
+    "capacity_utilization": 0.00015638184749650156,
+    "release_time": 7.840668686802642e-06,
+    "fixed_qa_labor_per_node": 0.11365575810406338,
+    "demand_cv": 8.730183441260303e-07,
+    "raw_material_lead_time": 1.0851227238820051e-05,
+    "common_cause_dependence": 1.4621540752548971e-05,
+    "shelf_life": 0.0,
+    "node_scale": 0.8592024847532428
+  },
+  "evpi": 4757493.5136837065,
+  "evppi": {
+    "capacity_utilization": 1016953.968203865,
+    "release_time": 9.462237358093262e-07,
+    "fixed_qa_labor_per_node": 0.0,
+    "demand_cv": 5.960464477539063e-08,
+    "raw_material_lead_time": 1477354.677560687,
+    "common_cause_dependence": 1150472.5402725264,
+    "shelf_life": 2.9802322387695312e-08,
+    "node_scale": 3.203749656677246e-07
+  }
+}

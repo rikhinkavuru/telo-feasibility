@@ -1,0 +1,18 @@
+[33s] norepi S1 declared infeasible_at_full_n fill=0.9874 p=0.72 cost=12.7M
+[181s] norepi S1 matched  infeasible_at_full_n fill=0.9889 p=0.85 cost=12.8M
+[215s] norepi S4 declared infeasible           fill=0.9881 p=0.67 cost=37.8M
+[566s] norepi S4 matched  optimal              fill=0.9952 p=0.90 cost=20.0M
+[649s] norepi S5 declared infeasible           fill=0.9801 p=0.58 cost=35.4M
+[1476s] norepi S5 matched  infeasible_at_full_n fill=0.9950 p=0.85 cost=20.0M
+[1561s] norepi S6 declared infeasible           fill=0.9801 p=0.58 cost=37.5M
+[2388s] norepi S6 matched  infeasible_at_full_n fill=0.9950 p=0.85 cost=21.0M
+[2419s] sodium S1 declared infeasible           fill=0.7582 p=0.00 cost=12.7M
+[2478s] sodium S1 matched  infeasible           fill=0.8951 p=0.00 cost=13.1M
+[2515s] sodium S4 declared infeasible           fill=0.9531 p=0.00 cost=38.6M
+[2756s] sodium S4 matched  optimal              fill=0.9952 p=0.90 cost=23.7M
+[2847s] sodium S5 declared infeasible           fill=0.8666 p=0.00 cost=46.7M
+[3229s] sodium S5 matched  infeasible           fill=0.9883 p=0.58 cost=64.3M
+[3321s] sodium S6 declared infeasible           fill=0.8666 p=0.00 cost=49.0M
+[3706s] sodium S6 matched  infeasible           fill=0.9883 p=0.58 cost=67.0M
+results -> /Users/rikhinkavuru/telo/feasibility/results/design_space/matched_20260905.json (3706s)
+PRELIMINARY / ILLUSTRATIVE / NOT FOR EXTERNAL CLAIMS

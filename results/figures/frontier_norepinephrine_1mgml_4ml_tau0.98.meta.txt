@@ -1,0 +1,9 @@
+title: Cost-reliability frontier of optimized designs (norepinephrine_1mgml_4ml, tau=0.98)
+xlabel: mean fill rate [fraction]
+ylabel: mean annual total cost [USD/yr]
+product: norepinephrine_1mgml_4ml
+scenario: optimized to tau=0.98, q=0.9; gates UNCERTAIN
+manifest_id: opt_20260906T054704Z_tau0.98
+source_note: illustrative workbook inputs (tier 5); results/optimization
+decision_caption: Solid markers met the service target on the full run set; hollow did not. No strategy can be preferred while regulatory gates are unresolved and inputs are illustrative.
+illustrative: True

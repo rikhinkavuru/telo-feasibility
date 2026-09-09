@@ -1,0 +1,17 @@
+{
+  "source_id": "S05",
+  "url": "https://www.gao.gov/assets/gao-25-107153.pdf",
+  "retrieved_at": "2026-09-01T23:02:11.218924Z",
+  "http_status": 200,
+  "sha256": "a8cb852b5c969938080dff57b5c143fcf1e6a0d50f7b1209645bc73a0b9a1b4e",
+  "content_type": "application/pdf",
+  "size_bytes": 738309,
+  "license_note": "same as S04",
+  "raw_path": "data/raw_snapshots/S05/2026-09-01/gao-25-107153.pdf",
+  "transform_script": null,
+  "processed_path": null,
+  "data_dictionary_rows": 0,
+  "access_method": "auto",
+  "robots_allowed": true,
+  "notes": ""
+}

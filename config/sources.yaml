@@ -1,0 +1,537 @@
+# Official source registry (protocol Appendix E, workbook 02_Sources, source probe 2026-09-01).
+# Every entry says how the study may acquire it: `auto` (fetched by scripts/acquire_sources.py
+# under the recorded robots/rate rules) or `human` (a person must retrieve it; the script
+# writes a HUMAN-ACQUISITION-TASK manifest and nothing else). No source is fetched by
+# circumventing an access control. Tiers per protocol 5.3.
+version: 1.0.0
+user_agent: "TeloFeasibilityStudy/0.1 (research; contact rikhin@virahacks.com)"
+default_min_interval_seconds: 5
+sources:
+  - id: S01
+    name: FDA Drug Shortages database (current-state CSV export)
+    domain: shortages
+    tier: 1
+    landing_url: https://dps.fda.gov/drugshortages
+    access_method: auto
+    license_note: "FDA website policies: contents of fda.gov are not copyrighted and are in the public domain; credit appreciated but not required."
+    robots_note: "www.accessdata.fda.gov/robots.txt allows /scripts/drugshortages/; Hit-rate 30 s; Visiting-hours 23:00-05:00 EDT."
+    min_interval_seconds: 30
+    visiting_hours_edt: ["23:00", "05:00"]
+    update_frequency: daily (per openFDA mirror); not stated on site
+    notes: "Current-state snapshot with 22 columns; only 7 Resolved rows; shortage history needs repeated snapshots or the Initial Posting Date column. 2026-09-01 probe: sodium bicarbonate 19 rows, furosemide 33, norepinephrine 0, acyclovir 0."
+    fetches:
+      - key: csv
+        url: https://www.accessdata.fda.gov/scripts/drugshortages/Drugshortages.cfm
+        filename: Drugshortages.csv
+        max_bytes: 5000000
+      - key: detail_sodium_bicarbonate
+        url: "https://www.accessdata.fda.gov/scripts/drugshortages/dsp_ActiveIngredientDetails.cfm?AI=Sodium+Bicarbonate+Injection&st=c"
+        filename: detail_sodium_bicarbonate_injection.html
+        max_bytes: 2000000
+      - key: detail_furosemide
+        url: "https://www.accessdata.fda.gov/scripts/drugshortages/dsp_ActiveIngredientDetails.cfm?AI=Furosemide+Injection&st=c"
+        filename: detail_furosemide_injection.html
+        max_bytes: 2000000
+  - id: S01B
+    name: openFDA drug shortages bulk download
+    domain: shortages
+    tier: 1
+    landing_url: https://open.fda.gov/apis/drug/drugshortages/
+    access_method: auto
+    license_note: "CC0 1.0 Universal public domain dedication (open.fda.gov/license); terms at open.fda.gov/terms."
+    robots_note: "download.open.fda.gov robots.txt not retrievable (403); documented bulk download endpoint."
+    min_interval_seconds: 5
+    update_frequency: daily
+    notes: "Mirror of S01 lagging about one day (1,623 vs 1,635 rows on 2026-09-01). Record which is the system of record."
+    fetches:
+      - key: download_index
+        url: https://api.fda.gov/download.json
+        filename: download.json
+        max_bytes: 5000000
+      - key: bulk_zip
+        url: https://download.open.fda.gov/drug/shortages/drug-shortages-0001-of-0001.json.zip
+        filename: drug-shortages-0001-of-0001.json.zip
+        max_bytes: 20000000
+  - id: S02
+    name: FDA Drug Shortages Task Force report (Drug Shortages - Root Causes and Potential Solutions, 2019/2020)
+    domain: economics
+    tier: 1
+    landing_url: https://www.fda.gov/drugs/drug-shortages/report-drug-shortages-root-causes-and-potential-solutions
+    access_method: auto
+    license_note: FDA public domain
+    robots_note: fda.gov robots.txt allows /media/; Crawl-Delay 30
+    min_interval_seconds: 30
+    update_frequency: static
+    notes: historic 2013-2017 cohort
+    fetches:
+      - key: pdf
+        url: https://www.fda.gov/media/131130/download
+        filename: DSTF_Full_Report.pdf
+        max_bytes: 10000000
+  - id: S03
+    name: ASPE report on preventing shortages and supply-chain vulnerabilities (generic sterile injectables)
+    domain: policy
+    tier: 1
+    landing_url: https://aspe.hhs.gov/reports/preventing-shortages-supply-chain-vulnerabilities
+    access_method: auto
+    license_note: US government work
+    robots_note: not probed; landing page only
+    min_interval_seconds: 10
+    update_frequency: static
+    notes: policy analysis, not product cost data
+    fetches:
+      - key: landing
+        url: https://aspe.hhs.gov/reports/preventing-shortages-supply-chain-vulnerabilities
+        filename: aspe_landing.html
+        max_bytes: 5000000
+  - id: S04
+    name: GAO-25-107110 Drug Shortages (HHS coordination)
+    domain: evidence
+    tier: 1
+    landing_url: https://www.gao.gov/products/gao-25-107110
+    access_method: auto
+    license_note: "gao.gov/copyright: GAO products may be copied and distributed in their entirety without permission; third-party images may be copyrighted."
+    robots_note: gao.gov robots.txt allows /assets/ and /products/; Crawl-delay 420
+    min_interval_seconds: 420
+    update_frequency: static
+    notes: 4.6 MB PDF dated 2025-04-09
+    fetches:
+      - key: pdf
+        url: https://www.gao.gov/assets/gao-25-107110.pdf
+        filename: gao-25-107110.pdf
+        max_bytes: 10000000
+  - id: S05
+    name: GAO-25-107153 Nonprofit Drug Companies (Civica and others)
+    domain: comparator
+    tier: 1
+    landing_url: https://www.gao.gov/products/gao-25-107153
+    access_method: auto
+    license_note: same as S04
+    robots_note: same as S04
+    min_interval_seconds: 420
+    update_frequency: static
+    notes: interview-based; comparator evidence on contracts, inventory, dual sourcing
+    fetches:
+      - key: pdf
+        url: https://www.gao.gov/assets/gao-25-107153.pdf
+        filename: gao-25-107153.pdf
+        max_bytes: 10000000
+  - id: S06
+    name: 21 CFR Part 211 (CGMP for finished pharmaceuticals)
+    domain: regulatory
+    tier: 1
+    landing_url: https://www.ecfr.gov/current/title-21/chapter-I/subchapter-C/part-211
+    access_method: auto
+    license_note: US government work (verbatim eCFR statement not retrievable; HTML blocked to automation)
+    robots_note: "ecfr.gov robots.txt disallows /api/versioner/v1/full/ ('don't index developer tool links'); the versions and structure endpoints are allowed; full text taken from the GovInfo annual bulk XML instead."
+    min_interval_seconds: 10
+    update_frequency: eCFR continuous; GovInfo annual edition
+    notes: "Policy decision HA-15b: the study does not call the eCFR /full/ endpoint. GovInfo CFR-2025 Title 21 Vol 4 XML (annual edition, 2025-08-20) plus the eCFR versions list (latest Part 211 amendment 2025-12-18) are the frozen legal text."
+    fetches:
+      - key: ecfr_versions
+        url: "https://www.ecfr.gov/api/versioner/v1/versions/title-21.json?part=211"
+        filename: ecfr_title21_part211_versions.json
+        max_bytes: 5000000
+      - key: govinfo_xml
+        url: https://www.govinfo.gov/bulkdata/CFR/2025/title-21/CFR-2025-title21-vol4.xml
+        filename: CFR-2025-title21-vol4.xml
+        max_bytes: 60000000
+  - id: S07
+    name: FDA guidance - Sterile Drug Products Produced by Aseptic Processing (2004)
+    domain: sterility
+    tier: 1
+    landing_url: https://www.fda.gov/media/71026/download
+    access_method: auto
+    license_note: FDA public domain
+    robots_note: fda.gov /media/ allowed; Crawl-Delay 30
+    min_interval_seconds: 30
+    update_frequency: static
+    fetches:
+      - key: pdf
+        url: https://www.fda.gov/media/71026/download
+        filename: fda_aseptic_processing_2004.pdf
+        max_bytes: 10000000
+  - id: S08
+    name: FDA guidance - Process Validation General Principles and Practices (2011)
+    domain: validation
+    tier: 1
+    landing_url: https://www.fda.gov/media/71021/download
+    access_method: auto
+    license_note: FDA public domain
+    robots_note: fda.gov /media/ allowed; Crawl-Delay 30
+    min_interval_seconds: 30
+    update_frequency: static
+    fetches:
+      - key: pdf
+        url: https://www.fda.gov/media/71021/download
+        filename: fda_process_validation_2011.pdf
+        max_bytes: 10000000
+  - id: S09
+    name: ICH Q8(R2) Pharmaceutical Development (FDA copy)
+    domain: rtrt
+    tier: 1
+    landing_url: https://www.fda.gov/media/71535/download
+    access_method: auto
+    license_note: FDA public domain copy of ICH text
+    robots_note: fda.gov /media/ allowed; Crawl-Delay 30
+    min_interval_seconds: 30
+    update_frequency: static
+    fetches:
+      - key: pdf
+        url: https://www.fda.gov/media/71535/download
+        filename: ich_q8r2.pdf
+        max_bytes: 10000000
+  - id: S10
+    name: FDA FRAME initiative page
+    domain: advanced_manufacturing
+    tier: 1
+    landing_url: https://www.fda.gov/about-fda/center-drug-evaluation-and-research-cder/cders-framework-regulatory-advanced-manufacturing-evaluation-frame-initiative
+    access_method: auto
+    license_note: FDA public domain
+    robots_note: fda.gov allowed; Crawl-Delay 30
+    min_interval_seconds: 30
+    update_frequency: evolving policy page
+    notes: agency initiative, not a regulation
+    fetches:
+      - key: html
+        url: https://www.fda.gov/about-fda/center-drug-evaluation-and-research-cder/cders-framework-regulatory-advanced-manufacturing-evaluation-frame-initiative
+        filename: frame.html
+        max_bytes: 5000000
+  - id: S11
+    name: Federal Register 2026-14073 - proposed rule on registration and listing for distributed manufacturing establishments
+    domain: distributed_manufacturing
+    tier: 1
+    landing_url: https://www.federalregister.gov/documents/2026/07/13/2026-14073/drug-establishment-registration-and-drug-listing-requirements-for-establishments-engaged-in
+    access_method: auto
+    license_note: US government work (Federal Register)
+    robots_note: federalregister.gov robots.txt allows /api/ and /documents/full_text/; HTML pages redirect automation to a CAPTCHA (not fetched)
+    min_interval_seconds: 10
+    update_frequency: static (proposed rule; watch for final rule)
+    notes: "Proposed Rule, 91 FR 42888, Docket FDA-2025-N-6075, RIN 0910-AI94, 21 CFR 207, comments closed 2026-09-11."
+    fetches:
+      - key: api_json
+        url: https://www.federalregister.gov/api/v1/documents/2026-14073.json
+        filename: fr_2026-14073.json
+        max_bytes: 2000000
+      - key: full_text_xml
+        url: https://www.federalregister.gov/documents/full_text/xml/2026/07/13/2026-14073.xml
+        filename: fr_2026-14073.xml
+        max_bytes: 10000000
+      - key: pdf
+        url: https://www.govinfo.gov/content/pkg/FR-2026-07-13/pdf/2026-14073.pdf
+        filename: fr_2026-14073.pdf
+        max_bytes: 10000000
+  - id: S12
+    name: FDA Advanced Manufacturing Technologies Designation Program guidance page
+    domain: amt
+    tier: 1
+    landing_url: https://www.fda.gov/regulatory-information/search-fda-guidance-documents/advanced-manufacturing-technologies-designation-program
+    access_method: auto
+    license_note: FDA public domain
+    robots_note: fda.gov allowed; Crawl-Delay 30
+    min_interval_seconds: 30
+    update_frequency: static guidance page
+    notes: designation is not product approval
+    fetches:
+      - key: html
+        url: https://www.fda.gov/regulatory-information/search-fda-guidance-documents/advanced-manufacturing-technologies-designation-program
+        filename: amt_designation_program.html
+        max_bytes: 5000000
+  - id: S13
+    name: FDA - Compounding when drugs are on FDA's drug shortages list (web page)
+    domain: 503b
+    tier: 1
+    landing_url: https://www.fda.gov/drugs/human-drug-compounding/compounding-when-drugs-are-fdas-drug-shortages-list
+    access_method: auto
+    license_note: FDA public domain
+    robots_note: fda.gov allowed; Crawl-Delay 30
+    min_interval_seconds: 30
+    update_frequency: page current as of 2025-08-08 at probe
+    notes: no standalone guidance PDF; operative documents are the essentially-a-copy guidances (S15)
+    fetches:
+      - key: html
+        url: https://www.fda.gov/drugs/human-drug-compounding/compounding-when-drugs-are-fdas-drug-shortages-list
+        filename: compounding_shortage_list.html
+        max_bytes: 5000000
+  - id: S14
+    name: FDA 503B bulk drug substances - policy page, category lists, interim policy, final bulks list
+    domain: 503b
+    tier: 1
+    landing_url: https://www.fda.gov/drugs/human-drug-compounding/bulk-drug-substances-used-compounding-under-section-503b-fdc-act
+    access_method: auto
+    license_note: FDA public domain
+    robots_note: fda.gov allowed; Crawl-Delay 30
+    min_interval_seconds: 30
+    update_frequency: irregular
+    notes: "Final 503B bulks list (current as of 2024-05-16) NOT INCLUDED table lists sodium bicarbonate (88 FR 20531, 2023-04-06); norepinephrine appears on neither table."
+    fetches:
+      - key: policy_page
+        url: https://www.fda.gov/drugs/human-drug-compounding/bulk-drug-substances-used-compounding-under-section-503b-fdc-act
+        filename: bulks_policy_page.html
+        max_bytes: 5000000
+      - key: bulks_list_page
+        url: https://www.fda.gov/drugs/human-drug-compounding/503b-bulk-drug-substances-list
+        filename: 503b_bulks_list.html
+        max_bytes: 5000000
+      - key: categories_pdf
+        url: https://www.fda.gov/media/94164/download
+        filename: 503b_categories_march_2025.pdf
+        max_bytes: 10000000
+      - key: interim_policy_pdf
+        url: https://www.fda.gov/media/94402/download
+        filename: 503b_interim_policy_bulks.pdf
+        max_bytes: 10000000
+  - id: S15
+    name: FDA guidance - Compounded Drug Products That Are Essentially Copies of Approved Drug Products Under Section 503B (January 2018)
+    domain: 503b
+    tier: 1
+    landing_url: https://www.fda.gov/media/98964/download
+    access_method: auto
+    license_note: FDA public domain
+    robots_note: fda.gov /media/ allowed; Crawl-Delay 30
+    min_interval_seconds: 30
+    update_frequency: static (final guidance)
+    fetches:
+      - key: pdf_503b
+        url: https://www.fda.gov/media/98964/download
+        filename: essentially_a_copy_503b_2018.pdf
+        max_bytes: 10000000
+      - key: pdf_503a
+        url: https://www.fda.gov/media/98973/download
+        filename: essentially_a_copy_503a_2018.pdf
+        max_bytes: 10000000
+  - id: S16
+    name: Drugs@FDA data files
+    domain: approvals
+    tier: 1
+    landing_url: https://www.fda.gov/drugs/drug-approvals-and-databases/drugsfda-data-files
+    access_method: auto
+    license_note: FDA public domain
+    robots_note: fda.gov /media/ allowed; Crawl-Delay 30
+    min_interval_seconds: 30
+    update_frequency: each morning Monday-Friday
+    notes: ZIP of 12 tab-delimited tables (about 6 MB)
+    fetches:
+      - key: zip
+        url: https://www.fda.gov/media/89850/download
+        filename: drugsatfda.zip
+        max_bytes: 30000000
+  - id: S17
+    name: Orange Book data files (EOBZIP)
+    domain: approvals
+    tier: 1
+    landing_url: https://www.fda.gov/drugs/drug-approvals-and-databases/orange-book-data-files
+    access_method: auto
+    license_note: FDA public domain
+    robots_note: fda.gov /media/ allowed; Crawl-Delay 30
+    min_interval_seconds: 30
+    update_frequency: monthly
+    fetches:
+      - key: zip
+        url: https://www.fda.gov/media/76860/download
+        filename: EOBZIP.zip
+        max_bytes: 30000000
+  - id: S18
+    name: DailyMed SPL REST API (labels for candidate presentations)
+    domain: labels
+    tier: 1
+    landing_url: https://dailymed.nlm.nih.gov/dailymed/spl-resources-all-drug-labels.cfm
+    access_method: auto
+    license_note: "NLM: US government works not subject to copyright; acknowledge NLM; non-government label content may be copyrighted by the labeler."
+    robots_note: dailymed robots.txt redirects to index (no rules); rate limit undocumented
+    min_interval_seconds: 5
+    update_frequency: daily
+    notes: bulk SPL releases (multi-GB) are not downloaded; per-product queries only
+    fetches:
+      - key: spls_sodium_bicarbonate
+        url: "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls.json?drug_name=sodium+bicarbonate&pagesize=100"
+        filename: spls_sodium_bicarbonate.json
+        max_bytes: 5000000
+      - key: spls_norepinephrine
+        url: "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls.json?drug_name=norepinephrine&pagesize=100"
+        filename: spls_norepinephrine.json
+        max_bytes: 5000000
+      - key: spls_furosemide
+        url: "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls.json?drug_name=furosemide&pagesize=100"
+        filename: spls_furosemide.json
+        max_bytes: 5000000
+      - key: spls_acyclovir
+        url: "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls.json?drug_name=acyclovir&pagesize=100"
+        filename: spls_acyclovir.json
+        max_bytes: 5000000
+      - key: spls_sterile_water
+        url: "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls.json?drug_name=sterile+water&pagesize=100"
+        filename: spls_sterile_water.json
+        max_bytes: 5000000
+      - key: spls_acetazolamide
+        url: "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls.json?drug_name=acetazolamide&pagesize=100"
+        filename: spls_acetazolamide.json
+        max_bytes: 5000000
+  - id: S19
+    name: CMS Medicare Part B Spending by Drug (annual)
+    domain: demand_proxy
+    tier: 1
+    landing_url: https://data.cms.gov/summary-statistics-on-use-and-payments/medicare-medicaid-spending-by-drug/medicare-part-b-spending-by-drug
+    access_method: auto
+    license_note: "US government work (https://www.usa.gov/government-works). UTILIZATION / REIMBURSEMENT PROXY ONLY; never manufacturing cost."
+    robots_note: data.cms.gov robots.txt crawl-delay 10; /data-api/v1/download-request disallowed (unused)
+    min_interval_seconds: 10
+    update_frequency: annual (modified 2026-06-25; data year 2024)
+    notes: no HCPCS for norepinephrine or sodium bicarbonate (0 rows); furosemide J1940 and acyclovir J0133 present
+    fetches:
+      - key: csv
+        url: "https://data.cms.gov/sites/default/files/2026-06/6616fc91-eb70-404c-9f27-1448e47a3a73/DSD_PTB_RY26_P06_V10_DYT24_HCPCS-%20260602.csv"
+        filename: part_b_spending_by_drug_2024.csv
+        max_bytes: 5000000
+  - id: S20
+    name: CMS Medicare Part B ASP pricing files (quarterly payment limits)
+    domain: pricing_proxy
+    tier: 1
+    landing_url: https://www.cms.gov/medicare/payment/part-b-drugs/asp-pricing-files
+    access_method: auto
+    license_note: "US government work. REIMBURSEMENT / ASP PROXY ONLY; never manufacturing cost."
+    robots_note: cms.gov robots.txt disallows query strings, /media/, /node/; /files/zip/ not disallowed
+    min_interval_seconds: 10
+    update_frequency: quarterly
+    notes: contents of the ZIP undetermined at probe; NOC/ASP crosswalk needed for products without a J-code
+    fetches:
+      - key: july_2026_zip
+        url: https://www.cms.gov/files/zip/july-2026-medicare-part-b-payment-limit-files.zip
+        filename: july-2026-medicare-part-b-payment-limit-files.zip
+        max_bytes: 20000000
+  - id: S21
+    name: ASHP current drug shortages
+    domain: shortage_discovery
+    tier: 2
+    landing_url: https://www.ashp.org/drug-shortages/current-shortages
+    access_method: human
+    license_note: "Bulletins copyrighted (University of Utah Drug Information Service); personal use only; commercial redistribution prohibited; a paid data license exists."
+    robots_note: site returns a Cloudflare challenge (403) to automation; robots.txt has no Disallow rules
+    min_interval_seconds: 0
+    update_frequency: continuous
+    human_task: "Retrieve, in a browser, the current-shortage list and the bulletin page for each longlist presentation; save page captures with date and URL under data/raw_snapshots/S21/<date>/; record the copyright notice. Do not redistribute bulletin text; store extracted facts (status, dates, reasons, presentations) in the dossier with citation."
+    fetches: []
+  - id: S22
+    name: DailyMed sodium bicarbonate 8.4% label (workbook's illustrative Product A reference)
+    domain: case_label
+    tier: 1
+    landing_url: "https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid=2f05947f-a489-4298-a871-90db75b2a6c5&type=display"
+    access_method: auto
+    license_note: same as S18
+    robots_note: same as S18
+    min_interval_seconds: 5
+    update_frequency: per label version
+    notes: one labeler only; the study will select labels from S18 query results, not from this single set id
+    fetches:
+      - key: spl_xml
+        url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/2f05947f-a489-4298-a871-90db75b2a6c5.xml
+        filename: spl_2f05947f.xml
+        max_bytes: 5000000
+  - id: S23
+    name: DailyMed norepinephrine label (workbook's illustrative Product B reference)
+    domain: case_label
+    tier: 1
+    landing_url: "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=4408987e-690a-41ac-9677-e24604fa9793"
+    access_method: auto
+    license_note: same as S18
+    robots_note: same as S18
+    min_interval_seconds: 5
+    update_frequency: per label version
+    fetches:
+      - key: spl_xml
+        url: https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/4408987e-690a-41ac-9677-e24604fa9793.xml
+        filename: spl_4408987e.xml
+        max_bytes: 5000000
+  - id: S24
+    name: Lucker, Seifert, Biçer - pharmaceutical supply-chain resilience (Omega, 2019)
+    domain: operations
+    tier: 3
+    landing_url: https://doi.org/10.1016/j.omega.2017.01.004
+    access_method: human
+    license_note: publisher copyright; paywalled
+    robots_note: n/a
+    min_interval_seconds: 0
+    update_frequency: static
+    human_task: "Obtain the article through institutional access or the authors; record citation, access date, and the specific parameters or findings used (page/line) in the assumption register."
+    fetches: []
+  - id: S25
+    name: Lee et al. - learning and recovery in drug shortages (Management Science)
+    domain: recovery
+    tier: 3
+    landing_url: https://doi.org/10.1287/mnsc.2024.08337
+    access_method: human
+    license_note: publisher copyright; paywalled
+    robots_note: n/a
+    min_interval_seconds: 0
+    update_frequency: static
+    human_task: "Verify the DOI resolves and the publication year (workbook says 2026, DOI string says 2024); obtain the article; record what is used."
+    fetches: []
+  - id: S26
+    name: FDA NDC directory (text)
+    domain: presentations
+    tier: 1
+    landing_url: https://www.fda.gov/drugs/drug-approvals-and-databases/national-drug-code-directory
+    access_method: auto
+    license_note: FDA public domain
+    robots_note: accessdata robots.txt allows /cder/; Hit-rate 30; Visiting-hours 23:00-05:00 EDT
+    min_interval_seconds: 30
+    visiting_hours_edt: ["23:00", "05:00"]
+    update_frequency: daily
+    notes: about 10.8 MB; presentation-level NDC, package size, labeler
+    fetches:
+      - key: zip
+        url: https://www.accessdata.fda.gov/cder/ndctext.zip
+        filename: ndctext.zip
+        max_bytes: 30000000
+  - id: S27
+    name: USASpending award search (Phlow ASPR contract; Civica awards)
+    domain: contracts
+    tier: 1
+    landing_url: https://api.usaspending.gov/docs/endpoints
+    access_method: auto
+    license_note: US government work
+    robots_note: api.usaspending.gov robots.txt 404; documented public API without key
+    min_interval_seconds: 5
+    update_frequency: continuous
+    notes: "Probe 2026-09-01: Phlow contract 75A50120C00092, $696,665,953.98, ASPR, 2020-05-18 to 2027-01-13; no Civica reserved-capacity prime award."
+    fetches:
+      - key: phlow_awards
+        url: https://api.usaspending.gov/api/v2/search/spending_by_award/
+        method: POST
+        filename: usaspending_phlow.json
+        max_bytes: 5000000
+        body:
+          filters:
+            keywords: ["Phlow"]
+            award_type_codes: ["A", "B", "C", "D"]
+          fields: ["Award ID", "Recipient Name", "Award Amount", "Total Outlays", "Start Date", "End Date", "Awarding Agency", "Description"]
+          limit: 50
+          page: 1
+      - key: civica_awards
+        url: https://api.usaspending.gov/api/v2/search/spending_by_award/
+        method: POST
+        filename: usaspending_civica.json
+        max_bytes: 5000000
+        body:
+          filters:
+            keywords: ["Civica"]
+            award_type_codes: ["A", "B", "C", "D"]
+          fields: ["Award ID", "Recipient Name", "Award Amount", "Total Outlays", "Start Date", "End Date", "Awarding Agency", "Description"]
+          limit: 50
+          page: 1
+  - id: S28
+    name: IDRC 2002 NIR tablet shootout dataset (Eigenvector Research distribution)
+    domain: release_assurance_benchmark
+    tier: 3
+    landing_url: https://eigenvector.com/data/tablets/
+    access_method: auto
+    license_note: "Public benchmark dataset distributed by Eigenvector Research for research use; no license text found on the landing page at probe time (HUMAN CHECK: confirm redistribution terms before publishing derived data). Values are pharmaceutical tablet NIR spectra with reference assay; no Telo data."
+    robots_note: not probed; single file fetch with descriptive user agent
+    min_interval_seconds: 10
+    update_frequency: static (2002 dataset)
+    notes: "Same file the repository's research/conformal/data_tablet.py fetches; MD5 of the repo copy 9cdc57e841cbb8a422c44906f2b6d714. 155 calibration + 460 test + 40 validation tablets on two instruments."
+    fetches:
+      - key: mat
+        url: https://eigenvector.com/data/tablets/nir_shootout_2002.mat
+        filename: nir_shootout_2002.mat
+        max_bytes: 20000000

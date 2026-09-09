@@ -1,0 +1,2388 @@
+{
+  "config": {
+    "seeds": 50,
+    "alpha": 0.1,
+    "ood_alpha": 0.1,
+    "n_train": 105,
+    "repair_sizes": [
+      5,
+      9,
+      15,
+      30,
+      50
+    ],
+    "ood_grid": [
+      0.0,
+      0.01,
+      0.02,
+      0.05,
+      0.1,
+      0.2,
+      0.3,
+      0.5
+    ],
+    "fallback_cost": 1.0,
+    "wrong_release_cost": 50.0,
+    "synthetic_lots": 5,
+    "synthetic_time_blocks": 4,
+    "n_components": null,
+    "pls_scale": false,
+    "gate_score": "nn",
+    "component_selection": "train_and_calibration_cv",
+    "extra_repair_sizes": [
+      3
+    ],
+    "transfer_sizes": [
+      15,
+      30,
+      50
+    ],
+    "holdout_grid": [
+      0.0,
+      0.02,
+      0.04,
+      0.06,
+      0.08,
+      0.1,
+      0.12,
+      0.14,
+      0.16,
+      0.18,
+      0.2,
+      0.25,
+      0.3,
+      0.35,
+      0.4,
+      0.45,
+      0.5
+    ],
+    "holdout_detection_target": 0.9,
+    "cost_product_id": "sodium_bicarbonate_8_4_50ml"
+  },
+  "data_sha256": "129a32ec9e194e568cbd96a200c88aabeb347156081b5dfbb0120372fdd6c22a",
+  "metrics": {
+    "home": {
+      "released_fraction": {
+        "mean": 0.9185652173913043,
+        "ci95_low": 0.9097826086956523,
+        "ci95_high": 0.9266532608695651,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.08143478260869565,
+        "ci95_low": 0.07334347826086958,
+        "ci95_high": 0.08965652173913045,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.061173913043478266,
+        "ci95_low": 0.05382391304347826,
+        "ci95_high": 0.06943478260869566,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.06707669066509618,
+        "ci95_low": 0.05894389352540893,
+        "ci95_high": 0.07620323214298767,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.9266956521739129,
+        "ci95_low": 0.9156945652173913,
+        "ci95_high": 0.9382173913043478,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.0751012146514215,
+        "ci95_low": 0.06905816603436743,
+        "ci95_high": 0.08142925543898448,
+        "seeds_with_value": 50
+      },
+      "r2": {
+        "mean": 0.9069861316694658,
+        "ci95_low": 0.9047457592006481,
+        "ci95_high": 0.9091656557155944,
+        "seeds_with_value": 50
+      }
+    },
+    "shift": {
+      "released_fraction": {
+        "mean": 0.5631739130434783,
+        "ci95_low": 0.5254260869565217,
+        "ci95_high": 0.6015684782608696,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.4368260869565217,
+        "ci95_low": 0.39697499999999997,
+        "ci95_high": 0.4764358695652174,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.15234782608695652,
+        "ci95_low": 0.13539021739130436,
+        "ci95_high": 0.1685652173913043,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.28406418307923403,
+        "ci95_low": 0.2529476485563022,
+        "ci95_high": 0.3185716826000382,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.7221304347826087,
+        "ci95_low": 0.6949989130434782,
+        "ci95_high": 0.7479663043478261,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.4378689124268123,
+        "ci95_low": 0.39102343123032923,
+        "ci95_high": 0.48367358879166555,
+        "seeds_with_value": 50
+      },
+      "r2": {
+        "mean": 0.7737863696094581,
+        "ci95_low": 0.7599103636168386,
+        "ci95_high": 0.7876954581738728,
+        "seeds_with_value": 50
+      }
+    },
+    "shift_by_synthetic_lot_0": {
+      "released_fraction": {
+        "mean": 0.6115217391304348,
+        "ci95_low": 0.5747826086956522,
+        "ci95_high": 0.6506630434782608,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.38847826086956516,
+        "ci95_low": 0.3476032608695652,
+        "ci95_high": 0.42807608695652166,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.1784782608695652,
+        "ci95_low": 0.16217391304347825,
+        "ci95_high": 0.19413586956521742,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.3044370406207361,
+        "ci95_low": 0.27235378733554605,
+        "ci95_high": 0.3352584379881705,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.7132608695652174,
+        "ci95_low": 0.6904293478260869,
+        "ci95_high": 0.7343478260869564,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.3985867859833563,
+        "ci95_low": 0.352748639735794,
+        "ci95_high": 0.44891578890579814,
+        "seeds_with_value": 50
+      }
+    },
+    "shift_by_synthetic_lot_1": {
+      "released_fraction": {
+        "mean": 0.478695652173913,
+        "ci95_low": 0.4445652173913043,
+        "ci95_high": 0.5173967391304347,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.5213043478260869,
+        "ci95_low": 0.48433695652173914,
+        "ci95_high": 0.5569728260869565,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.11978260869565219,
+        "ci95_low": 0.10390760869565215,
+        "ci95_high": 0.13565217391304346,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.2630108681897103,
+        "ci95_low": 0.22900780610666527,
+        "ci95_high": 0.3005982893447579,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.7306521739130437,
+        "ci95_low": 0.7006467391304347,
+        "ci95_high": 0.7604347826086957,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.5145906097792117,
+        "ci95_low": 0.4694913702387444,
+        "ci95_high": 0.556521244992261,
+        "seeds_with_value": 50
+      }
+    },
+    "shift_by_synthetic_lot_2": {
+      "released_fraction": {
+        "mean": 0.5432608695652175,
+        "ci95_low": 0.5071684782608695,
+        "ci95_high": 0.5832717391304348,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.4567391304347826,
+        "ci95_low": 0.41716304347826083,
+        "ci95_high": 0.4969565217391304,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.15043478260869564,
+        "ci95_low": 0.13455978260869564,
+        "ci95_high": 0.167179347826087,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.29454594429094255,
+        "ci95_low": 0.25788597090163634,
+        "ci95_high": 0.3314656171055424,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.7000000000000002,
+        "ci95_low": 0.671945652173913,
+        "ci95_high": 0.7289239130434783,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.447141604016127,
+        "ci95_low": 0.40009970414204316,
+        "ci95_high": 0.4969715568600377,
+        "seeds_with_value": 50
+      }
+    },
+    "shift_by_synthetic_lot_3": {
+      "released_fraction": {
+        "mean": 0.6026086956521739,
+        "ci95_low": 0.5662989130434782,
+        "ci95_high": 0.6413097826086956,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.3973913043478261,
+        "ci95_low": 0.3558695652173913,
+        "ci95_high": 0.4363152173913043,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.12804347826086956,
+        "ci95_low": 0.10999456521739129,
+        "ci95_high": 0.14826630434782606,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.224066588486824,
+        "ci95_low": 0.18819549356526027,
+        "ci95_high": 0.2621857311719797,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.763913043478261,
+        "ci95_low": 0.7319510869565218,
+        "ci95_high": 0.7923967391304348,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.38670265097049267,
+        "ci95_low": 0.34116186067559656,
+        "ci95_high": 0.4313129228126595,
+        "seeds_with_value": 50
+      }
+    },
+    "shift_by_synthetic_lot_4": {
+      "released_fraction": {
+        "mean": 0.5797826086956522,
+        "ci95_low": 0.5412989130434782,
+        "ci95_high": 0.6169619565217392,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.4202173913043479,
+        "ci95_low": 0.37934782608695655,
+        "ci95_high": 0.4545652173913044,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.18499999999999997,
+        "ci95_low": 0.16934239130434783,
+        "ci95_high": 0.2017445652173913,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.3335958331347579,
+        "ci95_low": 0.3017044032894985,
+        "ci95_high": 0.36919920370411374,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.7028260869565216,
+        "ci95_low": 0.6767282608695653,
+        "ci95_high": 0.7278260869565217,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.444715066535527,
+        "ci95_low": 0.3949740049572231,
+        "ci95_high": 0.4934290894813574,
+        "seeds_with_value": 50
+      }
+    },
+    "shift_by_synthetic_time_0": {
+      "released_fraction": {
+        "mean": 0.5245217391304349,
+        "ci95_low": 0.4923478260869566,
+        "ci95_high": 0.5643521739130435,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.47547826086956513,
+        "ci95_low": 0.44051739130434786,
+        "ci95_high": 0.5087173913043478,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.2580869565217392,
+        "ci95_low": 0.23389565217391306,
+        "ci95_high": 0.2815739130434783,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.5081069020438095,
+        "ci95_low": 0.45956166712364216,
+        "ci95_high": 0.5565899574201201,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.528695652173913,
+        "ci95_low": 0.49547391304347826,
+        "ci95_high": 0.5659130434782608,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.5117235984546346,
+        "ci95_low": 0.4579208103945748,
+        "ci95_high": 0.5616807063871601,
+        "seeds_with_value": 50
+      }
+    },
+    "shift_by_synthetic_time_1": {
+      "released_fraction": {
+        "mean": 0.5132173913043478,
+        "ci95_low": 0.4605173913043478,
+        "ci95_high": 0.5633173913043478,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.48678260869565215,
+        "ci95_low": 0.4326695652173913,
+        "ci95_high": 0.5396565217391305,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.04469565217391305,
+        "ci95_low": 0.03321739130434783,
+        "ci95_high": 0.057395652173913035,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.09809253717636404,
+        "ci95_low": 0.07149027150115062,
+        "ci95_high": 0.12493879263741935,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.913391304347826,
+        "ci95_low": 0.8876521739130433,
+        "ci95_high": 0.9387869565217392,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.49191082528001123,
+        "ci95_low": 0.437199062360139,
+        "ci95_high": 0.5467094854113755,
+        "seeds_with_value": 50
+      }
+    },
+    "shift_by_synthetic_time_2": {
+      "released_fraction": {
+        "mean": 0.6321739130434783,
+        "ci95_low": 0.6010391304347826,
+        "ci95_high": 0.6652391304347826,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.3678260869565218,
+        "ci95_low": 0.33337826086956523,
+        "ci95_high": 0.3994913043478261,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.06052173913043478,
+        "ci95_low": 0.05182173913043477,
+        "ci95_high": 0.07009130434782608,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.09707096776540997,
+        "ci95_low": 0.08219755679962808,
+        "ci95_high": 0.11280727670991285,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.8723478260869565,
+        "ci95_low": 0.8544304347826087,
+        "ci95_high": 0.8873086956521739,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.3471309168557282,
+        "ci95_low": 0.3163075732749358,
+        "ci95_high": 0.3808322490552319,
+        "seeds_with_value": 50
+      }
+    },
+    "shift_by_synthetic_time_3": {
+      "released_fraction": {
+        "mean": 0.5827826086956521,
+        "ci95_low": 0.5450347826086956,
+        "ci95_high": 0.6184478260869565,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.4172173913043478,
+        "ci95_low": 0.38190869565217395,
+        "ci95_high": 0.4539173913043478,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.24608695652173915,
+        "ci95_low": 0.22034347826086959,
+        "ci95_high": 0.27287391304347824,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.4418102076066129,
+        "ci95_low": 0.3886690285363042,
+        "ci95_high": 0.4971464666609816,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.5740869565217391,
+        "ci95_low": 0.5366913043478261,
+        "ci95_high": 0.6059173913043479,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.4334158800277644,
+        "ci95_low": 0.3828222987778955,
+        "ci95_high": 0.4872082278139342,
+        "seeds_with_value": 50
+      }
+    },
+    "shift_by_concentration_tertile_0": {
+      "released_fraction": {
+        "mean": 0.51359477124183,
+        "ci95_low": 0.46548366013071885,
+        "ci95_high": 0.5615718954248365,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.48640522875817,
+        "ci95_low": 0.43645424836601304,
+        "ci95_high": 0.5333496732026144,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.027320261437908496,
+        "ci95_low": 0.021568627450980395,
+        "ci95_high": 0.0342516339869281,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.053735099918423665,
+        "ci95_low": 0.04340152725088549,
+        "ci95_high": 0.06516937873809255,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.9247058823529412,
+        "ci95_low": 0.9120261437908497,
+        "ci95_high": 0.935297385620915,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.4758819893032091,
+        "ci95_low": 0.42832893348848944,
+        "ci95_high": 0.5255181031686775,
+        "seeds_with_value": 50
+      }
+    },
+    "shift_by_concentration_tertile_1": {
+      "released_fraction": {
+        "mean": 0.5308496732026143,
+        "ci95_low": 0.501173202614379,
+        "ci95_high": 0.5647091503267975,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.4691503267973856,
+        "ci95_low": 0.43764705882352933,
+        "ci95_high": 0.4998692810457516,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.1526797385620915,
+        "ci95_low": 0.13437254901960785,
+        "ci95_high": 0.1695457516339869,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.29600798119874727,
+        "ci95_low": 0.2587249855802568,
+        "ci95_high": 0.3301044642646324,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.6426143790849673,
+        "ci95_low": 0.6145098039215687,
+        "ci95_high": 0.6678725490196078,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.41791207352205445,
+        "ci95_low": 0.3771379425091691,
+        "ci95_high": 0.4560649806395965,
+        "seeds_with_value": 50
+      }
+    },
+    "shift_by_concentration_tertile_2": {
+      "released_fraction": {
+        "mean": 0.6445454545454545,
+        "ci95_low": 0.6093409090909091,
+        "ci95_high": 0.6832629870129869,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.35545454545454547,
+        "ci95_low": 0.31878896103896104,
+        "ci95_high": 0.3937889610389611,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.2762337662337662,
+        "ci95_low": 0.2450551948051948,
+        "ci95_high": 0.30610714285714286,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.44434095027140796,
+        "ci95_low": 0.3933392890370562,
+        "ci95_high": 0.49186974206192424,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.5998701298701299,
+        "ci95_low": 0.5532272727272727,
+        "ci95_high": 0.6465032467532466,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.40200279530533245,
+        "ci95_low": 0.3534444518457527,
+        "ci95_high": 0.45375882269146,
+        "seeds_with_value": 50
+      }
+    },
+    "shift_no_gate": {
+      "released_fraction": {
+        "mean": 1.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.27786956521739126,
+        "ci95_low": 0.2521684782608696,
+        "ci95_high": 0.30504565217391305,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.27786956521739126,
+        "ci95_low": 0.25159891304347826,
+        "ci95_high": 0.30388043478260873,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.7221304347826087,
+        "ci95_low": 0.6955184782608695,
+        "ci95_high": 0.7475282608695651,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      }
+    },
+    "shift_mandatory_hold": {
+      "released_fraction": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 1.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": NaN,
+        "ci95_low": NaN,
+        "ci95_high": NaN,
+        "seeds_with_value": 0
+      },
+      "empirical_coverage": {
+        "mean": 0.7221304347826087,
+        "ci95_low": 0.6948249999999999,
+        "ci95_high": 0.7477826086956522,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 1.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "seeds_with_value": 50
+      }
+    },
+    "shift_repaired_quantile_n5": {
+      "released_fraction": {
+        "mean": 1.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 1.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      },
+      "interval_half_width_mg": {
+        "mean": Infinity,
+        "ci95_low": NaN,
+        "ci95_high": NaN,
+        "seeds_with_value": 50
+      }
+    },
+    "shift_slope_bias_n5": {
+      "released_fraction": {
+        "mean": 1.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.16082608695652176,
+        "ci95_low": 0.1456,
+        "ci95_high": 0.1794391304347826,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.16082608695652176,
+        "ci95_low": 0.14516521739130436,
+        "ci95_high": 0.1799228260869565,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.8391739130434783,
+        "ci95_low": 0.8202586956521739,
+        "ci95_high": 0.8546978260869565,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      }
+    },
+    "shift_repaired_quantile_n9": {
+      "released_fraction": {
+        "mean": 1.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.10417391304347827,
+        "ci95_low": 0.08142826086956523,
+        "ci95_high": 0.12856739130434783,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.10417391304347827,
+        "ci95_low": 0.08181739130434783,
+        "ci95_high": 0.12869891304347822,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.8958260869565219,
+        "ci95_low": 0.8702902173913043,
+        "ci95_high": 0.9194902173913044,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      },
+      "interval_half_width_mg": {
+        "mean": 13.247549216943282,
+        "ci95_low": 12.085219474000171,
+        "ci95_high": 14.592103940932336,
+        "seeds_with_value": 50
+      }
+    },
+    "shift_slope_bias_n9": {
+      "released_fraction": {
+        "mean": 1.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.14456521739130435,
+        "ci95_low": 0.13478152173913044,
+        "ci95_high": 0.15652934782608693,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.14456521739130435,
+        "ci95_low": 0.1334304347826087,
+        "ci95_high": 0.15500108695652176,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.8554347826086957,
+        "ci95_low": 0.8453021739130433,
+        "ci95_high": 0.8660010869565218,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      }
+    },
+    "shift_repaired_quantile_n15": {
+      "released_fraction": {
+        "mean": 1.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.07243478260869565,
+        "ci95_low": 0.055081521739130446,
+        "ci95_high": 0.09091847826086956,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.07243478260869565,
+        "ci95_low": 0.05517391304347827,
+        "ci95_high": 0.09052282608695653,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.9275652173913044,
+        "ci95_low": 0.9099967391304348,
+        "ci95_high": 0.9446521739130435,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      },
+      "interval_half_width_mg": {
+        "mean": 15.18053637709441,
+        "ci95_low": 13.706180380321914,
+        "ci95_high": 16.5876484533793,
+        "seeds_with_value": 50
+      }
+    },
+    "shift_slope_bias_n15": {
+      "released_fraction": {
+        "mean": 1.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.1389130434782609,
+        "ci95_low": 0.1310423913043478,
+        "ci95_high": 0.14726304347826086,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.1389130434782609,
+        "ci95_low": 0.13078260869565217,
+        "ci95_high": 0.14739565217391307,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.8610869565217394,
+        "ci95_low": 0.8533032608695653,
+        "ci95_high": 0.8695250000000001,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      }
+    },
+    "shift_pds_n15": {
+      "released_fraction": {
+        "mean": 1.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.16991304347826083,
+        "ci95_low": 0.1533445652173913,
+        "ci95_high": 0.18587391304347825,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.16991304347826083,
+        "ci95_low": 0.15343260869565217,
+        "ci95_high": 0.18635760869565215,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.8300869565217391,
+        "ci95_low": 0.8141293478260869,
+        "ci95_high": 0.8478717391304348,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      }
+    },
+    "shift_repaired_quantile_n30": {
+      "released_fraction": {
+        "mean": 1.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.13343478260869568,
+        "ci95_low": 0.12234565217391304,
+        "ci95_high": 0.14509782608695648,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.13343478260869568,
+        "ci95_low": 0.12278152173913043,
+        "ci95_high": 0.14430543478260868,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.8665652173913042,
+        "ci95_low": 0.8555652173913043,
+        "ci95_high": 0.8774347826086956,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      },
+      "interval_half_width_mg": {
+        "mean": 10.748813556767784,
+        "ci95_low": 10.18138011631695,
+        "ci95_high": 11.39199409709884,
+        "seeds_with_value": 50
+      }
+    },
+    "shift_slope_bias_n30": {
+      "released_fraction": {
+        "mean": 1.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.13578260869565217,
+        "ci95_low": 0.1281304347826087,
+        "ci95_high": 0.14408695652173914,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.13578260869565217,
+        "ci95_low": 0.1270413043478261,
+        "ci95_high": 0.14334782608695654,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.8642173913043478,
+        "ci95_low": 0.8568239130434783,
+        "ci95_high": 0.8721782608695652,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      }
+    },
+    "shift_pds_n30": {
+      "released_fraction": {
+        "mean": 1.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.1078695652173913,
+        "ci95_low": 0.0981717391304348,
+        "ci95_high": 0.11734891304347828,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.1078695652173913,
+        "ci95_low": 0.09895326086956521,
+        "ci95_high": 0.11743804347826085,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.8921304347826086,
+        "ci95_low": 0.8829130434782608,
+        "ci95_high": 0.9011336956521739,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      }
+    },
+    "shift_repaired_quantile_n50": {
+      "released_fraction": {
+        "mean": 1.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.1305217391304348,
+        "ci95_low": 0.12434782608695652,
+        "ci95_high": 0.13735217391304347,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.1305217391304348,
+        "ci95_low": 0.12412934782608696,
+        "ci95_high": 0.13608804347826087,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.8694782608695653,
+        "ci95_low": 0.8624760869565218,
+        "ci95_high": 0.8755228260869565,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      },
+      "interval_half_width_mg": {
+        "mean": 10.690277673280962,
+        "ci95_low": 10.126064043345163,
+        "ci95_high": 11.269926621467008,
+        "seeds_with_value": 50
+      }
+    },
+    "shift_slope_bias_n50": {
+      "released_fraction": {
+        "mean": 1.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.1366086956521739,
+        "ci95_low": 0.1286076086956522,
+        "ci95_high": 0.14443695652173913,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.1366086956521739,
+        "ci95_low": 0.12882608695652173,
+        "ci95_high": 0.14569565217391303,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.8633913043478262,
+        "ci95_low": 0.8550869565217389,
+        "ci95_high": 0.8718260869565218,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      }
+    },
+    "shift_pds_n50": {
+      "released_fraction": {
+        "mean": 1.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.1043913043478261,
+        "ci95_low": 0.09652065217391305,
+        "ci95_high": 0.11187391304347825,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.1043913043478261,
+        "ci95_low": 0.09578260869565218,
+        "ci95_high": 0.1122608695652174,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.8956086956521738,
+        "ci95_low": 0.8876478260869566,
+        "ci95_high": 0.9030456521739132,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      }
+    },
+    "shift_mean_centering": {
+      "released_fraction": {
+        "mean": 1.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.13969565217391305,
+        "ci95_low": 0.12973913043478258,
+        "ci95_high": 0.1486086956521739,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.13969565217391305,
+        "ci95_low": 0.13004021739130434,
+        "ci95_high": 0.1489141304347826,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.8603043478260869,
+        "ci95_low": 0.8519119565217392,
+        "ci95_high": 0.8696097826086956,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      }
+    },
+    "stress_wavelength_shift": {
+      "released_fraction": {
+        "mean": 0.4951304347826087,
+        "ci95_low": 0.46855760869565216,
+        "ci95_high": 0.5216608695652174,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.5048695652173913,
+        "ci95_low": 0.4793032608695652,
+        "ci95_high": 0.529970652173913,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.4936521739130435,
+        "ci95_low": 0.4668695652173913,
+        "ci95_high": 0.5202619565217392,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.9971413883607609,
+        "ci95_low": 0.9965786937660078,
+        "ci95_high": 0.9977496539011855,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.002260869565217391,
+        "ci95_low": 0.002173913043478261,
+        "ci95_high": 0.002391304347826087,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.35,
+        "ci95_low": 0.22,
+        "ci95_high": 0.5,
+        "seeds_with_value": 50
+      }
+    },
+    "stress_baseline_offset": {
+      "released_fraction": {
+        "mean": 0.9185652173913043,
+        "ci95_low": 0.9105619565217391,
+        "ci95_high": 0.9272641304347826,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.08143478260869565,
+        "ci95_low": 0.07378152173913044,
+        "ci95_high": 0.0892608695652174,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.061173913043478266,
+        "ci95_low": 0.053907608695652164,
+        "ci95_high": 0.0686532608695652,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.06707669066509618,
+        "ci95_low": 0.05896577578681392,
+        "ci95_high": 0.07535557425935809,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.9266956521739129,
+        "ci95_low": 0.9140413043478262,
+        "ci95_high": 0.9375239130434784,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.0751012146514215,
+        "ci95_low": 0.06868118373681412,
+        "ci95_high": 0.08129963692736819,
+        "seeds_with_value": 50
+      }
+    },
+    "stress_baseline_slope": {
+      "released_fraction": {
+        "mean": 0.5143478260869565,
+        "ci95_low": 0.4846934782608696,
+        "ci95_high": 0.5433532608695651,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.4856521739130435,
+        "ci95_low": 0.45873804347826097,
+        "ci95_high": 0.5148750000000001,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.06652173913043477,
+        "ci95_low": 0.05930326086956522,
+        "ci95_high": 0.0752608695652174,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.13154934122771825,
+        "ci95_low": 0.11635244255669411,
+        "ci95_high": 0.14728337508581577,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.8293913043478259,
+        "ci95_low": 0.8087347826086957,
+        "ci95_high": 0.8490891304347826,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.4600088941454854,
+        "ci95_low": 0.42916893113109467,
+        "ci95_high": 0.4911310893018338,
+        "seeds_with_value": 50
+      }
+    },
+    "stress_gain": {
+      "released_fraction": {
+        "mean": 0.9185652173913043,
+        "ci95_low": 0.9101282608695652,
+        "ci95_high": 0.9263913043478261,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.08143478260869565,
+        "ci95_low": 0.07369565217391305,
+        "ci95_high": 0.08974021739130433,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.061173913043478266,
+        "ci95_low": 0.05391195652173912,
+        "ci95_high": 0.06921847826086958,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.06707669066509618,
+        "ci95_low": 0.059487304269404385,
+        "ci95_high": 0.07588898155812672,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.9266956521739129,
+        "ci95_low": 0.9151684782608697,
+        "ci95_high": 0.9381315217391306,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.0751012146514215,
+        "ci95_low": 0.06877141448456375,
+        "ci95_high": 0.08128038708070023,
+        "seeds_with_value": 50
+      }
+    },
+    "stress_noise": {
+      "released_fraction": {
+        "mean": 0.7239565217391304,
+        "ci95_low": 0.6746000000000001,
+        "ci95_high": 0.7656206521739132,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.27604347826086956,
+        "ci95_low": 0.2324271739130435,
+        "ci95_high": 0.3241978260869566,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.3688695652173913,
+        "ci95_low": 0.34386304347826085,
+        "ci95_high": 0.39404673913043475,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.5139229458531839,
+        "ci95_low": 0.49578787964790627,
+        "ci95_high": 0.5299520579422603,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.4594782608695652,
+        "ci95_low": 0.44143478260869573,
+        "ci95_high": 0.47878260869565215,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.2410393801689601,
+        "ci95_low": 0.2000157882418991,
+        "ci95_high": 0.2833462264824947,
+        "seeds_with_value": 50
+      }
+    },
+    "stress_spikes": {
+      "released_fraction": {
+        "mean": 0.8539130434782608,
+        "ci95_low": 0.8326010869565217,
+        "ci95_high": 0.8737423913043478,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.14608695652173914,
+        "ci95_low": 0.12343043478260872,
+        "ci95_high": 0.16782717391304344,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.32534782608695656,
+        "ci95_low": 0.31056304347826086,
+        "ci95_high": 0.34221739130434775,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.3826797799498361,
+        "ci95_low": 0.36454747603004184,
+        "ci95_high": 0.4017837692964573,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.6010869565217392,
+        "ci95_low": 0.5823880434782608,
+        "ci95_high": 0.6210021739130435,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.12373957262014226,
+        "ci95_low": 0.10740052675459463,
+        "ci95_high": 0.14491194220512657,
+        "seeds_with_value": 50
+      }
+    },
+    "stress_dead_channels": {
+      "released_fraction": {
+        "mean": 0.3281739130434783,
+        "ci95_low": 0.2374608695652174,
+        "ci95_high": 0.4205043478260869,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.6718260869565218,
+        "ci95_low": 0.5792641304347826,
+        "ci95_high": 0.7610293478260869,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.21239130434782605,
+        "ci95_low": 0.14637608695652174,
+        "ci95_high": 0.2915434782608695,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.7025467987406159,
+        "ci95_low": 0.6053057768050512,
+        "ci95_high": 0.789738751001486,
+        "seeds_with_value": 41
+      },
+      "empirical_coverage": {
+        "mean": 0.3058695652173913,
+        "ci95_low": 0.23387173913043477,
+        "ci95_high": 0.38714021739130433,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.6978294325306669,
+        "ci95_low": 0.6023225025491531,
+        "ci95_high": 0.7869904632868086,
+        "seeds_with_value": 48
+      }
+    },
+    "stress_gradual_drift": {
+      "released_fraction": {
+        "mean": 0.9185652173913043,
+        "ci95_low": 0.9100847826086956,
+        "ci95_high": 0.9259999999999999,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.08143478260869565,
+        "ci95_low": 0.07347826086956522,
+        "ci95_high": 0.09009347826086958,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.061173913043478266,
+        "ci95_low": 0.05352173913043479,
+        "ci95_high": 0.0689163043478261,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.06707669066509618,
+        "ci95_low": 0.058832349740362354,
+        "ci95_high": 0.07643454705109458,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.9266956521739129,
+        "ci95_low": 0.9155641304347825,
+        "ci95_high": 0.9376978260869566,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.0751012146514215,
+        "ci95_low": 0.06862520647353552,
+        "ci95_high": 0.08145801083231553,
+        "seeds_with_value": 50
+      }
+    },
+    "home_label_noise_5mg": {
+      "released_fraction": {
+        "mean": 0.9201739130434783,
+        "ci95_low": 0.9125652173913043,
+        "ci95_high": 0.9275228260869565,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.07982608695652174,
+        "ci95_low": 0.07195326086956522,
+        "ci95_high": 0.08761086956521742,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.018782608695652174,
+        "ci95_low": 0.01665108695652174,
+        "ci95_high": 0.020956521739130433,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.020411988722600777,
+        "ci95_low": 0.01819999737404781,
+        "ci95_high": 0.022936143160593857,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.9792608695652174,
+        "ci95_low": 0.9755206521739129,
+        "ci95_high": 0.9826086956521739,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.07948666041216315,
+        "ci95_low": 0.07200480779331456,
+        "ci95_high": 0.0871388588007691,
+        "seeds_with_value": 50
+      }
+    },
+    "model": {
+      "n_components": {
+        "mean": 4.18,
+        "ci95_low": 4.06,
+        "ci95_high": 4.3,
+        "seeds_with_value": 50
+      },
+      "interval_half_width_mg": {
+        "mean": 7.061649104059509,
+        "ci95_low": 6.800851696308834,
+        "ci95_high": 7.30589824956834,
+        "seeds_with_value": 50
+      }
+    },
+    "selective_prediction": {
+      "home_aurc": {
+        "mean": 0.06600851767419384,
+        "ci95_low": 0.05882898848398258,
+        "ci95_high": 0.07350167018745495,
+        "seeds_with_value": 50
+      },
+      "home_e_aurc": {
+        "mean": 0.06230101604423125,
+        "ci95_low": 0.05621681027429987,
+        "ci95_high": 0.06830593113946082,
+        "seeds_with_value": 50
+      },
+      "home_aurc_oracle": {
+        "mean": 0.003707501629962584,
+        "ci95_low": 0.002671824503362977,
+        "ci95_high": 0.004809772959408016,
+        "seeds_with_value": 50
+      },
+      "shift_aurc": {
+        "mean": 0.2982548751758427,
+        "ci95_low": 0.26464599352182855,
+        "ci95_high": 0.33408109999571767,
+        "seeds_with_value": 50
+      },
+      "shift_e_aurc": {
+        "mean": 0.24861109899245284,
+        "ci95_low": 0.22369965004102957,
+        "ci95_high": 0.27344537228459653,
+        "seeds_with_value": 50
+      },
+      "shift_aurc_oracle": {
+        "mean": 0.049643776183389825,
+        "ci95_low": 0.03958748724026041,
+        "ci95_high": 0.06036935667011787,
+        "seeds_with_value": 50
+      }
+    },
+    "shift_repaired_quantile_n3": {
+      "released_fraction": {
+        "mean": 1.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 1.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      },
+      "interval_half_width_mg": {
+        "mean": Infinity,
+        "ci95_low": NaN,
+        "ci95_high": NaN,
+        "seeds_with_value": 50
+      }
+    },
+    "shift_ds_n15": {
+      "released_fraction": {
+        "mean": 1.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.1534782608695652,
+        "ci95_low": 0.13421086956521738,
+        "ci95_high": 0.17330543478260868,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.1534782608695652,
+        "ci95_low": 0.13447499999999998,
+        "ci95_high": 0.17435543478260873,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.8465217391304347,
+        "ci95_low": 0.8260391304347827,
+        "ci95_high": 0.8669152173913045,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      }
+    },
+    "shift_instrument_std_n15": {
+      "released_fraction": {
+        "mean": 1.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.13521739130434784,
+        "ci95_low": 0.1221282608695652,
+        "ci95_high": 0.14869673913043477,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.13521739130434784,
+        "ci95_low": 0.12191195652173914,
+        "ci95_high": 0.14848369565217392,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.8647826086956522,
+        "ci95_low": 0.8502576086956523,
+        "ci95_high": 0.8779565217391303,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      }
+    },
+    "shift_ds_n30": {
+      "released_fraction": {
+        "mean": 1.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.15195652173913043,
+        "ci95_low": 0.13795326086956522,
+        "ci95_high": 0.16669565217391302,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.15195652173913043,
+        "ci95_low": 0.1380858695652174,
+        "ci95_high": 0.16747934782608695,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.8480434782608696,
+        "ci95_low": 0.8325619565217393,
+        "ci95_high": 0.8618717391304348,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      }
+    },
+    "shift_instrument_std_n30": {
+      "released_fraction": {
+        "mean": 1.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.12321739130434782,
+        "ci95_low": 0.11486630434782609,
+        "ci95_high": 0.1311304347826087,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.12321739130434782,
+        "ci95_low": 0.11504239130434785,
+        "ci95_high": 0.13117391304347825,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.876782608695652,
+        "ci95_low": 0.8686054347826088,
+        "ci95_high": 0.8843065217391305,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      }
+    },
+    "shift_ds_n50": {
+      "released_fraction": {
+        "mean": 1.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.17734782608695648,
+        "ci95_low": 0.1589521739130435,
+        "ci95_high": 0.19656847826086954,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.17734782608695648,
+        "ci95_low": 0.15939130434782608,
+        "ci95_high": 0.19743913043478262,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.8226521739130435,
+        "ci95_low": 0.8035858695652175,
+        "ci95_high": 0.8411304347826086,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      }
+    },
+    "shift_instrument_std_n50": {
+      "released_fraction": {
+        "mean": 1.0,
+        "ci95_low": 1.0,
+        "ci95_high": 1.0,
+        "seeds_with_value": 50
+      },
+      "abstention_fraction": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      },
+      "unconditional_wrong_release": {
+        "mean": 0.12082608695652175,
+        "ci95_low": 0.11299347826086957,
+        "ci95_high": 0.12847934782608697,
+        "seeds_with_value": 50
+      },
+      "conditional_error_among_released": {
+        "mean": 0.12082608695652175,
+        "ci95_low": 0.1130423913043478,
+        "ci95_high": 0.12821847826086957,
+        "seeds_with_value": 50
+      },
+      "empirical_coverage": {
+        "mean": 0.8791739130434784,
+        "ci95_low": 0.8713000000000001,
+        "ci95_high": 0.8866130434782608,
+        "seeds_with_value": 50
+      },
+      "false_hold_rate": {
+        "mean": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0,
+        "seeds_with_value": 50
+      }
+    },
+    "pooled_home": {
+      "n": 23000,
+      "released_fraction": 0.9185652173913044,
+      "abstention_fraction": 0.08143478260869563,
+      "unconditional_wrong_release": 0.06117391304347826,
+      "conditional_error_among_released": 0.06659724523122071,
+      "empirical_coverage": 0.926695652173913,
+      "false_hold_rate": 0.07478652528854274,
+      "n_released": 21127
+    },
+    "pooled_shift": {
+      "n": 23000,
+      "released_fraction": 0.5631739130434783,
+      "abstention_fraction": 0.4368260869565217,
+      "unconditional_wrong_release": 0.15234782608695652,
+      "conditional_error_among_released": 0.2705164826681078,
+      "empirical_coverage": 0.7221304347826087,
+      "false_hold_rate": 0.4310915768559215,
+      "n_released": 12953
+    }
+  },
+  "curves": {
+    "risk_coverage_shift": {
+      "thr_0.0": {
+        "released_fraction": 1.0,
+        "conditional_error_among_released": 0.27786956521739126,
+        "unconditional_wrong_release": 0.27786956521739126,
+        "operational_cost": 13.893478260869564
+      },
+      "thr_0.01": {
+        "released_fraction": 1.0,
+        "conditional_error_among_released": 0.27786956521739126,
+        "unconditional_wrong_release": 0.27786956521739126,
+        "operational_cost": 13.893478260869564
+      },
+      "thr_0.02": {
+        "released_fraction": 0.9011739130434782,
+        "conditional_error_among_released": 0.2734856159605936,
+        "unconditional_wrong_release": 0.24739130434782608,
+        "operational_cost": 12.468391304347824
+      },
+      "thr_0.05": {
+        "released_fraction": 0.7569565217391303,
+        "conditional_error_among_released": 0.2739700882699277,
+        "unconditional_wrong_release": 0.2079130434782609,
+        "operational_cost": 10.638695652173915
+      },
+      "thr_0.1": {
+        "released_fraction": 0.5631739130434783,
+        "conditional_error_among_released": 0.28406418307923403,
+        "unconditional_wrong_release": 0.15234782608695652,
+        "operational_cost": 8.054217391304347
+      },
+      "thr_0.2": {
+        "released_fraction": 0.4102608695652174,
+        "conditional_error_among_released": 0.30464729529394696,
+        "unconditional_wrong_release": 0.11739130434782609,
+        "operational_cost": 6.459304347826087
+      },
+      "thr_0.3": {
+        "released_fraction": 0.29,
+        "conditional_error_among_released": 0.3262979428940338,
+        "unconditional_wrong_release": 0.08782608695652173,
+        "operational_cost": 5.101304347826087
+      },
+      "thr_0.5": {
+        "released_fraction": 0.12160869565217391,
+        "conditional_error_among_released": 0.3494127810984283,
+        "unconditional_wrong_release": 0.03895652173913043,
+        "operational_cost": 2.8262173913043482
+      }
+    },
+    "risk_coverage_home": {
+      "thr_0.0": {
+        "released_fraction": 1.0,
+        "conditional_error_among_released": 0.07330434782608697,
+        "unconditional_wrong_release": 0.07330434782608697,
+        "operational_cost": 3.6652173913043486
+      },
+      "thr_0.01": {
+        "released_fraction": 1.0,
+        "conditional_error_among_released": 0.07330434782608697,
+        "unconditional_wrong_release": 0.07330434782608697,
+        "operational_cost": 3.6652173913043486
+      },
+      "thr_0.02": {
+        "released_fraction": 0.9877391304347828,
+        "conditional_error_among_released": 0.07132832435421944,
+        "unconditional_wrong_release": 0.07047826086956523,
+        "operational_cost": 3.5361739130434784
+      },
+      "thr_0.05": {
+        "released_fraction": 0.9624782608695652,
+        "conditional_error_among_released": 0.068926649239798,
+        "unconditional_wrong_release": 0.06621739130434783,
+        "operational_cost": 3.3483913043478264
+      },
+      "thr_0.1": {
+        "released_fraction": 0.9185652173913043,
+        "conditional_error_among_released": 0.06707669066509618,
+        "unconditional_wrong_release": 0.061173913043478266,
+        "operational_cost": 3.140130434782609
+      },
+      "thr_0.2": {
+        "released_fraction": 0.857521739130435,
+        "conditional_error_among_released": 0.06523634021877762,
+        "unconditional_wrong_release": 0.055608695652173905,
+        "operational_cost": 2.922913043478261
+      },
+      "thr_0.3": {
+        "released_fraction": 0.7677391304347826,
+        "conditional_error_among_released": 0.06202210883321079,
+        "unconditional_wrong_release": 0.047260869565217384,
+        "operational_cost": 2.595304347826087
+      },
+      "thr_0.5": {
+        "released_fraction": 0.5042608695652173,
+        "conditional_error_among_released": 0.05858004011699598,
+        "unconditional_wrong_release": 0.029173913043478255,
+        "operational_cost": 1.9544347826086956
+      }
+    },
+    "holdout_shift": {
+      "families": [
+        "wavelength_shift",
+        "baseline_offset",
+        "baseline_slope",
+        "gain",
+        "noise",
+        "spikes",
+        "dead_channels",
+        "gradual_drift",
+        "instrument"
+      ],
+      "rows": {
+        "wavelength_shift": {
+          "tuned_threshold_mean": 0.47400000000000003,
+          "target_reachable_fraction": 0.44,
+          "home_clean_abstention": 0.4708695652173913,
+          "released_on": {
+            "wavelength_shift": 0.11608695652173912,
+            "baseline_offset": 0.5291304347826087,
+            "baseline_slope": 0.09082608695652172,
+            "gain": 0.5291304347826087,
+            "noise": 0.19356521739130436,
+            "spikes": 0.32713043478260867,
+            "dead_channels": 0.06721739130434783,
+            "gradual_drift": 0.5291304347826087,
+            "instrument": 0.13008695652173913
+          }
+        },
+        "baseline_offset": {
+          "tuned_threshold_mean": 0.5,
+          "target_reachable_fraction": 0.0,
+          "home_clean_abstention": 0.4957391304347826,
+          "released_on": {
+            "wavelength_shift": 0.11126086956521737,
+            "baseline_offset": 0.5042608695652173,
+            "baseline_slope": 0.08347826086956521,
+            "gain": 0.5042608695652173,
+            "noise": 0.18047826086956523,
+            "spikes": 0.30730434782608695,
+            "dead_channels": 0.06004347826086956,
+            "gradual_drift": 0.5042608695652173,
+            "instrument": 0.12160869565217391
+          }
+        },
+        "baseline_slope": {
+          "tuned_threshold_mean": 0.45599999999999996,
+          "target_reachable_fraction": 0.68,
+          "home_clean_abstention": 0.44504347826086965,
+          "released_on": {
+            "wavelength_shift": 0.12791304347826088,
+            "baseline_offset": 0.5549565217391303,
+            "baseline_slope": 0.0976086956521739,
+            "gain": 0.5549565217391303,
+            "noise": 0.20786956521739128,
+            "spikes": 0.34895652173913044,
+            "dead_channels": 0.06969565217391305,
+            "gradual_drift": 0.5549565217391303,
+            "instrument": 0.14234782608695654
+          }
+        },
+        "gain": {
+          "tuned_threshold_mean": 0.5,
+          "target_reachable_fraction": 0.0,
+          "home_clean_abstention": 0.4957391304347826,
+          "released_on": {
+            "wavelength_shift": 0.11126086956521737,
+            "baseline_offset": 0.5042608695652173,
+            "baseline_slope": 0.08347826086956521,
+            "gain": 0.5042608695652173,
+            "noise": 0.18047826086956523,
+            "spikes": 0.30730434782608695,
+            "dead_channels": 0.06004347826086956,
+            "gradual_drift": 0.5042608695652173,
+            "instrument": 0.12160869565217391
+          }
+        },
+        "noise": {
+          "tuned_threshold_mean": 0.4844,
+          "target_reachable_fraction": 0.2,
+          "home_clean_abstention": 0.47430434782608694,
+          "released_on": {
+            "wavelength_shift": 0.12226086956521738,
+            "baseline_offset": 0.5256956521739131,
+            "baseline_slope": 0.09621739130434781,
+            "gain": 0.5256956521739131,
+            "noise": 0.18565217391304348,
+            "spikes": 0.3263478260869565,
+            "dead_channels": 0.06004347826086956,
+            "gradual_drift": 0.5256956521739131,
+            "instrument": 0.1333913043478261
+          }
+        },
+        "spikes": {
+          "tuned_threshold_mean": 0.499,
+          "target_reachable_fraction": 0.04,
+          "home_clean_abstention": 0.49478260869565216,
+          "released_on": {
+            "wavelength_shift": 0.11152173913043478,
+            "baseline_offset": 0.5052173913043478,
+            "baseline_slope": 0.084,
+            "gain": 0.5052173913043478,
+            "noise": 0.1805217391304348,
+            "spikes": 0.30769565217391304,
+            "dead_channels": 0.06004347826086956,
+            "gradual_drift": 0.5052173913043478,
+            "instrument": 0.122
+          }
+        },
+        "dead_channels": {
+          "tuned_threshold_mean": 0.24420000000000003,
+          "target_reachable_fraction": 0.78,
+          "home_clean_abstention": 0.22717391304347828,
+          "released_on": {
+            "wavelength_shift": 0.37469565217391304,
+            "baseline_offset": 0.7728260869565218,
+            "baseline_slope": 0.38473913043478253,
+            "gain": 0.7728260869565218,
+            "noise": 0.5385217391304348,
+            "spikes": 0.6683043478260869,
+            "dead_channels": 0.0958695652173913,
+            "gradual_drift": 0.7728260869565218,
+            "instrument": 0.42813043478260865
+          }
+        },
+        "gradual_drift": {
+          "tuned_threshold_mean": 0.5,
+          "target_reachable_fraction": 0.0,
+          "home_clean_abstention": 0.4957391304347826,
+          "released_on": {
+            "wavelength_shift": 0.11126086956521737,
+            "baseline_offset": 0.5042608695652173,
+            "baseline_slope": 0.08347826086956521,
+            "gain": 0.5042608695652173,
+            "noise": 0.18047826086956523,
+            "spikes": 0.30730434782608695,
+            "dead_channels": 0.06004347826086956,
+            "gradual_drift": 0.5042608695652173,
+            "instrument": 0.12160869565217391
+          }
+        },
+        "instrument": {
+          "tuned_threshold_mean": 0.485,
+          "target_reachable_fraction": 0.28,
+          "home_clean_abstention": 0.478304347826087,
+          "released_on": {
+            "wavelength_shift": 0.11734782608695651,
+            "baseline_offset": 0.521695652173913,
+            "baseline_slope": 0.08943478260869567,
+            "gain": 0.521695652173913,
+            "noise": 0.1936086956521739,
+            "spikes": 0.32391304347826094,
+            "dead_channels": 0.06704347826086957,
+            "gradual_drift": 0.521695652173913,
+            "instrument": 0.12708695652173913
+          }
+        }
+      },
+      "summary": {
+        "mean_released_in_family": 0.27142028985507244,
+        "mean_released_out_of_family": 0.30603260869565213,
+        "worst_out_of_family_released": 0.7728260869565218
+      }
+    },
+    "cost_parameters": {
+      "product_id": "sodium_bicarbonate_8_4_50ml",
+      "inputs": {
+        "testing_usd_per_batch": {
+          "value": 30000.0,
+          "tier": 5,
+          "status": "illustrative",
+          "source": "06_Product_A!B17:D17"
+        },
+        "units_per_batch": {
+          "value": 25000.0,
+          "tier": 5,
+          "status": "illustrative",
+          "source": "06_Product_A!B6:D6"
+        },
+        "variable_materials_usd_per_unit": {
+          "value": 0.6,
+          "tier": 5,
+          "status": "illustrative",
+          "source": "06_Product_A!B15:D15"
+        },
+        "variable_conversion_usd_per_unit": {
+          "value": 0.6,
+          "tier": 5,
+          "status": "illustrative",
+          "source": "06_Product_A!B16:D16"
+        },
+        "assay_days": {
+          "value": 5.0,
+          "tier": 4,
+          "status": "expert_validated",
+          "source": "regulatory/release-constraints.md lines 41-50 (5-7 business days contract; 1-2 in-house)"
+        },
+        "inventory_carrying_rate": {
+          "value": 0.2,
+          "tier": 5,
+          "status": "illustrative",
+          "source": "workbook 05_Assumptions!B8:D8"
+        },
+        "investigation_cost_usd": {
+          "value": 20000.0,
+          "tier": 5,
+          "status": "illustrative",
+          "source": "study placeholder"
+        },
+        "wrong_release_cost_usd": {
+          "value": 2000000.0,
+          "tier": 5,
+          "status": "illustrative",
+          "source": "design-space assignment Phase G placeholder (2026-09-02); no source. Replace with recall-cost evidence (FDA recall records, industry surveys) or an expert elicitation (HA-22)."
+        }
+      },
+      "batch_value_usd": 30000.0,
+      "false_hold_delay_carrying_usd": 82.13552361396304,
+      "false_hold_usd": 30082.135523613964,
+      "false_hold_with_investigation_usd": 50082.135523613964,
+      "wrong_release_usd": 2000000.0,
+      "implied_cost_ratio_wrong_to_false_hold": 66.48464163822526,
+      "legacy_relative_ratio": 50.0,
+      "note": "wrong release = interval miss on a released batch (a wrong certificate), not a shipped out-of-specification unit; illustrative inputs"
+    },
+    "cost_curve_usd_shift": {
+      "thr_0.0": {
+        "abstention_fraction": 0.0,
+        "unconditional_wrong_release": 0.27786956521739126,
+        "cost_usd_per_batch": 555739.1304347825,
+        "cost_usd_per_batch_with_investigation": 555739.1304347825,
+        "break_even_wrong_release_usd": 108259.91504351766
+      },
+      "thr_0.01": {
+        "abstention_fraction": 0.0,
+        "unconditional_wrong_release": 0.27786956521739126,
+        "cost_usd_per_batch": 555739.1304347825,
+        "cost_usd_per_batch_with_investigation": 555739.1304347825,
+        "break_even_wrong_release_usd": 108259.91504351766
+      },
+      "thr_0.02": {
+        "abstention_fraction": 0.09882608695652184,
+        "unconditional_wrong_release": 0.24739130434782608,
+        "cost_usd_per_batch": 497755.5084367467,
+        "cost_usd_per_batch_with_investigation": 499732.03017587715,
+        "break_even_wrong_release_usd": 109580.39068505212
+      },
+      "thr_0.05": {
+        "abstention_fraction": 0.2430434782608697,
+        "unconditional_wrong_release": 0.2079130434782609,
+        "cost_usd_per_batch": 423137.3538076958,
+        "cost_usd_per_batch_with_investigation": 427998.2233729132,
+        "break_even_wrong_release_usd": 109521.11657593455
+      },
+      "thr_0.1": {
+        "abstention_fraction": 0.4368260869565217,
+        "unconditional_wrong_release": 0.15234782608695652,
+        "cost_usd_per_batch": 317836.3137219891,
+        "cost_usd_per_batch_with_investigation": 326572.83546111954,
+        "break_even_wrong_release_usd": 111202.59744217231
+      },
+      "thr_0.2": {
+        "abstention_fraction": 0.5897391304347825,
+        "unconditional_wrong_release": 0.11739130434782609,
+        "cost_usd_per_batch": 252523.22114096957,
+        "cost_usd_per_batch_with_investigation": 264318.0037496652,
+        "break_even_wrong_release_usd": 105131.4928891931
+      },
+      "thr_0.3": {
+        "abstention_fraction": 0.71,
+        "unconditional_wrong_release": 0.08782608695652173,
+        "cost_usd_per_batch": 197010.49013480937,
+        "cost_usd_per_batch_with_investigation": 211210.49013480937,
+        "break_even_wrong_release_usd": 99330.61581312137
+      },
+      "thr_0.5": {
+        "abstention_fraction": 0.8783913043478261,
+        "unconditional_wrong_release": 0.03895652173913043,
+        "cost_usd_per_batch": 104336.9297384162,
+        "cost_usd_per_batch_with_investigation": 121904.75582537273,
+        "break_even_wrong_release_usd": 93905.95207538869
+      }
+    },
+    "cost_curve_usd_home": {
+      "thr_0.0": {
+        "abstention_fraction": 0.0,
+        "unconditional_wrong_release": 0.07330434782608697,
+        "cost_usd_per_batch": 146608.69565217395,
+        "cost_usd_per_batch_with_investigation": 146608.69565217395,
+        "break_even_wrong_release_usd": 410373.1417812106
+      },
+      "thr_0.01": {
+        "abstention_fraction": 0.0,
+        "unconditional_wrong_release": 0.07330434782608697,
+        "cost_usd_per_batch": 146608.69565217395,
+        "cost_usd_per_batch_with_investigation": 146608.69565217395,
+        "break_even_wrong_release_usd": 410373.1417812106
+      },
+      "thr_0.02": {
+        "abstention_fraction": 0.012260869565217214,
+        "unconditional_wrong_release": 0.07047826086956523,
+        "cost_usd_per_batch": 141325.3548790287,
+        "cost_usd_per_batch_with_investigation": 141570.572270333,
+        "break_even_wrong_release_usd": 421595.28366777423
+      },
+      "thr_0.05": {
+        "abstention_fraction": 0.03752173913043477,
+        "unconditional_wrong_release": 0.06621739130434783,
+        "cost_usd_per_batch": 133563.51665029908,
+        "cost_usd_per_batch_with_investigation": 134313.95143290778,
+        "break_even_wrong_release_usd": 437247.6914551821
+      },
+      "thr_0.1": {
+        "abstention_fraction": 0.08143478260869574,
+        "unconditional_wrong_release": 0.061173913043478266,
+        "cost_usd_per_batch": 124797.55825372736,
+        "cost_usd_per_batch_with_investigation": 126426.25390590126,
+        "break_even_wrong_release_usd": 451702.40028954664
+      },
+      "thr_0.2": {
+        "abstention_fraction": 0.14247826086956505,
+        "unconditional_wrong_release": 0.055608695652173905,
+        "cost_usd_per_batch": 115503.4416569949,
+        "cost_usd_per_batch_with_investigation": 118353.00687438619,
+        "break_even_wrong_release_usd": 463885.8162097251
+      },
+      "thr_0.3": {
+        "abstention_fraction": 0.2322608695652174,
+        "unconditional_wrong_release": 0.047260869565217384,
+        "cost_usd_per_batch": 101508.64208552806,
+        "cost_usd_per_batch_with_investigation": 106153.85947683241,
+        "break_even_wrong_release_usd": 488675.5741269323
+      },
+      "thr_0.5": {
+        "abstention_fraction": 0.4957391304347827,
+        "unconditional_wrong_release": 0.029173913043478255,
+        "cost_usd_per_batch": 73260.71779305418,
+        "cost_usd_per_batch_with_investigation": 83175.50040174984,
+        "break_even_wrong_release_usd": 519959.17705346463
+      }
+    }
+  },
+  "notes": [
+    "Instrument is the only real group; lot and time groups are SYNTHETIC index blocks and test nothing about real lots or time.",
+    "Wrong release here means the certified interval missed the reference assay; it is not an out-of-specification release rate.",
+    "Repair curves reuse calibration tablets re-measured on the shifted instrument; they never touch the test set.",
+    "PLS components are chosen by 5-fold CV on the training partition of each seed (the repository's fixed N_PLS=8 is not reproduced).",
+    "No Telo data, no target chemistry, no prospective validation; this supports stop-the-line detection claims only.",
+    "Gate statistic: nn; component selection: train_and_calibration_cv.",
+    "AURC and E-AURC (selective prediction) use the conformal p-value as confidence and an interval miss as the error; ties broken in expectation.",
+    "Held-out shift-type matrix: threshold tuned to reach the detection target on one family, evaluated on every other; synthetic families are generated from a separate stream.",
+    "Operational cost curve in USD uses the study's parameter sets (tier 5 illustrative) instead of the relative 1:50 weights; the wrong-release cost is a placeholder until a recall-cost source exists."
+  ],
+  "banner": "PRELIMINARY / ILLUSTRATIVE / NOT FOR EXTERNAL CLAIMS"
+}

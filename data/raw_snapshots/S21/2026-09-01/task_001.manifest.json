@@ -1,0 +1,17 @@
+{
+  "source_id": "S21",
+  "url": "https://www.ashp.org/drug-shortages/current-shortages",
+  "retrieved_at": "2026-09-01T23:09:14.606788Z",
+  "http_status": null,
+  "sha256": null,
+  "content_type": "",
+  "size_bytes": null,
+  "license_note": "Bulletins copyrighted (University of Utah Drug Information Service); personal use only; commercial redistribution prohibited; a paid data license exists.",
+  "raw_path": null,
+  "transform_script": null,
+  "processed_path": null,
+  "data_dictionary_rows": 0,
+  "access_method": "human",
+  "robots_allowed": null,
+  "notes": "HUMAN-ACQUISITION-TASK: Retrieve, in a browser, the current-shortage list and the bulletin page for each longlist presentation; save page captures with date and URL under data/raw_snapshots/S21/<date>/; record the copyright notice. Do not redistribute bulletin text; store extracted facts (status, dates, reasons, presentations) in the dossier with citation."
+}

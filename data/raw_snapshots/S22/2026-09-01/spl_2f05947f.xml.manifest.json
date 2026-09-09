@@ -1,0 +1,17 @@
+{
+  "source_id": "S22",
+  "url": "https://dailymed.nlm.nih.gov/dailymed/services/v2/spls/2f05947f-a489-4298-a871-90db75b2a6c5.xml",
+  "retrieved_at": "2026-09-01T23:09:19.319947Z",
+  "http_status": 200,
+  "sha256": "700a31bb6f6f963af5bda24f6970491f55df9478c62855af611c3368109ca5a7",
+  "content_type": "application/xml",
+  "size_bytes": 41044,
+  "license_note": "same as S18",
+  "raw_path": "data/raw_snapshots/S22/2026-09-01/spl_2f05947f.xml",
+  "transform_script": null,
+  "processed_path": null,
+  "data_dictionary_rows": 0,
+  "access_method": "auto",
+  "robots_allowed": true,
+  "notes": ""
+}

@@ -1,0 +1,17 @@
+{
+  "source_id": "S11",
+  "url": "https://www.govinfo.gov/content/pkg/FR-2026-07-13/pdf/2026-14073.pdf",
+  "retrieved_at": "2026-09-01T23:03:54.235620Z",
+  "http_status": 200,
+  "sha256": "1a40a978bb414cf2b75f23015a6fa264b4ae57e528cd27ccd5519bfc562e5b70",
+  "content_type": "application/pdf",
+  "size_bytes": 327451,
+  "license_note": "US government work (Federal Register)",
+  "raw_path": "data/raw_snapshots/S11/2026-09-01/fr_2026-14073.pdf",
+  "transform_script": null,
+  "processed_path": null,
+  "data_dictionary_rows": 0,
+  "access_method": "auto",
+  "robots_allowed": true,
+  "notes": ""
+}

@@ -1,0 +1,9 @@
+title: Preferred strategy across utilization and release time (common-cause rate at base)
+xlabel: annual demand [units/yr] (utilization at fixed capacity)
+ylabel: sterility incubation [days] (release critical path)
+product: sodium_bicarbonate_8_4_50ml
+scenario: optimized designs; gates UNCERTAIN
+manifest_id: 20260902T045142Z
+source_note: results/sensitivity/decision_reversal.json; tier-5 inputs
+decision_caption: Cells show the minimum-cost strategy meeting the service target; 'None' means no strategy met it. Read as a map of conditions, not a verdict.
+illustrative: True

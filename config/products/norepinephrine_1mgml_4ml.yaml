@@ -1,0 +1,279 @@
+# Provisional Product B (protocol 2.5): resolved comparator. NOT a final selection.
+# Repo evidence (research/beachhead-verification.md, 2026-07-16): openFDA 0 shortage
+# records; ASHP bulletin id=292 resolved 2022-06-07 (opened 2017-02-09); vial FSS
+# $1.47 (Big4) / $4.52; ~20 companies hold 23 applications. Those are price and
+# status proxies, not cost, and are not entered as parameters here.
+# Source probe 2026-09-01: 0 rows in the FDA shortage CSV and 0 in openFDA.
+# EVERY NUMERIC PARAMETER IS TIER 5 (ILLUSTRATIVE), from workbook 07_Product_B,
+# which is a near-clone of 06_Product_A (WB-26).
+presentation:
+  id: norepinephrine_1mgml_4ml
+  ingredient: norepinephrine
+  salt_or_form: bitartrate
+  strength: "1 mg/mL norepinephrine base (4 mg per 4 mL)"
+  dosage_form: injection, solution, concentrate
+  route: intravenous (after dilution)
+  presentation: 4 mL single-dose vial
+  container: glass vial, light-protected
+  fill_volume_ml: 4
+  labels: []
+  controlled_substance: false
+  small_molecule: true
+  aqueous_solution: true
+  standard_vial: true
+  lyophilized: false
+  suspension_or_emulsion: false
+  biologic_or_vaccine: false
+  cytotoxic_or_high_potency: false
+  drug_device_combination: false
+  cold_chain_intensive: false
+  out_of_archetype_comparator: false
+  pathway_candidates: [approved_cmo, 503b]
+  notes: "Provisional resolved comparator. Its 'recurrent' label is unsupported: ASHP shows one bulletin ever (2017-2022). Light/stability, dilution practice and supplier structure need reconciliation (protocol 2.5)."
+parameters:
+  id: product.norepinephrine_1mgml_4ml
+  description: Workbook 07_Product_B base/low/high, all illustrative
+  parameters:
+    annual_demand_units:
+      id: annual_demand_units
+      definition: Annual national demand for this presentation
+      units: units_per_year
+      entity_level: product
+      low: 500000
+      base: 900000
+      high: 1800000
+      evidence_tier: 5
+      confidence: low
+      validation_status: illustrative
+      source_locator: "07_Product_B!B5:D5"
+      outputs_it_can_reverse: [break_even_volume, utilization]
+    units_per_batch:
+      id: units_per_batch
+      definition: Saleable-fill batch size
+      units: units_per_batch
+      entity_level: site
+      low: 10000
+      base: 30000
+      high: 75000
+      evidence_tier: 5
+      confidence: low
+      validation_status: illustrative
+      source_locator: "07_Product_B!B6:D6"
+    batches_per_site_year_nominal:
+      id: batches_per_site_year_nominal
+      definition: Nominal scheduling capacity in batches per site-year (status quo)
+      units: per_site_year
+      entity_level: site
+      low: 30
+      base: 45
+      high: 70
+      evidence_tier: 5
+      confidence: low
+      validation_status: illustrative
+      source_locator: "07_Product_B!B7:D7"
+    yield_fraction:
+      id: yield_fraction
+      definition: Saleable fraction of filled units
+      units: fraction
+      entity_level: site
+      low: 0.90
+      base: 0.96
+      high: 0.99
+      evidence_tier: 5
+      confidence: low
+      validation_status: illustrative
+      source_locator: "07_Product_B!B8:D8"
+    uptime_fraction:
+      id: uptime_fraction
+      definition: Available fraction of scheduled capacity
+      units: fraction
+      entity_level: site
+      low: 0.70
+      base: 0.85
+      high: 0.95
+      evidence_tier: 5
+      confidence: low
+      validation_status: illustrative
+      source_locator: "07_Product_B!B9:D9"
+    production_cycle_days:
+      id: production_cycle_days
+      definition: Compounding, fill and inspection time per batch
+      units: days_per_batch
+      entity_level: site
+      low: 1
+      base: 3
+      high: 7
+      evidence_tier: 5
+      confidence: low
+      validation_status: illustrative
+      source_locator: "07_Product_B!B10:D10"
+    release_time_days:
+      id: release_time_days
+      definition: Conventional quality release time per batch as a single number
+      units: days_per_batch
+      entity_level: site
+      low: 5
+      base: 12
+      high: 28
+      evidence_tier: 5
+      confidence: low
+      validation_status: illustrative
+      source_locator: "07_Product_B!B11:D11"
+      notes: 12 d base is below the 14 d USP <71> sterility incubation that regulatory/release-constraints.md (tier 1) identifies as the critical path for aseptic fill
+      outputs_it_can_reverse: [H7, response_time]
+    material_lead_time_days:
+      id: material_lead_time_days
+      definition: API and component procurement lead time
+      units: days
+      entity_level: supplier
+      low: 30
+      base: 90
+      high: 240
+      evidence_tier: 5
+      confidence: low
+      validation_status: illustrative
+      source_locator: "07_Product_B!B12:D12"
+    changeover_days:
+      id: changeover_days
+      definition: Setup and changeover time per campaign
+      units: days
+      entity_level: site
+      low: 1
+      base: 3
+      high: 10
+      evidence_tier: 5
+      confidence: low
+      validation_status: illustrative
+      source_locator: "07_Product_B!B13:D13"
+    shelf_life_months:
+      id: shelf_life_months
+      definition: Labeled shelf life (light protection required)
+      units: months
+      entity_level: product
+      low: 12
+      base: 24
+      high: 30
+      evidence_tier: 5
+      confidence: low
+      validation_status: illustrative
+      source_locator: "07_Product_B!B14:D14 (S23 cited but status Illustrative)"
+    variable_materials_usd_per_unit:
+      id: variable_materials_usd_per_unit
+      definition: API, vial, stopper, seal and label cost per unit
+      units: usd_per_unit
+      entity_level: product
+      low: 0.20
+      base: 0.55
+      high: 1.50
+      evidence_tier: 5
+      confidence: low
+      validation_status: illustrative
+      source_locator: "07_Product_B!B15:D15"
+    variable_conversion_usd_per_unit:
+      id: variable_conversion_usd_per_unit
+      definition: Incremental conversion labor and utilities per unit
+      units: usd_per_unit
+      entity_level: site
+      low: 0.20
+      base: 0.60
+      high: 1.50
+      evidence_tier: 5
+      confidence: low
+      validation_status: illustrative
+      source_locator: "07_Product_B!B16:D16"
+    testing_usd_per_batch:
+      id: testing_usd_per_batch
+      definition: Release testing per batch
+      units: usd_per_batch
+      entity_level: site
+      low: 10000
+      base: 30000
+      high: 100000
+      evidence_tier: 5
+      confidence: low
+      validation_status: illustrative
+      source_locator: "07_Product_B!B17:D17"
+    fixed_qa_labor_usd_per_site_year:
+      id: fixed_qa_labor_usd_per_site_year
+      definition: Fixed quality-unit, operations, maintenance and metrology labor per site-year
+      units: usd_per_site_year
+      entity_level: site
+      low: 1500000
+      base: 3000000
+      high: 6000000
+      evidence_tier: 5
+      confidence: low
+      validation_status: illustrative
+      source_locator: "07_Product_B!B18:D18"
+    capital_usd_per_site:
+      id: capital_usd_per_site
+      definition: Installed and qualified capital per site or node
+      units: usd
+      entity_level: site
+      low: 15000000
+      base: 40000000
+      high: 100000000
+      evidence_tier: 5
+      confidence: low
+      validation_status: illustrative
+      source_locator: "07_Product_B!B19:D19"
+    validation_usd_one_time:
+      id: validation_usd_one_time
+      definition: Product/site validation and technology transfer (one-time)
+      units: usd
+      entity_level: site
+      low: 1000000
+      base: 4000000
+      high: 12000000
+      evidence_tier: 5
+      confidence: low
+      validation_status: illustrative
+      source_locator: "07_Product_B!B20:D20"
+    distribution_usd_per_unit:
+      id: distribution_usd_per_unit
+      definition: Warehousing and transport per unit
+      units: usd_per_unit
+      entity_level: product
+      low: 0.05
+      base: 0.20
+      high: 0.80
+      evidence_tier: 5
+      confidence: low
+      validation_status: illustrative
+      source_locator: "07_Product_B!B21:D21"
+    delivery_days:
+      id: delivery_days
+      definition: Release-to-hospital delivery time (product-level; unused by the workbook screen, WB-23)
+      units: days
+      entity_level: product
+      low: 1
+      base: 2
+      high: 5
+      evidence_tier: 5
+      confidence: low
+      validation_status: illustrative
+      source_locator: "07_Product_B!B22:D22"
+    expiry_scrap_fraction:
+      id: expiry_scrap_fraction
+      definition: Fraction of production scrapped or expired per year
+      units: fraction
+      entity_level: product
+      low: 0.005
+      base: 0.02
+      high: 0.08
+      evidence_tier: 5
+      confidence: low
+      validation_status: illustrative
+      source_locator: "07_Product_B!B23:D23"
+    target_safety_stock_days:
+      id: target_safety_stock_days
+      definition: Finished-goods safety stock (product-level; unused by the workbook screen, WB-23)
+      units: days
+      entity_level: product
+      low: 30
+      base: 60
+      high: 180
+      evidence_tier: 5
+      confidence: low
+      validation_status: illustrative
+      source_locator: "07_Product_B!B24:D24"

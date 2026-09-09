@@ -1,0 +1,108 @@
+% executive_summary.tex -- one page, standalone.
+% Build:  tectonic executive_summary.tex   (run from reports/executive_summary/)
+% Every figure here is quoted from the memo; nothing is computed in this file.
+
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,margin=0.78in]{geometry}
+\usepackage{newtxtext}
+\usepackage{newtxmath}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+
+\titleformat{\section}{\normalfont\normalsize\bfseries}{}{0em}{}
+\titlespacing*{\section}{0pt}{1.3ex plus 0.3ex}{0.5ex}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.55ex plus 0.2ex}
+\setlist[itemize]{leftmargin=1.1em,itemsep=0.25ex,topsep=0.3ex,parsep=0pt}
+\renewcommand{\arraystretch}{1.05}
+\pagestyle{empty}
+
+\hypersetup{
+  pdftitle={Executive summary: distributed sterile-injectable manufacturing under real-world constraints},
+  pdfauthor={Rikhin Kavuru},
+  pdfsubject={Constraint-driven feasibility investigation. Illustrative inputs.
+              Not a claim of regulatory compliance or manufacturing readiness.}
+}
+
+\begin{document}
+
+{\large\bfseries Distributed sterile-injectable manufacturing under real-world constraints}\\[0.3ex]
+{\small Executive summary. Rikhin Kavuru. Full memo and code:
+\texttt{reports/memo/memo.pdf}, \texttt{docs/}, \texttt{src/}.}
+
+\vspace{0.6ex}
+\fbox{\begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}
+\footnotesize
+\textbf{PRELIMINARY AND ILLUSTRATIVE. NOT FOR EXTERNAL CLAIMS.} 87 of 91 model parameters are
+tier-5 placeholders with no operational, official, peer-reviewed or elicited source. Zero of a
+target 25 to 30 interviews and zero of three required independent reviews are complete. All
+sixteen regulatory gates are UNCERTAIN, so eligibility is NO\_CONCLUSION for every architecture.
+Nothing here claims any system is FDA-compliant, clinically deployable, or ready to manufacture
+drugs. Every number is the behaviour of a model under those inputs.
+\end{minipage}}
+
+\section{The question}
+Under what product, demand, regulatory and operating conditions could regional manufacturing
+reduce sterile-injectable shortages more effectively than safety stock, dual sourcing, or
+additional centralized capacity? Two non-controlled small-molecule presentations were carried
+through: sodium bicarbonate 8.4\% in a 50\,mL vial, in prolonged shortage, and norepinephrine
+bitartrate 1\,mg/mL in a 4\,mL vial, resolved.
+
+\section{Method, in one paragraph}
+A protocol frozen before any run fixes the service target: mean fill rate $\geq 0.99$ in at least
+90\% of simulated years. A daily discrete-event engine simulates twenty supply architectures over
+five years on common random numbers, so every architecture meets the same disruptions in the same
+years. Each is optimized to that one target, then re-evaluated at 100 paired runs. An ablation
+harness over 22 named failure mechanisms attributes the result and, in practice, detects defects:
+a factor whose sign comes out wrong is usually a bug. Twenty-five were found that way.
+
+\section{What the model says}
+\begin{itemize}
+\item \textbf{A capacity-short network cannot be stocked out of the deficit.} On the short product,
+a full year of safety stock with daily base-stock review leaves the status quo at mean fill 0.869
+and a tail probability of zero. At twice base demand, none of the twenty architectures meets the
+target anywhere. That region argues for capacity, not for \emph{regional} capacity.
+
+\item \textbf{Owned regional nodes lose the years before they exist.} On the short product the
+distributed design needs commissioning within 741 days, supplier disruption at or below 0.127
+against an assumed base of 0.200, shelf life at or above 17.6 months and changeover within 4.5
+days. It therefore sits outside its own feasible region on the supplier axis at the base
+assumption, at the highest cost in the battery: 32.0 against 19.4 million USD per year for the
+cheapest cell that meets the target.
+
+\item \textbf{Adding a validated release layer to those nodes buys nothing.} It returns mean fill
+identical to four decimals while costing 1.0 to 1.7 million USD per year more. The reasons are a
+model defect (MD-18) and a regulatory gate held UNCERTAIN (G15), neither an argument for the layer.
+
+\item \textbf{Regional manufacturing is not eliminated, but the honest form is narrow.} On the
+product that is \emph{not} capacity-short, the distributed design meets the target at a tail
+probability of 0.940, at about 9\% above rotating contracted campaigns and 32\% above the cheapest
+feasible cell. It clears the bar where the incumbent plant has slack, and not where shortages
+actually arise.
+
+\item \textbf{Two architectures meet the target on both products, and neither is a plant the
+sponsor builds.} Rotating prequalified campaigns across three already-registered third-party fill
+lines (S17), and dual finished-dose sourcing with an explicit key-starting-material tier (S9).
+\end{itemize}
+
+\section{The conditional answer}
+On these inputs, the strongest intervention is contracted registered capacity plus positioned
+finished-goods stock, bought rather than built. The binding constraint is a contract, not a
+machine. Of 40 re-evaluated cells, 14 meet the target and 16 sit within one standard error of it,
+so two fifths of the verdicts cannot be resolved at this sample size.
+
+\section{What would overturn this, and what it would take}
+The three inputs that most change the answer are the regional replenishment rule, the rate at which
+one event removes several nominally independent sites, and the real backorder window. All three are
+currently placeholders the author wrote. None can be settled by more computation; each needs a
+practitioner. The study also retracted three of its own headline conclusions after correcting its
+own model, and one earlier failure of the distributed design proved to be an artifact of an unequal
+search space rather than a property of distribution.
+
+\end{document}

@@ -1,0 +1,17 @@
+{
+  "source_id": "S14",
+  "url": "https://www.fda.gov/drugs/human-drug-compounding/bulk-drug-substances-used-compounding-under-section-503b-fdc-act",
+  "retrieved_at": "2026-09-01T23:05:14.182792Z",
+  "http_status": 200,
+  "sha256": "aa35582ea47105a1569a31023d4a5c2860273185a81eb29cf313f4391d142a13",
+  "content_type": "text/html; charset=UTF-8",
+  "size_bytes": 42756,
+  "license_note": "FDA public domain",
+  "raw_path": "data/raw_snapshots/S14/2026-09-01/bulks_policy_page.html",
+  "transform_script": null,
+  "processed_path": null,
+  "data_dictionary_rows": 0,
+  "access_method": "auto",
+  "robots_allowed": true,
+  "notes": ""
+}

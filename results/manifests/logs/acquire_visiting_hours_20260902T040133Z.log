@@ -1,0 +1,5 @@
+AUTO  S01    200     539616 https://www.accessdata.fda.gov/scripts/drugshortages/Drugshortages.cfm
+AUTO  S01    200      35992 https://www.accessdata.fda.gov/scripts/drugshortages/dsp_ActiveIngredientDetails.cfm?AI=Sodium+Bicarbonate+Injection&st=c
+AUTO  S01    200      41912 https://www.accessdata.fda.gov/scripts/drugshortages/dsp_ActiveIngredientDetails.cfm?AI=Furosemide+Injection&st=c
+AUTO  S26    200   10802069 https://www.accessdata.fda.gov/cder/ndctext.zip
+4 payloads frozen, 0 human-acquisition tasks recorded under /Users/rikhinkavuru/telo/feasibility/data/raw_snapshots

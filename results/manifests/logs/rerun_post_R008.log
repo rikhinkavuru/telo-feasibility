@@ -1,0 +1,5 @@
+[1/6] paired simulation, all 20 strategies
+[2/6] optimization at the frozen target
+    opt run: opt_20260903T220534Z
+[3/6] optimization at the pre-registered sensitivity target tau=0.98
+[4/6] ablation on the new optimized designs

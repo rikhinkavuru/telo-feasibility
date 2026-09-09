@@ -1,0 +1,17 @@
+{
+  "source_id": "S26",
+  "url": "https://www.accessdata.fda.gov/cder/ndctext.zip",
+  "retrieved_at": "2026-09-01T23:09:24.629093Z",
+  "http_status": null,
+  "sha256": null,
+  "content_type": "",
+  "size_bytes": null,
+  "license_note": "FDA public domain",
+  "raw_path": null,
+  "transform_script": null,
+  "processed_path": null,
+  "data_dictionary_rows": 0,
+  "access_method": "human",
+  "robots_allowed": null,
+  "notes": "HUMAN-ACQUISITION-TASK: outside robots Visiting-hours 23:00-05:00 Eastern; rerun inside the window or pass --override-visiting-hours with a reason"
+}

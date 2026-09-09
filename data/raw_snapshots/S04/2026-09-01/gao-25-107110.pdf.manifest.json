@@ -1,0 +1,17 @@
+{
+  "source_id": "S04",
+  "url": "https://www.gao.gov/assets/gao-25-107110.pdf",
+  "retrieved_at": "2026-09-01T22:55:10.731882Z",
+  "http_status": 200,
+  "sha256": "87a8eed67b40f2571a295eaa22287b76c0b447c8263b53879fc3bf8316318095",
+  "content_type": "application/pdf",
+  "size_bytes": 4644011,
+  "license_note": "gao.gov/copyright: GAO products may be copied and distributed in their entirety without permission; third-party images may be copyrighted.",
+  "raw_path": "data/raw_snapshots/S04/2026-09-01/gao-25-107110.pdf",
+  "transform_script": null,
+  "processed_path": null,
+  "data_dictionary_rows": 0,
+  "access_method": "auto",
+  "robots_allowed": true,
+  "notes": ""
+}

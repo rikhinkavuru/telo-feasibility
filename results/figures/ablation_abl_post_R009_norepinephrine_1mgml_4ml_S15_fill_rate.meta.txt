@@ -1,0 +1,9 @@
+title: Failure attribution, S15, norepinephrine_1mgml_4ml: fill_rate
+xlabel: delta fill_rate [fraction]
+ylabel: mechanism (family) [-]
+product: norepinephrine_1mgml_4ml
+scenario: ablation abl_post_R009; base fill_rate = 0.9957878437882312
+manifest_id: abl_post_R009
+source_note: results/ablation/abl_post_R009/summary.json and attribution.csv; all inputs tier 5 illustrative
+decision_caption: Blue: how much the service metric improves when this mechanism alone is switched off in the base world. Orange: how much it degrades when this mechanism alone is switched on in the quiet world. Bars that disagree signal interaction with other mechanisms. Model behavior under illustrative inputs, not a finding.
+illustrative: True

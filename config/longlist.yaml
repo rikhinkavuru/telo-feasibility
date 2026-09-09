@@ -1,0 +1,70 @@
+# Dated longlist of exact product presentations for the product screen (protocol 2.2 step 1).
+# The two full product configs (sodium_bicarbonate_8_4_50ml, norepinephrine_1mgml_4ml) are the
+# workbook's provisional cases; the remaining entries are protocol 2.5 provisional candidates and
+# the repository's independent scorecard pick. Nothing here is a selection.
+# Matching rules: `ingredient_exact` matches the Drugs@FDA / Orange Book active-ingredient field
+# exactly (upper-cased, single-ingredient products only); `ingredient_pattern` is used for free-text
+# fields (FDA shortage generic name, DailyMed titles, openFDA); `dosage_form_pattern` must match the
+# Drugs@FDA Form or Orange Book DF;Route field (injectables only).
+version: 1.0.0
+candidates:
+  - id: sodium_bicarbonate_8_4_50ml
+    ingredient: sodium bicarbonate
+    presentation: 8.4% (50 mEq/50 mL) single-dose vial
+    strength_pattern: "8\\.4|84 ?mg/?1? ?mL|1 ?mEq/mL|50 ?mEq"
+    ingredient_pattern: "sodium bicarbonate"
+    ingredient_exact: ["SODIUM BICARBONATE"]
+    dosage_form_pattern: "inject|intravenous"
+    protocol_role: current/recurrent case candidate
+    flags: {controlled_substance: false, small_molecule: true, aqueous_solution: true, standard_vial: true, lyophilized: false, suspension_or_emulsion: false, biologic_or_vaccine: false, cytotoxic_or_high_potency: false, drug_device_combination: false, cold_chain_intensive: false}
+    identity_fixed: true
+  - id: norepinephrine_1mgml_4ml
+    ingredient: norepinephrine
+    presentation: 1 mg/mL (4 mg/4 mL) single-dose vial
+    strength_pattern: "1 ?mg/ ?mL|4 ?mg/ ?4 ?mL|EQ 1MG BASE/ML"
+    ingredient_pattern: "norepinephrine"
+    ingredient_exact: ["NOREPINEPHRINE BITARTRATE"]
+    dosage_form_pattern: "inject|intravenous"
+    protocol_role: resolved/recurrent comparator
+    flags: {controlled_substance: false, small_molecule: true, aqueous_solution: true, standard_vial: true, lyophilized: false, suspension_or_emulsion: false, biologic_or_vaccine: false, cytotoxic_or_high_potency: false, drug_device_combination: false, cold_chain_intensive: false}
+    identity_fixed: true
+  - id: acyclovir_sodium_50mgml_vial
+    ingredient: acyclovir
+    presentation: acyclovir sodium 50 mg/mL vial (10 mL or 20 mL; exact fill not fixed)
+    strength_pattern: "50 ?mg/ ?mL|EQ 50MG BASE/ML"
+    ingredient_pattern: "acyclovir"
+    ingredient_exact: ["ACYCLOVIR SODIUM", "ACYCLOVIR"]
+    dosage_form_pattern: "inject|intravenous"
+    protocol_role: reserve
+    flags: {controlled_substance: false, small_molecule: true, aqueous_solution: true, standard_vial: true, lyophilized: false, suspension_or_emulsion: false, biologic_or_vaccine: false, cytotoxic_or_high_potency: false, drug_device_combination: false, cold_chain_intensive: false}
+    identity_fixed: false
+  - id: furosemide_10mgml_vial
+    ingredient: furosemide
+    presentation: 10 mg/mL vial (2, 4, or 10 mL; exact fill not fixed)
+    strength_pattern: "10 ?mg/ ?mL|10MG/ML"
+    ingredient_pattern: "furosemide"
+    ingredient_exact: ["FUROSEMIDE"]
+    dosage_form_pattern: "inject|intravenous|intramuscular"
+    protocol_role: reserve (repository scorecard pick 2026-07-16)
+    flags: {controlled_substance: false, small_molecule: true, aqueous_solution: true, standard_vial: true, lyophilized: false, suspension_or_emulsion: false, biologic_or_vaccine: false, cytotoxic_or_high_potency: false, drug_device_combination: false, cold_chain_intensive: false}
+    identity_fixed: false
+  - id: sterile_water_for_injection_vial
+    ingredient: sterile water for injection
+    presentation: single-dose vial (fill not fixed)
+    strength_pattern: "."
+    ingredient_pattern: "sterile water|water for injection"
+    ingredient_exact: ["STERILE WATER FOR INJECTION", "STERILE WATER"]
+    dosage_form_pattern: "inject|intravenous"
+    protocol_role: include only if scale can be represented meaningfully
+    flags: {controlled_substance: false, small_molecule: true, aqueous_solution: true, standard_vial: true, lyophilized: false, suspension_or_emulsion: false, biologic_or_vaccine: false, cytotoxic_or_high_potency: false, drug_device_combination: false, cold_chain_intensive: false}
+    identity_fixed: false
+  - id: acetazolamide_500mg_vial
+    ingredient: acetazolamide
+    presentation: acetazolamide sodium 500 mg lyophilized powder vial
+    strength_pattern: "500 ?mg|EQ 500MG BASE"
+    ingredient_pattern: "acetazolamide"
+    ingredient_exact: ["ACETAZOLAMIDE SODIUM"]
+    dosage_form_pattern: "inject|intravenous"
+    protocol_role: explicit out-of-archetype (lyophilized) comparator
+    flags: {controlled_substance: false, small_molecule: true, aqueous_solution: false, standard_vial: true, lyophilized: true, suspension_or_emulsion: false, biologic_or_vaccine: false, cytotoxic_or_high_potency: false, drug_device_combination: false, cold_chain_intensive: false}
+    identity_fixed: true

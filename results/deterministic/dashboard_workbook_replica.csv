@@ -1,0 +1,17 @@
+product_id,strategy_id,mode,cost_per_unit,response_days,expected_shortage_days,shortage_days_avoided,incremental_annual_cost,cost_per_shortage_day_avoided,approx_fill_rate,interpretation,eligibility
+norepinephrine_1mgml_4ml,S0,workbook_replica,13.427339794365233,113.0,11.720400000000003,0.0,0.0,,0.9887612602739726,Below service target,YES
+norepinephrine_1mgml_4ml,S1,workbook_replica,13.523789333084832,113.0,11.720400000000003,0.0,86804.58484763838,,0.9887612602739726,Below service target,YES
+norepinephrine_1mgml_4ml,S2,workbook_replica,25.90218525766471,112.0,0.0,11.720400000000003,11227360.916969527,957933.2545791545,1.0,Resilience premium required,YES
+norepinephrine_1mgml_4ml,S3,workbook_replica,26.523018590998042,112.0,0.0,11.720400000000003,11786110.916969527,1005606.5421802603,1.0,Resilience premium required,YES
+norepinephrine_1mgml_4ml,S4,workbook_replica,25.568851924331373,113.0,0.0,11.720400000000003,10927360.916969527,932336.8585517153,1.0,Regulatory eligibility unresolved,UNCERTAIN
+norepinephrine_1mgml_4ml,S5,workbook_replica,54.47031808157053,110.0,0.0,11.720400000000003,36938680.45848477,3151656.979154701,1.0,Regulatory eligibility unresolved,UNCERTAIN
+norepinephrine_1mgml_4ml,S6,workbook_replica,56.692540303792754,105.2,0.0,11.720400000000003,38938680.45848477,3322299.61933763,1.0,Regulatory eligibility unresolved,UNCERTAIN
+norepinephrine_1mgml_4ml,S7,workbook_replica,26.27761757214301,111.0,0.0,11.720400000000003,11565250.0,986762.397187809,1.0,Regulatory eligibility unresolved,UNCERTAIN
+sodium_bicarbonate_8_4_50ml,S0,workbook_replica,10.927441524555027,115.0,17.45025,0.0,0.0,,0.9832668835616438,Below service target,YES
+sodium_bicarbonate_8_4_50ml,S1,workbook_replica,11.028084521479824,115.0,17.45025,0.0,120771.59630975686,,0.9832668835616438,Below service target,YES
+sodium_bicarbonate_8_4_50ml,S2,workbook_replica,20.289236790606655,114.0,1.4759999999999998,15.974250000000001,11234154.319261955,703266.4644200482,0.9985846575342465,Resilience premium required,YES
+sodium_bicarbonate_8_4_50ml,S3,workbook_replica,20.839236790606655,114.0,0.09899999999999964,17.35125,11894154.319261955,685492.6486139013,0.9999050684931506,Resilience premium required,YES
+sodium_bicarbonate_8_4_50ml,S4,workbook_replica,20.039236790606655,115.0,0.0,17.45025,10934154.319261955,626590.1244544894,1.0,Regulatory eligibility unresolved,UNCERTAIN
+sodium_bicarbonate_8_4_50ml,S5,workbook_replica,41.71250582424751,112.0,0.0,17.45025,36942077.15963098,2116994.1496328693,1.0,Regulatory eligibility unresolved,UNCERTAIN
+sodium_bicarbonate_8_4_50ml,S6,workbook_replica,43.37917249091417,106.4,0.0,17.45025,38942077.15963098,2231605.6881495095,1.0,Regulatory eligibility unresolved,UNCERTAIN
+sodium_bicarbonate_8_4_50ml,S7,workbook_replica,20.61577485788836,113.0,2.164500000000004,15.285749999999997,11626000.000000002,760577.6622017241,0.9979244520547945,Regulatory eligibility unresolved,UNCERTAIN

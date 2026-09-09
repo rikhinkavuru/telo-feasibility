@@ -1,0 +1,539 @@
+# Telo feasibility study - machine-readable protocol
+#
+# This file is the frozen, versioned representation of the governing research
+# specification (Telo_Feasibility_Study_Protocol, Version 1.0, 1 September 2026).
+# Code loads it through telo_feasibility.schemas.Protocol. Any change to a
+# decision-relevant rule (thresholds, gates, weights, comparison rules, decision
+# classes, kill criteria, metrics, horizon) MUST bump `version` and add a row to
+# protocol/revisions.csv. Non-decision edits (typos, comments) bump the patch
+# number only and are still logged.
+
+protocol:
+  id: telo-feasibility-protocol
+  title: Distributed Sterile-Injectable Manufacturing Under Real-World Constraints
+  subtitle: Maximum-quality feasibility-study protocol and model specification
+  version: 1.0.0
+  status: frozen
+  frozen_on: 2026-09-01
+  machine_readable_created_on: 2026-09-01
+  label: "Preliminary research design; not legal or regulatory advice"
+  designed_to_permit_negative_conclusion: true
+  source_documents:
+    - id: SRC-PROTOCOL-DOCX
+      filename: Telo_Feasibility_Study_Protocol.docx
+      sha256: 9c0e0a0a1d89d23b08937f8afce70628cba85882d4c8c760d29acb782e4e15dd
+      size_bytes: 70482
+      version_string: "Version 1.0 | 1 September 2026"
+      role: governing research specification (authoritative text)
+    - id: SRC-PROTOCOL-PDF
+      filename: Telo_Feasibility_Study_Protocol.pdf
+      sha256: 36bf2c08982bdb82a6c9eb85dde13d25d4f7bbb15a7c99c1cacfed36937f07ea
+      size_bytes: 668096
+      pages: 24
+      version_string: "Version 1.0 | 1 September 2026"
+      role: rendered copy of the DOCX; same version string; used for page citations
+    - id: SRC-WORKBOOK
+      filename: Telo_Feasibility_Model.xlsx
+      sha256: 367069513203098f0157dfca83272e7bda35b045ecd67139bb268d483b9be9f8
+      size_bytes: 55725
+      version_string: "0.1 research scaffold, as of 2026-09-01"
+      role: auditable deterministic scaffold; 386 yellow illustrative cells; reports NOT READY
+      caution: yellow inputs and their outputs are not evidence
+  change_log: protocol/revisions.csv
+
+central_question: >
+  Under what product, demand, regulatory, and operating conditions can
+  distributed regional capacity reduce sterile-injectable shortages more
+  cost-effectively than additional safety stock, dual sourcing, reserved
+  contract capacity, or additional centralized capacity?
+
+governing_rule: >
+  No strategy is eligible for a favorable conclusion unless all applicable
+  regulatory and quality gates pass. Among eligible strategies, compare the
+  minimum total cost required to reach the same service target, not
+  hand-picked versions of each strategy.
+
+decision:
+  owner: Telo research team advised by independent manufacturing, pharmacy-supply, regulatory, and operations experts
+  decision_statement: >
+    Whether to advance a specific product-pathway-network design into paid
+    regulatory/engineering diligence, redesign it, or stop. The decision is
+    not "launch Telo".
+  freeze_before_final_run: [protocol, source_snapshot, candidate_list, analysis_version]
+  unit_of_analysis: >
+    A product-presentation-pathway-network architecture over a defined
+    national or multi-region demand system. Each site, supplier, component,
+    release queue, and inventory location is modeled explicitly enough to
+    expose shared failure modes.
+  classes:
+    - id: ADVANCE
+      interpretation: All gates pass; distributed design is Pareto-efficient; benefit persists through credible uncertainty; contractable demand clears break-even; no unresolvable common-cause fragility
+    - id: NARROW_ADVANCE
+      interpretation: Feasible only for a defined product/presentation/region/contract structure; state the boundary as the principal finding
+    - id: REDESIGN
+      interpretation: A resolvable bottleneck (supplier independence, release process, site size, stock placement, or contract) causes failure
+    - id: STOP
+      interpretation: Dominated, legally/technically infeasible, dependent on unsupported release claims, or economically incompatible with credible demand
+
+hypotheses_file: protocol/hypotheses.yaml
+
+kill_criteria:
+  - id: K1
+    text: A material regulatory or quality gate is failed or cannot be bounded credibly.
+  - id: K2
+    text: The distributed design is dominated (higher cost and worse reliability) across the credible uncertainty region.
+  - id: K3
+    text: Required take-or-pay volume exceeds credibly contractable demand.
+  - id: K4
+    text: Resilience disappears under plausible common-cause dependence or when material lead time is represented correctly.
+  - id: K5
+    text: The result depends on reimbursement mislabeled as cost, on unsourced precision, or on release-time reductions unsupported by validated practice.
+  - id: K6
+    text: The preferred strategy reverses under modest, plausible changes in one or two high-leverage assumptions and those inputs cannot be resolved economically.
+
+product_archetype:
+  include:
+    - non-controlled
+    - small-molecule
+    - aqueous sterile solution
+    - standard vial
+    - qualified API sourced externally
+    - Telo owns or controls formulation and sterile fill-finish
+  exclude_from_first_model:
+    - biologics
+    - vaccines
+    - suspensions
+    - emulsions
+    - lyophilized products
+    - cytotoxics
+    - high-potency compounds
+    - controlled substances
+    - drug-device combinations / complex devices
+    - cold-chain-intensive presentations
+  exclusion_rule: excluded modalities may appear only as explicitly labeled out-of-archetype comparators; never pooled into the first economic result
+
+product_selection:
+  procedure:
+    - step: 1
+      text: Create a dated longlist of at least five product presentations from frozen FDA and ASHP shortage snapshots, including at least one resolved/recurrent comparator.
+    - step: 2
+      text: Apply hard gates. A failed hard gate excludes a product from the first archetype before weighted scoring.
+    - step: 3
+      text: Score only surviving candidates using pre-declared weights. Keep the raw evidence, disagreements, and uncertainty, not only the final number.
+    - step: 4
+      text: Select one case with plausible regional relevance and one hard comparator that tests whether the conclusion generalizes.
+    - step: 5
+      text: Have one hospital pharmacy leader and one sterile-manufacturing expert independently challenge the selection before model calibration.
+      human_required: true
+  longlist_minimum: 5
+  hard_gates:
+    - id: PG1
+      name: Product identity
+      pass_condition: Exact ingredient, strength, dosage form, route, presentation, container closure, and label can be fixed.
+    - id: PG2
+      name: Manufacturing fit
+      pass_condition: Aqueous small-molecule sterile solution compatible with the first process train; no hidden lyo/suspension/high-potency requirement.
+    - id: PG3
+      name: Control status
+      pass_condition: Non-controlled and no special handling regime that invalidates the first-site design.
+    - id: PG4
+      name: Regulatory pathway
+      pass_condition: At least one supportable approved-generic/CMO architecture can be mapped; 503B, if analyzed, is separate.
+    - id: PG5
+      name: Demand observability
+      pass_condition: National/regional utilization can be bounded using hospital/GPO/wholesaler evidence, not only reimbursement.
+    - id: PG6
+      name: Clinical substitutability
+      pass_condition: Shortage impact and presentation-specific substitution behavior can be described by clinicians/pharmacists.
+    - id: PG7
+      name: Input feasibility
+      pass_condition: API, vial, stopper, seals, labels, and testing can be sourced and their dependencies mapped.
+    - id: PG8
+      name: Economic relevance
+      pass_condition: Volume is neither so large that micro nodes are obviously mismatched nor so small that validation/fixed QA is necessarily overwhelming without contracted premiums.
+  gate_statuses: [PASS, FAIL, UNCERTAIN]
+  gate_rule: any FAIL excludes; UNCERTAIN blocks final selection until resolved (score may be computed for information only)
+  score_scale: {min: 1, max: 5, meaning: "1 = weak/unfavorable; 5 = strong/favorable"}
+  weights:
+    clinical_criticality: 0.20
+    shortage_recurrence_duration: 0.20
+    supplier_vulnerability: 0.15
+    manufacturing_fit: 0.15
+    public_data_strength: 0.10
+    regional_relevance: 0.10
+    demand_contract_fit: 0.10
+  weights_sum_to: 1.0
+  per_criterion_record: [score, evidence, confidence, disagreement, uncertainty]
+  provisional_candidates:
+    - presentation: Sodium bicarbonate injection 8.4%, 50 mL vial
+      provisional_role: current/recurrent case candidate
+      final: false
+    - presentation: Norepinephrine bitartrate 1 mg/mL, 4 mL vial
+      provisional_role: resolved/recurrent comparator
+      final: false
+    - presentation: Acyclovir sodium injection
+      provisional_role: reserve
+      final: false
+    - presentation: Furosemide injection
+      provisional_role: reserve
+      final: false
+    - presentation: Sterile water for injection, vial
+      provisional_role: include only if scale can be represented meaningfully
+      final: false
+    - presentation: Acetazolamide sodium 500 mg vial
+      provisional_role: explicit out-of-archetype (lyophilized) comparator
+      final: false
+  final_cases_required:
+    - role: case
+      definition: one current, prolonged, or recurrent shortage for which regional production is at least plausible
+    - role: comparator
+      definition: one resolved, recurrent, or difficult comparator that tests whether the result generalizes
+  do_not_finalize_because_listed: true
+
+strategies:
+  - id: S0
+    name: Status quo centralized supply
+    durable: true
+    pathway: approved_cmo
+    must_represent: Existing approved supply architecture; no favorable assumptions about hidden spare capacity
+  - id: S1
+    name: Additional safety stock
+    durable: true
+    pathway: approved_cmo
+    must_represent: Days of supply, placement, rotation, carrying cost, expiry, shortage timing
+    design_variables: [safety_stock_days, locations, rotation_frequency, reorder_point, target_service_level]
+  - id: S2
+    name: Dual source plus contracts
+    durable: true
+    pathway: approved_cmo
+    must_represent: Two qualified sources with explicit shared-cause mapping and allocated commitments
+    design_variables: [allocation_fraction, capacity_reservation, independence_constraints, inventory_by_source]
+  - id: S3
+    name: Reserved flexible contract capacity
+    durable: true
+    pathway: approved_cmo
+    must_represent: Qualified capacity held through reservation/take-or-pay terms; activation, campaign, and release delay
+    design_variables: [reserved_fraction, activation_threshold, minimum_campaign, take_or_pay, product_slate]
+  - id: S4
+    name: Additional centralized capacity
+    durable: true
+    pathway: approved_cmo
+    must_represent: New/expanded large-site capacity with scale economies and concentration risk
+    design_variables: [site_size, spare_capacity, campaign_structure, stock_placement]
+  - id: S5
+    name: Distributed regional nodes with conventional release
+    durable: true
+    pathway: approved_cmo
+    must_represent: Multiple smaller approved/contracted nodes using conventional validated disposition
+    design_variables: [node_count, node_size, regional_assignment, pooled_overflow, common_suppliers, safety_stock, campaign_schedule]
+  - id: S6
+    name: Distributed regional nodes plus validated release assurance
+    durable: true
+    pathway: approved_cmo
+    must_represent: S5 plus only the release components prospectively demonstrated and accepted for the product/site
+    design_variables: [node_count, node_size, regional_assignment, pooled_overflow, common_suppliers, safety_stock, campaign_schedule, release_assurance_scenario]
+    requires_gates: [G15]
+  - id: S7
+    name: 503B shortage response
+    durable: false
+    pathway: 503b
+    must_represent: Separate status-dependent architecture; not ranked as though legal availability were permanent
+    design_variables: [eligible_time_windows, presentations, activation_policy, bud, jurisdictional_reach]
+
+fair_comparison_rules:
+  - id: FC1
+    rule: Same demand paths and disruptions via common random numbers so strategies face the same simulated world in each paired run.
+  - id: FC2
+    rule: Same service target - minimize cost subject to pre-specified fill-rate and shortage-risk constraints; never compare a low-cost unreliable strategy to an overbuilt reliable one.
+  - id: FC3
+    rule: Same cost boundary - annualized capital, fixed quality/operations labor, validation, testing, deviations, scrap, inventory, distribution, software/integration, compliance, and reserved-capacity payments without double counting.
+  - id: FC4
+    rule: Same time horizon and discounting; include commissioning/qualification lead time where a strategy does not exist on day zero.
+  - id: FC5
+    rule: Same common-cause scrutiny - nominal site count is not independent redundancy.
+  - id: FC6
+    rule: Pathway gating - an ineligible strategy is excluded, not assigned a finite regulatory penalty an optimizer can pay through.
+
+service_thresholds:
+  # Pre-specified before any simulation result existed (revisions.csv R001).
+  # Decision-relevant numbers only; statements and provenance are in
+  # service_threshold_notes so this block loads into the strict schema.
+  fill_rate_mean_min: 0.99
+  fill_rate_tail_confidence: 0.90
+  shortage_day_threshold: 0.95
+  max_expected_shortage_days_per_year: null
+  max_regional_fill_rate_disparity: null
+  recovery_time_constraint_days: null
+  recovery_window_days: 30
+
+service_threshold_notes:
+  fill_rate_tail_statement: P(run-level fill rate >= fill_rate_mean_min) >= fill_rate_tail_confidence
+  shortage_day_statement: a day is a shortage day when fulfilled[t] / demand[t] < shortage_day_threshold
+  sensitivity_values:
+    fill_rate_mean_min: [0.98, 0.99, 0.995]
+    shortage_day_threshold: [0.90, 0.95, 0.99]
+    recovery_window_days: [14, 30]
+  provenance: >
+    Base values match workbook 05_Assumptions rows 9-10 (illustrative fill) and
+    were adopted as the frozen pre-specification on 2026-09-01. The tail
+    confidence q is not numeric in the protocol; 0.90 was chosen and logged
+    (R001). Null constraints are reported, not enforced, in the base analysis.
+
+recovery_definition:
+  statement: Sustained return of daily fill fraction above shortage_day_threshold for recovery_window_days consecutive days, measured from the disruption start; not the first positive inventory day.
+  recovery_window_days: 30
+  report: [time_to_first_response_days, time_to_stable_recovery_days, unmet_demand_area_units, peak_unmet_demand_units, probability_recovered_by_date]
+
+model_horizon:
+  time_step_days: 1
+  horizon_years: 5
+  warm_up_days: 365
+  weekly_step_sensitivity: true
+  weekly_step_rule: run weekly step only after confirming it reproduces daily results
+
+network_boundary:
+  regions_base: 4
+  regions_sensitivity: [3, 8]
+  region_definition_rule: follow data and distribution practice
+  demand_unit: presentation-specific units; no cross-presentation pooling without explicit conversion/substitution matrix
+  production_scope: [formulation, sterile_filtration_where_applicable, filling, inspection, testing, release, scrap, cleaning_changeover]
+  upstream_scope: qualified API and critical components as suppliers with lead times, capacity, and common-cause group
+  downstream_scope: distribution center or direct-to-hospital policy, transport time, allocation, substitution, expiry
+  quality_scope: [deviation_rejection, testing_queues, release_time, model_abstention, state_of_control_loss]
+  regulation_scope: [pathway_availability, site_qualification, shortage_list_state_503b, implementation_delay]
+  economics_scope: societal/purchaser supply cost primary; provider operational harm only as a secondary transparent scenario; no invented patient-dollar value
+
+discounting:
+  rate: {low: 0.06, base: 0.10, high: 0.15, status: illustrative, source: workbook 05_Assumptions row 6}
+  capital_economic_life_years: {low: 7, base: 10, high: 15, status: illustrative, source: workbook 05_Assumptions row 7}
+  method: capital recovery factor CRF = r(1+r)^n / ((1+r)^n - 1) unless a full DCF is required
+
+cost_boundary:
+  ledgers: [capital, fixed_site_operations, product_site_launch, variable_production, quality_testing, failure_waste, inventory_logistics, resilience_contracts, os_integration]
+  separate_concepts: [production_cost, reimbursement, market_price, purchaser_willingness_to_pay, provider_shortage_cost]
+  cms_rule: CMS Part B spending and ASP are utilization/reimbursement proxies; never manufacturing cost
+  committed_volume_rule: node economics depend on contracted (take-or-pay) volume, never on all addressable demand becoming Telo demand
+
+metrics:
+  primary:
+    - {id: cost_per_delivered_unit, definition: total annual cost / delivered nonexpired units, report: [mean, median, p5, p95]}
+    - {id: annual_total_cost, definition: expected annual total strategy cost, report: [mean, p5, p95, mcse]}
+    - {id: fill_rate, definition: fulfilled demand / demand, report: [overall, by_region, mean, lower_tail]}
+    - {id: shortage_days, definition: days daily fill falls below shortage_day_threshold, report: [expected, p95, probability_zero]}
+  secondary:
+    - {id: unmet_units, definition: demand not fulfilled within allowed window, report: [area, peak]}
+    - {id: time_to_first_response, report: [median, p95, by_event_class]}
+    - {id: time_to_stable_recovery, report: [median, p95, by_event_class]}
+    - {id: probability_meeting_service_constraints, report: [mean, monte_carlo_interval]}
+    - {id: batch_and_node_failures, report: [counts]}
+    - {id: common_cause_failures, report: [counts]}
+    - {id: expiry_and_scrap, definition: expired units / units released into inventory, report: [by_strategy, by_location]}
+    - {id: quality_holds, report: [counts, duration, cost]}
+    - {id: batch_rejections, report: [counts]}
+    - {id: release_assurance_abstentions, report: [counts, fraction]}
+    - {id: break_even_volume, report: [surface_over_price_utilization_node_count]}
+    - {id: required_resilience_premium, report: [per_committed_unit, payer_stated]}
+    - {id: icer, definition: incremental cost per shortage-day avoided vs reference, rule: never for dominated strategies without dominance label, report: [point, uncertainty_interval]}
+    - {id: regional_disparity, definition: max_r(metric) - min_r(metric), report: [fill_shortfall, recovery_time, allocation_policy_sensitivity]}
+    - {id: regulatory_eligibility, report: [gate_status_per_run]}
+  reporting_statistics: [mean, median, quantiles, uncertainty_interval, monte_carlo_standard_error, paired_difference]
+  event_log_required: true
+
+optimization:
+  objective: minimize expected annual total cost
+  constraints:
+    - mean fill rate >= service_thresholds.fill_rate_mean_min
+    - P(fill rate >= fill_rate_mean_min) >= service_thresholds.fill_rate_tail_confidence
+    - expected shortage days <= max_expected_shortage_days_per_year (if set)
+    - recovery time <= recovery_time_constraint_days (if set)
+    - regional disparity <= max_regional_fill_rate_disparity (if set)
+    - all applicable regulatory and quality gates = PASS
+  per_strategy: true
+  method_requirements: [auditable_method, verify_against_coarse_grid_or_alternative_solver, record_convergence, record_search_bounds, record_seeds, record_constraint_violations, record_compute_budget]
+  no_single_winner_rule: present cost-reliability frontier, dominated architectures, conditional winners, infeasible regions, and ranking uncertainty when several strategies are Pareto-efficient
+
+uncertainty_methods:
+  parameter_representation: distributions or empirical resampling with physical support; preserve elicited dependence; separate aleatory from epistemic
+  mandatory_sensitivity_inputs: [capacity_utilization, release_time, fixed_qa_labor_per_node, yield, uptime, demand_cv, regional_demand_covariance, raw_material_lead_time, supplier_concentration, common_cause_dependence, shelf_life, expiry, node_count, node_size, batch_size, changeover_burden, deviation_rejection_rate, contracted_demand_share, release_assurance_risk_coverage]
+  methods: [one_way_threshold, sobol, prcc_where_monotone, structural_alternatives, decision_reversal_map, evpi, evppi_where_feasible]
+  structural_alternatives: [demand_distribution, failure_process, allocation_rule, recovery_definition, site_dependence_representation]
+  key_figure: feasibility map of preferred (or infeasible) architecture across utilization, release time, and common-cause dependence with gate-masked regions
+
+random_streams:
+  separate_streams: [routine_demand, demand_shocks, site_failures, supplier_disruptions, common_cause_events, yield, deviations, batch_rejection, release_time, transport_delay, regulatory_state_transitions]
+  common_random_numbers_across_strategies: true
+
+daily_event_order:
+  - 1. Advance time and expire inventory using FEFO.
+  - 2. Advance demand and demand shocks.
+  - 3. Advance supplier, site, common-cause, regulatory, and transportation disruptions.
+  - 4. Receive materials and released batches whose lead times complete.
+  - 5. Allocate available inventory; record served demand, backorders, unmet units, shortage flags.
+  - 6. Advance setup, production, inspection, testing, investigation, and release queues.
+  - 7. Trigger reorder, campaign, emergency-transfer, contract-capacity, or 503B policies when eligible.
+  - 8. Accrue costs and record audit events.
+  - 9. Assert mass balance, nonnegativity, and regulatory eligibility.
+
+release_assurance:
+  scenarios:
+    - id: R0
+      name: conventional validated release
+      treatment: all standard validated testing and human disposition; no Telo benefit
+    - id: R1
+      name: documentation/orchestration benefit only
+      treatment: reduces administrative cycle time only where measured; no analytical test replacement
+    - id: R2
+      name: shadow-mode decision support
+      treatment: predictions and shift alerts do not control release; value measured through detection, investigation prioritization, and prospective concordance
+    - id: R3
+      name: validated release component
+      treatment: only after predefined product/site validation and quality/regulatory acceptance; model the exact component and fallback path
+  default_scenario: R0
+  r3_enabled_by_default: false
+  r3_requires_gates_pass: [G15, G03, G05]
+  never_removed_by_release_assurance: [sterility_assurance, endotoxin, mandatory_compendial_or_product_specific_testing, quality_unit_disposition, deviation_investigations, validation, change_control]
+  fallback_after_abstention: conventional testing and investigation queue
+  metrics_that_travel_together: [released_fraction, abstention_fraction, unconditional_wrong_release_exposure, conditional_error_among_released, empirical_coverage, false_hold_rate, risk_coverage_curve, operational_cost_coverage_curve, performance_by_instrument_site_lot_time_concentration_shift, repair_sample_count, performance_after_repair, uncertainty_intervals]
+  current_evidence_boundary: methods proof of instrument-shift/OOD detection and abstention on public spectra; not evidence of commercial batch release, useful operational coverage, target chemistry, prospective validation, or sterility assurance
+
+regulatory_gates_file: config/regulatory_gates.yaml
+regulatory_gate_rules:
+  statuses: [PASS, FAIL, UNCERTAIN, NOT_APPLICABLE]
+  fail_treatment: strategy excluded from the comparison (hard gate)
+  uncertain_treatment: strategy may be simulated for information but is reported as "no conclusion" and can never receive a favorable decision class
+  uncertain_is_never_pass: true
+  every_run_records_gate_outcomes: true
+  label_until_reviewed: "preliminary regulatory analysis; not legal advice"
+  legal_status_labels: [law_or_regulation, final_guidance, agency_initiative, proposed_rule, expert_interpretation, unresolved_question]
+  proposed_rule_policy: base case must not depend on a proposed rule becoming final in Telo's preferred form
+  pathway_503b_policy: separate status-dependent legal architecture; never a ladder to an ANDA or a permanent supply pathway
+
+evidence_tiers:
+  - tier: 1
+    name: legal/regulatory and official product/shortage records
+    examples: [eCFR, FDA guidance and databases, Drugs@FDA, Orange Book, DailyMed]
+  - tier: 2
+    name: direct operational evidence
+    examples: [executed contracts, quotes, plant batch history, deviation/release logs, hospital/GPO/wholesaler demand]
+  - tier: 3
+    name: peer-reviewed empirical evidence
+    examples: [recovery, resilience, inventory, and supply-network research]
+  - tier: 4
+    name: qualified expert elicitation
+    required_fields: [role, experience, confidence, rationale, disagreement]
+  - tier: 5
+    name: illustrative placeholders
+    rule: allowed for scaffold testing only; never cited as results
+
+assumption_register_fields: [parameter_id, definition, units, entity_level, distribution_or_low_base_high, bounds, dependence_group, source, source_page_or_line, access_date, transformation, evidence_tier, confidence, validation_status, last_revision, owner, outputs_it_can_reverse]
+
+validation_layers:
+  - layer: conceptual
+    work: manufacturing, pharmacy, regulatory, and OR experts review boundaries, causal logic, comparators, and failure modes
+    human_required: true
+  - layer: input
+    work: source reconciliation, direct quotes/records where authorized, structured elicitation, range/confidence review
+    human_required: true
+  - layer: computational
+    work: unit tests, mass balance, extreme cases, seed reproducibility, independent code walkthrough
+    human_required: false
+  - layer: empirical_backcast
+    work: recreate selected historical shortage episodes without fitting the desired strategy ranking
+    human_required: false
+  - layer: decision
+    work: blind or pre-specified review of whether conclusions follow from gates, uncertainty, and dominance
+    human_required: true
+
+backcasting:
+  minimum_episode_classes: [site_failure, upstream_api_or_common_cause, demand_shock_or_substitution_cascade, resolved_shortage]
+  freeze_information_at_episode_start: true
+  compare: [duration, severity, recovery_shape, binding_bottleneck, regional_effects]
+  interpretation: validates broad behavior; not counterfactual proof
+
+interview_program:
+  targets:
+    - {role: hospital_pharmacy_supply_chain, min: 6, max: 8}
+    - {role: sterile_manufacturing_process, min: 5, max: 6}
+    - {role: quality_cmc_microbiology_validation, min: 4, max: 5}
+    - {role: generic_drug_or_503b_regulatory, min: 3, max: 4}
+    - {role: gpo_wholesaler_distributor, min: 2, max: 3}
+    - {role: drug_supply_economics_operations_research, min: 2, max: 3}
+    - {role: purchaser_contracting_authority, min: 3, max: 4}
+  total_target: [25, 30]
+  # R012: role maxima now sum to 33 and role minima to 25, so total_target [25, 30] is
+  # reachable. Before R012 the maxima summed to 29 and the declared ceiling of 30 could not
+  # be reached without breaking a role cap. The governing assignment asks for 12 to 20
+  # interviews; this protocol is the stricter of the two and governs.
+  counting_rule: count only interviews with directly relevant experience and logged evidence
+  attribution_rule: consent required for attribution; otherwise role and organization type only; never call interviewees partners, validators, or advisors without authorization
+  no_fabrication: completed-interview fields stay empty until real conversations occur
+
+independent_review:
+  reviewers:
+    - id: reviewer_1
+      qualification: sterile-injectable manufacturing/quality professional
+      can_reject: process and cost assumptions
+      required: true
+    - id: reviewer_2
+      qualification: generic-drug/CMC or 503B regulatory professional
+      can_reject: pathway map
+      required: true
+    - id: reviewer_3
+      qualification: operations-research/simulation expert
+      can_reject: model structure, optimization, and uncertainty methods
+      required: true
+    - id: reviewer_4
+      qualification: hospital pharmacy/GPO/wholesaler leader
+      can_reject: demand, inventory, and contract assumptions
+      required: false
+  minimum_completed: 3
+  publish_per_review: [issue, decision, exact_model_change, rationale]
+  logo_or_quote_is_not_validation: true
+
+reporting:
+  preliminary_banner: "PRELIMINARY / ILLUSTRATIVE / NOT FOR EXTERNAL CLAIMS"
+  banner_removed_only_when: evidence gates and validation requirements pass
+  figure_requirements: [descriptive_title, labeled_axes_with_units, uncertainty_where_relevant, product_and_scenario, version_and_run_manifest, source_note, decision_caption]
+  outputs: [technical_paper, two_page_executive_summary, assumptions_source_register, product_selection_report, regulatory_decision_maps, deterministic_results, stochastic_results, pareto_frontiers, feasibility_maps, sensitivity_results, backcasting_report, release_assurance_model_card, limitations, interview_synthesis, revision_log, reproducibility_appendix]
+
+claim_discipline:
+  - do_not_say: "'FDA-ready' or 'regulator validated'"
+    use_only_after_evidence: "Preliminary regulatory map reviewed by [qualified role]; product/site engagement still required"
+  - do_not_say: "'Our AI automates release'"
+    use_only_after_evidence: "In a public-benchmark methods study, our shift detector abstained under instrument drift; prospective product/site validation is the next step"
+  - do_not_say: "'Distributed manufacturing solves shortages'"
+    use_only_after_evidence: "The model found a bounded feasibility region, or found distributed capacity dominated, under stated assumptions"
+  - do_not_say: "'Partnered with' after an interview"
+    use_only_after_evidence: "Interviewed [role/organization type] and revised X assumption"
+  - do_not_say: "'Manufacturing cost' from CMS"
+    use_only_after_evidence: "CMS utilization/reimbursement proxy; cost estimated separately"
+
+definition_of_finished:
+  incomplete_rule: until every test passes, every report and CLI status must list exactly which gates remain incomplete
+  tests:
+  - {id: DF01, test: protocol version frozen}
+  - {id: DF02, test: five-product dated screen complete}
+  - {id: DF03, test: two exact product presentations selected}
+  - {id: DF04, test: product dossiers complete}
+  - {id: DF05, test: all eight strategies represented}
+  - {id: DF06, test: strategies optimized to matched service targets}
+  - {id: DF07, test: approved-generic/CMO and 503B pathways separated}
+  - {id: DF08, test: material regulatory gates reviewed by a qualified expert, human_required: true}
+  - {id: DF09, test: no material illustrative input remains}
+  - {id: DF10, test: direct or expert-validated input distributions documented}
+  - {id: DF11, test: deterministic model reconciles with workbook}
+  - {id: DF12, test: stochastic simulation passes all tests}
+  - {id: DF13, test: common random numbers implemented}
+  - {id: DF14, test: common-cause failures represented}
+  - {id: DF15, test: historical backcasts complete}
+  - {id: DF16, test: global and structural sensitivity complete}
+  - {id: DF17, test: decision-reversal and value-of-information analyses complete}
+  - {id: DF18, test: real interview evidence logged, human_required: true}
+  - {id: DF19, test: at least three qualified independent reviews completed, human_required: true}
+  - {id: DF20, test: "public code, data dictionary, assumptions, model cards, run manifest, revision log, and limitations released"}
+  - {id: DF21, test: at least one non-obvious result identified}
+  - {id: DF22, test: external claims do not exceed evidence}
+
+out_of_scope:
+  - shelved-asset development, clinical-success prediction, priority-review-voucher economics, foundation-model drug sourcing (separate future program; interface only)
+  - generalization of first-archetype economics to excluded modalities

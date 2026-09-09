@@ -1,0 +1,4 @@
+/Users/rikhinkavuru/telo/feasibility/.venv/lib/python3.12/site-packages/numpy/lib/_function_base_impl.py:4608: RuntimeWarning: invalid value encountered in scalar subtract
+  diff_b_a = b - a
+results -> /Users/rikhinkavuru/telo/feasibility/results/release_assurance/ra_20260902T044654Z (46s)
+PRELIMINARY / ILLUSTRATIVE / NOT FOR EXTERNAL CLAIMS

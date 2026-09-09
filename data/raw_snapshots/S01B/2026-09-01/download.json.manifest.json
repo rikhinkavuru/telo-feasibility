@@ -1,0 +1,17 @@
+{
+  "source_id": "S01B",
+  "url": "https://api.fda.gov/download.json",
+  "retrieved_at": "2026-09-01T22:55:08.800769Z",
+  "http_status": 200,
+  "sha256": "c1c341708518f6e40789ed31e8d0c25feddc65d7be846424ae819f52c088378a",
+  "content_type": "application/json; charset=utf-8",
+  "size_bytes": 590571,
+  "license_note": "CC0 1.0 Universal public domain dedication (open.fda.gov/license); terms at open.fda.gov/terms.",
+  "raw_path": "data/raw_snapshots/S01B/2026-09-01/download.json",
+  "transform_script": null,
+  "processed_path": null,
+  "data_dictionary_rows": 0,
+  "access_method": "auto",
+  "robots_allowed": true,
+  "notes": ""
+}

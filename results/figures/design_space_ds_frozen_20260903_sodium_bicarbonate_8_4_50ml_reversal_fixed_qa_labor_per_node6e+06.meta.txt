@@ -1,0 +1,9 @@
+title: Preferred strategy over capacity_utilization and common_cause_dependence, sodium_bicarbonate_8_4_50ml
+xlabel: capacity_utilization [input units]
+ylabel: common_cause_dependence [input units]
+product: sodium_bicarbonate_8_4_50ml
+scenario: fixed_qa_labor_per_node = 6e+06
+manifest_id: ds_frozen_20260903
+source_note: results/design_space/ds_frozen_20260903/; all inputs tier 5 illustrative; index order ['None', 'S2']
+decision_caption: Cell value indexes the cheapest strategy that meets the service target; the index order is ['None', 'S2'], where None means no strategy qualifies. A change of index across the map is a decision reversal. Illustrative.
+illustrative: True

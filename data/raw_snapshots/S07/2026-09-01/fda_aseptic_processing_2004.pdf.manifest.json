@@ -1,0 +1,17 @@
+{
+  "source_id": "S07",
+  "url": "https://www.fda.gov/media/71026/download",
+  "retrieved_at": "2026-09-01T23:02:12.313074Z",
+  "http_status": 200,
+  "sha256": "6971a83145b89dd839d217a9885fbdb7da62b4a6a31587a03e7901a5a8b7a0dd",
+  "content_type": "application/pdf",
+  "size_bytes": 751842,
+  "license_note": "FDA public domain",
+  "raw_path": "data/raw_snapshots/S07/2026-09-01/fda_aseptic_processing_2004.pdf",
+  "transform_script": null,
+  "processed_path": null,
+  "data_dictionary_rows": 0,
+  "access_method": "auto",
+  "robots_allowed": true,
+  "notes": ""
+}

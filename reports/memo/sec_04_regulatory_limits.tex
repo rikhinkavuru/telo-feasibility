@@ -1,0 +1,396 @@
+\section{Regulatory pathways: what each permits, restricts, and leaves uncertain}
+\label{sec:regulatory}
+
+\textbf{This is a preliminary regulatory analysis. It is not legal advice.} No statement in it
+has been reviewed by a qualified generic-drug, CMC, sterile-manufacturing or 503B professional.
+All sixteen gates carry \texttt{status: UNCERTAIN} with a null reviewer and a null review date.
+UNCERTAIN is never PASS, so \texttt{regulatory.evaluate\_all} returns \texttt{NO\_CONCLUSION} for
+every strategy in every run quoted in this memo. Nothing below asserts that any architecture is
+permitted, compliant, clinically deployable, or ready to manufacture a drug. Gates are hard
+constraints: none is relaxed anywhere to improve an economic result, and the engine carries no
+penalty-cost substitute for one.
+
+\subsection{Approved-generic contract manufacturing}
+
+\textbf{Permits.} Supply of an approved presentation requires an approved application and a site
+named in it. The decision map (\texttt{docs/regulatory/approved\_generic\_cmo\_map.md}) records
+four positions: hold an ANDA or 505(b)(2) NDA; be added as a contract fill-finish site to a
+holder's application by supplement; take transfer of an application; or supply components or bulk
+only. Owners are identifiable from the frozen 2026-09-01 Drugs@FDA and Orange Book snapshots,
+where the two modelled presentations sit behind 26 injectable applications from 23 sponsors
+(norepinephrine) and 19 from 13 (sodium bicarbonate). Which of them would contract, license or
+compete is an unresolved commercial question this package does not answer.
+
+\textbf{Restricts.} Sites must be registered and drugs listed under FD\&C Act 510 and 21 CFR Part
+207, and site additions are governed by 21 CFR 314.70. Batch disposition is non-delegable under
+21 CFR 211.22(a), an extramural facility is an extension of the manufacturer under 21 CFR
+200.10(b), and a quality agreement cannot delegate CGMP responsibility. Nominally separate sites
+under one application therefore share one quality unit and share its hazard, which revision R007
+had to correct in five configurations that had asserted an independence their own
+regulatory-owner field denied.
+
+\textbf{Leaves uncertain.} The reporting category for adding a third-party sterile fill-finish
+site is expert interpretation until a reviewer assigns it. No framework grants automatic
+statistical interchangeability across sites, so gate G14 blocks any fleet-level equivalence claim
+while UNCERTAIN, removing the pooled-validation and shared-quality-unit savings that are the whole
+economic case of the modular fleet family. The distributed-manufacturing registration instrument
+is only a proposed rule (FR doc 2026-14073, 91 FR 42888), the base case is forbidden to depend on
+it, and a word search of its text returns no occurrence of sterile, aseptic, 503B, outsourcing
+facilit, or real-time release.
+
+\textbf{What changes in the model.} G01 excludes a strategy outright if the relationship is
+absent, so every non-503B result in this memo presumes an application relationship that does not
+exist. G02, G07, G13 and G16 are lead-time gates the engine serves with tier-5 stand-ins rather
+than with a category read from a regulatory assessment. G03 to G05 set the earliest commercial
+start, modelled as a one-time cost plus a delay and not as a probability of failure. G06 caps
+shelf life, which binds for several architectures in the current threshold grid. G16 blocks an
+alternate API or container source until its lots are qualified under 21 CFR 211.84 and 211.94 and
+a Type II drug master file letter of authorisation issues; it applies to S9, S18 and S19, and S9
+is one of only two architectures meeting the service target on both products, so its source
+independence rests on an UNCERTAIN gate.
+
+\subsection{503B outsourcing}
+
+\textbf{Permits, and for exactly how long.} A registered outsourcing facility may compound from a
+bulk substance only if that substance is on the 503B bulks list or the drug is on FDA's shortage
+list, and 503B(a)(5) bars copying an approved product except through the shortage exception. The
+predicate must hold at compounding, at distribution, and at dispensing. \textbf{Eligibility is
+therefore tied to the shortage list or the bulks list, and it evaporates when a shortage
+resolves.} When the listing lapses, compounding stops, and inventory already compounded may not be
+distributed or dispensed under the exception after that date as the statute is written; whether
+transition relief exists is an unresolved question for a reviewer. The package models 503B as a
+time-varying legal state, never a durable pathway and never a bridge to an approved application.
+
+\textbf{The frozen record.} On the 2026-09-02 snapshots, sodium bicarbonate 8.4 percent carries 19
+shortage rows of which 15 are current, first posted 2017-03-01, and is explicitly NOT INCLUDED on
+the final bulks list (88 FR 20531), so the shortage listing is its only predicate. Norepinephrine
+1 mg/mL carries zero shortage rows and appears on neither bulks table, so the pathway is
+unavailable for it today. Furosemide 10 mg/mL, a reserve candidate, carries 33 rows of which 30
+are current.
+
+\textbf{What changes in the model.} The engine computes
+\texttt{eligible\_today = on\_shortage\_list AND static\_gates\_pass AND state\_permission} and
+re-checks the listing on each compounding, shipment and issue day. The only 503B cells ever
+feasible in this study were produced by the forbidden world in which the product is listed at time
+zero and the resolution rate is set to zero, that is, by assuming permanence. G12 removes regions
+without state licensure from the service set, but no state-by-state map is frozen here, so that
+restriction is unmodelled rather than modelled as absent. The beyond-use date is also not a scalar
+in the source: 6 days for aseptic product released without a completed sterility test, 14 for
+terminally sterilized product on a validated indicator-monitored cycle, 28 for either route with a
+completed passing test. That instrument is revised draft guidance stamped nonbinding and not for
+implementation, so it is not in-force policy, and the model holds \texttt{bud\_503b\_days} constant
+where the source is a lookup on route by test completion by storage condition.
+
+\begin{table}[htbp]
+\centering
+\caption{The sixteen gates, their treatment in the model, and their legal-status label. Source:
+\texttt{config/regulatory\_gates.yaml}. Every status is UNCERTAIN with a null reviewer and a null
+review date.}
+\label{tab:gates}
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}p{6.0cm}llp{3.2cm}@{}}
+\toprule
+Gate & Pathway & Treatment & Legal basis type \\
+\midrule
+G01 application or CMO relationship & approved & exclude if fail & law or regulation \\
+G02 site in application, registered & approved & lead time & law or regulation \\
+G03 process and cleaning validation & approved & hard feasibility & final guidance \\
+G04 aseptic or terminal validated & approved & hard feasibility & final guidance \\
+G05 analytical methods transferred & approved & hard feasibility & law or regulation \\
+G06 stability and container closure & approved & cap & law or regulation \\
+G07 change category and submission & approved & lead time & law or regulation \\
+G16 alternate source qualified & approved & lead time & law or regulation \\
+G08 outsourcing facility registered & 503B & exclude if fail & law or regulation \\
+G09 bulk eligible at all three dates & 503B & dynamic state & law or regulation \\
+G10 not barred as essentially a copy & 503B & dynamic state & final guidance \\
+G11 stability, BUD and sterility & 503B & cap & law or regulation \\
+G12 state licensure and distribution & 503B & region restriction & law or regulation \\
+G13 per-unit registration supportable & distributed & lead time & proposed rule \\
+G14 cross-site comparability accepted & distributed & no fleet claim & unresolved question \\
+G15 release model validated & release & fallback conventional & expert interpretation \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{What neither pathway resolves}
+
+G15 governs any release-assurance component, its treatment is fallback to conventional release,
+and the R3 scenario stays disabled unless it passes, so no strategy here takes credit for a
+model-assisted release decision. That constraint costs almost nothing, which is itself a result:
+on the illustrative release inputs, removing the entire chemical release queue removes two of the
+sixteen base release days and G15 in full removes zero, because the one component it may reduce
+sits underneath two longer ones while sterility incubation is the critical path.
+
+Neither pathway gives the study's subject standing to change a sterilization route. Route
+conversion is a prior approval supplement under 21 CFR 314.70(b)(2)(iii), with 314.97(a) applying
+the same regime to ANDAs, and parametric release is a second prior approval supplement. Both are
+filed by an application holder, and a 503B facility can hold neither. That matters because route
+conversion with parametric release is the only intervention found across fourteen architecture
+families that removes the binding release constraint, and it is unavailable to a party holding no
+application.
+
+\section{Limitations}
+\label{sec:limitations}
+
+\subsection{Inputs, and the absence of any human evidence}
+
+Eighty-seven of ninety-one registered parameters carry evidence tier 5, illustrative, and zero are
+missing. That covers every demand, cost, capacity, yield, uptime, lead-time, price, shelf-life and
+disruption input; the only sourced numeric inputs driving the runs are four release-time
+components. No absolute cost, break-even price, capital requirement, fill rate, shortage-days-avoided
+figure or incremental cost per shortage-day avoided in this memo is a statement about
+sterile-injectable manufacturing.
+
+Zero interviews have been completed against a protocol target of 25 to 30, zero of three required
+independent reviews, zero of sixteen gate reviews. Every counterparty named anywhere is a published
+third party cited by source id: nobody is a partner, no conversation is a letter of intent, no price
+has been quoted by a purchaser, no regulatory opinion has been obtained. All eleven protocol
+revisions carry \texttt{approved\_by: pending founder sign-off}, and since the verdict is stated
+against mean fill at or above 0.99 in at least 0.90 of runs, and the feasible set changes at 0.98,
+an unsigned threshold is not a formality. Nine of twenty-two definition-of-finished tests pass, and
+eleven of the thirteen incomplete ones cannot be closed by any amount of code. The modelling has run
+ahead of the evidence.
+
+Two input artifacts limit what any product comparison can mean. The two presentations differ mainly
+through one derived tier-5 number, status-quo utilization 1.245 against 0.778, and the package's
+audit records the dossiers as near-clones on several axes, so most apparent product discrimination
+is an artifact of one assumption. The second product also failed the study's own beachhead
+verification on 2026-07-16, so it is a control rather than a second market case.
+
+\subsection{Three retracted headline claims}
+
+This is kept rather than tidied away, because it bounds how much confidence any current number
+deserves. Revisions R009 to R011 fixed six defects that carried the architecture ranking: free
+opening inventory scaled to each design's own stock policy (NEW-1), unmatched search spaces between
+the frozen comparators and the new architectures (MD-3, MD-12), an infeasible tie-break with no
+Monte Carlo tolerance that had bought a 9.26 million USD per year cost increase for 0.00004 of fill
+(MD-11), a material buffer that scaled with the lead time (MD-1), an inert allocation policy
+(NEW-2), and readiness and take-or-pay instruments with no service channel (MD-23, MD-24). Three
+earlier conclusions were then withdrawn. That owned distributed nodes meet the target nowhere on
+either product: false, they meet it for norepinephrine. That no frozen comparator meets it: false,
+dual sourcing meets it for norepinephrine at 0.960. That bright-stock postponement is the strongest
+shape on both products: withdrawn, because once opening inventory is charged the design falls to
+0.630 on sodium bicarbonate, having carried roughly 1.2 million free units, about five years of the
+structural capacity gap, inside a five-year window. The last three headline claims this study made
+did not survive its own next round of fixes.
+
+\subsection{Open model defects and structural limits}
+
+Twenty-nine defects are registered in
+\texttt{docs/design\_space/bottleneck\_decomposition.md} section 7 and
+\texttt{docs/design\_space/novel\_architectures.md} section 5. Twenty-one are recorded as fixed
+under revisions R003 to R011, one (MD-1) with a residual the register states rather than argues
+away. Eight remain open (Table~\ref{tab:defects}); MD-15 and NEW-3 could change the ranking rather
+than only the numbers. One inconsistency is carried rather than smoothed: MD-17 is recorded as fixed
+by R008 in \texttt{protocol/revisions.csv} and also appears among the deferred items in the later
+status table.
+
+\begin{table}[htbp]
+\centering
+\caption{The eight open model defects and what each could still move.}
+\label{tab:defects}
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}p{1.6cm}p{5.0cm}p{6.4cm}@{}}
+\toprule
+Id & Defect & What it could still move \\
+\midrule
+MD-1 residual & Under a forced outage a shorter lead can still show marginally more stockouts, because a deferred order lands when the supplier resumes & Every raw-material lead-time condition in this study, in either direction \\
+MD-5 & The fill metric forgives anything delivered inside a 7-day backorder window & Fill by up to 0.016 in an unstable direction, and so any verdict near the requirement \\
+MD-8 & Node capacity is quadratic in the capacity factor, since batch size and batches per year both scale & Any future node-scale result; a node at scale 1.0 would be 1.82 times the central plant \\
+MD-15 & One product per network, and equal regional shares & The largest unquantified distortion in the cost comparison: 94.5 percent of one distributed-node cell's cost is borne by one presentation at 0.203 utilization \\
+MD-18 & The frozen release-time design variable is read only by the deterministic screen, never by the stochastic engine & The release-layer variant returns fill identical to the plain node design while costing 1.0 and 1.7 million USD per year more \\
+MD-22 & The screen's common-impact factor is derived from topology for new architectures and hand-set for frozen comparators & No deterministic-screen common-impact comparison across the two arms is valid \\
+MD-25 & Shared operating-layer cost is charged only outside release scenario R0, and every design-space strategy is R0 & A declared shared operating layer carries hazard with no cost line and no benefit \\
+NEW-3 & No readiness-decay hazard, so exercising a line buys production volume and not reliability & The whole readiness case for the rotating and standby designs, including the architecture ranked first below \\
+NEW-4 & Every declared common-cause group draws its own Poisson stream at one global rate, so group count is not neutral & A design declaring an honest correlation is penalised for declaring it, distorting comparison between differently documented topologies \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Three further engine limits carry no id: material stock has no shelf life, retest period or hold
+limit, so upstream reserves escape the obsolescence that emptied every real one; per-site
+commissioning, activation lead, exercise cadence and activation failure probability are
+configuration constants no design variable can reach; and the common-cause group type cannot
+express a key starting material tier, a regulatory-action group, or a shared utility. The engine
+also runs one presentation through one network, so every portfolio, postponement and pooling
+statement here is an accounting proxy, and the pooling threshold the study computed, on the order
+of five comparable presentations per node, is untestable inside its own engine. Regions are
+identical by default: R011 added the plumbing for differing criticality weights and minimum
+guarantees and measured that, with identical regions, three of the four allocation policies return
+the same fill to nine decimal places.
+
+A later and deeper optimization exists at 60 final runs (\texttt{opt\_20260906T043357Z}), with the
+design-space and ablation batteries re-run on its designs, but those artifacts have not been
+re-evaluated at 100 runs and no narrative document interprets them. They disagree with the verified
+set: there 29 of 40 cells return optimal rather than 14, and the status quo itself clears the target
+on norepinephrine at 12.91 million USD per year, the cheapest cell in the run. The documentation lags
+the artifacts, and the feasible boundary is not sharp at any resolution the package has run.
+
+\subsection{Evidence limits outside the engine}
+
+\textbf{The sterilization-route data is redacted, not merely unpublished.} That distinction decides
+whether more searching would help, and it does not. Across 65 manufacturer labels behind 50
+applications for the six longlist candidates, zero state a sterilization method, and for the two
+modelled presentations the screen determined nothing at any confidence: 0 of 24 labels and 0 of 18
+applications. FDA writes the route down and withholds the word. The published NDA 214313 review reads
+``The proposed drug product is (b) (4) sterilized'', and the Product Quality Review template's
+``Method of Sterilization:'' field is withheld behind a (b)(4) redaction in the published NDA 207987
+review. A Freedom of Information Act request returns the same redaction, because it is the holder's
+trade-secret claim and not an agency backlog.
+
+\textbf{No price evidence, weak backcasts, a methods-proof release layer.} A landscape review over
+313 sources found no published rate card, minimum order value, reservation fee or per-unit price for
+US sterile fill-finish, 503B product, enterprise quality systems, shortage-data platforms or modular
+hardware, so every unit price and break-even figure here is an assumption. Reimbursement, market
+price, willingness to pay and production cost are kept as distinct concepts; CMS average sales price
+and Part B spending appear only as labelled utilization proxies, and no reimbursement figure in this
+memo is a manufacturing cost. The backcasts compare three ongoing shortages of one class against a
+requirement of four episode classes, and no documented single-site failure episode has been obtained.
+The release-assurance evidence rests on 615 of the 655 tablets in a 2002 public near-infrared
+benchmark, with no real lots, no real drift, no real operators and not the target chemistry; it says
+nothing about a sterile injectable, and abstention is never release.
+
+\textbf{Known defects in the study's own claims, and authorship.} Fourteen claim-register rows are
+recorded as unsupported, contradicted or retracted, one of them a citation error inside the
+regulatory material: the repository's release-constraints memo attributes to FDA's 2004 aseptic
+processing guidance a sentence that is not in it. The conclusion below does not rest on that
+sentence; the citation is still wrong. Every artifact in this package, including the code, the
+configurations, the regulatory decision maps and this prose, was produced with an AI coding agent,
+and the disclosure record marks essentially all of it as not yet reviewed by the author. The
+legal-basis text in the gate configuration is that agent's classification and is unverified, and a
+planned adversarial verification pass over the audit findings did not complete.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+Stated once more so no sentence below is mistaken for a claim about the world: every number here is
+engine behaviour under evidence tier 5 illustrative inputs, all sixteen gates are UNCERTAIN and
+unreviewed, and no interview or independent review has taken place.
+
+\subsection{Where regional manufacturing does not beat the alternatives}
+
+Three results survive every revision of the engine, including the ones that overturned its other
+conclusions.
+
+A network whose saleable capacity is below demand cannot be stocked out of the deficit. On the
+capacity-short product a full year of safety stock with daily base-stock review leaves the status quo
+at mean fill 0.869 with a tail probability of zero, and on the current reversal grid the feasible set
+is empty in all nine high-demand cells of each product, so at twice base demand no strategy of the
+twenty meets the target anywhere. That region argues for capacity, not for regional capacity.
+
+Regional nodes lose the days before they exist, and their conditions are tight. On the
+capacity-short product the distributed node design needs commissioning at or below 741 days, a
+supplier disruption rate at or below 0.127 against an assumed base of 0.200, shelf life at or above
+17.6 months and changeover at or below 4.5 days, so it sits outside its own feasible region on the
+supplier axis at the base assumption. Its cost there is the highest in the battery, 32.0 million USD
+per year against 19.4 million for the cheapest cell that meets the target on that product.
+
+Adding a validated release layer to those nodes buys nothing. The release-layer variant returns mean
+fill identical to the plain node design to four decimals on both products while costing 1.0 and 1.7
+million USD per year more, for two reasons, a model defect (MD-18) and a regulatory constraint (G15
+held UNCERTAIN), neither of which is an argument for the layer.
+
+\subsection{Where it clears the bar, and the two architectures that clear both products}
+
+Regional manufacturing is not eliminated. On the product that is not capacity-short, the distributed
+node design meets the frozen target at a tail probability of 0.940, which is not borderline, at 20.0
+million USD per year. What had previously made it fail was in part an unequal search space: it had
+been denied the inventory freedom its competitors were given, and that is the clearest case in the
+package of a conclusion that was an artifact of the harness rather than a statement about
+distribution. The honest form is narrow. Regional capacity can meet the target where the incumbent
+plant is not capacity-short, at about 9 percent above rotating contracted campaigns, 11 percent above
+plain dual sourcing and 32 percent above the cheapest feasible cell; it cannot meet it at competitive
+cost where the plant is capacity-short, which is the case shortages actually present.
+
+Of forty cells re-evaluated at 100 paired runs, fourteen meet the frozen target and only two
+architectures meet it on \emph{both} products: rotating prequalified campaigns across three
+already-registered third-party fill lines (S17), and dual finished-dose sourcing with an explicit key
+starting material tier (S9). Neither is a plant the sponsor builds.
+
+\begin{table}[htbp]
+\centering
+\caption{The two architectures meeting the service target on both products. Results at 100 paired
+runs from \texttt{results/design\_space/reeval\_post\_R009.json}; conditions at 20 paired runs per
+evaluation from \texttt{ds\_post\_R009/thresholds.csv}. All inputs tier 5 illustrative. Base demand
+900,000 units per year (norepinephrine) and 1,200,000 (sodium bicarbonate); base common-cause rate
+0.1 per year; base 45 batches per site-year; base changeover 3 days.}
+\label{tab:clearboth}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}p{2.3cm}p{1.7cm}rrrp{5.4cm}@{}}
+\toprule
+Architecture & Product & Cost & Fill & P(meet) & Binding conditions inside the swept ranges \\
+ & & M USD/yr & mean & & \\
+\midrule
+S17 rotating campaigns & norepine. & 18.4 & 0.9975 & 1.000 & demand at or below 926,600 per year; changeover at or below 8.45 days \\
+S17 rotating campaigns & sodium bicarb. & 19.4 & 0.9960 & 0.900 & demand at or below 1,191,000, below the base; common cause at or below 0.182; batches at or above 44.4 \\
+S9 dual source, KSM tier & norepine. & 23.3 & 0.9975 & 0.920 & demand at or below 642,200, well below the base; common cause at or below 0.068; batches at or above 51.9; the other nine axes infeasible at both ends \\
+S9 dual source, KSM tier & sodium bicarb. & 24.6 & 0.9987 & 0.940 & demand at or below 1,303,000; shelf life at or above 12.4 months; API lead at or below 125 days; common cause at or below 0.182; supplier rate at or below 0.385 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Two features of Table~\ref{tab:clearboth} matter more than the ranking. Three of the four demand
+ceilings sit at or below the base demand assumption, so the conditions and the base verdicts disagree
+at the resolution of the grid. And for S9 on the resolved product, nine of twelve swept axes return
+infeasible at both ends of their recorded range while the same cell is feasible at base at 100 paired
+runs, which the package does not resolve. Read the conditions as an indication of which axes bind,
+not as numbers to plan against. Neither architecture is contractable today: no purchaser has been
+asked and no price has been quoted.
+
+One condition applies to every architecture at once, and it is the strongest single result in the
+current reversal grid. At base demand, raising the multi-site common-cause rate from its base of 0.1
+to the top of its recorded range of 0.3 events per group-year collapses the feasible set from 20
+strategies to 1 on norepinephrine and from 15 to 0 on sodium bicarbonate, and the one survivor is the
+rotating campaign network. Against that, fixed quality and labour cost per node changes the preferred
+strategy in zero of the eighteen demand-by-common-cause cells across both products, and neither it
+nor node capital crosses a feasibility boundary in any of their 40 threshold rows. Correlated failure
+decides this map. Fixed quality cost does not.
+
+\subsection{What would overturn this}
+
+\textbf{A demand denominator.} True utilization and installed capacity for the exact presentation
+produces 40 of the 202 crossings on the current threshold grid, more than any other swept input, and
+removes an architecture outright if it lands above that architecture's demand ceiling. Every ceiling
+in Table~\ref{tab:clearboth} sits within a few percent of the base or below it.
+
+\textbf{A price and a committed volume from a purchaser with authority.} On the pre-correction
+feasible set of thirteen cells, five moved from commercially possible to impossible as the assumed
+price fell from each design's own break-even to 18.00 USD per unit, which is an assumption and not
+evidence. An answer of ``nobody funds standing availability'' leaves every capacity-carrying design
+unfunded by construction.
+
+\textbf{The G07 reporting category in writing.} If adding a third-party sterile fill site returns as
+a prior approval supplement with a preapproval inspection, the fastest leg of the contracted family
+lengthens, and the contracted family is where both surviving architectures sit.
+
+\textbf{Closing the open defects and re-running.} Until NEW-3 gives readiness a decay hazard,
+exercising a line buys production volume rather than reliability, and the architecture ranked first
+above is routine contracted supply wearing a standby label. Until MD-15 allows more than one product
+per network, every pooling statement is an accounting proxy. The study has already shown twice that
+closing defects of this size changes which architecture wins.
+
+\subsection{The conditional answer, stated plainly}
+
+On this evidence, regional manufacturing beats safety stock, dual sourcing and additional centralized
+capacity only under a narrow conjunction: the presentation's incumbent capacity is not short of
+demand, demand sits below roughly the base assumption, correlated failure stays near the low end of
+its range, commissioning completes inside the measured window, and a buyer will pay a premium over
+contracted alternatives for something other than service, because the service is matched and the cost
+is not. Of the alternatives, additional safety stock alone never meets the target on the
+capacity-short product anywhere in the searched space, and once every comparator searches the same
+inventory space it is no longer distinguishable from the status quo, returning identical cost, fill
+and tail probability in both current runs; dual sourcing meets the target on one product and not the
+other; and rotating contracted campaigns on already-registered lines meet it on both, more cheaply
+than nodes on either.
+
+The defensible conclusion is therefore not an architecture. It is that the binding constraints in this
+model are capacity relative to demand, correlated failure across nominally separate sites and
+suppliers, the non-negotiable sterility hold, and a set of regulatory gates no design choice reaches,
+and that none of those four is improved by distributing manufacture as such. Nothing here says any
+architecture is FDA-compliant, clinically deployable, or ready to manufacture a drug. Whether the
+conclusion also holds for sterile-injectable manufacturing in the world is not something this study is
+entitled to say, and it will not be until the inputs are real, the gates are reviewed by qualified
+people, and the defects in Section~\ref{sec:limitations} are closed.

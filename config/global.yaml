@@ -1,0 +1,653 @@
+# Global parameters carried over from workbook 05_Assumptions.
+# EVERY VALUE HERE IS TIER 5 (ILLUSTRATIVE). Protocol choices (horizon, thresholds,
+# time step, regions, iterations) are NOT duplicated here; they live in
+# protocol/protocol.yaml (workbook anomaly WB-10: one source of truth).
+id: global
+description: Global economic and disruption parameters; illustrative workbook values pending evidence
+parameters:
+  discount_rate:
+    id: discount_rate
+    definition: Real annual discount rate used for capital recovery
+    units: annual_rate
+    entity_level: global
+    low: 0.06
+    base: 0.10
+    high: 0.15
+    bounds: [0.0, 0.5]
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "workbook 05_Assumptions!B6:D6 ('Expert estimate', no expert named)"
+    outputs_it_can_reverse: [cost_per_delivered_unit, annual_total_cost]
+  capital_economic_life_years:
+    id: capital_economic_life_years
+    definition: Economic life over which installed capital and validation are annualized
+    units: years
+    entity_level: global
+    low: 7
+    base: 10
+    high: 15
+    bounds: [1, 40]
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "workbook 05_Assumptions!B7:D7"
+    outputs_it_can_reverse: [cost_per_delivered_unit]
+  capital_recovery_factor_typed:
+    id: capital_recovery_factor_typed
+    definition: The workbook's TYPED capital recovery factor (not a formula; WB-09). Kept only so the deterministic replica reconciles exactly; the corrected variant computes CRF from discount_rate and capital_economic_life_years. Low pairs (0.06, 15 y); high pairs (0.15, 7 y).
+    units: annual_rate
+    entity_level: global
+    low: 0.10296
+    base: 0.16275
+    high: 0.24036
+    bounds: [0.0, 1.0]
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "workbook 05_Assumptions!B25:D25 (typed constant labeled 'Calculated')"
+  inventory_carrying_rate:
+    id: inventory_carrying_rate
+    definition: Annual inventory carrying rate (capital, handling, obsolescence) as a fraction of inventory value
+    units: annual_rate
+    entity_level: global
+    low: 0.12
+    base: 0.20
+    high: 0.30
+    bounds: [0.0, 1.0]
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "workbook 05_Assumptions!B8:D8"
+    outputs_it_can_reverse: [strategy_ranking_S1]
+  annual_demand_growth:
+    id: annual_demand_growth
+    definition: Annual growth of presentation-level demand
+    units: annual_rate
+    entity_level: global
+    low: -0.02
+    base: 0.01
+    high: 0.05
+    bounds: [-0.5, 0.5]
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "workbook 05_Assumptions!B14:D14 (no consumer in the workbook)"
+  demand_cv:
+    id: demand_cv
+    definition: Coefficient of variation of routine weekly demand
+    units: fraction
+    entity_level: global
+    low: 0.08
+    base: 0.15
+    high: 0.30
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "workbook 05_Assumptions!B15:D15; duplicated in 10_MC_Parameters row 6"
+    outputs_it_can_reverse: [pooling_benefit_S4_vs_S5]
+  demand_shock_multiplier:
+    id: demand_shock_multiplier
+    definition: Peak demand multiplier during a demand shock
+    units: multiplier
+    entity_level: global
+    low: 1.1
+    base: 1.35
+    high: 2.0
+    bounds: [1.0, 10.0]
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "workbook 05_Assumptions!B16:D16"
+  demand_shocks_per_year:
+    id: demand_shocks_per_year
+    definition: Arrival rate of demand shocks (Poisson)
+    units: per_year
+    entity_level: network
+    low: 0.1
+    base: 0.4
+    high: 1.0
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "workbook 05_Assumptions!B17:D17"
+  demand_shock_duration_days:
+    id: demand_shock_duration_days
+    definition: Duration of a demand shock
+    units: days
+    entity_level: event
+    low: 7
+    base: 30
+    high: 90
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "workbook 05_Assumptions!B18:D18"
+  site_failures_per_site_year:
+    id: site_failures_per_site_year
+    definition: Arrival rate of idiosyncratic site failures per site-year (Poisson)
+    units: per_site_year
+    entity_level: site
+    low: 0.05
+    base: 0.2
+    high: 0.6
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "workbook 05_Assumptions!B19:D19 ('calibrate to history')"
+    outputs_it_can_reverse: [shortage_days, strategy_ranking]
+  site_failure_duration_days:
+    id: site_failure_duration_days
+    definition: Duration of a site failure (lognormal; right-skewed)
+    units: days
+    entity_level: event
+    low: 7
+    base: 45
+    high: 180
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "workbook 05_Assumptions!B20:D20"
+    outputs_it_can_reverse: [shortage_days, time_to_stable_recovery]
+  common_cause_events_per_year:
+    id: common_cause_events_per_year
+    definition: Arrival rate of common-cause events (API, component, regulatory, weather)
+    units: per_year
+    entity_level: network
+    low: 0.02
+    base: 0.1
+    high: 0.3
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "workbook 05_Assumptions!B21:D21"
+    outputs_it_can_reverse: [strategy_ranking, H3, H5]
+  common_cause_duration_days:
+    id: common_cause_duration_days
+    definition: Duration of a common-cause event
+    units: days
+    entity_level: event
+    low: 14
+    base: 60
+    high: 240
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "workbook 05_Assumptions!B22:D22"
+  common_cause_capacity_impact:
+    id: common_cause_capacity_impact
+    definition: Fraction of capacity lost at affected sites during a common-cause event
+    units: fraction
+    entity_level: event
+    low: 0.2
+    base: 0.5
+    high: 1.0
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "workbook 05_Assumptions!B23:D23"
+  # ------------------------------------------------------------------
+  # Simulation parameters introduced by the study (NOT in the workbook).
+  # All tier 5 until sourced or elicited. Each names what replaces it.
+  # ------------------------------------------------------------------
+  demand_autocorrelation:
+    id: demand_autocorrelation
+    definition: Lag-1 autocorrelation of the log routine-demand multiplier (daily AR(1))
+    units: fraction
+    entity_level: global
+    low: 0.0
+    base: 0.3
+    high: 0.7
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "study placeholder; workbook 10_MC_Parameters row 6 names 'Lognormal AR(1)' without a coefficient (WB-12)"
+    notes: replace with fits to hospital/GPO order series (HA-11)
+  demand_seasonality_amplitude:
+    id: demand_seasonality_amplitude
+    definition: Peak-to-mean amplitude of an annual sinusoidal seasonality factor
+    units: fraction
+    entity_level: global
+    low: 0.0
+    base: 0.0
+    high: 0.2
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "study placeholder"
+  demand_shock_all_regions_probability:
+    id: demand_shock_all_regions_probability
+    definition: Probability that a demand shock hits every region (otherwise one region)
+    units: probability
+    entity_level: network
+    low: 0.2
+    base: 0.5
+    high: 0.9
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "study placeholder; workbook 10_MC row 8 says 'Correlated by clinical event' without a value"
+  disruption_duration_cv:
+    id: disruption_duration_cv
+    definition: Coefficient of variation of lognormal disruption durations around their median
+    units: fraction
+    entity_level: event
+    low: 0.3
+    base: 0.6
+    high: 1.0
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "study placeholder; workbook says 'Lognormal; right-skewed' without spread"
+  site_failure_residual_capacity:
+    id: site_failure_residual_capacity
+    definition: Fraction of site capacity that remains during an idiosyncratic site failure
+    units: fraction
+    entity_level: site
+    low: 0.0
+    base: 0.0
+    high: 0.5
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "study placeholder"
+  supplier_disruptions_per_supplier_year:
+    id: supplier_disruptions_per_supplier_year
+    definition: Arrival rate of supplier-specific disruptions (API or component) per supplier-year
+    units: per_year
+    entity_level: supplier
+    low: 0.05
+    base: 0.2
+    high: 0.6
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "study placeholder; workbook has no supplier-specific rate"
+  supplier_disruption_duration_days:
+    id: supplier_disruption_duration_days
+    definition: Median duration of a supplier disruption
+    units: days
+    entity_level: event
+    low: 14
+    base: 45
+    high: 120
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "study placeholder"
+  common_cause_capacity_impact_sd:
+    id: common_cause_capacity_impact_sd
+    definition: Standard deviation of the Beta-distributed common-cause capacity impact
+    units: fraction
+    entity_level: event
+    low: 0.05
+    base: 0.15
+    high: 0.3
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "study placeholder; workbook 10_MC row 12 says 'Beta' without a spread"
+  deviation_rate_per_batch:
+    id: deviation_rate_per_batch
+    definition: Probability that a batch raises a deviation requiring investigation before disposition
+    units: probability
+    entity_level: batch
+    low: 0.005
+    base: 0.02
+    high: 0.08
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "workbook 10_MC_Parameters row 16 (Bernoulli 0.005/0.02/0.08, re-used expiry placeholder)"
+  batch_rejection_rate:
+    id: batch_rejection_rate
+    definition: Probability that a batch is rejected at disposition
+    units: probability
+    entity_level: batch
+    low: 0.002
+    base: 0.01
+    high: 0.04
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "study placeholder"
+  investigation_duration_days:
+    id: investigation_duration_days
+    definition: Median added disposition time when a deviation is investigated
+    units: days
+    entity_level: batch
+    low: 7
+    base: 21
+    high: 60
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "study placeholder"
+  investigation_cost_usd:
+    id: investigation_cost_usd
+    definition: Cost of one deviation investigation
+    units: usd
+    entity_level: batch
+    low: 5000
+    base: 20000
+    high: 80000
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "study placeholder"
+  release_time_cv:
+    id: release_time_cv
+    definition: Coefficient of variation of batch release time around the component-derived median
+    units: fraction
+    entity_level: batch
+    low: 0.1
+    base: 0.2
+    high: 0.4
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "study placeholder"
+  yield_sd:
+    id: yield_sd
+    definition: Standard deviation of batch saleable yield around the site mean
+    units: fraction
+    entity_level: batch
+    low: 0.01
+    base: 0.02
+    high: 0.05
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "study placeholder; workbook 10_MC row 13 says 'Beta' without spread"
+  sterility_incubation_days:
+    id: sterility_incubation_days
+    definition: USP <71> sterility test incubation (release component; critical path for aseptic fill)
+    units: days
+    entity_level: batch
+    low: 14
+    base: 14
+    high: 18
+    evidence_tier: 1
+    confidence: high
+    validation_status: sourced
+    source_ids: [S06]
+    source_locator: "USP <71> 'not less than 14 days' as quoted in regulatory/release-constraints.md lines 44-53 (tier 1 quote); 18 d = 4-day subculture extension"
+    access_date: 2026-07-24
+    notes: the repo memo is the citation carrier; the USP chapter itself is paywalled (HA-17)
+  environmental_monitoring_days:
+    id: environmental_monitoring_days
+    definition: Environmental-monitoring yeast/mould plate incubation (release component)
+    units: days
+    entity_level: batch
+    low: 5
+    base: 7
+    high: 7
+    evidence_tier: 4
+    confidence: medium
+    validation_status: expert_validated
+    source_ids: [S07]
+    source_locator: "regulatory/release-constraints.md lines 41-50 (FDA 2004 aseptic guidance context; 5-7 d)"
+    access_date: 2026-07-24
+  assay_days:
+    id: assay_days
+    definition: Assay and content testing turnaround (release component; the only component a chemical release-assurance layer could reduce)
+    units: days
+    entity_level: batch
+    low: 1
+    base: 5
+    high: 7
+    evidence_tier: 4
+    confidence: medium
+    validation_status: expert_validated
+    source_ids: [S07]
+    source_locator: "regulatory/release-constraints.md lines 41-50 (5-7 business days contract; 1-2 in-house)"
+    access_date: 2026-07-24
+  endotoxin_days:
+    id: endotoxin_days
+    definition: Endotoxin test turnaround (release component)
+    units: days
+    entity_level: batch
+    low: 0
+    base: 2
+    high: 3
+    evidence_tier: 4
+    confidence: medium
+    validation_status: expert_validated
+    source_ids: [S07]
+    source_locator: "regulatory/release-constraints.md lines 41-50 (2-3 d; 15 min PTS)"
+    access_date: 2026-07-24
+  qa_review_days:
+    id: qa_review_days
+    definition: Quality-unit review and disposition after the last test result (serial release component)
+    units: days
+    entity_level: batch
+    low: 0
+    base: 2
+    high: 4
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "regulatory/release-constraints.md tags 0-4 d as [E] modelled estimate"
+  backorder_window_days:
+    id: backorder_window_days
+    definition: Days a region keeps unmet demand as a backorder before it is lost or substituted
+    units: days
+    entity_level: region
+    low: 3
+    base: 7
+    high: 30
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "study placeholder; needs hospital pharmacy interviews (HA-20)"
+  emergency_transport_days:
+    id: emergency_transport_days
+    definition: Transit time of an emergency transfer between locations
+    units: days
+    entity_level: shipment
+    low: 1
+    base: 1
+    high: 2
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "study placeholder"
+  emergency_transport_premium:
+    id: emergency_transport_premium
+    definition: Multiplier on distribution cost per unit for emergency transfers
+    units: multiplier
+    entity_level: shipment
+    low: 1.5
+    base: 3.0
+    high: 6.0
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "study placeholder"
+  transport_time_cv:
+    id: transport_time_cv
+    definition: Coefficient of variation of transit time around the lane median
+    units: fraction
+    entity_level: shipment
+    low: 0.1
+    base: 0.25
+    high: 0.5
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "workbook 10_MC row 18 'Gamma 1/2/5' without units (WB-12)"
+  node_commissioning_days:
+    id: node_commissioning_days
+    definition: Days from decision to a new regional node producing released product (build, qualification, submission)
+    units: days
+    entity_level: site
+    low: 365
+    base: 730
+    high: 1095
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "study placeholder; repo roadmap cites '6-12+ months' cleanroom build from trade press without the regulatory tail"
+  capacity_expansion_days:
+    id: capacity_expansion_days
+    definition: Elapsed days from the decision to expand an existing, registered site until the added capacity can run commercial batches. Applies to capacity above what the site runs on day zero; the day-zero capacity is available immediately.
+    units: days
+    entity_level: site
+    low: 90
+    base: 270
+    high: 730
+    bounds: [0, 2000]
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "no source; introduced 2026-09-03 by revision R004 to close model defect MD-7 (docs/design_space/bottleneck_decomposition.md section 7), which let capacity_factor rescale an existing plant instantly while identical capacity added as a new site waited node_commissioning_days. Base moved from 365 to 270 by revision R008 for MD-17: expanding a registered line is a change to an existing establishment (equipment installation plus a change filed under 21 CFR 314.70), not the qualification of a new one, so it must not default to second_source_qualification_days; and 365 equals warm_up_days, so a site available on exactly that day opens on the first measured day and its commissioning costs nothing inside the measured window, which makes the parameter unobservable at its own base"
+    outputs_it_can_reverse: [fill_rate, shortage_days_per_year, meets_fill_rate, cost_per_delivered_unit]
+    notes: "The base equals second_source_qualification_days (365 d), the closest sourced analogue already in this configuration: qualifying added capacity at a registered site should not be faster than qualifying a second source, and should be faster than building a new node (node_commissioning_days 730 d), which the low and high bracket. Replace with vendor and engineering evidence (HA-13). Set the design variable instant_expansion to 1 to restore the pre-R004 behaviour for a sensitivity run."
+  second_source_qualification_days:
+    id: second_source_qualification_days
+    definition: Days to qualify a second finished-dose source in an existing application
+    units: days
+    entity_level: site
+    low: 180
+    base: 365
+    high: 730
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "study placeholder; gate G07 lead time to be elicited"
+  reserved_capacity_activation_days:
+    id: reserved_capacity_activation_days
+    definition: Days from activation call to the first batch start at reserved contract capacity
+    units: days
+    entity_level: site
+    low: 7
+    base: 21
+    high: 60
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "study placeholder"
+  reserved_capacity_fee_fraction:
+    id: reserved_capacity_fee_fraction
+    definition: Annual reservation fee as a fraction of the reserved site's annualized fixed plus capital cost
+    units: fraction
+    entity_level: site
+    low: 0.1
+    base: 0.3
+    high: 0.6
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "study placeholder replacing workbook WB-21 fee definition"
+  node_scale_fraction:
+    id: node_scale_fraction
+    definition: Regional node scheduling capacity as a fraction of the central plant's nominal batches per year
+    units: fraction
+    entity_level: site
+    low: 0.15
+    base: 0.35
+    high: 0.6
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "study placeholder replacing the unscaled workbook node (WB-04)"
+  node_capital_scale_exponent:
+    id: node_capital_scale_exponent
+    definition: Capital scales with capacity to this power (0.6 = classic six-tenths rule)
+    units: fraction
+    entity_level: site
+    low: 0.5
+    base: 0.6
+    high: 0.8
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "study placeholder (engineering rule of thumb; needs vendor estimates HA-13)"
+  node_fixed_cost_scale_exponent:
+    id: node_fixed_cost_scale_exponent
+    definition: Fixed QA/labor scales with capacity to this power (quality-unit replication makes it > capital exponent)
+    units: fraction
+    entity_level: site
+    low: 0.6
+    base: 0.8
+    high: 1.0
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "study placeholder"
+  shortage_list_resolution_rate_per_year:
+    id: shortage_list_resolution_rate_per_year
+    definition: Hazard of the FDA shortage listing resolving (503B eligibility turning off)
+    units: per_year
+    entity_level: network
+    low: 0.1
+    base: 0.3
+    high: 1.0
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "study placeholder; calibrate to repeated FDA snapshots (HA-10)"
+  shortage_list_relisting_rate_per_year:
+    id: shortage_list_relisting_rate_per_year
+    definition: Hazard of a resolved product being re-listed
+    units: per_year
+    entity_level: network
+    low: 0.02
+    base: 0.1
+    high: 0.4
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "study placeholder"
+  bud_503b_days:
+    id: bud_503b_days
+    definition: Beyond-use date for 503B-compounded product (caps 503B inventory age)
+    units: days
+    entity_level: product
+    low: 45
+    base: 90
+    high: 180
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "repo memo cites 90-day assured BUD as secondary-sourced (HA-17)"
+  os_integration_usd_per_site_year:
+    id: os_integration_usd_per_site_year
+    definition: Manufacturing OS, integration, validation, cybersecurity, storage, and support per site-year (release-assurance scenarios R1-R3)
+    units: usd_per_site_year
+    entity_level: site
+    low: 100000
+    base: 300000
+    high: 800000
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "study placeholder"
+  unmet_demand_severity:
+    id: unmet_demand_severity
+    definition: Average fraction of daily demand unmet on a shortage day. Deterministic screen only (drives the workbook's approximate fill rate); never used by the simulation.
+    units: fraction
+    entity_level: global
+    low: 0.1
+    base: 0.35
+    high: 0.8
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "workbook 05_Assumptions!B24:D24 ('For deterministic screen only')"
+    outputs_it_can_reverse: [workbook_service_verdict]
+  wrong_release_cost_usd:
+    id: wrong_release_cost_usd
+    definition: Cost to the manufacturer of one wrong release decision by an analytical release gate (a batch certified on a prediction whose interval missed the reference assay), including recall or field correction, investigation, and regulatory follow-up. Used only by the release-assurance benchmark's operational cost curve; never by the network simulation.
+    units: usd
+    entity_level: batch
+    low: 200000
+    base: 2000000
+    high: 20000000
+    bounds: [0, 1000000000]
+    evidence_tier: 5
+    confidence: low
+    validation_status: illustrative
+    source_locator: "design-space assignment Phase G placeholder (2026-09-02); no source. Replace with recall-cost evidence (FDA recall records, industry surveys) or an expert elicitation (HA-22)."
+    outputs_it_can_reverse: [release_gate_operating_point, operational_cost_curve]
+    notes: "The benchmark's earlier cost curve used a relative weight of 50 per wrong release against 1 per false hold with no provenance; this parameter and the product's testing cost replace those weights."

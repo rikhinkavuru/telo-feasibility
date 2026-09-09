@@ -1,0 +1,17 @@
+{
+  "source_id": "S11",
+  "url": "https://www.federalregister.gov/api/v1/documents/2026-14073.json",
+  "retrieved_at": "2026-09-01T23:03:43.743194Z",
+  "http_status": 200,
+  "sha256": "cf9754cc67b1f39e0e86e2d5701b0169d1b41aad73d29da6c482d77249fdf229",
+  "content_type": "application/json; charset=utf-8",
+  "size_bytes": 7972,
+  "license_note": "US government work (Federal Register)",
+  "raw_path": "data/raw_snapshots/S11/2026-09-01/fr_2026-14073.json",
+  "transform_script": null,
+  "processed_path": null,
+  "data_dictionary_rows": 0,
+  "access_method": "auto",
+  "robots_allowed": true,
+  "notes": ""
+}

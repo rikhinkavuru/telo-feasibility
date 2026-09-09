@@ -1,0 +1,152 @@
+% memo.tex -- master file for the feasibility memo.
+% Build:  tectonic memo.tex     (run from reports/memo/)
+% Sections are fragments in sec_01..sec_04; this file owns the preamble.
+
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,margin=1in]{geometry}
+
+% Serif throughout: no sans faces anywhere, including headings and captions.
+\usepackage{newtxtext}
+\usepackage{newtxmath}
+
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+
+\usepackage{caption}
+\captionsetup{font=footnotesize,labelfont=bf,justification=justified,
+              singlelinecheck=false,skip=3pt}
+\setlength{\textfloatsep}{9pt plus 3pt minus 3pt}
+\setlength{\floatsep}{9pt plus 3pt minus 3pt}
+\setlength{\intextsep}{9pt plus 3pt minus 3pt}
+\renewcommand{\topfraction}{0.92}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\textfraction}{0.06}
+\renewcommand{\floatpagefraction}{0.80}
+
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection}{0.8em}{}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries}{\thesubsection}{0.7em}{}
+\titlespacing*{\section}{0pt}{1.6ex plus 0.4ex minus 0.2ex}{0.9ex plus 0.2ex}
+\titlespacing*{\subsection}{0pt}{1.2ex plus 0.3ex minus 0.2ex}{0.5ex plus 0.1ex}
+
+\setlength{\parskip}{0.35ex plus 0.2ex}
+\setlength{\emergencystretch}{2em}
+\renewcommand{\arraystretch}{1.04}
+
+\hypersetup{
+  pdftitle={Distributed Sterile-Injectable Manufacturing Under Real-World Constraints:
+            An Engineering and Operations Feasibility Study},
+  pdfauthor={Rikhin Kavuru},
+  pdfsubject={Constraint-driven engineering and operations feasibility investigation.
+              Illustrative inputs. Not a claim of regulatory compliance or manufacturing readiness.}
+}
+
+\begin{document}
+
+\title{Distributed Sterile-Injectable Manufacturing Under Real-World Constraints:\\
+An Engineering and Operations Feasibility Study}
+\author{Rikhin Kavuru\thanks{Prepared with AI coding assistance. What an agent produced, and
+what the author has and has not reviewed, is recorded in \texttt{AI\_ASSISTANCE.md} in the
+package root.}}
+\date{2026}
+\maketitle
+
+\thispagestyle{plain}
+
+\begin{center}
+\fbox{\begin{minipage}{0.93\textwidth}
+\small
+\textbf{STATUS: PRELIMINARY AND ILLUSTRATIVE. NOT FOR EXTERNAL CLAIMS.}
+Every model input except four release-time components is illustrative. Of 91 registered
+parameters, 87 carry evidence tier 5, the study's own label for a placeholder with no
+operational, official, peer-reviewed or elicited source behind it; the four exceptions are
+the sterility incubation, environmental monitoring, assay and endotoxin components of
+release time. No interview and no expert review has been completed: zero of a protocol
+target of 25 to 30 interviews, and zero of three required independent reviews. All sixteen
+regulatory gates are UNCERTAIN with no reviewer assigned, so regulatory eligibility returns
+NO\_CONCLUSION for every architecture in every run quoted here. Nothing in this document is
+a claim that any system is FDA-compliant, clinically deployable, or ready to manufacture
+drugs, and no number in it is a statement about sterile-injectable manufacturing in the
+world. Every figure below is the behaviour of a computational model under those inputs.
+This paragraph is the standing qualification on every sentence, figure and table that
+follows.
+\end{minipage}}
+\end{center}
+
+\input{sec_01_front}
+\input{sec_02_model}
+\input{sec_03_results}
+\input{sec_04_regulatory_limits}
+
+\appendix
+\section{Run identifiers behind every table, and how to reproduce them}
+\label{app:runs}
+
+Every table in this memo is produced by a named run whose manifest is written to
+\texttt{results/manifests/}. A manifest records the code version, the configuration digest,
+the seed, the run count and the parameter overrides in force, so a table can be traced to
+the exact state that produced it. All runs listed here postdate protocol revisions R009,
+R010 and R011; every earlier run in the package is superseded for quantitative use and none
+appears in this memo. Commands are run from the package root with the locked environment
+(\texttt{make env}).
+
+\begin{table}[htbp]
+\centering
+\caption{Provenance of every numbered table. Paired runs are the Monte Carlo replications
+behind each cell, on common random numbers across strategies. ``SE'' is the binomial
+standard error of the tail probability at the 0.90 requirement.}
+\label{tab:provenance}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}llrrl@{}}
+\toprule
+Table & Run identifier or artifact & Runs & SE & Command \\
+\midrule
+\ref{tab:screen} screen & \texttt{screen\_manifest.json} & n/a & n/a & \texttt{make dossiers} \\
+\ref{tab:revisions} revisions & \texttt{protocol/revisions.csv} & n/a & n/a & version-controlled file \\
+\ref{tab:release} release & \texttt{config/global.yaml} & n/a & n/a & configuration file \\
+\ref{tab:ops} operations & \texttt{config/products/*.yaml} & n/a & n/a & configuration files \\
+\ref{tab:reliability} reliability & \texttt{config/global.yaml} & n/a & n/a & configuration file \\
+\ref{tab:architectures} architectures & \texttt{config/strategies/design\_space.yaml} & n/a & n/a & configuration file \\
+\ref{tab:norepi} norepinephrine & \texttt{opt\_20260906T043357Z} & 60 & 0.039 & \texttt{make optimize} \\
+\ref{tab:bicarb} bicarbonate & \texttt{opt\_20260906T043357Z} & 60 & 0.039 & \texttt{make optimize} \\
+\ref{tab:feasible} feasible set & \texttt{reeval\_post\_R009.json} & 100 & 0.030 & \texttt{scripts/reevaluate\_optima.py} \\
+\ref{tab:census} thresholds & \texttt{ds\_post\_R009/thresholds.csv} & 20 & 0.067 & \texttt{make design-space} \\
+\ref{tab:ablation} attribution & \texttt{abl\_post\_R009/attribution.csv} & 60 & 0.039 & \texttt{make ablate} \\
+\ref{tab:interaction} interaction & \texttt{abl\_post\_R009\_pairs/} & 60 & 0.039 & \texttt{make ablate --pairs} \\
+\ref{tab:reversal} reversal & \texttt{ds\_post\_R009/reversal.json} & 40 & 0.047 & \texttt{make design-space} \\
+\ref{tab:gates} gates & \texttt{config/regulatory\_gates.yaml} & n/a & n/a & configuration file \\
+\ref{tab:defects} defects & \texttt{bottleneck\_decomposition.md} \S7 & n/a & n/a & version-controlled file \\
+\ref{tab:clearboth} clears both & \texttt{reeval\_post\_R009.json} plus thresholds & 100, 20 & 0.030 & both commands above \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Two cautions belong with this table. The resolutions are not uniform: a verdict from the
+threshold grid at 20 paired runs and a verdict from the verified feasible set at 100 are not
+interchangeable, and where they disagree the memo reports both rather than choosing. And the
+narrative documents in \texttt{docs/design\_space/} were written against the
+\texttt{reeval\_post\_R009} artifact; the later optimization
+\texttt{opt\_20260906T043357Z} and the batteries re-run on its designs are not yet
+interpreted by any narrative document, which is why some figures in
+Section~\ref{sec:limitations} differ from
+\texttt{docs/design\_space/post\_R009\_correction.md}. That document remains the governing
+statement of the verified feasible set, and it supersedes the earlier synthesis and the
+regions document wherever they disagree.
+
+Reproduction requires the frozen snapshots under \texttt{data/}, which are pinned by SHA-256
+hash in the source register \texttt{config/sources.yaml} and verified by
+\texttt{make protocol-hash}. Seeds are derived through \texttt{rng.RunStreams} from the run
+index, a named stream, a BLAKE2b hash of the entity identifier and an ordinal, so a rerun at
+the same run count reproduces the same world for every strategy. The complete assumption
+register, generated from the configuration files rather than written by hand, is
+\texttt{ASSUMPTIONS.md} in the package root, rebuilt by
+\texttt{python scripts/build\_assumptions\_table.py}.
+
+\end{document}

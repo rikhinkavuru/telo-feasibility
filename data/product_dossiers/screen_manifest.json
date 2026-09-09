@@ -1,0 +1,86 @@
+{
+  "generated_at": "2026-09-02T04:07:45.242084+00:00",
+  "protocol_version": "1.0.0",
+  "weights": {
+    "clinical_criticality": 0.2,
+    "shortage_recurrence_duration": 0.2,
+    "supplier_vulnerability": 0.15,
+    "manufacturing_fit": 0.15,
+    "public_data_strength": 0.1,
+    "regional_relevance": 0.1,
+    "demand_contract_fit": 0.1
+  },
+  "snapshot_ids": [
+    "S01:2ea0ff3bb44c",
+    "S01B:417de7856556",
+    "S14:7f00a4d2672a",
+    "S16:52e1277513bc",
+    "S17:caaa826d4ba7",
+    "S18/acetazolamide_500mg_vial:282b33d34c33",
+    "S18/acyclovir_sodium_50mgml_vial:0364dcefc84c",
+    "S18/furosemide_10mgml_vial:e464b6b51f69",
+    "S18/norepinephrine_1mgml_4ml:8f9cb72e5257",
+    "S18/sodium_bicarbonate_8_4_50ml:b6d09135744c",
+    "S18/sterile_water_for_injection_vial:32f17469d12c",
+    "S19:986deefa094d"
+  ],
+  "candidates": [
+    {
+      "id": "sodium_bicarbonate_8_4_50ml",
+      "role": "current/recurrent case candidate",
+      "hard_gate_outcome": "UNCERTAIN",
+      "data_partial_score": 1.65,
+      "data_weight_covered": 0.45,
+      "workbook_provisional_total": 4.45,
+      "status": "partial"
+    },
+    {
+      "id": "norepinephrine_1mgml_4ml",
+      "role": "resolved/recurrent comparator",
+      "hard_gate_outcome": "UNCERTAIN",
+      "data_partial_score": 0.65,
+      "data_weight_covered": 0.45,
+      "workbook_provisional_total": 3.7,
+      "status": "partial"
+    },
+    {
+      "id": "acyclovir_sodium_50mgml_vial",
+      "role": "reserve",
+      "hard_gate_outcome": "UNCERTAIN",
+      "data_partial_score": 0.75,
+      "data_weight_covered": 0.45,
+      "workbook_provisional_total": 3.5500000000000003,
+      "status": "partial"
+    },
+    {
+      "id": "furosemide_10mgml_vial",
+      "role": "reserve (repository scorecard pick 2026-07-16)",
+      "hard_gate_outcome": "UNCERTAIN",
+      "data_partial_score": 1.65,
+      "data_weight_covered": 0.45,
+      "workbook_provisional_total": 3.9000000000000004,
+      "status": "partial"
+    },
+    {
+      "id": "sterile_water_for_injection_vial",
+      "role": "include only if scale can be represented meaningfully",
+      "hard_gate_outcome": "UNCERTAIN",
+      "data_partial_score": 2.25,
+      "data_weight_covered": 0.45,
+      "workbook_provisional_total": 3.8,
+      "status": "partial"
+    },
+    {
+      "id": "acetazolamide_500mg_vial",
+      "role": "explicit out-of-archetype (lyophilized) comparator",
+      "hard_gate_outcome": "FAIL",
+      "data_partial_score": 0.75,
+      "data_weight_covered": 0.45,
+      "workbook_provisional_total": 3.2,
+      "status": "partial"
+    }
+  ],
+  "selection": null,
+  "banner": "PRELIMINARY / ILLUSTRATIVE / NOT FOR EXTERNAL CLAIMS",
+  "note": "No candidate is selected by this screen. Selection requires expert scores, resolved gates, and the challenge step (protocol 2.2 step 5)."
+}

@@ -1,0 +1,17 @@
+{
+  "source_id": "S15",
+  "url": "https://www.fda.gov/media/98964/download",
+  "retrieved_at": "2026-09-01T23:07:15.364351Z",
+  "http_status": 200,
+  "sha256": "cb1d7af105eb20f44f57b6acbd05240b6a7eb4a54c431b2ac482b4d0b56013e9",
+  "content_type": "application/pdf",
+  "size_bytes": 479565,
+  "license_note": "FDA public domain",
+  "raw_path": "data/raw_snapshots/S15/2026-09-01/essentially_a_copy_503b_2018.pdf",
+  "transform_script": null,
+  "processed_path": null,
+  "data_dictionary_rows": 0,
+  "access_method": "auto",
+  "robots_allowed": true,
+  "notes": ""
+}

@@ -1,0 +1,9 @@
+title: One-way sensitivity of S5 annual cost
+xlabel: annual total cost [USD/yr]
+ylabel: input [protocol 11.2 list]
+product: sodium_bicarbonate_8_4_50ml
+scenario: low vs high of each input, others at base
+manifest_id: 20260902T045142Z
+source_note: results/sensitivity/one_way.json; tier-5 ranges
+decision_caption: Bar length shows how far each input alone moves the strategy's cost; reversal inputs are listed in the report text.
+illustrative: True

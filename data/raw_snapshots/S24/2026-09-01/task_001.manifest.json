@@ -1,0 +1,17 @@
+{
+  "source_id": "S24",
+  "url": "https://doi.org/10.1016/j.omega.2017.01.004",
+  "retrieved_at": "2026-09-01T23:09:24.625749Z",
+  "http_status": null,
+  "sha256": null,
+  "content_type": "",
+  "size_bytes": null,
+  "license_note": "publisher copyright; paywalled",
+  "raw_path": null,
+  "transform_script": null,
+  "processed_path": null,
+  "data_dictionary_rows": 0,
+  "access_method": "human",
+  "robots_allowed": null,
+  "notes": "HUMAN-ACQUISITION-TASK: Obtain the article through institutional access or the authors; record citation, access date, and the specific parameters or findings used (page/line) in the assumption register."
+}

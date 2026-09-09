@@ -1,0 +1,17 @@
+{
+  "source_id": "S27",
+  "url": "https://api.usaspending.gov/api/v2/search/spending_by_award/",
+  "retrieved_at": "2026-09-01T23:09:25.348179Z",
+  "http_status": 200,
+  "sha256": "a570f73e327749e6a9be8b4b50f32b18e3862ff4b2ace46a8b53dae9550afd29",
+  "content_type": "application/json",
+  "size_bytes": 1494,
+  "license_note": "US government work",
+  "raw_path": "data/raw_snapshots/S27/2026-09-01/usaspending_phlow.json",
+  "transform_script": null,
+  "processed_path": null,
+  "data_dictionary_rows": 0,
+  "access_method": "auto",
+  "robots_allowed": true,
+  "notes": ""
+}

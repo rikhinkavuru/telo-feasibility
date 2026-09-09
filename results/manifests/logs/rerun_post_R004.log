@@ -1,0 +1,9 @@
+[1/6] paired simulation
+[2/6] optimization at the frozen target
+    opt run: opt_20260903T181601Z
+[3/6] optimization at the pre-registered sensitivity target tau=0.98
+[4/6] ablation on the new optimized designs
+[5/6] interaction study
+[6/6] feasibility conditions, dominance, reversal
+figures and report
+RERUN_COMPLETE opt=opt_20260903T181601Z sim=sim_post_R004 abl=abl_post_R004 pairs=abl_post_R004_pairs ds=ds_post_R004
