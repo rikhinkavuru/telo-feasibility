@@ -1,5 +1,7 @@
 # Telo feasibility study
 
+[![Interactive simulator](https://img.shields.io/badge/simulator-live-b06a12)](https://claude.ai/code/artifact/7da19bbb-b3b7-406a-9c9d-5730f08502a0)
+
 **Status: PRELIMINARY / ILLUSTRATIVE / NOT FOR EXTERNAL CLAIMS.** Run `make status` for the definition-of-finished gate list (8 of 22 at 2026-09-02: dated screen, eight strategies represented, optimization run, pathway maps, workbook reconciliation, engine tests, common random numbers, common-cause failures). Every numeric input except four release-time components is illustrative; all regulatory gates are unresolved; no interview or review has occurred.
 
 This directory is a self-contained research package inside the Telo repository. It implements the frozen protocol *Distributed Sterile-Injectable Manufacturing Under Real-World Constraints* (v1.0, 1 September 2026) as reproducible code, configuration, tests, and reports.

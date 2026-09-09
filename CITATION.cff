@@ -8,7 +8,7 @@ authors:
   - family-names: Kavuru
     given-names: Rikhin
     email: rikhin@virahacks.com
-repository-code: https://github.com/rikhinkavuru/Telo
+repository-code: https://github.com/rikhinkavuru/telo-feasibility
 license: Apache-2.0
 keywords:
   - drug shortages
