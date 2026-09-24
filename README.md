@@ -1,5 +1,7 @@
 # Telo feasibility study
 
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22678282-1f6feb)](https://doi.org/10.5281/zenodo.22678282)
+[![FDA docket comment](https://img.shields.io/badge/FDA%20docket-FDA--2025--N--6075--0046-4a5568)](https://www.regulations.gov/comment/FDA-2025-N-6075-0046)
 [![Interactive simulator](https://img.shields.io/badge/simulator-live-b06a12)](https://claude.ai/code/artifact/7da19bbb-b3b7-406a-9c9d-5730f08502a0)
 
 **Status: PRELIMINARY / ILLUSTRATIVE / NOT FOR EXTERNAL CLAIMS.** Run `make status` for the definition-of-finished gate list (8 of 22 at 2026-09-02: dated screen, eight strategies represented, optimization run, pathway maps, workbook reconciliation, engine tests, common random numbers, common-cause failures). Every numeric input except four release-time components is illustrative; all regulatory gates are unresolved; no interview or review has occurred.
